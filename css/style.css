@@ -950,19 +950,7 @@ body.animations-disabled *:after {
 }
 
 
-/* ── RESPONSIVE FIXES (15 INCH / NARROW PANELS) ── */
-@media screen and (max-width: 450px), screen and (max-height: 700px) {
-    .tab { font-size: 11px; padding: 6px 8px 5px; gap: 3px; min-width: 60px; }
-    .tab-icon { font-size: 11px; }
-    .tab-bar { padding: 0 4px; }
-    .tab-content { padding: 8px; }
-    
-    /* Make lists expand dynamically */
-    .library-container, .folder-list, #libraryList, .tab-content.active { 
-        min-height: 150px !important; 
-        flex-grow: 1 !important; 
-    }
-}
+
 
 /* ── GRAPH RESPONSIVENESS FIX ── */
 @media screen and (max-height: 850px) {
@@ -981,3 +969,41 @@ body.animations-disabled *:after {
     .section-label { margin-bottom: 2px !important; font-size: 9px !important; }
 }
 
+
+
+/* ── COMPACT MODE STYLES ── */
+/* Base rules applied ONLY if explicitly forced, OR if auto and screen is small */
+
+/* Wrap the selectors in a media query for AUTO mode */
+@media screen and (max-height: 850px), screen and (max-width: 360px) {
+    body:not(.force-large-mode) .tab-content { padding: 4px !important; gap: 2px !important; }
+    body:not(.force-large-mode) .header { padding: 6px 10px !important; }
+    body:not(.force-large-mode) .plugin-name { font-size: 13px !important; }
+    body:not(.force-large-mode) .curve-canvas-wrap { max-width: 160px !important; padding: 0 !important; margin: 0 auto !important; width: 100% !important; box-sizing: border-box !important; }
+    body:not(.force-large-mode) .curve-canvas-wrap canvas { max-height: 120px !important; max-width: 100% !important; width: 100% !important; height: auto !important; }
+    body:not(.force-large-mode) .flow-sliders-box { padding: 2px !important; gap: 0px !important; max-width: 100% !important; width: 100% !important; box-sizing: border-box !important; }
+    body:not(.force-large-mode) .flow-slider-row { gap: 2px !important; flex-wrap: wrap !important; }
+    body:not(.force-large-mode) .flow-sliders-box label { font-size: 9px !important; }
+    body:not(.force-large-mode) .slider-val { font-size: 9px !important; }
+    body:not(.force-large-mode) .flow-topbar, body:not(.force-large-mode) .flow-preset-tabs { gap: 2px !important; }
+    body:not(.force-large-mode) .fp-tab, body:not(.force-large-mode) .read-btn, body:not(.force-large-mode) .kf-count-btn, body:not(.force-large-mode) .grid-btn, body:not(.force-large-mode) .tab { padding: 2px 4px !important; font-size: 9px !important; }
+    body:not(.force-large-mode) .section-label { font-size: 8px !important; margin-bottom: 0 !important; }
+    body:not(.force-large-mode) .preset-list { max-height: 60px !important; }
+    body:not(.force-large-mode) .btn-grid { gap: 4px !important; grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)) !important; }
+}
+
+/* Also apply them REGARDLESS of screen size if force-compact-mode is active */
+.force-compact-mode .tab-content { padding: 4px !important; gap: 2px !important; }
+.force-compact-mode .header { padding: 6px 10px !important; }
+.force-compact-mode .plugin-name { font-size: 13px !important; }
+.force-compact-mode .curve-canvas-wrap { max-width: 160px !important; padding: 0 !important; margin: 0 auto !important; width: 100% !important; box-sizing: border-box !important; }
+.force-compact-mode .curve-canvas-wrap canvas { max-height: 120px !important; max-width: 100% !important; width: 100% !important; height: auto !important; }
+.force-compact-mode .flow-sliders-box { padding: 2px !important; gap: 0px !important; max-width: 100% !important; width: 100% !important; box-sizing: border-box !important; }
+.force-compact-mode .flow-slider-row { gap: 2px !important; flex-wrap: wrap !important; }
+.force-compact-mode .flow-sliders-box label { font-size: 9px !important; }
+.force-compact-mode .slider-val { font-size: 9px !important; }
+.force-compact-mode .flow-topbar, .force-compact-mode .flow-preset-tabs { gap: 2px !important; }
+.force-compact-mode .fp-tab, .force-compact-mode .read-btn, .force-compact-mode .kf-count-btn, .force-compact-mode .grid-btn, .force-compact-mode .tab { padding: 2px 4px !important; font-size: 9px !important; }
+.force-compact-mode .section-label { font-size: 8px !important; margin-bottom: 0 !important; }
+.force-compact-mode .preset-list { max-height: 60px !important; }
+.force-compact-mode .btn-grid { gap: 4px !important; grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)) !important; }
