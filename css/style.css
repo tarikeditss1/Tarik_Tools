@@ -1,3 +1,19 @@
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg) !important;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border) !important;
+    border-radius: 10px !important;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue) !important;
+}
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
@@ -1254,4 +1270,52 @@ html, body {
 }
 .force-compact-mode .curve-canvas-wrap canvas {
     max-height: 220px !important;
+}
+
+/* ====== COMPACT MODE SMALL MONITOR OPTIMIZATIONS ====== */
+.force-compact-mode .btn-grid {
+    grid-template-columns: repeat(3, 1fr) !important; /* 3 columns grid to reduce vertical height */
+    gap: 4px !important;
+}
+.force-compact-mode .grid-btn {
+    padding: 6px 2px !important;
+    font-size: 10px !important;
+}
+.force-compact-mode .tab-content {
+    padding: 8px !important;
+    gap: 5px !important;
+}
+.force-compact-mode .section-label {
+    margin-top: 4px !important;
+    margin-bottom: 2px !important;
+    font-size: 9px !important;
+}
+.force-compact-mode .anchor-grid {
+    grid-template-columns: repeat(3, 20px) !important;
+    grid-template-rows: repeat(3, 20px) !important;
+    padding: 3px !important;
+    gap: 2px !important;
+}
+.force-compact-mode .anchor-btn {
+    width: 14px !important;
+    height: 14px !important;
+}
+.force-compact-mode #anchorWidgetArea.show {
+    max-height: 90px !important;
+}
+.force-compact-mode .effect-search-row {
+    gap: 4px !important;
+    margin-bottom: 2px !important;
+}
+.force-compact-mode .effect-search {
+    padding: 5px 8px !important;
+    font-size: 11px !important;
+}
+.force-compact-mode .effect-item {
+    padding: 5px 8px !important;
+    font-size: 11px !important;
+}
+.force-compact-mode .apply-btn {
+    padding: 8px 10px !important;
+    font-size: 11px !important;
 }
