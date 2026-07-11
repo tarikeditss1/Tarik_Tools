@@ -1479,7 +1479,7 @@ function createNull(shiftPressed) {
     var newLayer;
     if (shiftPressed === "true" || shiftPressed === true) {
         // Create Null
-        newLayer = comp.layers.addNull(durationData.duration);
+        newLayer = comp.layers.addNull();
         newLayer.name = generateDefaultLayerName(comp, "Null");
         newLayer.startTime = durationData.start;
         try { newLayer.inPoint = durationData.start; } catch(e) {}
@@ -1936,9 +1936,6 @@ function getFXBypassState(mode) {
 
 function takeSnapshot(defaultPath, alwaysAsk, quality) {
     app.beginUndoGroup("Snapshot Al");
-    
-    // We declare tempComp outside try to make sure we can clean it up in catch
-    var tempComp = null;
     try {
         var comp = app.project.activeItem;
         if (!comp || !(comp instanceof CompItem)) {
@@ -1968,54 +1965,21 @@ function takeSnapshot(defaultPath, alwaysAsk, quality) {
             }
         }
         
-        // Timeline pozisyonunu kaydet - snapshot sonrasi sifirlanmasin
-        var savedTime = comp.time;
+        var originalRes = comp.resolutionFactor;
+        try {
+            if (quality === "full") comp.resolutionFactor = [1, 1];
+            else if (quality === "half") comp.resolutionFactor = [2, 2];
+            else if (quality === "third") comp.resolutionFactor = [3, 3];
+            else if (quality === "quarter") comp.resolutionFactor = [4, 4];
+        } catch(e) {}
         
-        // Resolution Quality handling using the Nested Comp Workaround
-        if (quality === "auto") {
-            // Save directly using current active viewer resolution (default AE behavior)
-            comp.saveFrameToPng(comp.time, file);
-        } else {
-            // Force specific resolution by creating a temporary comp with NO active viewer
-            var targetRes = [1, 1];
-            if (quality === "full") targetRes = [1, 1];
-            else if (quality === "half") targetRes = [2, 2];
-            else if (quality === "third") targetRes = [3, 3];
-            else if (quality === "quarter") targetRes = [4, 4];
-            
-            // Create temporary comp
-            tempComp = app.project.items.addComp(
-                "__TempSnapshot__", 
-                comp.width, 
-                comp.height, 
-                comp.pixelAspect, 
-                comp.duration, 
-                comp.frameRate
-            );
-            
-            // Nest the original comp inside
-            var tempLayer = tempComp.layers.add(comp);
-            
-            // Set forced resolution factor
-            tempComp.resolutionFactor = targetRes;
-            
-            // Save frame from the temporary comp (since it has no active viewer, it honors resolutionFactor!)
-            tempComp.saveFrameToPng(savedTime, file);
-            
-            // Remove the temporary comp immediately
-            tempComp.remove();
-            tempComp = null;
-        }
+        comp.saveFrameToPng(comp.time, file);
         
-        // Timeline'i eski pozisyona geri al
-        try { comp.time = savedTime; } catch(e) {}
+        try { comp.resolutionFactor = originalRes; } catch(e) {}
         
         app.endUndoGroup();
         return "Kaydedildi: " + file.displayName;
     } catch(err) {
-        if (tempComp !== null) {
-            try { tempComp.remove(); } catch(e) {}
-        }
         app.endUndoGroup();
         return "ERROR: " + err.toString();
     }
@@ -2038,8 +2002,18 @@ function applyHizFX(isShift) {
         if (layers.length === 0) return "ERROR: Lütfen bir katman seçin.";
         for (var i = 0; i < layers.length; i++) {
             var layer = layers[i];
+            
+            // Use language independent ADBE Effect Parade
+            var fxParade = layer.property("ADBE Effect Parade");
+            if (!fxParade) continue;
+            
             if (isShift === "true" || isShift === true) {
-                var fx = layer.property("Effects").addProperty("CC Motion Tile");
+                var fx = null;
+                try { fx = fxParade.addProperty("ADBE Tile"); } catch(e){}
+                if (!fx) try { fx = fxParade.addProperty("Motion Tile"); } catch(e){}
+                if (!fx) try { fx = fxParade.addProperty("CC Motion Tile"); } catch(e){}
+                if (!fx) return "ERROR: Motion Tile eklentisi bulunamadı!";
+                
                 if (fx) {
                     try { fx.property("Output Width").setValue(300); } catch(e){}
                     try { fx.property("Output Height").setValue(300); } catch(e){}
@@ -2047,9 +2021,11 @@ function applyHizFX(isShift) {
                 }
             } else {
                 var fx = null;
-                try { fx = layer.property("Effects").addProperty("Twixtor Pro"); } catch(e){}
-                if (!fx) try { fx = layer.property("Effects").addProperty("Twixtor7 Pro"); } catch(e){}
-                if (!fx) try { fx = layer.property("Effects").addProperty("Twixtor6 Pro"); } catch(e){}
+                try { fx = fxParade.addProperty("Twixtor Pro"); } catch(e){}
+                if (!fx) try { fx = fxParade.addProperty("Twixtor7 Pro"); } catch(e){}
+                if (!fx) try { fx = fxParade.addProperty("Twixtor6 Pro"); } catch(e){}
+                if (!fx) try { fx = fxParade.addProperty("Twixtor"); } catch(e){}
+                if (!fx) try { fx = fxParade.addProperty("REVisionEffects TwixtorPro"); } catch(e){}
                 if (!fx) return "ERROR: Twixtor Pro eklentisi bulunamadı!";
             }
         }
