@@ -87,6 +87,7 @@ body::-webkit-scrollbar-thumb { background: var(--border); border-radius:4px; }
     border-bottom: 1px solid var(--border);
     padding: 0 8px;
     gap: 2px;
+    flex-wrap: wrap;
 }
 
 .tab {
@@ -97,7 +98,10 @@ body::-webkit-scrollbar-thumb { background: var(--border); border-radius:4px; }
     font-family: inherit;
     font-size: 12px;
     font-weight: 500;
-    padding: 9px 12px 8px;
+    padding: 8px 10px 7px;
+    flex: 1;
+    justify-content: center;
+    min-width: 70px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -363,6 +367,7 @@ body::-webkit-scrollbar-thumb { background: var(--border); border-radius:4px; }
     display: flex;
     flex-direction: column;
     gap: 2px;
+    flex-wrap: wrap;
 }
 
 .preset-item-name { font-size:12px; color:var(--text); font-weight:500; }
@@ -910,4 +915,74 @@ body.animations-disabled *:after {
     0% { transform: scale(1); box-shadow: 0 0 0 rgba(249, 115, 22, 0); }
     50% { transform: scale(1.05); box-shadow: 0 0 8px rgba(249, 115, 22, 0.6); }
     100% { transform: scale(1); box-shadow: 0 0 0 rgba(249, 115, 22, 0); }
+}
+
+/* ── RESPONSIVE CANVAS & PANEL STYLES ────────────────── */
+.curve-canvas-wrap {
+    width: 100%;
+    max-width: 300px;
+}
+.curve-canvas-wrap canvas {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 300px;
+    max-height: 260px;
+}
+
+@media (max-width: 290px) {
+    .header { padding: 8px 10px; }
+    .plugin-name { font-size: 12px; }
+    .tab { padding: 7px 8px 6px; font-size: 11px; }
+    .tab-content { padding: 8px; gap: 6px; }
+    .btn-grid { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 4px; }
+    .grid-btn { padding: 7px 4px; font-size: 11px; }
+    .section-label { font-size: 9px; }
+}
+
+@media (max-height: 620px) {
+    .tab-content { gap: 6px; padding: 8px; }
+    .curve-canvas-wrap { padding: 4px 0 0; }
+    .preset-list { max-height: 90px; }
+    .settings-group { padding: 8px 12px; }
+    .info-box-cyan { padding: 6px 10px; margin-bottom: 6px; }
+    .selected-comp-info { padding: 6px 10px; margin-bottom: 8px; }
+}
+
+
+/* ── RESPONSIVE FIXES (15 INCH / NARROW PANELS) ── */
+@media screen and (max-width: 450px), screen and (max-height: 700px) {
+    .tab { font-size: 11px; padding: 6px 8px 5px; gap: 3px; min-width: 60px; }
+    .tab-icon { font-size: 11px; }
+    .tab-bar { padding: 0 4px; }
+    .tab-content { padding: 8px; }
+    
+    /* Make lists expand dynamically */
+    .library-container, .folder-list, #libraryList, .tab-content.active { 
+        min-height: 150px !important; 
+        flex-grow: 1 !important; 
+    }
+}
+
+/* ── GRAPH RESPONSIVENESS FIX ── */
+@media screen and (max-height: 800px) {
+    .curve-canvas-wrap {
+        max-width: 250px !important;
+    }
+    .curve-canvas-wrap canvas {
+        max-height: 200px !important;
+    }
+    .flow-sliders-box {
+        padding: 6px;
+        gap: 4px;
+    }
+}
+@media screen and (max-height: 700px) {
+    .curve-canvas-wrap {
+        max-width: 200px !important;
+    }
+    .curve-canvas-wrap canvas {
+        max-height: 150px !important;
+    }
+    .slider-val { font-size: 9px; }
 }
