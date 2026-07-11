@@ -70,9 +70,9 @@
 
 <!-- ========== TAB: KATMAN ========== -->
 <div id="tab-layers" class="tab-content active">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 8px;">
         <div class="section-label" style="margin-bottom: 0; padding-bottom: 0;">Katman & Düzenleme</div>
-        <div style="display:flex; gap:4px;">
+        <div style="display:flex; gap:4px; flex-wrap:wrap;">
         <button id="btnToggleAnchorUI" style="font-size: 10px; background: var(--bg-3); border: 1px solid var(--border); border-radius: 4px; color: var(--text-dim); padding: 2px 6px; cursor: pointer; transition: all 0.2s; font-family: inherit;" title="Merkez Noktası (Anchor) aracını göster/gizle">⚓ Anchor</button>
         <button id="btnEditLayout" style="font-size: 10px; background: var(--bg-3); border: 1px solid var(--border); border-radius: 4px; color: var(--text-dim); padding: 2px 6px; cursor: pointer; transition: all 0.2s; font-family: inherit;">⚙️ Düzenle</button>
     </div>
@@ -112,9 +112,9 @@
 
     </div>
     
-    <div class="section-label" style="margin-top: 12px; display:flex; justify-content:space-between; align-items:center;">
+    <div class="section-label" style="margin-top: 12px; display:flex; flex-wrap: wrap; justify-content:space-between; align-items:center; gap: 4px;">
         <span>FFX Efekt Kütüphanesi</span>
-        <div style="display:flex; gap:6px;">
+        <div style="display:flex; gap:6px; flex-wrap:wrap;">
             <button id="tabFFXLibrary" class="cat-btn active" style="font-size: 10px; padding: 2px 8px; border-radius: 4px;">📂 Kütüphane</button>
             <button id="tabFFXFavorites" class="cat-btn" style="font-size: 10px; padding: 2px 8px; border-radius: 4px;">★ Favoriler</button>
         </div>
@@ -177,7 +177,7 @@
     </div>
 
     <!-- TOOLBAR ROW -->
-    <div style="display:flex; gap:4px; margin-bottom:5px; align-items:center;">
+    <div style="display:flex; gap:4px; flex-wrap:wrap; margin-bottom:5px; align-items:center;">
         <button class="tool-btn" id="btnSymLock" title="Simetri Kilidi (sol/sağ birlikte hareket)" style="flex:1;">🔗 Simetri</button>
         <button class="tool-btn" id="btnSnapMode" title="Izgara Modu (0.10 adım)" style="flex:1;">📐 Snap</button>
         <button class="tool-btn" id="btnCompare" title="Karşılaştırma Modu" style="flex:1;">👁 Karşılaştır</button>
@@ -232,14 +232,14 @@
     <!-- PRESETS -->
     <div class="section-label" style="margin-top:8px;">
         Kayıtlı Presetler
-        <div style="margin-left:auto; display:flex; gap:4px; align-items:center;">
+        <div style="margin-left:auto; display:flex; gap:4px; flex-wrap:wrap; align-items:center;">
             <label id="btnImportPreset" class="graph-action-btn import-btn" title="Preset İçe Aktar">📥 İçe Aktar<input type="file" id="importPresetFile" accept=".tarikgraph,.json" style="display:none;"></label>
             <button id="btnExportPreset" class="graph-action-btn export-btn" title="Presetleri Dışa Aktar">📤 Dışa Aktar</button>
             <button id="clearPresets" class="graph-action-btn delete-btn" title="Tümünü Sil">🗑️ Temizle</button>
         </div>
     </div>
     <!-- Category filter -->
-    <div id="presetCatRow" style="display:flex; gap:4px; margin-bottom:5px; flex-wrap:wrap;">
+    <div id="presetCatRow" style="display:flex; gap:4px; flex-wrap:wrap; margin-bottom:5px; flex-wrap:wrap;">
         <button class="cat-btn active" data-cat="all" style="font-size:9px;padding:2px 7px;">Tümü</button>
         <button class="cat-btn" data-cat="ui" style="font-size:9px;padding:2px 7px;">UI</button>
         <button class="cat-btn" data-cat="karakter" style="font-size:9px;padding:2px 7px;">Karakter</button>
@@ -376,7 +376,7 @@
             
             <!-- GENEL GROUP -->
             <div class="settings-group-title" style="font-size: 10px; font-weight: 700; color: var(--blue-light); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Genel Ayarlar</div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                 <span style="font-size: 11px; color: var(--text);">FX Bypass Modu</span>
                 <select class="select-box" id="fxBypassMode" style="width: 140px; font-size: 10px; padding: 4px;">
                     <option value="layers" selected>Seçili Katmanlar</option>
@@ -385,12 +385,12 @@
             </div>
 
             
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                 <span style="font-size: 11px; color: var(--text-dim);">Pre Comp FPS:</span>
                 <input type="number" id="inpPreCompFPS" value="60" style="width: 50px; background: var(--bg-3); border: 1px solid var(--border); color: var(--text); border-radius: 4px; padding: 3px 6px; text-align: center; font-size: 11px;">
             </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                 <span style="font-size: 11px; color: var(--text-dim);">Animasyonlu Arayüz:</span>
                 <label class="switch-container" style="position: relative; display: inline-block; width: 28px; height: 16px;">
                     <input type="checkbox" id="chkAnim" checked style="opacity: 0; width: 0; height: 0;">
@@ -402,42 +402,42 @@
             <div class="settings-group-title" style="font-size: 10px; font-weight: 700; color: var(--blue-light); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 15px; margin-bottom: 8px; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Gelişmiş Temizle Kuralları</div>
             
             <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
                     <span style="font-size: 11px; color: var(--text-dim);">Efektleri Sil:</span>
                     <label class="switch-container" style="position: relative; display: inline-block; width: 28px; height: 16px;">
                         <input type="checkbox" id="chkCleanEffects" checked style="opacity: 0; width: 0; height: 0;">
                         <span class="switch-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #4b5563; transition: .2s; border-radius: 16px;"></span>
                     </label>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
                     <span style="font-size: 11px; color: var(--text-dim);">Maskeleri Sil:</span>
                     <label class="switch-container" style="position: relative; display: inline-block; width: 28px; height: 16px;">
                         <input type="checkbox" id="chkCleanMasks" checked style="opacity: 0; width: 0; height: 0;">
                         <span class="switch-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #4b5563; transition: .2s; border-radius: 16px;"></span>
                     </label>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
                     <span style="font-size: 11px; color: var(--text-dim);">Keyframe'leri Sil:</span>
                     <label class="switch-container" style="position: relative; display: inline-block; width: 28px; height: 16px;">
                         <input type="checkbox" id="chkCleanKeys" checked style="opacity: 0; width: 0; height: 0;">
                         <span class="switch-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #4b5563; transition: .2s; border-radius: 16px;"></span>
                     </label>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
                     <span style="font-size: 11px; color: var(--text-dim);">Expression'ları Sil:</span>
                     <label class="switch-container" style="position: relative; display: inline-block; width: 28px; height: 16px;">
                         <input type="checkbox" id="chkCleanExpr" style="opacity: 0; width: 0; height: 0;">
                         <span class="switch-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #4b5563; transition: .2s; border-radius: 16px;"></span>
                     </label>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
                     <span style="font-size: 11px; color: var(--text-dim);">Transformu Sıfırla:</span>
                     <label class="switch-container" style="position: relative; display: inline-block; width: 28px; height: 16px;">
                         <input type="checkbox" id="chkCleanTransform" style="opacity: 0; width: 0; height: 0;">
                         <span class="switch-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #4b5563; transition: .2s; border-radius: 16px;"></span>
                     </label>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);">
                     <span style="font-size: 11px; color: var(--text-dim);">Solid Varsayılan Rengi:</span>
                     <input type="color" id="solidColorPicker" value="#1a1a1a" style="border: 1px solid var(--border); border-radius: 4px; background: transparent; width: 36px; height: 20px; cursor: pointer; padding: 0;">
                 </div>
@@ -446,7 +446,7 @@
             <div class="settings-group-title" style="font-size: 10px; font-weight: 700; color: var(--blue-light); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 14px; margin-bottom: 8px; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Ekran Görüntüsü Ayarları</div>
             
             <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
                     <span style="font-size: 11px; color: var(--text);">Kayıt Klasörü</span>
                     <button class="folder-btn" id="btnSelectSnapshotFolder" style="font-size: 10px; padding: 2px 8px; background: var(--bg-3); border: 1px solid var(--border); border-radius: 4px; color: var(--text); cursor: pointer;">📂 Seç</button>
                 </div>
@@ -454,7 +454,7 @@
             </div>
             
             
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                 <span style="font-size: 11px; color: var(--text);">Çözünürlük Kalitesi</span>
                 <select class="select-box" id="snapshotQuality" style="width: 140px; font-size: 10px; padding: 4px;">
                     <option value="auto" selected>Oto (Aktif Önizleme)</option>
@@ -464,7 +464,7 @@
                     <option value="quarter">Quarter (Çeyrek)</option>
                 </select>
             </div>
-<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                 <span style="font-size: 11px; color: var(--text);">Her Seferinde Sor (Save Dialog)</span>
                 <input type="checkbox" id="chkSnapshotAlwaysAsk" checked style="cursor:pointer; width: 14px; height: 14px;">
             </div>

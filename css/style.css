@@ -135,7 +135,7 @@ body::-webkit-scrollbar-thumb { background: var(--border); border-radius:4px; }
 }
 
 /* ── BTN GRID ────────────────────────────── */
-.btn-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+.btn-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap:6px; }
 
 .grid-btn {
     background: var(--bg-2);
