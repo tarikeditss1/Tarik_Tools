@@ -1073,7 +1073,8 @@ html, body {
 .folder-bar, 
 .effect-search-row, 
 .custom-checkbox,
-.apply-btn {
+.apply-btn,
+#anchorWidgetArea {
     flex-shrink: 0 !important;
 }
 
