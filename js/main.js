@@ -1,1 +1,4602 @@
-var a0_0x2349bc=a0_0x41dd;(function(_0x33dd5f,_0x5c1f2f){var _0x465d06=a0_0x41dd,_0x3cbdc9=_0x33dd5f();while(!![]){try{var _0x280b7a=parseInt(_0x465d06(0x287))/0x1+parseInt(_0x465d06(0x2b1))/0x2*(-parseInt(_0x465d06(0x16e))/0x3)+parseInt(_0x465d06(0x23d))/0x4*(parseInt(_0x465d06(0x149))/0x5)+parseInt(_0x465d06(0x121))/0x6+-parseInt(_0x465d06(0x183))/0x7+-parseInt(_0x465d06(0x323))/0x8*(parseInt(_0x465d06(0x17d))/0x9)+parseInt(_0x465d06(0x365))/0xa;if(_0x280b7a===_0x5c1f2f)break;else _0x3cbdc9['push'](_0x3cbdc9['shift']());}catch(_0x188392){_0x3cbdc9['push'](_0x3cbdc9['shift']());}}}(a0_0x1abf,0x6401f),document[a0_0x2349bc(0x32a)]('contextmenu',function(_0x42d0b8){var _0x2aa053=a0_0x2349bc;_0x42d0b8[_0x2aa053(0x369)]();}));function queryAll(_0x5f46fa){var _0x4dd1b5=a0_0x2349bc,_0x84f008=document[_0x4dd1b5(0x23c)](_0x5f46fa),_0x1071cd=[];for(var _0x321db1=0x0;_0x321db1<_0x84f008['length'];_0x321db1++){_0x1071cd[_0x4dd1b5(0x1fd)](_0x84f008[_0x321db1]);}return _0x1071cd;}var cs=new CSInterface(),settingsFile='';try{var os=require('os'),path=require(a0_0x2349bc(0x222)),fs=require('fs');settingsFile=path[a0_0x2349bc(0x13f)](os[a0_0x2349bc(0x326)](),a0_0x2349bc(0x337));var oldSettingsFile=path[a0_0x2349bc(0x13f)](os[a0_0x2349bc(0x326)](),a0_0x2349bc(0x347));if(fs[a0_0x2349bc(0x23b)](oldSettingsFile)&&!fs[a0_0x2349bc(0x23b)](settingsFile))try{fs['writeFileSync'](settingsFile,fs[a0_0x2349bc(0x12d)](oldSettingsFile,'utf8'),a0_0x2349bc(0x19e));}catch(a0_0x2cd1ad){}}catch(a0_0xe324d3){}function getPersistedSettings(){var _0x444ff2=a0_0x2349bc;if(!settingsFile)return{};try{var _0x931bb9=require('fs');if(_0x931bb9[_0x444ff2(0x23b)](settingsFile)){var _0x50120e=_0x931bb9[_0x444ff2(0x12d)](settingsFile,_0x444ff2(0x19e));return JSON[_0x444ff2(0x276)](_0x50120e)||{};}}catch(_0x4ab585){}return{};}function savePersistedSettings(_0xf4674f){var _0x1649b2=a0_0x2349bc;if(!settingsFile)return;try{var _0x453989=require('fs'),_0x389b61=getPersistedSettings();for(var _0x246181 in _0xf4674f){_0xf4674f['hasOwnProperty'](_0x246181)&&(_0x389b61[_0x246181]=_0xf4674f[_0x246181]);}_0x453989['writeFileSync'](settingsFile,JSON['stringify'](_0x389b61,null,0x2),_0x1649b2(0x19e));}catch(_0x319d9b){}}function a0_0x41dd(_0x40581e,_0x560516){_0x40581e=_0x40581e-0xf8;var _0x1abf9f=a0_0x1abf();var _0x41dde4=_0x1abf9f[_0x40581e];return _0x41dde4;}try{var settings=getPersistedSettings();for(var k in settings){if(settings[a0_0x2349bc(0x244)](k)){var val=settings[k];typeof val===a0_0x2349bc(0x1a3)?localStorage['setItem'](k,JSON[a0_0x2349bc(0x31c)](val)):localStorage[a0_0x2349bc(0x2b7)](k,String(val));}}}catch(a0_0x3a7c6c){}var _origSetItem=localStorage[a0_0x2349bc(0x2b7)];localStorage[a0_0x2349bc(0x2b7)]=function(_0xf7f6ba,_0x3a9e37){var _0x2a4a5c=a0_0x2349bc;_origSetItem[_0x2a4a5c(0x2d9)](localStorage,_0xf7f6ba,_0x3a9e37);try{var _0x359bd8={};_0x359bd8[_0xf7f6ba]=_0x3a9e37,savePersistedSettings(_0x359bd8);}catch(_0x1d5b6f){}};var toastTimeout=null;function showToast(_0x44702e,_0x17c17d){var _0x13994d=a0_0x2349bc;_0x17c17d=_0x17c17d!==undefined?_0x17c17d:0x5dc;var _0x207755=document[_0x13994d(0x340)](_0x13994d(0x100));_0x207755[_0x13994d(0x190)]=_0x44702e,_0x207755['classList'][_0x13994d(0x1c6)]('show');if(toastTimeout)clearTimeout(toastTimeout);toastTimeout=setTimeout(function(){var _0x30fc53=_0x13994d;_0x207755[_0x30fc53(0x120)]['remove'](_0x30fc53(0xfd));},_0x17c17d);}function runScript(_0xf1d445,_0x45cc35){var _0xe99c9b=a0_0x2349bc;cs[_0xe99c9b(0x357)](_0xf1d445,function(_0x530039){if(_0x45cc35)_0x45cc35(_0x530039);});}queryAll(a0_0x2349bc(0x388))[a0_0x2349bc(0x2e4)](function(_0x4c980e){var _0x43ab05=a0_0x2349bc;_0x4c980e['addEventListener'](_0x43ab05(0x1ed),function(){var _0x2c07fe=_0x43ab05;queryAll(_0x2c07fe(0x388))[_0x2c07fe(0x2e4)](function(_0x1c1a93){var _0x169cad=_0x2c07fe;_0x1c1a93[_0x169cad(0x120)]['remove']('active');}),queryAll(_0x2c07fe(0x30e))[_0x2c07fe(0x2e4)](function(_0x58ed6d){var _0xa55e73=_0x2c07fe;_0x58ed6d[_0xa55e73(0x120)][_0xa55e73(0x27f)](_0xa55e73(0x2e1));}),_0x4c980e[_0x2c07fe(0x120)][_0x2c07fe(0x1c6)](_0x2c07fe(0x2e1)),document[_0x2c07fe(0x340)](_0x2c07fe(0x128)+_0x4c980e[_0x2c07fe(0x1b5)][_0x2c07fe(0x32f)])[_0x2c07fe(0x120)][_0x2c07fe(0x1c6)](_0x2c07fe(0x2e1));});});var layerBtns={'btnPrecomp':[a0_0x2349bc(0x1b6),a0_0x2349bc(0x38c)],'btnAklliKopya':[a0_0x2349bc(0x26e),a0_0x2349bc(0x215)],'btnTemizle':[a0_0x2349bc(0x2ae),'✓\x20Katmanlar\x20temizlendi'],'btnTersCevir':[a0_0x2349bc(0x1cf),a0_0x2349bc(0x25f)]};Object[a0_0x2349bc(0x392)](layerBtns)[a0_0x2349bc(0x2e4)](function(_0x3b8a59){var _0xe7a1c7=a0_0x2349bc,_0xe33fb9=document[_0xe7a1c7(0x340)](_0x3b8a59);_0xe33fb9&&_0xe33fb9['addEventListener']('click',function(_0x4c4a3e){var _0x514ee8=_0xe7a1c7;if(window[_0x514ee8(0x2a6)])return;var _0x22657a=_0x4c4a3e[_0x514ee8(0x1ac)]?_0x514ee8(0x153):_0x514ee8(0x129),_0x2fae51=document[_0x514ee8(0x340)]('inpPreCompFPS')?document[_0x514ee8(0x340)](_0x514ee8(0x216))['value']:0x3c,_0x3116e4=layerBtns[_0x3b8a59][0x0];if(_0x3b8a59===_0x514ee8(0x13b)){var _0x51be07=document[_0x514ee8(0x340)](_0x514ee8(0x22b))?document[_0x514ee8(0x340)](_0x514ee8(0x22b))[_0x514ee8(0x37f)]:!![],_0x3a7667=document[_0x514ee8(0x340)](_0x514ee8(0x163))?document[_0x514ee8(0x340)](_0x514ee8(0x163))['checked']:!![],_0x4250ff=document['getElementById'](_0x514ee8(0x362))?document[_0x514ee8(0x340)](_0x514ee8(0x362))['checked']:!![],_0x1a9988=document[_0x514ee8(0x340)](_0x514ee8(0x1d6))?document[_0x514ee8(0x340)](_0x514ee8(0x1d6))['checked']:![],_0x44e721=document[_0x514ee8(0x340)]('chkCleanTransform')?document[_0x514ee8(0x340)](_0x514ee8(0x387))['checked']:![];_0x3116e4=_0x514ee8(0x24f)+_0x51be07+',\x20'+_0x3a7667+',\x20'+_0x4250ff+',\x20'+_0x1a9988+',\x20'+_0x44e721+')';}else _0x3116e4=_0x3116e4[_0x514ee8(0x126)]('()','('+_0x22657a+',\x20'+_0x2fae51+')');runScript(_0x3116e4,function(_0x986ec7){var _0x4c48be=_0x514ee8;_0x986ec7&&_0x986ec7[_0x4c48be(0x1e0)](_0x4c48be(0xfc))===0x0?window[_0x4c48be(0x1a2)](_0x986ec7[_0x4c48be(0x113)](0x6)):showToast(layerBtns[_0x3b8a59][0x1]);});});});var slSpeedIn={'value':0x0},slSpeedOut={'value':0x0},slInfluenceIn={'value':0x21},slInfluenceOut={'value':0x21},canvas=document['getElementById'](a0_0x2349bc(0x1ad)),ctx=canvas['getContext']('2d'),curveLabel=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x217)),CW=canvas[a0_0x2349bc(0x13d)],CH=canvas[a0_0x2349bc(0x32d)],PAD=0x18,BOX_W=CW-PAD*0x2,BOX_H=CH-PAD*0x2,cp1={'x':0.33,'y':0x0},cp2={'x':0.67,'y':0x1};try{var savedCp1=localStorage[a0_0x2349bc(0x2e9)](a0_0x2349bc(0x284)),savedCp2=localStorage['getItem']('flowease_cp2');if(savedCp1)cp1=JSON[a0_0x2349bc(0x276)](savedCp1);if(savedCp2)cp2=JSON['parse'](savedCp2);}catch(a0_0x47a46d){}var activeFlowType=a0_0x2349bc(0x289),graphMode=localStorage[a0_0x2349bc(0x2e9)](a0_0x2349bc(0x221))||a0_0x2349bc(0x236),PRESETS={'ease':{'cp1':[0.33,0x0],'cp2':[0.67,0x1],'label':'Easy\x20Ease'},'ease-in':{'cp1':[0.33,0x0],'cp2':[0.67,0.67],'label':a0_0x2349bc(0x1c5)},'ease-out':{'cp1':[0.33,0.33],'cp2':[0.67,0x1],'label':a0_0x2349bc(0x2e8)},'linear':{'cp1':[0.33,0.33],'cp2':[0.67,0.67],'label':a0_0x2349bc(0x197)}},flipY=![];try{var savedFlipY=localStorage[a0_0x2349bc(0x2e9)](a0_0x2349bc(0x2b0));if(savedFlipY)flipY=savedFlipY===a0_0x2349bc(0x153);}catch(a0_0x3d7ed2){}var btnFlipY=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x37d));btnFlipY&&(flipY&&(btnFlipY[a0_0x2349bc(0x368)][a0_0x2349bc(0x21b)]=a0_0x2349bc(0x334),btnFlipY[a0_0x2349bc(0x368)][a0_0x2349bc(0x127)]=a0_0x2349bc(0x334)),btnFlipY[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x9b1d88=a0_0x2349bc;flipY=!flipY,flipY?(btnFlipY[_0x9b1d88(0x368)][_0x9b1d88(0x21b)]=_0x9b1d88(0x334),btnFlipY[_0x9b1d88(0x368)][_0x9b1d88(0x127)]='#2e8ff5'):(btnFlipY[_0x9b1d88(0x368)]['color']=_0x9b1d88(0x363),btnFlipY['style']['borderColor']=_0x9b1d88(0x10a)),localStorage['setItem'](_0x9b1d88(0x2b0),String(flipY)),drawFlow();}));function toCanvas(_0x50d8b2,_0x4af018){var _0x5a3637=flipY?_0x4af018:0x1-_0x4af018;return{'x':PAD+_0x50d8b2*BOX_W,'y':PAD+_0x5a3637*BOX_H};}function fromCanvas(_0x1516f9,_0x3d4824){var _0x1d5e47=a0_0x2349bc,_0x2623c8=Math[_0x1d5e47(0x240)](0.001,Math[_0x1d5e47(0x204)](0.999,(_0x1516f9-PAD)/BOX_W)),_0x4700fb=(_0x3d4824-PAD)/BOX_H,_0x10da97=flipY?_0x4700fb:0x1-_0x4700fb;return{'x':_0x2623c8,'y':_0x10da97};}function drawFlow(){var _0x2dae2f=a0_0x2349bc;ctx[_0x2dae2f(0x1bf)](0x0,0x0,CW,CH);var _0x3e906d=toCanvas(0x0,0x0),_0xf1f7c5=toCanvas(0x1,0x1),_0x9bec13=toCanvas(cp1['x'],cp1['y']),_0xefd0e9=toCanvas(cp2['x'],cp2['y']);ctx[_0x2dae2f(0x29f)]=_0x2dae2f(0x211),ctx[_0x2dae2f(0x317)]=0x1,ctx['strokeRect'](PAD,PAD,BOX_W,BOX_H),ctx[_0x2dae2f(0x29f)]=_0x2dae2f(0x154),ctx[_0x2dae2f(0x317)]=0x1,ctx['setLineDash']([0x4,0x4]),ctx[_0x2dae2f(0x302)](),ctx[_0x2dae2f(0x32c)](_0x3e906d['x'],_0x3e906d['y']),ctx[_0x2dae2f(0x37b)](_0xf1f7c5['x'],_0xf1f7c5['y']),ctx['stroke'](),ctx[_0x2dae2f(0x1ca)]([]),ctx[_0x2dae2f(0x29f)]='rgba(255,255,255,0.06)',ctx[_0x2dae2f(0x317)]=0x1;for(var _0x4ae94e=0x1;_0x4ae94e<0x4;_0x4ae94e++){var _0x3b48d3=PAD+BOX_W*_0x4ae94e/0x4,_0x349b86=PAD+BOX_H*_0x4ae94e/0x4;ctx[_0x2dae2f(0x302)](),ctx['moveTo'](_0x3b48d3,PAD),ctx[_0x2dae2f(0x37b)](_0x3b48d3,PAD+BOX_H),ctx[_0x2dae2f(0x35a)](),ctx[_0x2dae2f(0x302)](),ctx['moveTo'](PAD,_0x349b86),ctx[_0x2dae2f(0x37b)](PAD+BOX_W,_0x349b86),ctx[_0x2dae2f(0x35a)]();}if(graphMode==='speed'){ctx['strokeStyle']=_0x2dae2f(0x333),ctx[_0x2dae2f(0x317)]=2.5,ctx['beginPath']();var _0x51d858=[];for(var _0x40fa70=0x0;_0x40fa70<=0xc8;_0x40fa70++){var _0x567e54=_0x40fa70/0xc8,_0x269a12=0x1-_0x567e54,_0x25da64=0x3*_0x269a12*_0x269a12*_0x567e54*cp1['x']+0x3*_0x269a12*_0x567e54*_0x567e54*cp2['x']+_0x567e54*_0x567e54*_0x567e54,_0x380c61=0x3*_0x269a12*_0x269a12*cp1['x']+0x6*_0x269a12*_0x567e54*(cp2['x']-cp1['x'])+0x3*_0x567e54*_0x567e54*(0x1-cp2['x']),_0x159235=0x3*_0x269a12*_0x269a12*cp1['y']+0x6*_0x269a12*_0x567e54*(cp2['y']-cp1['y'])+0x3*_0x567e54*_0x567e54*(0x1-cp2['y']),_0xd88248=Math[_0x2dae2f(0x115)](_0x380c61)>0.0001?_0x159235/_0x380c61:0x0;_0x51d858['push']({'bx':_0x25da64,'speed':_0xd88248});}var _0x56cf4e=0x2;for(var _0x40fa70=0x0;_0x40fa70<_0x51d858[_0x2dae2f(0x181)];_0x40fa70++){var _0x7fc428=PAD+_0x51d858[_0x40fa70]['bx']*BOX_W,_0x30d7a1=Math['min'](0x1,Math[_0x2dae2f(0x240)](0x0,_0x51d858[_0x40fa70][_0x2dae2f(0x19d)]/_0x56cf4e)),_0x117174=flipY?PAD+_0x30d7a1*BOX_H:PAD+BOX_H-_0x30d7a1*BOX_H;if(_0x40fa70===0x0)ctx[_0x2dae2f(0x32c)](_0x7fc428,_0x117174);else ctx[_0x2dae2f(0x37b)](_0x7fc428,_0x117174);}ctx['stroke']();var _0x3d63c3=flipY?PAD:PAD+BOX_H,_0x3ea63d={'x':PAD+cp1['x']*BOX_W,'y':_0x3d63c3},_0x2852a1={'x':PAD+cp2['x']*BOX_W,'y':_0x3d63c3},_0x6f3b9a={'x':PAD,'y':_0x3d63c3},_0x40dff8={'x':PAD+BOX_W,'y':_0x3d63c3};ctx[_0x2dae2f(0x29f)]='rgba(47,128,237,0.7)',ctx[_0x2dae2f(0x317)]=1.5,ctx[_0x2dae2f(0x302)](),ctx[_0x2dae2f(0x32c)](_0x6f3b9a['x'],_0x6f3b9a['y']),ctx[_0x2dae2f(0x37b)](_0x3ea63d['x'],_0x3ea63d['y']),ctx[_0x2dae2f(0x35a)](),ctx[_0x2dae2f(0x302)](),ctx[_0x2dae2f(0x32c)](_0x40dff8['x'],_0x40dff8['y']),ctx[_0x2dae2f(0x37b)](_0x2852a1['x'],_0x2852a1['y']),ctx[_0x2dae2f(0x35a)](),[_0x6f3b9a,_0x40dff8,_0x3ea63d,_0x2852a1]['forEach'](function(_0x48f4c7,_0x118baf){var _0x55ac31=_0x2dae2f;ctx[_0x55ac31(0x302)](),ctx[_0x55ac31(0x2f7)](_0x48f4c7['x'],_0x48f4c7['y'],_0x118baf<0x2?0x5:0x6,0x0,Math['PI']*0x2),ctx[_0x55ac31(0x2bc)]=_0x118baf<0x2?_0x55ac31(0x24c):_0x55ac31(0x374),ctx[_0x55ac31(0x1ce)]();}),lastHandles={'p0':_0x6f3b9a,'p3':_0x40dff8,'c1':_0x3ea63d,'c2':_0x2852a1};}else{ctx[_0x2dae2f(0x317)]=2.5;var _0x5b5eeb=cp1['y']<0x0||cp1['y']>0x1||cp2['y']<0x0||cp2['y']>0x1;_0x5b5eeb?ctx['strokeStyle']=_0x2dae2f(0x298):ctx[_0x2dae2f(0x29f)]=_0x2dae2f(0x1e4);ctx[_0x2dae2f(0x302)](),ctx['moveTo'](_0x3e906d['x'],_0x3e906d['y']),ctx[_0x2dae2f(0x17a)](_0x9bec13['x'],_0x9bec13['y'],_0xefd0e9['x'],_0xefd0e9['y'],_0xf1f7c5['x'],_0xf1f7c5['y']),ctx[_0x2dae2f(0x35a)]();var _0x1c571d={'x':_0x9bec13['x'],'y':Math[_0x2dae2f(0x204)](CH-0x8,Math[_0x2dae2f(0x240)](0x8,_0x9bec13['y']))},_0x24504f={'x':_0xefd0e9['x'],'y':Math['min'](CH-0x8,Math[_0x2dae2f(0x240)](0x8,_0xefd0e9['y']))};ctx[_0x2dae2f(0x29f)]='rgba(47,128,237,0.65)',ctx['lineWidth']=1.5,ctx[_0x2dae2f(0x302)](),ctx[_0x2dae2f(0x32c)](_0x3e906d['x'],_0x3e906d['y']),ctx[_0x2dae2f(0x37b)](_0x1c571d['x'],_0x1c571d['y']),ctx[_0x2dae2f(0x35a)](),ctx[_0x2dae2f(0x302)](),ctx[_0x2dae2f(0x32c)](_0xf1f7c5['x'],_0xf1f7c5['y']),ctx[_0x2dae2f(0x37b)](_0x24504f['x'],_0x24504f['y']),ctx[_0x2dae2f(0x35a)](),[_0x3e906d,_0xf1f7c5][_0x2dae2f(0x2e4)](function(_0x5cf371){var _0x21bb26=_0x2dae2f;ctx['beginPath'](),ctx[_0x21bb26(0x2f7)](_0x5cf371['x'],_0x5cf371['y'],0x5,0x0,Math['PI']*0x2),ctx[_0x21bb26(0x2bc)]=_0x21bb26(0x218),ctx[_0x21bb26(0x1ce)]();}),[_0x1c571d,_0x24504f][_0x2dae2f(0x2e4)](function(_0x3d47df){var _0x13d929=_0x2dae2f;ctx[_0x13d929(0x302)](),ctx['arc'](_0x3d47df['x'],_0x3d47df['y'],0x6,0x0,Math['PI']*0x2),ctx['fillStyle']=_0x13d929(0x374),ctx['fill'](),ctx[_0x13d929(0x29f)]='rgba(255,255,255,0.4)',ctx[_0x13d929(0x317)]=0x1,ctx['stroke']();}),lastHandles={'p0':_0x3e906d,'p3':_0xf1f7c5,'c1':_0x1c571d,'c2':_0x24504f};}ctx[_0x2dae2f(0x2bc)]=_0x2dae2f(0x22a),ctx['font']=_0x2dae2f(0x168),ctx[_0x2dae2f(0x394)]('0',PAD-0xc,PAD+BOX_H+0x3),ctx[_0x2dae2f(0x394)]('1',PAD+BOX_W-0x3,PAD+BOX_H+0xc),updateInfoFromCurve();}function updateInfoFromCurve(){var _0xbfecdb=a0_0x2349bc,_0x44d4bc=Math[_0xbfecdb(0x19f)](cp1['x']*0x64),_0x107654=Math[_0xbfecdb(0x19f)]((0x1-cp2['x'])*0x64),_0x3f62e0=cp1['x']>0.001?cp1['y']/cp1['x']:0x0,_0x171a45=0x1-cp2['x']>0.001?(0x1-cp2['y'])/(0x1-cp2['x']):0x0;slInfluenceOut[_0xbfecdb(0x236)]=_0x44d4bc,slInfluenceIn[_0xbfecdb(0x236)]=_0x107654,slSpeedOut[_0xbfecdb(0x236)]=Math[_0xbfecdb(0x19f)](_0x3f62e0*0x64)/0x64,slSpeedIn[_0xbfecdb(0x236)]=Math[_0xbfecdb(0x19f)](_0x171a45*0x64)/0x64;var _0x44c017=document[_0xbfecdb(0x340)]('dispOutInf'),_0xe0e8ee=document[_0xbfecdb(0x340)](_0xbfecdb(0x314)),_0x396875=document[_0xbfecdb(0x340)](_0xbfecdb(0x1fe)),_0x4eb3de=document[_0xbfecdb(0x340)](_0xbfecdb(0x2fa));if(_0x44c017)_0x44c017[_0xbfecdb(0x190)]=_0x44d4bc+'%';if(_0xe0e8ee)_0xe0e8ee[_0xbfecdb(0x190)]=_0x107654+'%';if(_0x396875)_0x396875[_0xbfecdb(0x190)]=(_0x3f62e0*0x64)[_0xbfecdb(0x27c)](0x0);if(_0x4eb3de)_0x4eb3de['textContent']=(_0x171a45*0x64)[_0xbfecdb(0x27c)](0x0);var _0x2326da=document[_0xbfecdb(0x340)](_0xbfecdb(0x2b4)),_0x49c792=document[_0xbfecdb(0x340)](_0xbfecdb(0x1c2)),_0x49106a=document['getElementById'](_0xbfecdb(0x27e)),_0x2c9ca0=document[_0xbfecdb(0x340)](_0xbfecdb(0x321));if(_0x2326da&&document[_0xbfecdb(0x23e)]!==_0x2326da)_0x2326da[_0xbfecdb(0x236)]=cp1['x'][_0xbfecdb(0x27c)](0x3);if(_0x49c792&&document[_0xbfecdb(0x23e)]!==_0x49c792)_0x49c792[_0xbfecdb(0x236)]=cp1['y']['toFixed'](0x3);if(_0x49106a&&document[_0xbfecdb(0x23e)]!==_0x49106a)_0x49106a[_0xbfecdb(0x236)]=cp2['x'][_0xbfecdb(0x27c)](0x3);if(_0x2c9ca0&&document[_0xbfecdb(0x23e)]!==_0x2c9ca0)_0x2c9ca0[_0xbfecdb(0x236)]=cp2['y'][_0xbfecdb(0x27c)](0x3);}var dragging=null,HIT_RADIUS=0xc,lastHandles={'p0':{'x':0x0,'y':0x0},'p3':{'x':0x0,'y':0x0},'c1':{'x':0x0,'y':0x0},'c2':{'x':0x0,'y':0x0}};function getMousePos(_0x4e99d2){var _0x36f8ce=a0_0x2349bc,_0x554a44=canvas['getBoundingClientRect']();return{'x':(_0x4e99d2[_0x36f8ce(0x1f8)]-_0x554a44[_0x36f8ce(0x2f0)])*(CW/_0x554a44['width']),'y':(_0x4e99d2['clientY']-_0x554a44[_0x36f8ce(0x29b)])*(CH/_0x554a44[_0x36f8ce(0x32d)])};}function ptDist(_0xc2f62e,_0x49a6ca,_0x1c9718,_0x2067d8){var _0x2b1073=a0_0x2349bc;return Math[_0x2b1073(0x1e3)]((_0xc2f62e-_0x1c9718)*(_0xc2f62e-_0x1c9718)+(_0x49a6ca-_0x2067d8)*(_0x49a6ca-_0x2067d8));}canvas[a0_0x2349bc(0x32a)](a0_0x2349bc(0x30a),function(_0x157c71){var _0x296e2f=a0_0x2349bc,_0x465c2a=getMousePos(_0x157c71);if(ptDist(_0x465c2a['x'],_0x465c2a['y'],lastHandles['c1']['x'],lastHandles['c1']['y'])<HIT_RADIUS)dragging='cp1',canvas[_0x296e2f(0x368)][_0x296e2f(0x315)]=_0x296e2f(0x2df);else ptDist(_0x465c2a['x'],_0x465c2a['y'],lastHandles['c2']['x'],lastHandles['c2']['y'])<HIT_RADIUS&&(dragging=_0x296e2f(0x11b),canvas[_0x296e2f(0x368)][_0x296e2f(0x315)]='grabbing');}),canvas[a0_0x2349bc(0x32a)](a0_0x2349bc(0x188),function(_0x226e4c){var _0x2e093=a0_0x2349bc,_0x983719=getMousePos(_0x226e4c);!dragging&&(ptDist(_0x983719['x'],_0x983719['y'],lastHandles['c1']['x'],lastHandles['c1']['y'])<HIT_RADIUS||ptDist(_0x983719['x'],_0x983719['y'],lastHandles['c2']['x'],lastHandles['c2']['y'])<HIT_RADIUS?canvas[_0x2e093(0x368)][_0x2e093(0x315)]=_0x2e093(0x20a):canvas[_0x2e093(0x368)][_0x2e093(0x315)]=_0x2e093(0x28c));}),document[a0_0x2349bc(0x32a)](a0_0x2349bc(0x138),function(){var _0x36d2da=a0_0x2349bc;dragging&&(localStorage['setItem']('flowease_cp1',JSON[_0x36d2da(0x31c)](cp1)),localStorage['setItem'](_0x36d2da(0x325),JSON[_0x36d2da(0x31c)](cp2))),dragging=null,canvas['style'][_0x36d2da(0x315)]=_0x36d2da(0x28c);}),canvas[a0_0x2349bc(0x32a)](a0_0x2349bc(0x2f2),function(){var _0x4e6c5b=a0_0x2349bc;if(!dragging)canvas[_0x4e6c5b(0x368)]['cursor']=_0x4e6c5b(0x28c);}),document[a0_0x2349bc(0x32a)](a0_0x2349bc(0x188),function(_0x503aa7){var _0x3924fa=a0_0x2349bc;if(!dragging)return;var _0x2ea5fe=canvas[_0x3924fa(0x1d2)](),_0x16fb38=Math[_0x3924fa(0x204)](Math[_0x3924fa(0x240)](_0x503aa7[_0x3924fa(0x1f8)],_0x2ea5fe['left']),_0x2ea5fe[_0x3924fa(0x282)]),_0x5d8639=Math['min'](Math[_0x3924fa(0x240)](_0x503aa7[_0x3924fa(0x18a)],_0x2ea5fe[_0x3924fa(0x29b)]-_0x2ea5fe[_0x3924fa(0x32d)]),_0x2ea5fe[_0x3924fa(0x225)]+_0x2ea5fe[_0x3924fa(0x32d)]),_0x5d0361={'x':(_0x16fb38-_0x2ea5fe['left'])*(CW/_0x2ea5fe[_0x3924fa(0x13d)]),'y':(_0x5d8639-_0x2ea5fe[_0x3924fa(0x29b)])*(CH/_0x2ea5fe[_0x3924fa(0x32d)])};if(graphMode==='speed'){var _0x3a6bd5=Math[_0x3924fa(0x240)](0.001,Math[_0x3924fa(0x204)](0.999,(_0x5d0361['x']-PAD)/BOX_W));if(dragging===_0x3924fa(0x2c6))cp1['x']=_0x3a6bd5;else cp2['x']=_0x3a6bd5;}else{var _0x1cb5c7=fromCanvas(_0x5d0361['x'],_0x5d0361['y']);dragging===_0x3924fa(0x2c6)?(cp1['x']=_0x1cb5c7['x'],cp1['y']=_0x1cb5c7['y']):(cp2['x']=_0x1cb5c7['x'],cp2['y']=_0x1cb5c7['y']);}activeFlowType='custom',queryAll(_0x3924fa(0x122))[_0x3924fa(0x2e4)](function(_0x6dd763){var _0x143673=_0x3924fa;_0x6dd763[_0x143673(0x120)][_0x143673(0x27f)](_0x143673(0x2e1));}),drawFlow();});function applyPreset(_0x158f44){var _0x546e2b=a0_0x2349bc,_0x9b6900=PRESETS[_0x158f44];if(!_0x9b6900)return;cp1={'x':_0x9b6900[_0x546e2b(0x2c6)][0x0],'y':_0x9b6900[_0x546e2b(0x2c6)][0x1]},cp2={'x':_0x9b6900[_0x546e2b(0x11b)][0x0],'y':_0x9b6900[_0x546e2b(0x11b)][0x1]},activeFlowType=_0x158f44,drawFlow(),localStorage[_0x546e2b(0x2b7)](_0x546e2b(0x284),JSON[_0x546e2b(0x31c)](cp1)),localStorage[_0x546e2b(0x2b7)]('flowease_cp2',JSON[_0x546e2b(0x31c)](cp2));}drawFlow();var selectedKfMode=a0_0x2349bc(0x13c),btnToggleKf=document['getElementById'](a0_0x2349bc(0x2eb));btnToggleKf&&btnToggleKf[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x4db27e=a0_0x2349bc,_0x4da584=parseInt(btnToggleKf[_0x4db27e(0x1b5)]['kf'],0xa)||0x2;_0x4da584++;if(_0x4da584>0x4)_0x4da584=0x2;btnToggleKf['dataset']['kf']=_0x4da584,btnToggleKf[_0x4db27e(0x190)]=_0x4da584+_0x4db27e(0x1cd),selectedKfMode=_0x4da584['toString']();var _0x217bb7=document['getElementById'](_0x4db27e(0x292));if(_0x217bb7)_0x217bb7['style'][_0x4db27e(0x370)]=_0x4db27e(0x174);drawFlow(),showToast(_0x4db27e(0x300)+selectedKfMode+'\x20keyframe');});var _graphModeBtns=queryAll(a0_0x2349bc(0x22d));for(var _gmbI=0x0;_gmbI<_graphModeBtns[a0_0x2349bc(0x181)];_gmbI++){(function(_0x9794f2){var _0x17ce17=a0_0x2349bc;_0x9794f2[_0x17ce17(0x32a)](_0x17ce17(0x1ed),function(){var _0x49a558=_0x17ce17;for(var _0x3b7dd9=0x0;_0x3b7dd9<_graphModeBtns[_0x49a558(0x181)];_0x3b7dd9++){_graphModeBtns[_0x3b7dd9]['classList'][_0x49a558(0x27f)](_0x49a558(0x2e1)),_graphModeBtns[_0x3b7dd9]['style'][_0x49a558(0x21b)]=_0x49a558(0x363);}this['classList']['add'](_0x49a558(0x2e1)),this[_0x49a558(0x368)]['color']='var(--text)',graphMode=this[_0x49a558(0x2c7)](_0x49a558(0x16a)),localStorage[_0x49a558(0x2b7)](_0x49a558(0x221),graphMode),drawFlow();});}(_graphModeBtns[_gmbI]));}queryAll('.fp-tab')['forEach'](function(_0x5308f7){var _0xd3762e=a0_0x2349bc;_0x5308f7[_0xd3762e(0x32a)](_0xd3762e(0x1ed),function(){var _0x56a478=_0xd3762e;queryAll(_0x56a478(0x122))[_0x56a478(0x2e4)](function(_0x26cca9){var _0x1f69e5=_0x56a478;_0x26cca9[_0x1f69e5(0x120)][_0x1f69e5(0x27f)](_0x1f69e5(0x2e1));}),_0x5308f7[_0x56a478(0x120)][_0x56a478(0x1c6)](_0x56a478(0x2e1)),applyPreset(_0x5308f7[_0x56a478(0x1b5)]['flow']),showToast(_0x56a478(0xfe)+_0x5308f7['textContent']['trim']()+_0x56a478(0x159));});}),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2ec))[a0_0x2349bc(0x32a)]('click',function(){var _0x5d4a0b=a0_0x2349bc;selectedKfMode=_0x5d4a0b(0x13c),btnToggleKf&&(btnToggleKf[_0x5d4a0b(0x368)]['border']=_0x5d4a0b(0x15c),btnToggleKf['style']['color']=_0x5d4a0b(0x363),btnToggleKf[_0x5d4a0b(0x120)][_0x5d4a0b(0x27f)](_0x5d4a0b(0x2e1))),runScript(_0x5d4a0b(0x12a),function(_0x1582a3){var _0x2f0b1b=_0x5d4a0b;if(!_0x1582a3||_0x1582a3==='null'||_0x1582a3===_0x2f0b1b(0x2be)){showToast(_0x2f0b1b(0x2e6));return;}try{var _0x2795b8=JSON[_0x2f0b1b(0x276)](_0x1582a3);if(_0x2795b8[_0x2f0b1b(0x151)]){showToast('⚠\x20'+_0x2795b8[_0x2f0b1b(0x151)]);return;}var _0x25819f=document[_0x2f0b1b(0x340)]('flowAutoInfo'),_0x3a53ba=document[_0x2f0b1b(0x340)]('flowAutoInfoText');_0x25819f&&_0x3a53ba&&(_0x3a53ba[_0x2f0b1b(0x366)]=_0x2f0b1b(0x38b)+_0x2795b8[_0x2f0b1b(0x105)]+_0x2f0b1b(0x2a9)+_0x2795b8[_0x2f0b1b(0x152)]+'</strong>\x20/\x20Toplam:\x20'+_0x2795b8[_0x2f0b1b(0x1df)],_0x25819f[_0x2f0b1b(0x368)][_0x2f0b1b(0x370)]='block');if(_0x2795b8['selectedKeysCount']>=0x2&&_0x2795b8[_0x2f0b1b(0x152)]<=0x4){var _0x3400c4=document[_0x2f0b1b(0x340)]('kfBtn'+_0x2795b8['selectedKeysCount']);_0x3400c4&&(_0x3400c4[_0x2f0b1b(0x120)][_0x2f0b1b(0x1c6)](_0x2f0b1b(0x2e1)),_0x3400c4[_0x2f0b1b(0x368)][_0x2f0b1b(0x18e)]=_0x2f0b1b(0x1da),_0x3400c4[_0x2f0b1b(0x368)][_0x2f0b1b(0x21b)]=_0x2f0b1b(0x374),selectedKfMode=String(_0x2795b8['selectedKeysCount']));}if(_0x2795b8[_0x2f0b1b(0x207)]!==undefined){var _0x1264ff=Math[_0x2f0b1b(0x204)](0.99,Math[_0x2f0b1b(0x240)](0.01,_0x2795b8[_0x2f0b1b(0x207)]/0x64)),_0x20700d=Math[_0x2f0b1b(0x204)](0.99,Math['max'](0.01,0x1-_0x2795b8['inInfluence']/0x64)),_0x5d16ce=Math[_0x2f0b1b(0x204)](0x2,Math[_0x2f0b1b(0x240)](-0.5,_0x1264ff*_0x2795b8[_0x2f0b1b(0x371)])),_0x2081b8=Math['min'](1.5,Math[_0x2f0b1b(0x240)](-0.5,0x1-_0x20700d*_0x2795b8[_0x2f0b1b(0x2b3)]));cp1={'x':_0x1264ff,'y':_0x5d16ce},cp2={'x':_0x20700d,'y':_0x2081b8},activeFlowType='custom',queryAll(_0x2f0b1b(0x122))['forEach'](function(_0x5cde71){var _0x5a92f6=_0x2f0b1b;_0x5cde71[_0x5a92f6(0x120)][_0x5a92f6(0x27f)](_0x5a92f6(0x2e1));}),drawFlow(),localStorage['setItem']('flowease_cp1',JSON[_0x2f0b1b(0x31c)](cp1)),localStorage[_0x2f0b1b(0x2b7)](_0x2f0b1b(0x325),JSON[_0x2f0b1b(0x31c)](cp2)),showToast(_0x2f0b1b(0x25a));}}catch(_0x9fa7b1){showToast(_0x2f0b1b(0x342)+_0x9fa7b1[_0x2f0b1b(0x270)]);}});}),document['getElementById'](a0_0x2349bc(0x110))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x22e407=a0_0x2349bc,_0xc2e191=JSON[_0x22e407(0x31c)]({'type':activeFlowType,'cp1x':Math[_0x22e407(0x19f)](cp1['x']*0x2710)/0x2710,'cp1y':Math['round'](cp1['y']*0x2710)/0x2710,'cp2x':Math[_0x22e407(0x19f)](cp2['x']*0x2710)/0x2710,'cp2y':Math['round'](cp2['y']*0x2710)/0x2710,'kfMode':selectedKfMode});runScript(_0x22e407(0x238)+_0xc2e191+')',function(_0x137a1e){var _0x262ea0=_0x22e407;if(_0x137a1e&&_0x137a1e[_0x262ea0(0x1e0)](_0x262ea0(0xfc))===0x0)window['showAlert'](_0x137a1e[_0x262ea0(0x113)](0x6));else{var _0x138d1d=selectedKfMode==='auto'?'Otomatik':selectedKfMode+'\x20KF';showToast(_0x262ea0(0x1bb)+_0x138d1d+')');}});}),[a0_0x2349bc(0x2b4),a0_0x2349bc(0x1c2),a0_0x2349bc(0x27e),'inpCp2y'][a0_0x2349bc(0x2e4)](function(_0x52c93f){var _0x5233d2=a0_0x2349bc,_0x201e1e=document['getElementById'](_0x52c93f);if(!_0x201e1e)return;_0x201e1e[_0x5233d2(0x32a)](_0x5233d2(0x109),function(){var _0x45c605=_0x5233d2,_0x5308d5=parseFloat(this[_0x45c605(0x236)]);if(isNaN(_0x5308d5))return;if(_0x52c93f==='inpCp1x')cp1['x']=Math[_0x45c605(0x240)](0.001,Math[_0x45c605(0x204)](0.999,_0x5308d5));if(_0x52c93f===_0x45c605(0x1c2))cp1['y']=_0x5308d5;if(_0x52c93f===_0x45c605(0x27e))cp2['x']=Math[_0x45c605(0x240)](0.001,Math[_0x45c605(0x204)](0.999,_0x5308d5));if(_0x52c93f===_0x45c605(0x321))cp2['y']=_0x5308d5;activeFlowType=_0x45c605(0xf8),queryAll(_0x45c605(0x122))['forEach'](function(_0x33fa82){var _0x3d88db=_0x45c605;_0x33fa82[_0x3d88db(0x120)]['remove'](_0x3d88db(0x2e1));}),drawFlow();});});var PRESETS_KEY='speedflow_presets_v1';function loadPresets(){var _0x8f5c52=a0_0x2349bc;try{return JSON[_0x8f5c52(0x276)](localStorage['getItem'](PRESETS_KEY))||[];}catch(_0x18fd9a){return[];}}function savePresetsToStorage(_0x30b269){var _0x57c1fb=a0_0x2349bc;localStorage[_0x57c1fb(0x2b7)](PRESETS_KEY,JSON[_0x57c1fb(0x31c)](_0x30b269));}function drawMiniPreset(_0x44ef75,_0x11288c){var _0x5af338=a0_0x2349bc;if(!_0x44ef75)return;var _0x23fba8=_0x44ef75['getContext']('2d'),_0x504767=_0x44ef75[_0x5af338(0x13d)],_0x4cd924=_0x44ef75[_0x5af338(0x32d)],_0x5ead03=0x5;_0x23fba8[_0x5af338(0x1bf)](0x0,0x0,_0x504767,_0x4cd924),_0x23fba8[_0x5af338(0x2bc)]=_0x5af338(0x143),_0x23fba8[_0x5af338(0x348)](0x0,0x0,_0x504767,_0x4cd924),_0x23fba8['strokeStyle']='rgba(47,128,237,0.2)',_0x23fba8['lineWidth']=0x1,_0x23fba8['strokeRect'](0.5,0.5,_0x504767-0x1,_0x4cd924-0x1);var _0x120d63=_0x11288c[_0x5af338(0x2c6)]||[0.25,0.1],_0x449a09=_0x11288c[_0x5af338(0x11b)]||[0.75,0.9],_0x566c38=_0x5ead03,_0x5eef42=_0x4cd924-_0x5ead03,_0xd9c6fb=_0x504767-_0x5ead03,_0x7140f3=_0x5ead03,_0x3ca2a7=_0x566c38+_0x120d63[0x0]*(_0x504767-_0x5ead03*0x2),_0x2d13a3=_0x4cd924-_0x5ead03-_0x120d63[0x1]*(_0x4cd924-_0x5ead03*0x2),_0x560151=_0x566c38+_0x449a09[0x0]*(_0x504767-_0x5ead03*0x2),_0x1ed257=_0x4cd924-_0x5ead03-_0x449a09[0x1]*(_0x4cd924-_0x5ead03*0x2),_0x155db0=_0x23fba8['createLinearGradient'](_0x566c38,_0x5eef42,_0xd9c6fb,_0x7140f3);_0x155db0[_0x5af338(0x335)](0x0,_0x5af338(0x354)),_0x155db0[_0x5af338(0x335)](0x1,_0x5af338(0x164)),_0x23fba8[_0x5af338(0x29f)]=_0x155db0,_0x23fba8['lineWidth']=1.8,_0x23fba8[_0x5af338(0x18c)]='#2f80ed',_0x23fba8[_0x5af338(0x198)]=0x4,_0x23fba8[_0x5af338(0x302)](),_0x23fba8[_0x5af338(0x32c)](_0x566c38,_0x5eef42),_0x23fba8[_0x5af338(0x17a)](_0x3ca2a7,_0x2d13a3,_0x560151,_0x1ed257,_0xd9c6fb,_0x7140f3),_0x23fba8[_0x5af338(0x35a)](),_0x23fba8[_0x5af338(0x198)]=0x0,[[_0x566c38,_0x5eef42],[_0xd9c6fb,_0x7140f3]]['forEach'](function(_0xa67042){var _0x11e99e=_0x5af338;_0x23fba8['beginPath'](),_0x23fba8['arc'](_0xa67042[0x0],_0xa67042[0x1],0x2,0x0,Math['PI']*0x2),_0x23fba8['fillStyle']='#2f80ed',_0x23fba8[_0x11e99e(0x1ce)]();});}function renderPresets(){var _0x5a9b0f=a0_0x2349bc,_0x311441=document['getElementById'](_0x5a9b0f(0x1f2)),_0xb9571b=loadPresets();_0x311441['innerHTML']='';if(!_0xb9571b[_0x5a9b0f(0x181)]){_0x311441['innerHTML']=_0x5a9b0f(0x16c);return;}_0xb9571b[_0x5a9b0f(0x2e4)](function(_0x5985d2,_0x330ed2){var _0x392f03=_0x5a9b0f,_0x10a233=document[_0x392f03(0x308)](_0x392f03(0x379));_0x10a233[_0x392f03(0x37e)]='preset-item';var _0x2a4f43=_0x5985d2['type']||_0x392f03(0xf8);_0x10a233[_0x392f03(0x366)]=_0x392f03(0x294)+'<div\x20class=\x22preset-item-info\x22>'+_0x392f03(0x156)+_0x5985d2['name']+_0x392f03(0x271)+_0x392f03(0x15e)+_0x2a4f43+_0x392f03(0x271)+_0x392f03(0x269)+'<button\x20class=\x22preset-item-del\x22\x20data-idx=\x22'+_0x330ed2+_0x392f03(0x165),drawMiniPreset(_0x10a233[_0x392f03(0x268)](_0x392f03(0x22e)),_0x5985d2),_0x10a233[_0x392f03(0x32a)](_0x392f03(0x1ed),function(_0x460fca){var _0x3d1272=_0x392f03;if(_0x460fca['target'][_0x3d1272(0x120)]['contains'](_0x3d1272(0x23f)))return;applyPresetValues(_0x5985d2),showToast(_0x3d1272(0x123)+_0x5985d2[_0x3d1272(0x313)]);}),_0x10a233[_0x392f03(0x268)](_0x392f03(0x2b5))[_0x392f03(0x32a)](_0x392f03(0x1ed),function(_0xccbe69){var _0x58ab35=_0x392f03;_0xccbe69[_0x58ab35(0x1f1)]();var _0x32ef74=loadPresets();_0x32ef74['splice'](_0x330ed2,0x1),savePresetsToStorage(_0x32ef74),renderPresets(),showToast(_0x58ab35(0x213));}),_0x311441[_0x392f03(0x31d)](_0x10a233);});}function applyPresetValues(_0x1c5cd5){var _0x4ab7e0=a0_0x2349bc;if(_0x1c5cd5[_0x4ab7e0(0x2c6)]&&_0x1c5cd5['cp2'])cp1={'x':_0x1c5cd5[_0x4ab7e0(0x2c6)][0x0],'y':_0x1c5cd5['cp1'][0x1]},cp2={'x':_0x1c5cd5[_0x4ab7e0(0x11b)][0x0],'y':_0x1c5cd5[_0x4ab7e0(0x11b)][0x1]};else{if(_0x1c5cd5['type']&&PRESETS[_0x1c5cd5[_0x4ab7e0(0x14d)]]){var _0x58ccc8=PRESETS[_0x1c5cd5[_0x4ab7e0(0x14d)]];cp1={'x':_0x58ccc8['cp1'][0x0],'y':_0x58ccc8[_0x4ab7e0(0x2c6)][0x1]},cp2={'x':_0x58ccc8[_0x4ab7e0(0x11b)][0x0],'y':_0x58ccc8['cp2'][0x1]};}}activeFlowType=_0x1c5cd5[_0x4ab7e0(0x14d)]||'custom',slSpeedIn[_0x4ab7e0(0x236)]=_0x1c5cd5[_0x4ab7e0(0x1a9)]!==undefined?_0x1c5cd5[_0x4ab7e0(0x1a9)]:0x50,slSpeedOut[_0x4ab7e0(0x236)]=_0x1c5cd5['speedOut']!==undefined?_0x1c5cd5[_0x4ab7e0(0x1e6)]:0x50,slInfluenceIn['value']=_0x1c5cd5['influenceIn']!==undefined?_0x1c5cd5[_0x4ab7e0(0x2ca)]:0x4b,slInfluenceOut[_0x4ab7e0(0x236)]=_0x1c5cd5['influenceOut']!==undefined?_0x1c5cd5[_0x4ab7e0(0x226)]:0x4b,queryAll(_0x4ab7e0(0x122))[_0x4ab7e0(0x2e4)](function(_0x3a437c){var _0x10663a=_0x4ab7e0;_0x3a437c[_0x10663a(0x120)]['toggle']('active',_0x3a437c['dataset'][_0x10663a(0x20e)]===activeFlowType);}),drawFlow();}document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2aa))[a0_0x2349bc(0x32a)]('click',function(){var _0x20c64f=a0_0x2349bc;document['getElementById'](_0x20c64f(0x17c))[_0x20c64f(0x236)]='',document[_0x20c64f(0x340)]('presetSaveOverlay')[_0x20c64f(0x120)][_0x20c64f(0x1c6)](_0x20c64f(0x2d4)),setTimeout(function(){var _0x5246e7=_0x20c64f;document[_0x5246e7(0x340)]('presetNameInput')[_0x5246e7(0x349)]();},0xc8);});function closePresetModal(){var _0xefc141=a0_0x2349bc;document[_0xefc141(0x340)](_0xefc141(0x305))[_0xefc141(0x120)]['remove']('open');}document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2d8))['addEventListener'](a0_0x2349bc(0x1ed),closePresetModal),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x33b))[a0_0x2349bc(0x32a)]('click',closePresetModal),document['getElementById'](a0_0x2349bc(0x15d))[a0_0x2349bc(0x32a)]('click',function(){var _0x210a91=a0_0x2349bc,_0x12e4cc=document[_0x210a91(0x340)](_0x210a91(0x17c))[_0x210a91(0x236)][_0x210a91(0x384)]();if(!_0x12e4cc){showToast(_0x210a91(0x1be));return;}var _0x97b45f=loadPresets();_0x97b45f[_0x210a91(0x1fd)]({'name':_0x12e4cc,'type':activeFlowType,'cp1':[cp1['x'],cp1['y']],'cp2':[cp2['x'],cp2['y']],'speedIn':parseInt(slSpeedIn[_0x210a91(0x236)]),'speedOut':parseInt(slSpeedOut[_0x210a91(0x236)]),'influenceIn':parseInt(slInfluenceIn[_0x210a91(0x236)]),'influenceOut':parseInt(slInfluenceOut[_0x210a91(0x236)])}),savePresetsToStorage(_0x97b45f),renderPresets(),closePresetModal(),showToast(_0x210a91(0x1e5)+_0x12e4cc);}),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x17c))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x329),function(_0x2b1088){var _0x2f9065=a0_0x2349bc;if(_0x2b1088[_0x2f9065(0x14f)]===_0x2f9065(0x1cc))document[_0x2f9065(0x340)](_0x2f9065(0x15d))[_0x2f9065(0x1ed)]();});function showConfirmDialog(_0x43e0da){var _0x2ee6d7=a0_0x2349bc,_0x22ffdf=document[_0x2ee6d7(0x340)]('confirmOverlay');_0x22ffdf['classList']['add'](_0x2ee6d7(0x2d4));function _0x3fc15c(){var _0x12b9d6=_0x2ee6d7;_0x22ffdf['classList'][_0x12b9d6(0x27f)](_0x12b9d6(0x2d4)),document[_0x12b9d6(0x340)]('btnConfirmYes')['removeEventListener'](_0x12b9d6(0x1ed),_0x174ab0),document[_0x12b9d6(0x340)](_0x12b9d6(0x2d1))[_0x12b9d6(0x2ee)](_0x12b9d6(0x1ed),_0x11ef92);}function _0x174ab0(){_0x3fc15c(),_0x43e0da();}function _0x11ef92(){_0x3fc15c();}document[_0x2ee6d7(0x340)]('btnConfirmYes')[_0x2ee6d7(0x32a)](_0x2ee6d7(0x1ed),_0x174ab0),document[_0x2ee6d7(0x340)](_0x2ee6d7(0x2d1))[_0x2ee6d7(0x32a)](_0x2ee6d7(0x1ed),_0x11ef92);}document[a0_0x2349bc(0x340)](a0_0x2349bc(0x266))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){showConfirmDialog(function(){savePresetsToStorage([]),renderPresets(),showToast('Tüm\x20presetler\x20silindi');});}),renderPresets();var selectedFFX=null;function processFFXFolderData(_0x5a5cd7,_0x15d3b3){var _0x43ea8a=a0_0x2349bc;if(_0x15d3b3===undefined)_0x15d3b3=!![];if(!_0x5a5cd7||_0x5a5cd7===_0x43ea8a(0x2ab)||_0x5a5cd7===_0x43ea8a(0x2be)||_0x5a5cd7['trim']()===''){if(_0x15d3b3)showToast(_0x43ea8a(0xff));return;}var _0x3bd6ed=_0x5a5cd7[_0x43ea8a(0x126)](/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g,'');try{var _0xc58b7e=JSON[_0x43ea8a(0x276)](_0x3bd6ed);if(_0xc58b7e&&_0xc58b7e[_0x43ea8a(0x151)]){if(_0x15d3b3)showToast('⚠\x20Hata:\x20'+_0xc58b7e[_0x43ea8a(0x151)]);return;}if(_0xc58b7e&&_0xc58b7e[_0x43ea8a(0x222)])document[_0x43ea8a(0x340)](_0x43ea8a(0x1b1))['textContent']=_0xc58b7e['path'],localStorage[_0x43ea8a(0x2b7)]('flowease_ffxFolder',_0xc58b7e[_0x43ea8a(0x222)]),renderFFXList(_0xc58b7e[_0x43ea8a(0x228)]||[]),_0x15d3b3&&showToast('✓\x20'+(_0xc58b7e[_0x43ea8a(0x228)]?_0xc58b7e[_0x43ea8a(0x228)][_0x43ea8a(0x181)]:0x0)+_0x43ea8a(0x171));else{if(_0x15d3b3)showToast(_0x43ea8a(0x2fd));}}catch(_0x4ad276){if(_0x15d3b3)showToast(_0x43ea8a(0x2f8)+_0x4ad276[_0x43ea8a(0x270)]);console[_0x43ea8a(0x151)](_0x43ea8a(0x304),_0x5a5cd7);}}document[a0_0x2349bc(0x340)]('btnSelectFolder')[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x2d6fd0=a0_0x2349bc;runScript(_0x2d6fd0(0x2b9),function(_0x291dce){processFFXFolderData(_0x291dce,!![]);});});var btnRefreshFolder=document[a0_0x2349bc(0x340)]('btnRefreshFolder');btnRefreshFolder&&btnRefreshFolder['addEventListener'](a0_0x2349bc(0x1ed),function(){var _0x26964a=a0_0x2349bc,_0x502b5c=localStorage[_0x26964a(0x2e9)](_0x26964a(0x352));if(!_0x502b5c){showToast('⚠\x20Önce\x20bir\x20klasör\x20seçmelisiniz!');return;}runScript(_0x26964a(0x2c2)+_0x502b5c['replace'](/\\/g,'\x5c\x5c')+'\x22)',function(_0x3331ef){processFFXFolderData(_0x3331ef,!![]);});});(function loadFFXFolderMemory(){var _0x515896=a0_0x2349bc,_0x560f9e=localStorage[_0x515896(0x2e9)]('flowease_ffxFolder');_0x560f9e&&runScript(_0x515896(0x2c2)+_0x560f9e[_0x515896(0x126)](/\\/g,'\x5c\x5c')+'\x22)',function(_0x25a0ca){var _0x5e1ce3=_0x515896;_0x25a0ca&&!_0x25a0ca[_0x5e1ce3(0x360)](_0x5e1ce3(0x140))&&processFFXFolderData(_0x25a0ca,![]);});}());var allFFXFiles=[],activeFFXTab=a0_0x2349bc(0x264);function renderFFXList(_0x10db6a){var _0x24aac6=a0_0x2349bc;allFFXFiles=_0x10db6a;var _0x13fa5e=document[_0x24aac6(0x340)](_0x24aac6(0x2c5));if(!_0x13fa5e)return;_0x13fa5e[_0x24aac6(0x366)]='';var _0x4c6ccd=[];try{var _0x49f5d3=localStorage[_0x24aac6(0x2e9)](_0x24aac6(0x288));if(_0x49f5d3)_0x4c6ccd=JSON['parse'](_0x49f5d3);}catch(_0x41703a){}if(activeFFXTab===_0x24aac6(0x35e)){if(_0x4c6ccd[_0x24aac6(0x181)]===0x0){_0x13fa5e[_0x24aac6(0x366)]='<div\x20class=\x22effect-empty\x22>Henüz\x20favori\x20efekt\x20eklemediniz.</div>';return;}var _0xb67483=require(_0x24aac6(0x222));_0x4c6ccd[_0x24aac6(0x2e4)](function(_0x81ecfa){var _0x208e46=_0x24aac6,_0xbfca3e=_0xb67483[_0x208e46(0x16d)](_0x81ecfa),_0xde94b9=createEffectItem({'name':_0xbfca3e,'path':_0x81ecfa},!![]);_0x13fa5e[_0x208e46(0x31d)](_0xde94b9);});}else{if(!_0x10db6a||_0x10db6a[_0x24aac6(0x181)]===0x0){_0x13fa5e['innerHTML']=_0x24aac6(0x346);return;}_0x10db6a['forEach'](function(_0x293123){var _0x225bcb=_0x24aac6,_0xdd89f6=_0x4c6ccd[_0x225bcb(0x1e0)](_0x293123['path'])!==-0x1,_0x5456ee=createEffectItem(_0x293123,_0xdd89f6);_0x13fa5e['appendChild'](_0x5456ee);});}}function createEffectItem(_0x480b5c,_0x15ee67){var _0x4f07af=a0_0x2349bc,_0x210013=document[_0x4f07af(0x308)](_0x4f07af(0x379));_0x210013[_0x4f07af(0x37e)]=_0x4f07af(0x247);if(_0x15ee67)_0x210013[_0x4f07af(0x120)][_0x4f07af(0x1c6)](_0x4f07af(0x350));var _0x213ab9=document[_0x4f07af(0x308)](_0x4f07af(0x2cb));_0x213ab9[_0x4f07af(0x37e)]='fav-star',_0x213ab9[_0x4f07af(0x366)]=_0x15ee67?'★':'☆',_0x213ab9[_0x4f07af(0x368)][_0x4f07af(0x259)]=_0x4f07af(0x1ec),_0x213ab9[_0x4f07af(0x368)][_0x4f07af(0x21b)]=_0x15ee67?'#fbbf24':'var(--text-dim)',_0x213ab9[_0x4f07af(0x368)][_0x4f07af(0x315)]=_0x4f07af(0x13a),_0x213ab9[_0x4f07af(0x368)][_0x4f07af(0x31a)]=_0x4f07af(0x393),_0x213ab9[_0x4f07af(0x368)][_0x4f07af(0x33f)]='1',_0x213ab9[_0x4f07af(0x32a)](_0x4f07af(0x1ed),function(_0x1476c){var _0x16b2bd=_0x4f07af;_0x1476c[_0x16b2bd(0x1f1)](),toggleFavorite(_0x480b5c[_0x16b2bd(0x222)]);});var _0x19d0b7=document[_0x4f07af(0x308)]('span');return _0x19d0b7[_0x4f07af(0x37e)]=_0x4f07af(0x14b),_0x19d0b7[_0x4f07af(0x303)]=decodeURIComponent(_0x480b5c[_0x4f07af(0x313)])[_0x4f07af(0x126)](/\.ffx$/i,''),_0x19d0b7[_0x4f07af(0x368)][_0x4f07af(0x2cc)]='1',_0x210013[_0x4f07af(0x31d)](_0x213ab9),_0x210013[_0x4f07af(0x31d)](_0x19d0b7),selectedFFX===_0x480b5c[_0x4f07af(0x222)]&&_0x210013[_0x4f07af(0x120)][_0x4f07af(0x1c6)](_0x4f07af(0x2d6)),_0x210013['addEventListener'](_0x4f07af(0x1ed),function(){var _0x43870e=_0x4f07af,_0x3de13e=document['querySelectorAll']('.effect-item');for(var _0x1cc523=0x0;_0x1cc523<_0x3de13e[_0x43870e(0x181)];_0x1cc523++){_0x3de13e[_0x1cc523][_0x43870e(0x120)][_0x43870e(0x27f)](_0x43870e(0x2d6));}_0x210013[_0x43870e(0x120)][_0x43870e(0x1c6)](_0x43870e(0x2d6)),selectedFFX=_0x480b5c[_0x43870e(0x222)],document['getElementById'](_0x43870e(0x106))['disabled']=![];}),_0x210013[_0x4f07af(0x32a)](_0x4f07af(0x2fb),function(){var _0xc291e8=_0x4f07af;selectedFFX=_0x480b5c[_0xc291e8(0x222)];var _0x451606=document['getElementById'](_0xc291e8(0x25c))?document[_0xc291e8(0x340)](_0xc291e8(0x25c))[_0xc291e8(0x37f)]:![],_0x560409=document[_0xc291e8(0x340)](_0xc291e8(0x102))?document['getElementById'](_0xc291e8(0x102))[_0xc291e8(0x37f)]:![],_0x540b24=_0xc291e8(0x172)+JSON['stringify'](selectedFFX)+',\x20'+_0x451606+',\x20'+_0x560409+')';cs&&selectedFFX&&cs[_0xc291e8(0x357)](_0x540b24);}),_0x210013;}function toggleFavorite(_0x5dd607){var _0x168003=a0_0x2349bc,_0x5a0b74=[];try{var _0x55a2a3=localStorage[_0x168003(0x2e9)](_0x168003(0x288));if(_0x55a2a3)_0x5a0b74=JSON['parse'](_0x55a2a3);}catch(_0x441c49){}var _0x56f81c=_0x5a0b74[_0x168003(0x1e0)](_0x5dd607);_0x56f81c!==-0x1?_0x5a0b74[_0x168003(0x263)](_0x56f81c,0x1):_0x5a0b74[_0x168003(0x1fd)](_0x5dd607),localStorage[_0x168003(0x2b7)](_0x168003(0x288),JSON[_0x168003(0x31c)](_0x5a0b74)),renderFFXList(allFFXFiles);}function bindFFXTabs(){var _0x5c9f75=a0_0x2349bc,_0x4ab12e=document[_0x5c9f75(0x340)](_0x5c9f75(0x2e5)),_0x5be9a4=document[_0x5c9f75(0x340)](_0x5c9f75(0x291));_0x4ab12e&&_0x5be9a4&&(_0x4ab12e[_0x5c9f75(0x32a)](_0x5c9f75(0x1ed),function(){var _0xb1b872=_0x5c9f75;activeFFXTab='library',_0x4ab12e[_0xb1b872(0x120)][_0xb1b872(0x1c6)]('active'),_0x5be9a4[_0xb1b872(0x120)][_0xb1b872(0x27f)]('active');var _0xc09f0a=document[_0xb1b872(0x340)](_0xb1b872(0x158));if(_0xc09f0a)_0xc09f0a[_0xb1b872(0x368)][_0xb1b872(0x370)]='flex';var _0x12b6ab=document[_0xb1b872(0x340)](_0xb1b872(0x2c5));_0x12b6ab&&(_0x12b6ab[_0xb1b872(0x120)][_0xb1b872(0x27f)](_0xb1b872(0x29a)),void _0x12b6ab[_0xb1b872(0x26c)],_0x12b6ab[_0xb1b872(0x120)][_0xb1b872(0x1c6)](_0xb1b872(0x29a))),renderFFXList(allFFXFiles);}),_0x5be9a4['addEventListener'](_0x5c9f75(0x1ed),function(){var _0x2db44a=_0x5c9f75;activeFFXTab='favorites',_0x5be9a4[_0x2db44a(0x120)][_0x2db44a(0x1c6)]('active'),_0x4ab12e[_0x2db44a(0x120)][_0x2db44a(0x27f)](_0x2db44a(0x2e1));var _0x22f43a=document[_0x2db44a(0x340)](_0x2db44a(0x158));if(_0x22f43a)_0x22f43a[_0x2db44a(0x368)][_0x2db44a(0x370)]=_0x2db44a(0x174);var _0x10215b=document[_0x2db44a(0x340)](_0x2db44a(0x2c5));_0x10215b&&(_0x10215b[_0x2db44a(0x120)][_0x2db44a(0x27f)]('fade-in-active'),void _0x10215b[_0x2db44a(0x26c)],_0x10215b[_0x2db44a(0x120)][_0x2db44a(0x1c6)](_0x2db44a(0x29a))),renderFFXList(allFFXFiles);}));}document[a0_0x2349bc(0x2bf)]===a0_0x2349bc(0x14a)?document['addEventListener'](a0_0x2349bc(0x242),bindFFXTabs):bindFFXTabs();document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2c8))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x2b2),function(){var _0x3bc6f4=a0_0x2349bc,_0x3a5874=this[_0x3bc6f4(0x236)][_0x3bc6f4(0x24a)]();queryAll(_0x3bc6f4(0x34a))[_0x3bc6f4(0x2e4)](function(_0x8151d8){var _0x426983=_0x3bc6f4;_0x8151d8[_0x426983(0x368)][_0x426983(0x370)]=_0x8151d8[_0x426983(0x268)](_0x426983(0x35f))[_0x426983(0x190)][_0x426983(0x24a)]()[_0x426983(0x339)](_0x3a5874)?_0x426983(0x2cc):'none';});});var chkApplyAtInPoint=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x25c));if(chkApplyAtInPoint){var savedApplyAtIn=localStorage[a0_0x2349bc(0x2e9)](a0_0x2349bc(0x2ad));savedApplyAtIn!==null?chkApplyAtInPoint[a0_0x2349bc(0x37f)]=savedApplyAtIn==='true':chkApplyAtInPoint[a0_0x2349bc(0x37f)]=!![],chkApplyAtInPoint[a0_0x2349bc(0x32a)](a0_0x2349bc(0x109),function(){var _0xd00c8c=a0_0x2349bc;localStorage[_0xd00c8c(0x2b7)](_0xd00c8c(0x2ad),String(chkApplyAtInPoint[_0xd00c8c(0x37f)]));});}var chkStretchPresets=document['getElementById'](a0_0x2349bc(0x102));if(chkStretchPresets){var savedStretch=localStorage['getItem'](a0_0x2349bc(0x135));savedStretch!==null?chkStretchPresets[a0_0x2349bc(0x37f)]=savedStretch===a0_0x2349bc(0x153):chkStretchPresets[a0_0x2349bc(0x37f)]=![],chkStretchPresets['addEventListener'](a0_0x2349bc(0x109),function(){var _0x4bedad=a0_0x2349bc;localStorage['setItem'](_0x4bedad(0x135),String(chkStretchPresets[_0x4bedad(0x37f)]));});}document[a0_0x2349bc(0x340)](a0_0x2349bc(0x106))[a0_0x2349bc(0x32a)]('click',function(){var _0x5ea637=a0_0x2349bc;if(!selectedFFX)return;var _0x2be383=document['getElementById'](_0x5ea637(0x25c))?document[_0x5ea637(0x340)](_0x5ea637(0x25c))[_0x5ea637(0x37f)]:![],_0xb231c7=document[_0x5ea637(0x340)](_0x5ea637(0x102))?document[_0x5ea637(0x340)](_0x5ea637(0x102))[_0x5ea637(0x37f)]:![],_0xcee284=_0x5ea637(0x172)+JSON[_0x5ea637(0x31c)](selectedFFX)+',\x20'+_0x2be383+',\x20'+_0xb231c7+')';runScript(_0xcee284,function(_0xd076e0){var _0xfc9c3=_0x5ea637;_0xd076e0&&_0xd076e0[_0xfc9c3(0x1e0)](_0xfc9c3(0x19b))>-0x1?showToast(_0xfc9c3(0x231)+_0xd076e0):showToast(_0xfc9c3(0x16f));});});function loadSettings(){var _0x2dd270=a0_0x2349bc,_0x58bbf9=localStorage['getItem'](_0x2dd270(0x21c))||'auto',_0x301295=document[_0x2dd270(0x340)](_0x2dd270(0x21c));if(_0x301295)_0x301295['value']=_0x58bbf9;var _0x165955=localStorage[_0x2dd270(0x2e9)](_0x2dd270(0x2a5))||'',_0x18a369=document[_0x2dd270(0x340)](_0x2dd270(0x180));_0x18a369&&(_0x18a369[_0x2dd270(0x190)]=_0x165955?_0x165955:_0x2dd270(0x275));var _0x50d1b8=localStorage[_0x2dd270(0x2e9)]('snapshotAlwaysAsk')!=='false',_0x3893bf=document['getElementById'](_0x2dd270(0x1c4));if(_0x3893bf)_0x3893bf[_0x2dd270(0x37f)]=_0x50d1b8;var _0x2f49fa=localStorage[_0x2dd270(0x2e9)]('preCompFPS')||'60',_0x3421ab=document[_0x2dd270(0x340)](_0x2dd270(0x216));if(_0x3421ab)_0x3421ab[_0x2dd270(0x236)]=_0x2f49fa;var _0x468d3f=localStorage[_0x2dd270(0x2e9)](_0x2dd270(0x10e))!==_0x2dd270(0x129),_0x5ca85c=document[_0x2dd270(0x340)](_0x2dd270(0x21f));if(_0x5ca85c)_0x5ca85c[_0x2dd270(0x37f)]=_0x468d3f;_0x468d3f?document[_0x2dd270(0x290)][_0x2dd270(0x120)][_0x2dd270(0x27f)]('animations-disabled'):document['body'][_0x2dd270(0x120)][_0x2dd270(0x1c6)](_0x2dd270(0x1f6));var _0x2042de=localStorage[_0x2dd270(0x2e9)](_0x2dd270(0x34f))!==_0x2dd270(0x129),_0xb715e=document['getElementById'](_0x2dd270(0x22b));if(_0xb715e)_0xb715e[_0x2dd270(0x37f)]=_0x2042de;var _0x3aa5f6=localStorage[_0x2dd270(0x2e9)](_0x2dd270(0x331))!==_0x2dd270(0x129),_0x321d76=document['getElementById'](_0x2dd270(0x163));if(_0x321d76)_0x321d76[_0x2dd270(0x37f)]=_0x3aa5f6;var _0x4468db=localStorage[_0x2dd270(0x2e9)]('cleanKeys')!==_0x2dd270(0x129),_0x5172c2=document[_0x2dd270(0x340)](_0x2dd270(0x362));if(_0x5172c2)_0x5172c2['checked']=_0x4468db;var _0x71f711=localStorage[_0x2dd270(0x2e9)](_0x2dd270(0x130))==='true',_0x1885c6=document[_0x2dd270(0x340)]('chkCleanExpr');if(_0x1885c6)_0x1885c6[_0x2dd270(0x37f)]=_0x71f711;var _0x3b4ff6=localStorage['getItem'](_0x2dd270(0x383))===_0x2dd270(0x153),_0x2bad11=document[_0x2dd270(0x340)](_0x2dd270(0x387));if(_0x2bad11)_0x2bad11[_0x2dd270(0x37f)]=_0x3b4ff6;var _0x1e2ef6=localStorage[_0x2dd270(0x2e9)](_0x2dd270(0x251))||'#1a1a1a',_0x46a51a=document[_0x2dd270(0x340)](_0x2dd270(0x35c));if(_0x46a51a)_0x46a51a[_0x2dd270(0x236)]=_0x1e2ef6;}function saveSettingsToStorage(){var _0x30921e=a0_0x2349bc,_0x44a1a4=document[_0x30921e(0x340)]('snapshotQuality');if(_0x44a1a4)localStorage['setItem'](_0x30921e(0x21c),_0x44a1a4['value']);var _0x52d228=document[_0x30921e(0x340)](_0x30921e(0x1c4));if(_0x52d228)localStorage['setItem'](_0x30921e(0x232),String(_0x52d228[_0x30921e(0x37f)]));var _0x57fada=document[_0x30921e(0x340)](_0x30921e(0x216));if(_0x57fada)localStorage[_0x30921e(0x2b7)](_0x30921e(0x202),_0x57fada['value']);var _0x404c36=document[_0x30921e(0x340)](_0x30921e(0x21f));if(_0x404c36){var _0x56604d=_0x404c36[_0x30921e(0x37f)];localStorage[_0x30921e(0x2b7)](_0x30921e(0x10e),_0x56604d),_0x56604d?document['body'][_0x30921e(0x120)][_0x30921e(0x27f)](_0x30921e(0x1f6)):document[_0x30921e(0x290)][_0x30921e(0x120)][_0x30921e(0x1c6)](_0x30921e(0x1f6));}var _0x24add3=document[_0x30921e(0x340)]('chkCleanEffects');if(_0x24add3)localStorage[_0x30921e(0x2b7)]('cleanEffects',_0x24add3['checked']);var _0x542b76=document[_0x30921e(0x340)](_0x30921e(0x163));if(_0x542b76)localStorage['setItem']('cleanMasks',_0x542b76[_0x30921e(0x37f)]);var _0x47b819=document[_0x30921e(0x340)](_0x30921e(0x362));if(_0x47b819)localStorage[_0x30921e(0x2b7)](_0x30921e(0x193),_0x47b819[_0x30921e(0x37f)]);var _0x50ae1e=document[_0x30921e(0x340)](_0x30921e(0x1d6));if(_0x50ae1e)localStorage['setItem'](_0x30921e(0x130),_0x50ae1e[_0x30921e(0x37f)]);var _0x47535e=document[_0x30921e(0x340)]('chkCleanTransform');if(_0x47535e)localStorage[_0x30921e(0x2b7)](_0x30921e(0x383),_0x47535e[_0x30921e(0x37f)]);var _0x36ce17=document['getElementById'](_0x30921e(0x35c));if(_0x36ce17)localStorage[_0x30921e(0x2b7)](_0x30921e(0x251),_0x36ce17[_0x30921e(0x236)]);showToast(_0x30921e(0x145));}loadSettings(),document['getElementById']('btnSettings')[a0_0x2349bc(0x32a)]('click',function(){var _0x3edef6=a0_0x2349bc;loadSettings(),document[_0x3edef6(0x340)](_0x3edef6(0x2f5))[_0x3edef6(0x120)][_0x3edef6(0x1c6)]('open');});function closeSettings(){var _0x47c9b0=a0_0x2349bc;document[_0x47c9b0(0x340)](_0x47c9b0(0x2f5))[_0x47c9b0(0x120)][_0x47c9b0(0x27f)]('open');}document['getElementById']('closeSettings')[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),closeSettings),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x341))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),closeSettings),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2f5))['addEventListener'](a0_0x2349bc(0x1ed),function(_0x4a153b){if(_0x4a153b['target']===this)closeSettings();}),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2c1))['addEventListener'](a0_0x2349bc(0x1ed),function(){saveSettingsToStorage(),closeSettings();});var TT_BASE_URL='https://tariktools.com',subFile=null,subSegments=null,subSrtContent=null,subMode='auto',verifiedApiKey=localStorage[a0_0x2349bc(0x2e9)](a0_0x2349bc(0x1ee))||'';function updateAuthUi(){var _0x4500e5=a0_0x2349bc,_0x28ab1b=document['getElementById'](_0x4500e5(0x1ae)),_0x21015f=document[_0x4500e5(0x340)](_0x4500e5(0x10c));if(verifiedApiKey){if(_0x28ab1b)_0x28ab1b[_0x4500e5(0x368)][_0x4500e5(0x370)]=_0x4500e5(0x174);if(_0x21015f)_0x21015f[_0x4500e5(0x368)][_0x4500e5(0x370)]=_0x4500e5(0x1c3);loadCredits(verifiedApiKey),startCompPolling();var _0x4c0dbc=document[_0x4500e5(0x340)](_0x4500e5(0x262));if(_0x4c0dbc){var _0x215d2c=verifiedApiKey;_0x215d2c[_0x4500e5(0x181)]>0xc&&(_0x215d2c=_0x215d2c[_0x4500e5(0x113)](0x0,0x8)+_0x4500e5(0x1d0)+_0x215d2c['substring'](_0x215d2c[_0x4500e5(0x181)]-0x4)),_0x4c0dbc[_0x4500e5(0x190)]='Key:\x20'+_0x215d2c;}}else{if(_0x28ab1b)_0x28ab1b['style'][_0x4500e5(0x370)]=_0x4500e5(0x1c3);if(_0x21015f)_0x21015f[_0x4500e5(0x368)]['display']=_0x4500e5(0x174);stopCompPolling();}}document[a0_0x2349bc(0x340)](a0_0x2349bc(0x150))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0xc6ff1d=a0_0x2349bc,_0x579cb1=document[_0xc6ff1d(0x340)](_0xc6ff1d(0x209));_0x579cb1[_0xc6ff1d(0x14d)]=_0x579cb1['type']===_0xc6ff1d(0x32b)?_0xc6ff1d(0x38d):_0xc6ff1d(0x32b),this['textContent']=_0x579cb1[_0xc6ff1d(0x14d)]===_0xc6ff1d(0x32b)?'👁':'🙈';}),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x189))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x4a3d7d=a0_0x2349bc,_0x11ec31=document[_0x4a3d7d(0x340)](_0x4a3d7d(0x209))[_0x4a3d7d(0x236)][_0x4a3d7d(0x384)]();if(!_0x11ec31){showToast(_0x4a3d7d(0x241));return;}showToast('🔑\x20Doğrulanıyor...'),fetch(TT_BASE_URL+_0x4a3d7d(0x137),{'headers':{'Authorization':_0x4a3d7d(0x2ed)+_0x11ec31}})['then'](function(_0x4eed74){var _0x24a8d2=_0x4a3d7d;return _0x4eed74[_0x24a8d2(0x21a)]();})[_0x4a3d7d(0x278)](function(_0xbf60e){var _0x279c77=_0x4a3d7d;if(_0xbf60e&&_0xbf60e[_0x279c77(0x151)])showToast(_0x279c77(0x234)+_0xbf60e[_0x279c77(0x151)]);else _0xbf60e&&_0xbf60e['credits']!==undefined?(localStorage['setItem']('tt_api_key',_0x11ec31),verifiedApiKey=_0x11ec31,updateAuthUi(),showToast(_0x279c77(0x12e))):showToast(_0x279c77(0x273));})['catch'](function(_0x40842c){var _0x104e9d=_0x4a3d7d;showToast(_0x104e9d(0x25e)+_0x40842c[_0x104e9d(0x270)]);});}),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x133))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x8554f=a0_0x2349bc;localStorage['removeItem'](_0x8554f(0x1ee)),verifiedApiKey='',document[_0x8554f(0x340)](_0x8554f(0x209))[_0x8554f(0x236)]='',updateAuthUi(),showToast(_0x8554f(0x141));}),document[a0_0x2349bc(0x340)]('btnGetApiKey')['addEventListener'](a0_0x2349bc(0x1ed),function(){var _0x483a0e=a0_0x2349bc;showToast(_0x483a0e(0x146)),cs[_0x483a0e(0x20c)]('https://tariktools.com/dashboard');});var aiTabSubtitle=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x351)),aiTabVocal=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x343)),aiContentSubtitle=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x330)),aiContentVocal=document[a0_0x2349bc(0x340)]('aiContentVocal');aiTabSubtitle&&aiTabVocal&&(aiTabSubtitle['addEventListener']('click',function(){var _0x57a5b4=a0_0x2349bc;aiTabSubtitle[_0x57a5b4(0x120)][_0x57a5b4(0x1c6)]('active'),aiTabVocal[_0x57a5b4(0x120)][_0x57a5b4(0x27f)](_0x57a5b4(0x2e1)),aiContentSubtitle[_0x57a5b4(0x368)][_0x57a5b4(0x370)]=_0x57a5b4(0x1c3),aiContentVocal[_0x57a5b4(0x368)]['display']=_0x57a5b4(0x174);}),aiTabVocal[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0xe1cb54=a0_0x2349bc;aiTabVocal['classList']['add']('active'),aiTabSubtitle[_0xe1cb54(0x120)]['remove']('active'),aiContentVocal['style']['display']='block',aiContentSubtitle[_0xe1cb54(0x368)]['display']=_0xe1cb54(0x174);}));function loadCredits(_0x242d03){var _0x7d235a=a0_0x2349bc;if(!_0x242d03)return;var _0x5efe28=document[_0x7d235a(0x340)](_0x7d235a(0x1db));_0x5efe28['textContent']=_0x7d235a(0x1a6),fetch(TT_BASE_URL+_0x7d235a(0x137),{'headers':{'Authorization':_0x7d235a(0x2ed)+_0x242d03}})[_0x7d235a(0x278)](function(_0x7ab8ec){var _0x1ba3ed=_0x7d235a;return _0x7ab8ec[_0x1ba3ed(0x21a)]();})[_0x7d235a(0x278)](function(_0x44a37e){var _0x229049=_0x7d235a;_0x44a37e&&_0x44a37e['credits']!==undefined?_0x5efe28['textContent']=_0x44a37e['credits']+_0x229049(0x245):_0x5efe28[_0x229049(0x190)]='Kredi\x20bilgisi\x20alınamadı';})[_0x7d235a(0x139)](function(){var _0x366847=_0x7d235a;_0x5efe28[_0x366847(0x190)]='Bağlantı\x20hatası';});}var compPollInterval=null;function startCompPolling(){if(compPollInterval)clearInterval(compPollInterval);compPollInterval=setInterval(function(){var _0x3137d3=a0_0x41dd;cs[_0x3137d3(0x357)](_0x3137d3(0x28b),function(_0x5dd386){var _0x19f0a0=_0x3137d3,_0xa2c461=document['getElementById'](_0x19f0a0(0x25d));_0xa2c461&&(_0x5dd386&&_0x5dd386[_0x19f0a0(0x384)]()?(_0xa2c461['textContent']=_0x5dd386,_0xa2c461[_0x19f0a0(0x368)]['color']=_0x19f0a0(0x2b6)):(_0xa2c461[_0x19f0a0(0x190)]=_0x19f0a0(0x286),_0xa2c461[_0x19f0a0(0x368)]['color']=_0x19f0a0(0x192)));}),cs[_0x3137d3(0x357)](_0x3137d3(0x185),function(_0x4933aa){var _0x4feaa5=_0x3137d3,_0x41c70a=document[_0x4feaa5(0x340)](_0x4feaa5(0x2c3)),_0x230607=document[_0x4feaa5(0x340)](_0x4feaa5(0x2a1)),_0x3f8ca9=_0x4933aa&&_0x4933aa[_0x4feaa5(0x384)]()?_0x4933aa:'';_0x41c70a&&(_0x3f8ca9?(_0x41c70a[_0x4feaa5(0x190)]=_0x3f8ca9,_0x41c70a[_0x4feaa5(0x368)]['color']=_0x4feaa5(0x2b6)):(_0x41c70a[_0x4feaa5(0x190)]='Yok\x20(Lütfen\x20sesli\x20bir\x20katman\x20seçin)',_0x41c70a[_0x4feaa5(0x368)][_0x4feaa5(0x21b)]=_0x4feaa5(0x192))),_0x230607&&(_0x3f8ca9?(_0x230607[_0x4feaa5(0x190)]=_0x3f8ca9,_0x230607['style']['color']=_0x4feaa5(0x2b6)):(_0x230607['textContent']=_0x4feaa5(0x227),_0x230607['style'][_0x4feaa5(0x21b)]='#ff6b6b'));});},0x5dc);}function stopCompPolling(){compPollInterval&&(clearInterval(compPollInterval),compPollInterval=null);}document['getElementById'](a0_0x2349bc(0x32e))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x649f36=a0_0x2349bc;subMode='auto',this[_0x649f36(0x120)][_0x649f36(0x1c6)](_0x649f36(0x2e1)),document[_0x649f36(0x340)](_0x649f36(0x2f1))['classList'][_0x649f36(0x27f)](_0x649f36(0x2e1)),document[_0x649f36(0x340)](_0x649f36(0x18f))[_0x649f36(0x368)][_0x649f36(0x370)]='block',document['getElementById'](_0x649f36(0x157))[_0x649f36(0x368)][_0x649f36(0x370)]=_0x649f36(0x174);}),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2f1))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x4da1bd=a0_0x2349bc;subMode=_0x4da1bd(0x30d),this['classList'][_0x4da1bd(0x1c6)]('active'),document['getElementById'](_0x4da1bd(0x32e))['classList']['remove'](_0x4da1bd(0x2e1)),document['getElementById'](_0x4da1bd(0x157))[_0x4da1bd(0x368)][_0x4da1bd(0x370)]=_0x4da1bd(0x1c3),document[_0x4da1bd(0x340)](_0x4da1bd(0x18f))[_0x4da1bd(0x368)][_0x4da1bd(0x370)]='none';});var dropZone=document['getElementById']('subDropZone'),fileInput=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x19c));dropZone[a0_0x2349bc(0x32a)]('click',function(){var _0x444ca4=a0_0x2349bc;fileInput[_0x444ca4(0x1ed)]();}),fileInput[a0_0x2349bc(0x32a)](a0_0x2349bc(0x109),function(){var _0x55c5f8=a0_0x2349bc;if(this['files'][0x0])setSubFile(this[_0x55c5f8(0x228)][0x0]);}),dropZone[a0_0x2349bc(0x32a)](a0_0x2349bc(0x142),function(_0x58b2c9){var _0x470ade=a0_0x2349bc;_0x58b2c9[_0x470ade(0x369)](),dropZone[_0x470ade(0x120)][_0x470ade(0x1c6)](_0x470ade(0x36e));}),dropZone[a0_0x2349bc(0x32a)](a0_0x2349bc(0x2dc),function(){var _0x5918ab=a0_0x2349bc;dropZone['classList'][_0x5918ab(0x27f)](_0x5918ab(0x36e));}),dropZone[a0_0x2349bc(0x32a)](a0_0x2349bc(0x2db),function(_0x937a85){var _0x2a9b1e=a0_0x2349bc;_0x937a85[_0x2a9b1e(0x369)](),dropZone[_0x2a9b1e(0x120)][_0x2a9b1e(0x27f)]('drag-over');var _0x3fed59=_0x937a85[_0x2a9b1e(0x33e)]['files'][0x0];if(_0x3fed59)setSubFile(_0x3fed59);});function setSubFile(_0x97c34f){var _0x585b3e=a0_0x2349bc,_0x548ef9=0x32*0x400*0x400;if(_0x97c34f[_0x585b3e(0x114)]>_0x548ef9){showToast('⚠\x20Dosya\x2050MB\x27dan\x20büyük!');return;}subFile=_0x97c34f,dropZone['classList']['add']('has-file'),document[_0x585b3e(0x340)]('subDropText')[_0x585b3e(0x190)]=_0x97c34f['name'],showToast(_0x585b3e(0x1e8)+_0x97c34f[_0x585b3e(0x313)]);}var progressInterval=null;function startProgress(){var _0x3663c9=a0_0x2349bc,_0x2e794d=document['getElementById']('subProgressFill'),_0x23eaf0=document[_0x3663c9(0x340)](_0x3663c9(0x35b));document['getElementById']('subProgress')[_0x3663c9(0x368)][_0x3663c9(0x370)]='flex',document[_0x3663c9(0x340)](_0x3663c9(0x118))[_0x3663c9(0x368)][_0x3663c9(0x370)]=_0x3663c9(0x174),document[_0x3663c9(0x340)](_0x3663c9(0x1af))[_0x3663c9(0x31e)]=!![];var _0x1d944a=0x5;_0x2e794d[_0x3663c9(0x368)]['width']=_0x1d944a+'%',progressInterval=setInterval(function(){var _0x243721=_0x3663c9;_0x1d944a=Math[_0x243721(0x204)](_0x1d944a+Math['random']()*0x3,0x5a),_0x2e794d[_0x243721(0x368)]['width']=_0x1d944a+'%';if(subMode===_0x243721(0x13c)&&_0x1d944a<0x19)_0x23eaf0[_0x243721(0x190)]=_0x243721(0x1a5);else{if(_0x1d944a<0x32)_0x23eaf0[_0x243721(0x190)]=_0x243721(0x117);else _0x1d944a<0x50?_0x23eaf0[_0x243721(0x190)]=_0x243721(0x23a):_0x23eaf0[_0x243721(0x190)]='Segmentler\x20oluşturuluyor...';}},0x258);}function stopProgress(_0x54eb62){var _0x51258b=a0_0x2349bc;clearInterval(progressInterval);var _0x4e52e6=document[_0x51258b(0x340)]('subProgressFill');_0x4e52e6[_0x51258b(0x368)][_0x51258b(0x13d)]=_0x54eb62?_0x51258b(0x265):'0%',setTimeout(function(){var _0x5a6746=_0x51258b;document[_0x5a6746(0x340)](_0x5a6746(0x364))[_0x5a6746(0x368)][_0x5a6746(0x370)]=_0x5a6746(0x174),_0x4e52e6[_0x5a6746(0x368)][_0x5a6746(0x13d)]='0%';},0x258);}document[a0_0x2349bc(0x340)](a0_0x2349bc(0x177))['addEventListener'](a0_0x2349bc(0x1ed),function(){var _0x1436d2=a0_0x2349bc,_0x418c69=verifiedApiKey||localStorage[_0x1436d2(0x2e9)](_0x1436d2(0x1ee))||'';if(!_0x418c69){showToast(_0x1436d2(0xfb));return;}if(subMode==='manual'&&!subFile){showToast(_0x1436d2(0x17b));return;}document[_0x1436d2(0x340)](_0x1436d2(0xf9))[_0x1436d2(0x120)][_0x1436d2(0x1c6)](_0x1436d2(0x2d4));}),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x336))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x37b8b2=a0_0x2349bc;document['getElementById']('subSettingsOverlay')[_0x37b8b2(0x120)][_0x37b8b2(0x27f)](_0x37b8b2(0x2d4));}),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x24d))['addEventListener'](a0_0x2349bc(0x1ed),function(){var _0x675f44=a0_0x2349bc;document[_0x675f44(0x340)]('subSettingsOverlay')['classList'][_0x675f44(0x27f)]('open');}),document[a0_0x2349bc(0x340)]('btnConfirmGenerateSub')[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x1ccd0c=a0_0x2349bc;document['getElementById']('subSettingsOverlay')[_0x1ccd0c(0x120)][_0x1ccd0c(0x27f)](_0x1ccd0c(0x2d4));var _0xbc997e=verifiedApiKey||localStorage['getItem'](_0x1ccd0c(0x1ee))||'',_0x1e7e52=document[_0x1ccd0c(0x340)](_0x1ccd0c(0x249))[_0x1ccd0c(0x236)],_0x160586=document[_0x1ccd0c(0x340)](_0x1ccd0c(0x36b))[_0x1ccd0c(0x236)],_0x2714b8=document['getElementById'](_0x1ccd0c(0x16b))['value'];subMode===_0x1ccd0c(0x30d)?sendToTranscribeAPI(subFile,_0xbc997e,_0x1e7e52,_0x160586,_0x2714b8):(startProgress(),cs[_0x1ccd0c(0x357)](_0x1ccd0c(0x1d8),function(_0x14c37e){var _0x213d6a=_0x1ccd0c;console[_0x213d6a(0x176)](_0x213d6a(0x359),_0x14c37e);try{if(!_0x14c37e)throw new Error('Katman\x20bilgisi\x20alınamadı.');var _0x4587ae=JSON[_0x213d6a(0x276)](_0x14c37e);if(_0x4587ae[_0x213d6a(0x151)]){stopProgress(![]),showToast(_0x213d6a(0x234)+decodeURIComponent(_0x4587ae[_0x213d6a(0x151)]));return;}var _0xc114bd=require('fs'),_0x4e9d38=require(_0x213d6a(0x222));if(_0x4587ae['hasSourceFile']){var _0x3fe10f=decodeURIComponent(_0x4587ae[_0x213d6a(0x222)]),_0x49e588=window[_0x213d6a(0x2d7)]['fs'][_0x213d6a(0x372)](_0x3fe10f);if(_0x49e588[_0x213d6a(0x103)]===0x0&&_0x49e588[_0x213d6a(0x1ea)]['isFile']){var _0x564a91=_0x49e588[_0x213d6a(0x1ea)][_0x213d6a(0x114)]/(0x400*0x400),_0xd155e9=_0x3fe10f[_0x213d6a(0x391)]('.')[_0x213d6a(0x1ff)]()[_0x213d6a(0x24a)](),_0x2fff18=_0xd155e9===_0x213d6a(0x37c)||_0xd155e9==='wav'||_0xd155e9===_0x213d6a(0x24b)||_0xd155e9===_0x213d6a(0x36c);if(_0x564a91<0x32){console['log'](_0x213d6a(0x1e1),_0x564a91[_0x213d6a(0x27c)](0x2),'MB.\x20Path:',_0x3fe10f);var _0x2fcb7b=window[_0x213d6a(0x2d7)]['fs']['readFile'](_0x3fe10f,window[_0x213d6a(0x2d7)][_0x213d6a(0x200)][_0x213d6a(0x2de)]);if(_0x2fcb7b['err']===0x0){var _0x37fcee=_0x2fcb7b[_0x213d6a(0x1ea)][_0x213d6a(0x126)](/[\r\n]+/g,''),_0x3d2c63=_0x213d6a(0x252)+(_0xd155e9||_0x213d6a(0x2ac));if(_0xd155e9===_0x213d6a(0x37c))_0x3d2c63=_0x213d6a(0x332);if(_0xd155e9==='m4a')_0x3d2c63='audio/mp4';if(_0xd155e9==='mp4'||_0xd155e9===_0x213d6a(0x230))_0x3d2c63=_0x213d6a(0x1c8);var _0x6fcb5a=_0x213d6a(0x38e)+_0x3d2c63+_0x213d6a(0x10d)+_0x37fcee,_0x317eb9=_0x3fe10f[_0x213d6a(0x391)]('\x5c\x5c')[_0x213d6a(0x1ff)]()[_0x213d6a(0x391)]('/')[_0x213d6a(0x1ff)](),_0x3d02ff={'audioDataUrl':_0x6fcb5a,'fileName':_0x317eb9,'language':_0x1e7e52,'wordLimit':_0x160586,'textCase':_0x2714b8};executeTranscribeRequestDirect(_0x3d02ff,_0xbc997e,_0x4587ae[_0x213d6a(0x34c)],_0x4587ae['inPoint'],_0x4587ae[_0x213d6a(0x20d)]);return;}}}}console[_0x213d6a(0x176)](_0x213d6a(0x376)),triggerAudioRenderSub(_0xbc997e,_0x1e7e52,_0x160586,_0x2714b8);}catch(_0x12a985){stopProgress(![]),showToast(_0x213d6a(0x234)+_0x12a985[_0x213d6a(0x270)]);}}));});function triggerAudioRenderSub(_0x59ea06,_0x47871c,_0x12812a,_0x47f88d){cs['evalScript']('exportSelectedLayerAudio()',function(_0x430a16){var _0xf64e54=a0_0x41dd;console[_0xf64e54(0x176)](_0xf64e54(0x319),_0x430a16);try{if(!_0x430a16)throw new Error(_0xf64e54(0x175));var _0xc5d4d2=JSON[_0xf64e54(0x276)](_0x430a16);if(_0xc5d4d2['error']){stopProgress(![]),showToast(_0xf64e54(0x234)+decodeURIComponent(_0xc5d4d2[_0xf64e54(0x151)]));return;}var _0x324728=decodeURIComponent(_0xc5d4d2[_0xf64e54(0x222)]),_0xdf6783=window[_0xf64e54(0x2d7)]['fs'][_0xf64e54(0x372)](_0x324728);if(_0xdf6783[_0xf64e54(0x103)]!==0x0){stopProgress(![]),showToast('❌\x20Hata:\x20Render\x20edilen\x20dosya\x20bulunamadı.');return;}var _0x40a334=window[_0xf64e54(0x2d7)]['fs'][_0xf64e54(0x2bd)](_0x324728,window[_0xf64e54(0x2d7)][_0xf64e54(0x200)]['Base64']);if(_0x40a334['err']!==0x0){stopProgress(![]),showToast(_0xf64e54(0x38f)+_0x40a334['err']);return;}var _0x498f2e=_0x40a334[_0xf64e54(0x1ea)][_0xf64e54(0x126)](/[\r\n]+/g,''),_0xd5b323='audio/wav',_0x14c604=_0x498f2e['substring'](0x0,0xa);if(_0x14c604['indexOf']('AAAA')===0x0||_0x14c604['indexOf'](_0xf64e54(0x28f))===0x0)_0xd5b323=_0xf64e54(0x1c8);else{if(_0x14c604['indexOf'](_0xf64e54(0x1de))===0x0)_0xd5b323='audio/wav';else{if(_0x14c604[_0xf64e54(0x1e0)](_0xf64e54(0x2ce))===0x0||_0x14c604['indexOf']('//Nkx')===0x0)_0xd5b323='audio/mpeg';else{var _0x13e3c0=_0x324728['split']('.')[_0xf64e54(0x1ff)]()[_0xf64e54(0x24a)]();if(_0x13e3c0===_0xf64e54(0x37c))_0xd5b323=_0xf64e54(0x332);if(_0x13e3c0===_0xf64e54(0x24b))_0xd5b323=_0xf64e54(0x15b);if(_0x13e3c0===_0xf64e54(0x220)||_0x13e3c0===_0xf64e54(0x230))_0xd5b323=_0xf64e54(0x1c8);}}}var _0x1ec31e=_0xf64e54(0x38e)+_0xd5b323+';base64,'+_0x498f2e;try{window['cep']['fs'][_0xf64e54(0x2d3)](_0x324728);}catch(_0x178897){}var _0x42cc44=_0x324728['split']('\x5c\x5c')[_0xf64e54(0x1ff)]()[_0xf64e54(0x391)]('/')['pop'](),_0x23211b={'audioDataUrl':_0x1ec31e,'fileName':_0x42cc44,'language':_0x47871c,'wordLimit':_0x12812a,'textCase':_0x47f88d};executeTranscribeRequest(_0x23211b,_0x59ea06);}catch(_0xaab9e){stopProgress(![]);var _0x11b1b9=_0x430a16?String(_0x430a16)[_0xf64e54(0x113)](0x0,0x78):_0xf64e54(0x214);showToast(_0xf64e54(0x1a1)+_0xaab9e[_0xf64e54(0x270)]+_0xf64e54(0x1d7)+_0x11b1b9+')');}});}function executeTranscribeRequestDirect(_0x1eda6a,_0x28f361,_0x2ba633,_0x54d9e4,_0x233ee2){var _0x1e3955=a0_0x2349bc;fetch(TT_BASE_URL+_0x1e3955(0x2cd),{'method':_0x1e3955(0x1fb),'headers':{'Content-Type':_0x1e3955(0x178),'Authorization':_0x1e3955(0x2ed)+_0x28f361},'body':JSON[_0x1e3955(0x31c)](_0x1eda6a)})[_0x1e3955(0x278)](function(_0xadfe73){var _0x46c793=_0x1e3955;return _0xadfe73[_0x46c793(0x21a)]();})['then'](function(_0x411eae){var _0x28d74f=_0x1e3955;if(_0x411eae[_0x28d74f(0x151)]){stopProgress(![]),showToast('❌\x20Hata:\x20'+_0x411eae['error']);return;}stopProgress(!![]);var _0x2466a8=_0x2ba633||0x0,_0x20d25f=[];for(var _0x3826bd=0x0;_0x3826bd<_0x411eae[_0x28d74f(0x13e)][_0x28d74f(0x181)];_0x3826bd++){var _0x3fb7c6=_0x411eae[_0x28d74f(0x13e)][_0x3826bd],_0x506276=_0x3fb7c6['start']+_0x2466a8,_0x505afa=_0x3fb7c6['end']+_0x2466a8;_0x506276>=_0x54d9e4-0.5&&_0x505afa<=_0x233ee2+0.5&&(_0x3fb7c6[_0x28d74f(0x361)]=_0x506276-_0x54d9e4,_0x3fb7c6[_0x28d74f(0x2f3)]=_0x505afa-_0x54d9e4,_0x20d25f['push'](_0x3fb7c6));}subSegments=_0x20d25f;function _0x123a64(_0x33ba15){var _0x1e456f=_0x28d74f,_0x515d9c=Math[_0x1e456f(0x29c)](_0x33ba15/0xe10),_0xb9a3fc=Math[_0x1e456f(0x29c)](_0x33ba15%0xe10/0x3c),_0x3e8ba3=Math[_0x1e456f(0x29c)](_0x33ba15%0x3c),_0x5a508e=Math[_0x1e456f(0x19f)](_0x33ba15%0x1*0x3e8);function _0x554331(_0x87eb8f){return(_0x87eb8f<0xa?'0':'')+_0x87eb8f;}function _0x10f9af(_0x5da201){return(_0x5da201<0xa?'00':_0x5da201<0x64?'0':'')+_0x5da201;}return _0x554331(_0x515d9c)+':'+_0x554331(_0xb9a3fc)+':'+_0x554331(_0x3e8ba3)+','+_0x10f9af(_0x5a508e);}var _0x10dedc=[];for(var _0x18e287=0x0;_0x18e287<subSegments['length'];_0x18e287++){var _0x19e3d4=subSegments[_0x18e287];_0x10dedc['push'](_0x18e287+0x1+'\x0a'+_0x123a64(_0x19e3d4[_0x28d74f(0x361)])+_0x28d74f(0x1f4)+_0x123a64(_0x19e3d4[_0x28d74f(0x2f3)])+'\x0a'+_0x19e3d4[_0x28d74f(0x38d)]);}subSrtContent=_0x10dedc['join']('\x0a\x0a'),_0x411eae['creditsLeft']!==undefined&&(document[_0x28d74f(0x340)]('creditText')[_0x28d74f(0x190)]=_0x411eae[_0x28d74f(0x186)]+_0x28d74f(0x245)),document[_0x28d74f(0x340)]('subResult')[_0x28d74f(0x368)][_0x28d74f(0x370)]=_0x28d74f(0x2cc),document[_0x28d74f(0x340)](_0x28d74f(0x112))[_0x28d74f(0x190)]=_0x28d74f(0x1fa),document['getElementById']('subResultMeta')['textContent']=subSegments[_0x28d74f(0x181)]+'\x20segment\x20(Sıfır\x20Render)',document[_0x28d74f(0x340)](_0x28d74f(0x1af))[_0x28d74f(0x31e)]=![],showToast('✅\x20'+subSegments[_0x28d74f(0x181)]+'\x20altyazı\x20oluşturuldu!');})[_0x1e3955(0x139)](function(_0x18c4c5){var _0x41414e=_0x1e3955;stopProgress(![]),showToast(_0x41414e(0x26f)+_0x18c4c5[_0x41414e(0x270)]);});}function sendToTranscribeAPI(_0x1ff614,_0x513062,_0x2d5621,_0x2fd7b2,_0x4c65bb){var _0x54e2b3=a0_0x2349bc;startProgress();var _0x24f34e=new FileReader();_0x24f34e[_0x54e2b3(0x301)]=function(_0x5d6c8f){var _0x690b93=_0x54e2b3,_0xfcd3b1={'audioDataUrl':_0x5d6c8f[_0x690b93(0x2ba)][_0x690b93(0x1a8)],'fileName':_0x1ff614[_0x690b93(0x313)],'language':_0x2d5621,'wordLimit':_0x2fd7b2,'textCase':_0x4c65bb};executeTranscribeRequest(_0xfcd3b1,_0x513062);},_0x24f34e[_0x54e2b3(0x201)](_0x1ff614);}function executeTranscribeRequest(_0x2e70d2,_0x431551){var _0x4d8308=a0_0x2349bc;fetch(TT_BASE_URL+_0x4d8308(0x2cd),{'method':_0x4d8308(0x1fb),'headers':{'Content-Type':'application/json','Authorization':'ApiKey\x20'+_0x431551},'body':JSON[_0x4d8308(0x31c)](_0x2e70d2)})[_0x4d8308(0x278)](function(_0x4979fc){var _0x4243d9=_0x4d8308;return _0x4979fc[_0x4243d9(0x21a)]();})[_0x4d8308(0x278)](function(_0x5cb2c0){var _0x598733=_0x4d8308;if(_0x5cb2c0[_0x598733(0x151)]){stopProgress(![]),showToast(_0x598733(0x234)+_0x5cb2c0[_0x598733(0x151)]);return;}stopProgress(!![]),subSegments=_0x5cb2c0['segments'],subSrtContent=_0x5cb2c0[_0x598733(0x28e)],_0x5cb2c0[_0x598733(0x186)]!==undefined&&(document[_0x598733(0x340)](_0x598733(0x1db))['textContent']=_0x5cb2c0[_0x598733(0x186)]+_0x598733(0x245)),document[_0x598733(0x340)]('subResult')['style'][_0x598733(0x370)]=_0x598733(0x2cc),document[_0x598733(0x340)](_0x598733(0x112))[_0x598733(0x190)]='Altyazı\x20Hazır\x20✓',document[_0x598733(0x340)]('subResultMeta')['textContent']=subSegments[_0x598733(0x181)]+_0x598733(0x20f)+Math[_0x598733(0x19f)](_0x5cb2c0[_0x598733(0x38d)][_0x598733(0x181)]/0xa)+_0x598733(0x2fc),document['getElementById']('btnImportToAE')[_0x598733(0x31e)]=![],showToast('✅\x20'+subSegments[_0x598733(0x181)]+_0x598733(0x29e));})[_0x4d8308(0x139)](function(_0x491aa7){var _0xb47ff1=_0x4d8308;stopProgress(![]),showToast(_0xb47ff1(0x26f)+_0x491aa7[_0xb47ff1(0x270)]);});}document[a0_0x2349bc(0x340)](a0_0x2349bc(0x144))[a0_0x2349bc(0x32a)]('click',function(){var _0x5cea8b=a0_0x2349bc;if(!subSrtContent){showToast(_0x5cea8b(0x1dd));return;}cs[_0x5cea8b(0x357)](_0x5cea8b(0x260)+JSON[_0x5cea8b(0x31c)](subSrtContent)+')',function(){showToast('⬇\x20SRT\x20kaydedildi');});}),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x1af))['addEventListener'](a0_0x2349bc(0x1ed),function(){var _0xb71e0a=a0_0x2349bc;if(!subSegments||!subSegments[_0xb71e0a(0x181)]){showToast('⚠\x20Altyazı\x20yok');return;}var _0x5c5ad4=require('fs'),_0x4af3c9=require(_0xb71e0a(0x222)),_0x1c991f=require('os'),_0x10765a=_0x4af3c9[_0xb71e0a(0x13f)](_0x1c991f['tmpdir'](),'ae_sub_data_'+new Date()[_0xb71e0a(0x373)]()+'.json'),_0x46ab58=JSON[_0xb71e0a(0x31c)](subSegments);_0x5c5ad4['writeFileSync'](_0x10765a,_0x46ab58,'utf8');if(subMode==='auto')cs[_0xb71e0a(0x357)](_0xb71e0a(0x26a),function(_0x2888d8){var _0x45e753=_0xb71e0a,_0x552446=parseFloat(_0x2888d8)||0x0,_0x35e378=_0x45e753(0x166)+_0x10765a['replace'](/\\/g,'/')+_0x45e753(0x1b2)+_0x552446+_0x45e753(0x1eb);cs[_0x45e753(0x357)](_0x35e378,function(_0x3191fe){var _0x5b95a2=_0x45e753;_0x3191fe&&_0x3191fe[_0x5b95a2(0x1e0)]('HATA')!==-0x1?showToast('❌\x20'+_0x3191fe):showToast('✦\x20'+(_0x3191fe||_0x5b95a2(0x124)));});});else{var _0x508930=_0xb71e0a(0x166)+_0x10765a[_0xb71e0a(0x126)](/\\/g,'/')+_0xb71e0a(0x320);cs[_0xb71e0a(0x357)](_0x508930,function(_0x4cac39){var _0x3ae435=_0xb71e0a;_0x4cac39&&_0x4cac39['indexOf'](_0x3ae435(0xfa))!==-0x1?showToast('❌\x20'+_0x4cac39):showToast('✦\x20'+(_0x4cac39||_0x3ae435(0x124)));});}});var vocalModeOverlay=document['getElementById'](a0_0x2349bc(0x1e9));document['getElementById'](a0_0x2349bc(0x258))&&document[a0_0x2349bc(0x340)](a0_0x2349bc(0x258))[a0_0x2349bc(0x32a)]('click',function(){var _0x7365c7=a0_0x2349bc,_0x1b124c=verifiedApiKey||localStorage[_0x7365c7(0x2e9)](_0x7365c7(0x1ee))||'';if(!_0x1b124c){showToast('⚠\x20Lütfen\x20Developer\x20Kodunuzu\x20girin');return;}updateStemCheckboxes();if(vocalModeOverlay)vocalModeOverlay['classList'][_0x7365c7(0x1c6)]('open');});document[a0_0x2349bc(0x340)](a0_0x2349bc(0x377))&&document[a0_0x2349bc(0x340)](a0_0x2349bc(0x377))[a0_0x2349bc(0x32a)]('click',function(){var _0x86ca5b=a0_0x2349bc;vocalModeOverlay[_0x86ca5b(0x120)][_0x86ca5b(0x27f)](_0x86ca5b(0x2d4));});document[a0_0x2349bc(0x340)]('cancelIsolateVocal')&&document['getElementById'](a0_0x2349bc(0x30b))[a0_0x2349bc(0x32a)]('click',function(){var _0x4d826d=a0_0x2349bc;vocalModeOverlay[_0x4d826d(0x120)][_0x4d826d(0x27f)](_0x4d826d(0x2d4));});function updateStemCheckboxes(){var _0x1ac031=a0_0x2349bc,_0x5f50ed=document['getElementById'](_0x1ac031(0x116))['value'],_0x25d6c5=document[_0x1ac031(0x340)](_0x1ac031(0x2ff));if(!_0x25d6c5)return;var _0x7b934d='';if(_0x5f50ed===_0x1ac031(0x2a3))_0x7b934d+=_0x1ac031(0x14e),_0x7b934d+=_0x1ac031(0x15a);else{if(_0x5f50ed[_0x1ac031(0x1e0)](_0x1ac031(0x1d1))!==-0x1)_0x7b934d+=_0x1ac031(0x318),_0x7b934d+=_0x1ac031(0x1ab),_0x7b934d+=_0x1ac031(0x2a2);else _0x5f50ed===_0x1ac031(0x25b)&&(_0x7b934d+=_0x1ac031(0x14e),_0x7b934d+=_0x1ac031(0x184),_0x7b934d+=_0x1ac031(0x1b3),_0x7b934d+=_0x1ac031(0x310));}_0x25d6c5[_0x1ac031(0x366)]=_0x7b934d;}document[a0_0x2349bc(0x340)](a0_0x2349bc(0x116))&&document[a0_0x2349bc(0x340)](a0_0x2349bc(0x116))[a0_0x2349bc(0x32a)]('change',updateStemCheckboxes);document[a0_0x2349bc(0x340)]('confirmIsolateVocal')&&document[a0_0x2349bc(0x340)](a0_0x2349bc(0x33c))['addEventListener'](a0_0x2349bc(0x1ed),function(){var _0x399248=a0_0x2349bc;if(vocalModeOverlay)vocalModeOverlay['classList'][_0x399248(0x27f)](_0x399248(0x2d4));var _0x3a8846=verifiedApiKey||localStorage['getItem'](_0x399248(0x1ee))||'',_0x54dcee=document['getElementById']('vocalModelSelectModal')[_0x399248(0x236)],_0x374527=document[_0x399248(0x340)](_0x399248(0x1aa))[_0x399248(0x37f)],_0x385825=[],_0xfee2ef=queryAll(_0x399248(0x2a7));_0xfee2ef['forEach'](function(_0x4e550b){_0x385825['push'](_0x4e550b['value']);});if(_0x385825[_0x399248(0x181)]===0x0){showToast(_0x399248(0x324));return;}document['getElementById'](_0x399248(0x283))[_0x399248(0x368)][_0x399248(0x370)]='flex',document[_0x399248(0x340)](_0x399248(0x1e7))[_0x399248(0x368)][_0x399248(0x13d)]=_0x399248(0x382),document[_0x399248(0x340)](_0x399248(0x390))[_0x399248(0x190)]='Ses\x20okunuyor...',cs[_0x399248(0x357)](_0x399248(0x1d8),function(_0x4aae3d){var _0x677d56=_0x399248;try{if(!_0x4aae3d)throw new Error(_0x677d56(0x15f));var _0x2ac1f5=JSON[_0x677d56(0x276)](_0x4aae3d);if(_0x2ac1f5['error'])throw new Error(decodeURIComponent(_0x2ac1f5['error']));var _0xddf609=require('fs'),_0x5e5e38=decodeURIComponent(_0x2ac1f5[_0x677d56(0x222)]),_0xfc8dbe=window['cep']['fs'][_0x677d56(0x372)](_0x5e5e38);if(_0xfc8dbe[_0x677d56(0x103)]===0x0&&_0xfc8dbe['data'][_0x677d56(0x18d)]){var _0x501ed3=_0xfc8dbe[_0x677d56(0x1ea)][_0x677d56(0x114)]/(0x400*0x400),_0x66d0b2=_0x5e5e38['split']('.')[_0x677d56(0x1ff)]()[_0x677d56(0x24a)](),_0x1100d8=[_0x677d56(0x37c),_0x677d56(0x2ac),'m4a',_0x677d56(0x36c),'mp4',_0x677d56(0x230)][_0x677d56(0x1e0)](_0x66d0b2)!==-0x1;if(_0x501ed3<0x32&&_0x1100d8){var _0x228ef0=window[_0x677d56(0x2d7)]['fs'][_0x677d56(0x2bd)](_0x5e5e38,window[_0x677d56(0x2d7)][_0x677d56(0x200)]['Base64']);if(_0x228ef0[_0x677d56(0x103)]===0x0){var _0x537d7c=_0x228ef0[_0x677d56(0x1ea)][_0x677d56(0x126)](/[\r\n]+/g,''),_0x1fb27b=_0x677d56(0x252)+(_0x66d0b2||_0x677d56(0x2ac));if(_0x66d0b2===_0x677d56(0x37c))_0x1fb27b='audio/mpeg';if(_0x66d0b2==='m4a'||_0x66d0b2==='mp4'||_0x66d0b2===_0x677d56(0x230))_0x1fb27b=_0x677d56(0x1c8);var _0x599e3e=_0x677d56(0x38e)+_0x1fb27b+_0x677d56(0x10d)+_0x537d7c,_0x2160bf=_0x5e5e38['split']('\x5c')[_0x677d56(0x1ff)]()['split']('/')['pop']();executeVocalIsolation(_0x599e3e,_0x2160bf,_0x54dcee,_0x3a8846,_0x2ac1f5[_0x677d56(0x34c)],_0x2ac1f5[_0x677d56(0x37a)],_0x2ac1f5['outPoint'],_0x374527,_0x385825);return;}}}document[_0x677d56(0x340)](_0x677d56(0x390))['textContent']=_0x677d56(0x195),cs[_0x677d56(0x357)](_0x677d56(0x136),function(_0x3c22fb){var _0x5b30d0=_0x677d56;try{var _0xcede0a=JSON[_0x5b30d0(0x276)](_0x3c22fb);if(_0xcede0a[_0x5b30d0(0x151)])throw new Error(decodeURIComponent(_0xcede0a[_0x5b30d0(0x151)]));var _0xae2a00=decodeURIComponent(_0xcede0a[_0x5b30d0(0x222)]),_0x1b50f6=window[_0x5b30d0(0x2d7)]['fs']['readFile'](_0xae2a00,window['cep'][_0x5b30d0(0x200)]['Base64']);if(_0x1b50f6[_0x5b30d0(0x103)]!==0x0)throw new Error(_0x5b30d0(0x212));var _0x12cf55=_0x1b50f6[_0x5b30d0(0x1ea)][_0x5b30d0(0x126)](/[\r\n]+/g,''),_0x554e08=_0x5b30d0(0x108),_0x49e5ca=_0x5b30d0(0x38e)+_0x554e08+';base64,'+_0x12cf55;try{window[_0x5b30d0(0x2d7)]['fs'][_0x5b30d0(0x2d3)](_0xae2a00);}catch(_0x1568b8){}var _0x157ddf=_0xae2a00[_0x5b30d0(0x391)]('\x5c')[_0x5b30d0(0x1ff)]()[_0x5b30d0(0x391)]('/')['pop']();executeVocalIsolation(_0x49e5ca,_0x157ddf,_0x54dcee,_0x3a8846,_0x2ac1f5[_0x5b30d0(0x37a)],_0x2ac1f5[_0x5b30d0(0x37a)],_0x2ac1f5[_0x5b30d0(0x20d)],_0x374527,_0x385825);}catch(_0x46760a){document[_0x5b30d0(0x340)]('vocalProgress')[_0x5b30d0(0x368)]['display']=_0x5b30d0(0x174),showToast(_0x5b30d0(0x1a1)+_0x46760a[_0x5b30d0(0x270)]);}});}catch(_0x4cbe27){document[_0x677d56(0x340)](_0x677d56(0x283))[_0x677d56(0x368)][_0x677d56(0x370)]=_0x677d56(0x174),showToast(_0x677d56(0x234)+_0x4cbe27[_0x677d56(0x270)]);}});});function executeVocalIsolation(_0x5c707e,_0x51dda0,_0x5f4c67,_0xe1c87e,_0x37dd43,_0xbf7a01,_0x21d8f2,_0x49a85a,_0x280ca7){var _0x505eb9=a0_0x2349bc;document[_0x505eb9(0x340)](_0x505eb9(0x1e7))[_0x505eb9(0x368)][_0x505eb9(0x13d)]=_0x505eb9(0x2f9),document[_0x505eb9(0x340)](_0x505eb9(0x390))[_0x505eb9(0x190)]=_0x505eb9(0x22c);var _0x183d51=_0x5f4c67;if(_0x5f4c67===_0x505eb9(0x2f6))_0x183d51=_0x505eb9(0x1d1);if(_0x5f4c67===_0x505eb9(0x2da))_0x183d51='karaoke-slow';fetch(TT_BASE_URL+_0x505eb9(0x101),{'method':'POST','headers':{'Content-Type':_0x505eb9(0x178),'Authorization':_0x505eb9(0x2ed)+_0xe1c87e},'body':JSON[_0x505eb9(0x31c)]({'audioDataUrl':_0x5c707e,'fileName':_0x51dda0,'model':_0x183d51,'selectedStems':_0x280ca7})})[_0x505eb9(0x278)](function(_0xc9a21){return _0xc9a21['json']();})[_0x505eb9(0x278)](function(_0x4eab52){var _0x559c96=_0x505eb9;if(_0x4eab52[_0x559c96(0x151)]){document[_0x559c96(0x340)](_0x559c96(0x283))['style']['display']=_0x559c96(0x174),showToast('❌\x20Sunucu\x20Hatası:\x20'+_0x4eab52['error']);return;}document['getElementById']('vocalProgressFill')[_0x559c96(0x368)]['width']=_0x559c96(0x2e3),document[_0x559c96(0x340)]('vocalProgressText')['textContent']=_0x559c96(0x2a8);if(_0x4eab52[_0x559c96(0x280)]){var _0x7fb77c=Object[_0x559c96(0x392)](_0x4eab52[_0x559c96(0x280)]),_0x3f139a=!![],_0x1a4730=![],_0x5d8f58=require('fs'),_0x2099d6=require(_0x559c96(0x222)),_0x18db9c=require('os');function _0x285acf(_0x4b3aa4){var _0x553ae7=_0x559c96;if(_0x4b3aa4>=_0x7fb77c[_0x553ae7(0x181)]){document['getElementById']('vocalProgress')[_0x553ae7(0x368)]['display']=_0x553ae7(0x174);if(!_0x1a4730)showToast(_0x553ae7(0x309));if(_0x4eab52[_0x553ae7(0x186)]!==undefined){var _0x3f9890=document[_0x553ae7(0x340)](_0x553ae7(0x1db));if(_0x3f9890)_0x3f9890[_0x553ae7(0x190)]=_0x4eab52[_0x553ae7(0x186)]+_0x553ae7(0x125);}return;}var _0x982de1=_0x7fb77c[_0x4b3aa4],_0x50e066=_0x4eab52['audioDataUrls'][_0x982de1],_0x8016f0=_0x50e066[_0x553ae7(0x1e0)](',')!==-0x1?_0x50e066[_0x553ae7(0x391)](',')[0x1]:_0x50e066,_0x410614=_0x2099d6['join'](_0x18db9c[_0x553ae7(0x306)](),_0x553ae7(0x1a4)+_0x982de1+'_'+Date['now']()+_0x553ae7(0x389)),_0x14d556=Buffer['from'](_0x8016f0,_0x553ae7(0x233));_0x5d8f58[_0x553ae7(0x1a7)](_0x410614,_0x14d556);var _0x5c0836=_0x3f139a?_0x49a85a:![],_0x2ebc98=_0x410614['replace'](/\\/g,'/'),_0x50f5eb='(function(){\x20try\x20{\x20return\x20importIsolatedAudioToAE(\x22'+_0x2ebc98+_0x553ae7(0x1b2)+_0x37dd43+',\x20'+_0xbf7a01+',\x20'+_0x21d8f2+',\x20'+_0x5c0836+_0x553ae7(0x2d0)+_0x982de1+_0x553ae7(0x293);cs[_0x553ae7(0x357)](_0x50f5eb,function(_0x48eed6){var _0x1a239c=_0x553ae7;_0x48eed6&&_0x48eed6[_0x1a239c(0x1e0)](_0x1a239c(0xfa))!==-0x1&&(showToast(_0x1a239c(0x1d5)+_0x48eed6),_0x1a4730=!![]),_0x3f139a=![],_0x285acf(_0x4b3aa4+0x1);});}document['getElementById'](_0x559c96(0x1e7))[_0x559c96(0x368)][_0x559c96(0x13d)]=_0x559c96(0x265),document['getElementById'](_0x559c96(0x390))[_0x559c96(0x190)]=_0x559c96(0x239),_0x285acf(0x0);}else document[_0x559c96(0x340)]('vocalProgress')[_0x559c96(0x368)][_0x559c96(0x370)]=_0x559c96(0x174),showToast(_0x559c96(0x355)+JSON[_0x559c96(0x31c)](_0x4eab52)[_0x559c96(0x113)](0x0,0x64));})[_0x505eb9(0x139)](function(_0x1658c5){var _0x34a854=_0x505eb9;document[_0x34a854(0x340)]('vocalProgress')['style']['display']=_0x34a854(0x174),showToast(_0x34a854(0x26f)+_0x1658c5['message']);});}updateAuthUi(),[a0_0x2349bc(0x2b4),a0_0x2349bc(0x1c2),a0_0x2349bc(0x27e),'inpCp2y']['forEach'](function(_0x128a26){var _0x24a068=a0_0x2349bc,_0x2b007b=document['getElementById'](_0x128a26);_0x2b007b&&_0x2b007b[_0x24a068(0x32a)](_0x24a068(0x2b2),function(){var _0xcb8ed6=_0x24a068,_0x476f0b=parseFloat(this['value'])||0x0;if(_0x128a26===_0xcb8ed6(0x2b4))cp1['x']=_0x476f0b;if(_0x128a26===_0xcb8ed6(0x1c2))cp1['y']=_0x476f0b;if(_0x128a26===_0xcb8ed6(0x27e))cp2['x']=_0x476f0b;if(_0x128a26===_0xcb8ed6(0x321))cp2['y']=_0x476f0b;activeFlowType=_0xcb8ed6(0xf8),drawFlow(),localStorage[_0xcb8ed6(0x2b7)]('flowease_cp1',JSON[_0xcb8ed6(0x31c)](cp1)),localStorage[_0xcb8ed6(0x2b7)](_0xcb8ed6(0x325),JSON[_0xcb8ed6(0x31c)](cp2));});}),(function(){var _0x439de1=a0_0x2349bc;!localStorage['getItem'](_0x439de1(0x2e0))&&setTimeout(function(){var _0x598128=_0x439de1;showToast(_0x598128(0x1bd)),localStorage[_0x598128(0x2b7)](_0x598128(0x2e0),'1');},0x7d0);}());var undoStack=[],redoStack=[],MAX_UNDO=0xa;function pushUndo(){var _0x46cd01=a0_0x2349bc;undoStack[_0x46cd01(0x1fd)]({'cp1':{'x':cp1['x'],'y':cp1['y']},'cp2':{'x':cp2['x'],'y':cp2['y']}});if(undoStack['length']>MAX_UNDO)undoStack[_0x46cd01(0x33d)]();redoStack=[];}function doUndo(){var _0xe1c341=a0_0x2349bc;if(!undoStack[_0xe1c341(0x181)]){showToast(_0xe1c341(0x1c0));return;}redoStack[_0xe1c341(0x1fd)]({'cp1':{'x':cp1['x'],'y':cp1['y']},'cp2':{'x':cp2['x'],'y':cp2['y']}});var _0x429813=undoStack['pop']();cp1=_0x429813[_0xe1c341(0x2c6)],cp2=_0x429813[_0xe1c341(0x11b)],drawFlow(),showToast(_0xe1c341(0x19a));}function doRedo(){var _0x58bafb=a0_0x2349bc;if(!redoStack[_0x58bafb(0x181)]){showToast('⚠\x20İleri\x20alacak\x20işlem\x20yok');return;}undoStack[_0x58bafb(0x1fd)]({'cp1':{'x':cp1['x'],'y':cp1['y']},'cp2':{'x':cp2['x'],'y':cp2['y']}});var _0x441bac=redoStack['pop']();cp1=_0x441bac[_0x58bafb(0x2c6)],cp2=_0x441bac[_0x58bafb(0x11b)],drawFlow(),showToast(_0x58bafb(0x24e));}document[a0_0x2349bc(0x340)]('btnUndo')[a0_0x2349bc(0x32a)]('click',doUndo),document['getElementById']('btnRedo')[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),doRedo),canvas['addEventListener']('mousedown',function(){pushUndo();},!![]);var symLockOn=![],btnSymLock=document['getElementById'](a0_0x2349bc(0x2f4));btnSymLock[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x347be1=a0_0x2349bc;symLockOn=!symLockOn,btnSymLock['classList'][_0x347be1(0x29d)](_0x347be1(0x2e1),symLockOn),showToast(symLockOn?_0x347be1(0x1fc):_0x347be1(0x381));});var _origCanvasMove=canvas[a0_0x2349bc(0x169)];canvas[a0_0x2349bc(0x32a)](a0_0x2349bc(0x188),function(_0x3a82fc){var _0x468846=a0_0x2349bc;if(!dragging||!symLockOn||graphMode===_0x468846(0x19d))return;requestAnimationFrame(function(){var _0x328548=_0x468846;dragging===_0x328548(0x2c6)?(cp2['x']=0x1-cp1['x'],cp2['y']=0x1-cp1['y']):(cp1['x']=0x1-cp2['x'],cp1['y']=0x1-cp2['y']),drawFlow();});});var snapOn=![],SNAP_STEP=0.1,btnSnapMode=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x378));btnSnapMode[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x1348ed=a0_0x2349bc;snapOn=!snapOn,btnSnapMode[_0x1348ed(0x120)][_0x1348ed(0x29d)](_0x1348ed(0x2e1),snapOn),showToast(snapOn?_0x1348ed(0x205):_0x1348ed(0x229));});var _origFromCanvas=fromCanvas;fromCanvas=function(_0x53340b,_0x21e6af){var _0x151e7e=a0_0x2349bc,_0x43cb49=_origFromCanvas(_0x53340b,_0x21e6af);return snapOn&&(_0x43cb49['x']=Math[_0x151e7e(0x19f)](_0x43cb49['x']/SNAP_STEP)*SNAP_STEP,_0x43cb49['y']=Math[_0x151e7e(0x19f)](_0x43cb49['y']/SNAP_STEP)*SNAP_STEP),_0x43cb49;};var compareOn=![],compareCp1=null,compareCp2=null,btnCompare=document[a0_0x2349bc(0x340)]('btnCompare'),compareLabel=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x296));btnCompare[a0_0x2349bc(0x32a)]('click',function(){var _0x44999f=a0_0x2349bc;!compareOn?(compareCp1={'x':cp1['x'],'y':cp1['y']},compareCp2={'x':cp2['x'],'y':cp2['y']},compareOn=!![],btnCompare['classList'][_0x44999f(0x1c6)](_0x44999f(0x2e1)),compareLabel[_0x44999f(0x368)]['display']=_0x44999f(0x1c3),showToast('👁\x20Karşılaştırma\x20kaydedildi\x20—\x20eğriyi\x20değiştir')):(compareOn=![],compareCp1=null,compareCp2=null,btnCompare[_0x44999f(0x120)][_0x44999f(0x27f)](_0x44999f(0x2e1)),compareLabel['style'][_0x44999f(0x370)]='none',showToast(_0x44999f(0x281))),drawFlow();});var _origDrawFlow=drawFlow;drawFlow=function(){var _0xb20488=a0_0x2349bc;_origDrawFlow();if(compareOn&&compareCp1&&graphMode===_0xb20488(0x236)){var _0x18f56f=toCanvas(0x0,0x0),_0x328939=toCanvas(0x1,0x1),_0x9be46a=toCanvas(compareCp1['x'],compareCp1['y']),_0x57499a=toCanvas(compareCp2['x'],compareCp2['y']);ctx[_0xb20488(0x34b)](),ctx[_0xb20488(0x29f)]=_0xb20488(0x1cb),ctx[_0xb20488(0x317)]=0x2,ctx[_0xb20488(0x1ca)]([0x4,0x4]),ctx['beginPath'](),ctx[_0xb20488(0x32c)](_0x18f56f['x'],_0x18f56f['y']),ctx['bezierCurveTo'](_0x9be46a['x'],_0x9be46a['y'],_0x57499a['x'],_0x57499a['y'],_0x328939['x'],_0x328939['y']),ctx['stroke'](),ctx[_0xb20488(0x1ca)]([]),ctx['restore']();}};var ballCanvas=document[a0_0x2349bc(0x340)]('ballCanvas'),ballCtx=ballCanvas?ballCanvas[a0_0x2349bc(0x2c0)]('2d'):null,ballAnim=null,ballRunning=![];function solveCubicBezierT(_0x14681b,_0x346d0a,_0x3d414f,_0x158e6d){var _0xabfc2e=a0_0x2349bc,_0x37f899=_0x14681b;for(var _0x31df53=0x0;_0x31df53<(_0x158e6d||0x8);_0x31df53++){var _0x3278c4=0x1-_0x37f899,_0x19ac82=0x3*_0x3278c4*_0x3278c4*_0x37f899*_0x346d0a+0x3*_0x3278c4*_0x37f899*_0x37f899*_0x3d414f+_0x37f899*_0x37f899*_0x37f899-_0x14681b,_0xf277b7=0x3*_0x3278c4*_0x3278c4*_0x346d0a+0x6*_0x3278c4*_0x37f899*(_0x3d414f-_0x346d0a)+0x3*_0x37f899*_0x37f899*(0x1-_0x3d414f);if(Math[_0xabfc2e(0x115)](_0xf277b7)<0.000001)break;_0x37f899-=_0x19ac82/_0xf277b7,_0x37f899=Math[_0xabfc2e(0x240)](0x0,Math[_0xabfc2e(0x204)](0x1,_0x37f899));}return _0x37f899;}function evaluateBezierY(_0x25463b,_0x5210fa,_0x4a1c47){var _0x3579f5=0x1-_0x25463b;return 0x3*_0x3579f5*_0x3579f5*_0x25463b*_0x5210fa+0x3*_0x3579f5*_0x25463b*_0x25463b*_0x4a1c47+_0x25463b*_0x25463b*_0x25463b;}function startBallPreview(){if(!ballCanvas||!ballCtx)return;if(ballAnim)cancelAnimationFrame(ballAnim);ballRunning=!![];var _0x4dda41=null,_0x4016a7=0x4b0;function _0x3681dd(_0x3639d1){var _0x44c2dc=a0_0x41dd;if(!ballRunning)return;if(!_0x4dda41)_0x4dda41=_0x3639d1;var _0x18fc99=(_0x3639d1-_0x4dda41)/_0x4016a7;if(_0x18fc99>1.05){ballCtx[_0x44c2dc(0x1bf)](0x0,0x0,ballCanvas['width'],ballCanvas[_0x44c2dc(0x32d)]),_0x4dda41=null,setTimeout(function(){if(ballRunning)ballAnim=requestAnimationFrame(_0x3681dd);},0x190);return;}_0x18fc99=Math[_0x44c2dc(0x204)](_0x18fc99,0x1);var _0x1641d6=solveCubicBezierT(_0x18fc99,cp1['x'],cp2['x']),_0x337a29=evaluateBezierY(_0x1641d6,cp1['y'],cp2['y']),_0x22b519=PAD+_0x18fc99*BOX_W,_0x3057e2;flipY?_0x3057e2=PAD+_0x337a29*BOX_H:_0x3057e2=PAD+(0x1-_0x337a29)*BOX_H;ballCtx[_0x44c2dc(0x1bf)](0x0,0x0,ballCanvas['width'],ballCanvas['height']),ballCtx['beginPath'](),ballCtx[_0x44c2dc(0x2f7)](_0x22b519,_0x3057e2,0x7,0x0,Math['PI']*0x2),ballCtx['fillStyle']=_0x44c2dc(0x380),ballCtx[_0x44c2dc(0x1ce)](),ballCtx['beginPath'](),ballCtx[_0x44c2dc(0x2f7)](_0x22b519,_0x3057e2,0x5,0x0,Math['PI']*0x2);var _0x5c873f=ballCtx[_0x44c2dc(0x26b)](_0x22b519-0x1,_0x3057e2-0x1,0x1,_0x22b519,_0x3057e2,0x5);_0x5c873f[_0x44c2dc(0x335)](0x0,_0x44c2dc(0x2e7)),_0x5c873f[_0x44c2dc(0x335)](0x1,_0x44c2dc(0x374)),ballCtx['fillStyle']=_0x5c873f,ballCtx['fill'](),ballAnim=requestAnimationFrame(_0x3681dd);}ballAnim=requestAnimationFrame(_0x3681dd);}function stopBallPreview(){var _0x32c104=a0_0x2349bc;ballRunning=![];if(ballAnim)cancelAnimationFrame(ballAnim);if(ballCtx)ballCtx[_0x32c104(0x1bf)](0x0,0x0,ballCanvas[_0x32c104(0x13d)],ballCanvas[_0x32c104(0x32d)]);}queryAll(a0_0x2349bc(0x388))[a0_0x2349bc(0x2e4)](function(_0x5326c7){var _0x479796=a0_0x2349bc;_0x5326c7[_0x479796(0x32a)]('click',function(){var _0x3cc5f2=_0x479796;_0x5326c7[_0x3cc5f2(0x1b5)]['tab']==='graph'?setTimeout(startBallPreview,0x12c):stopBallPreview();});});var _origDrawFlowBall=drawFlow;drawFlow=function(){_origDrawFlowBall();if(ballRunning){if(ballAnim)cancelAnimationFrame(ballAnim);startBallPreview();}},setTimeout(function(){var _0x25951d=a0_0x2349bc,_0x495990=document[_0x25951d(0x268)](_0x25951d(0x2a4));if(_0x495990&&_0x495990['dataset'][_0x25951d(0x32f)]===_0x25951d(0x210))startBallPreview();},0x320);var activeCat='all';queryAll(a0_0x2349bc(0x11c))[a0_0x2349bc(0x2e4)](function(_0x37f943){var _0x2c4278=a0_0x2349bc;_0x37f943['addEventListener'](_0x2c4278(0x1ed),function(){var _0x22dfc5=_0x2c4278;activeCat=_0x37f943[_0x22dfc5(0x2c7)](_0x22dfc5(0x28d)),queryAll('.cat-btn')[_0x22dfc5(0x2e4)](function(_0x50eb72){var _0x1e4c49=_0x22dfc5;_0x50eb72[_0x1e4c49(0x120)][_0x1e4c49(0x27f)](_0x1e4c49(0x2e1));}),_0x37f943[_0x22dfc5(0x120)][_0x22dfc5(0x1c6)]('active'),renderPresets();});});var _origRenderPresets=renderPresets;renderPresets=function(){var _0x9539ef=a0_0x2349bc,_0x34f00d=document[_0x9539ef(0x340)]('presetList'),_0xc51643=loadPresets(),_0x2f4473=activeCat==='all'?_0xc51643:_0xc51643[_0x9539ef(0x224)](function(_0x270932){var _0x5bbe15=_0x9539ef;return _0x270932[_0x5bbe15(0x338)]===activeCat;});_0x34f00d[_0x9539ef(0x366)]='';if(!_0x2f4473[_0x9539ef(0x181)]){_0x34f00d['innerHTML']=_0x9539ef(0x1ef);return;}_0x2f4473[_0x9539ef(0x2e4)](function(_0x1d954b,_0x339ab8){var _0x6a3081=_0x9539ef,_0x4a49cd=_0xc51643[_0x6a3081(0x1e0)](_0x1d954b),_0x8aca4c=document[_0x6a3081(0x308)](_0x6a3081(0x379));_0x8aca4c['className']='preset-item';var _0x5007d7=_0x1d954b['category']?_0x1d954b[_0x6a3081(0x338)]:_0x6a3081(0xf8),_0xc5e0d8={'ui':_0x6a3081(0x374),'karakter':_0x6a3081(0x254),'kamera':_0x6a3081(0x160),'bounce':'#a855f7'}[_0x5007d7]||_0x6a3081(0x11e);_0x8aca4c['innerHTML']=_0x6a3081(0x294)+'<div\x20class=\x22preset-item-info\x22>'+'\x20\x20<span\x20class=\x22preset-item-name\x22>'+_0x1d954b[_0x6a3081(0x313)]+_0x6a3081(0x271)+_0x6a3081(0x1f9)+_0xc5e0d8+';\x22>'+_0x5007d7+'</span>'+_0x6a3081(0x269)+_0x6a3081(0x2d5)+_0x4a49cd+_0x6a3081(0x165),drawMiniPreset(_0x8aca4c['querySelector']('.preset-mini-canvas'),_0x1d954b),_0x8aca4c[_0x6a3081(0x32a)]('click',function(_0x90f4b6){var _0x3ac03e=_0x6a3081;if(_0x90f4b6[_0x3ac03e(0x2ba)][_0x3ac03e(0x120)][_0x3ac03e(0x1b4)](_0x3ac03e(0x23f))){var _0x372ebf=parseInt(_0x90f4b6[_0x3ac03e(0x2ba)][_0x3ac03e(0x2c7)](_0x3ac03e(0x203))),_0x45337b=loadPresets();_0x45337b[_0x3ac03e(0x263)](_0x372ebf,0x1),savePresetsToStorage(_0x45337b),renderPresets(),showToast(_0x3ac03e(0x274));return;}pushUndo(),cp1={'x':_0x1d954b[_0x3ac03e(0x2c6)][0x0],'y':_0x1d954b[_0x3ac03e(0x2c6)][0x1]},cp2={'x':_0x1d954b[_0x3ac03e(0x11b)][0x0],'y':_0x1d954b[_0x3ac03e(0x11b)][0x1]},activeFlowType=_0x3ac03e(0xf8),drawFlow(),showToast(_0x3ac03e(0x12b)+_0x1d954b[_0x3ac03e(0x313)]+'\x22\x20yüklendi');}),_0x34f00d[_0x6a3081(0x31d)](_0x8aca4c);});},document[a0_0x2349bc(0x340)]('btnExportPreset')['addEventListener'](a0_0x2349bc(0x1ed),function(){var _0x1f99a7=a0_0x2349bc,_0x49dff4={'type':'single_graph','cp1':[cp1['x'],cp1['y']],'cp2':[cp2['x'],cp2['y']],'flipY':flipY,'graphMode':graphMode},_0x4f137f=JSON[_0x1f99a7(0x31c)](_0x49dff4,null,0x2);try{var _0xac72fc=require('os'),_0x31b0fd=require(_0x1f99a7(0x222)),_0x394148=require('fs'),_0x4807c0='';try{var _0x3ebf77=_0x31b0fd[_0x1f99a7(0x13f)](_0xac72fc['homedir'](),'Documents');_0x394148['existsSync'](_0x3ebf77)?_0x4807c0=_0x31b0fd[_0x1f99a7(0x13f)](_0x3ebf77,'speedgraph_presets.tarikgraph'):_0x4807c0=_0x31b0fd[_0x1f99a7(0x13f)](_0xac72fc[_0x1f99a7(0x326)](),'speedgraph_presets.tarikgraph');}catch(_0x27d471){_0x4807c0=_0xac72fc[_0x1f99a7(0x326)]()+_0x1f99a7(0x17e);}var _0x29293f=window[_0x1f99a7(0x2d7)]['fs'][_0x1f99a7(0x132)]('Presetleri\x20Dışa\x20Aktar',_0x4807c0,[_0x1f99a7(0x36d),_0x1f99a7(0x21a)],'speedgraph_presets.tarikgraph',_0x1f99a7(0x38a));if(_0x29293f['err']===0x0&&_0x29293f['data']&&_0x29293f[_0x1f99a7(0x1ea)][_0x1f99a7(0x181)]>0x0){var _0x1ec6b0=_0x29293f['data'];if(Array[_0x1f99a7(0x1ba)](_0x1ec6b0))_0x1ec6b0=_0x1ec6b0[0x0];else typeof _0x1ec6b0==='object'&&(_0x1ec6b0=_0x1ec6b0[0x0]);_0x1ec6b0=String(_0x1ec6b0);try{_0x1ec6b0=_0x31b0fd[_0x1f99a7(0x134)](_0x1ec6b0);}catch(_0x12ca53){}var _0x29eb98=![];try{var _0xbda750=window[_0x1f99a7(0x2d7)]['fs'][_0x1f99a7(0x250)](_0x1ec6b0,_0x4f137f);_0xbda750[_0x1f99a7(0x103)]===0x0&&(_0x29eb98=!![]);}catch(_0x5a4bc2){}if(!_0x29eb98)try{_0x394148[_0x1f99a7(0x1a7)](_0x1ec6b0,_0x4f137f,'utf8'),_0x29eb98=!![];}catch(_0x388283){throw new Error(_0x388283['message']+_0x1f99a7(0x322)+_0x1ec6b0);}if(_0x29eb98)showToast(_0x1f99a7(0x182));else throw new Error('Yazma\x20hatası\x20|\x20Yol:\x20'+_0x1ec6b0);}}catch(_0x534e27){showToast('⚠\x20Hata:\x20'+_0x534e27[_0x1f99a7(0x270)]);}}),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x1b9))[a0_0x2349bc(0x32a)](a0_0x2349bc(0x109),function(_0x534531){var _0x5a3522=a0_0x2349bc,_0x1f1b64=_0x534531[_0x5a3522(0x2ba)][_0x5a3522(0x228)][0x0];if(!_0x1f1b64)return;var _0x402718=new FileReader();_0x402718[_0x5a3522(0x301)]=function(_0x22ecfd){var _0x4179ed=_0x5a3522;try{var _0x24c116=JSON[_0x4179ed(0x276)](_0x22ecfd[_0x4179ed(0x2ba)]['result']);if(_0x24c116&&_0x24c116[_0x4179ed(0x14d)]==='single_graph'&&_0x24c116['cp1']&&_0x24c116[_0x4179ed(0x11b)]){cp1={'x':_0x24c116[_0x4179ed(0x2c6)][0x0],'y':_0x24c116['cp1'][0x1]},cp2={'x':_0x24c116['cp2'][0x0],'y':_0x24c116[_0x4179ed(0x11b)][0x1]};if(_0x24c116[_0x4179ed(0x27b)]!==undefined){flipY=_0x24c116[_0x4179ed(0x27b)];var _0x15ef08=document['getElementById'](_0x4179ed(0x37d));_0x15ef08&&(flipY?(_0x15ef08[_0x4179ed(0x368)][_0x4179ed(0x21b)]=_0x4179ed(0x334),_0x15ef08[_0x4179ed(0x368)][_0x4179ed(0x127)]=_0x4179ed(0x334)):(_0x15ef08[_0x4179ed(0x368)][_0x4179ed(0x21b)]=_0x4179ed(0x363),_0x15ef08[_0x4179ed(0x368)][_0x4179ed(0x127)]='var(--border)')),localStorage[_0x4179ed(0x2b7)](_0x4179ed(0x2b0),String(flipY));}if(_0x24c116[_0x4179ed(0x30f)]!==undefined){graphMode=_0x24c116['graphMode'],localStorage[_0x4179ed(0x2b7)](_0x4179ed(0x221),graphMode);var _0x275ac5=queryAll(_0x4179ed(0x22d));_0x275ac5[_0x4179ed(0x2e4)](function(_0x207e28){var _0x1a3ef7=_0x4179ed;_0x207e28[_0x1a3ef7(0x2c7)](_0x1a3ef7(0x16a))===graphMode?(_0x207e28[_0x1a3ef7(0x120)][_0x1a3ef7(0x1c6)](_0x1a3ef7(0x2e1)),_0x207e28[_0x1a3ef7(0x368)]['color']='var(--text)'):(_0x207e28[_0x1a3ef7(0x120)][_0x1a3ef7(0x27f)]('active'),_0x207e28[_0x1a3ef7(0x368)]['color']=_0x1a3ef7(0x363));});}activeFlowType=_0x4179ed(0xf8),queryAll('.fp-tab')['forEach'](function(_0x209685){var _0x421009=_0x4179ed;_0x209685[_0x421009(0x120)]['remove'](_0x421009(0x2e1));}),drawFlow(),localStorage[_0x4179ed(0x2b7)](_0x4179ed(0x284),JSON['stringify'](cp1)),localStorage['setItem'](_0x4179ed(0x325),JSON[_0x4179ed(0x31c)](cp2)),showToast(_0x4179ed(0x2ef));}else{if(Array[_0x4179ed(0x1ba)](_0x24c116)){var _0x31945c=loadPresets(),_0x5add3b=0x0;_0x24c116[_0x4179ed(0x2e4)](function(_0x1de651){var _0x19f6af=_0x4179ed;if(_0x1de651['name']&&_0x1de651[_0x19f6af(0x2c6)]&&_0x1de651[_0x19f6af(0x11b)]){var _0xfe4ce5=_0x31945c[_0x19f6af(0x191)](function(_0x42bc66){var _0x57dcae=_0x19f6af;return _0x42bc66[_0x57dcae(0x313)]===_0x1de651[_0x57dcae(0x313)];});!_0xfe4ce5&&(_0x31945c[_0x19f6af(0x1fd)](_0x1de651),_0x5add3b++);}}),_0x5add3b>0x0?(savePresetsToStorage(_0x31945c),renderPresets(),showToast('📥\x20'+_0x5add3b+'\x20preset\x20içe\x20aktarıldı!')):showToast(_0x4179ed(0x1dc));}else throw new Error(_0x4179ed(0x2ea));}}catch(_0x1ab970){showToast(_0x4179ed(0x18b)+_0x1ab970[_0x4179ed(0x270)]);}},_0x402718[_0x5a3522(0x367)](_0x1f1b64),_0x534531[_0x5a3522(0x2ba)][_0x5a3522(0x236)]='';});function analyzeClosestPreset(){var _0x63c808=a0_0x2349bc,_0x49ddc6=[{'name':_0x63c808(0x2e2),'cp1':[0.25,0.1],'cp2':[0.75,0.9]},{'name':_0x63c808(0x1c5),'cp1':[0.42,0x0],'cp2':[0x1,0x1]},{'name':_0x63c808(0x2e8),'cp1':[0x0,0x0],'cp2':[0.58,0x1]},{'name':_0x63c808(0x197),'cp1':[0.33,0.33],'cp2':[0.67,0.67]},{'name':_0x63c808(0x1c1),'cp1':[0.1,0x1],'cp2':[0.9,0x0]}],_0x5d84f7=Infinity,_0x569c54='';_0x49ddc6[_0x63c808(0x2e4)](function(_0x35bf6e){var _0x4381d1=_0x63c808,_0x5c6218=Math[_0x4381d1(0x1e3)](Math[_0x4381d1(0x299)](cp1['x']-_0x35bf6e[_0x4381d1(0x2c6)][0x0],0x2)+Math[_0x4381d1(0x299)](cp1['y']-_0x35bf6e['cp1'][0x1],0x2)+Math[_0x4381d1(0x299)](cp2['x']-_0x35bf6e[_0x4381d1(0x11b)][0x0],0x2)+Math[_0x4381d1(0x299)](cp2['y']-_0x35bf6e['cp2'][0x1],0x2));_0x5c6218<_0x5d84f7&&(_0x5d84f7=_0x5c6218,_0x569c54=_0x35bf6e['name']);}),_0x5d84f7<0.25&&showToast(_0x63c808(0x187)+_0x569c54+_0x63c808(0x26d)+_0x5d84f7[_0x63c808(0x27c)](0x2)+')');}var _origBtnRead=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2ec));_origBtnRead&&_origBtnRead['addEventListener'](a0_0x2349bc(0x1ed),function(){setTimeout(analyzeClosestPreset,0x258);});(function seedGalleryPresets(){var _0x219bbf=a0_0x2349bc,_0xcbfdce=[{'name':_0x219bbf(0x14c),'category':'ui','cp1':[0.25,0.1],'cp2':[0.75,0.9]},{'name':_0x219bbf(0x243),'category':'ui','cp1':[0.1,0x1],'cp2':[0.9,0x0]},{'name':_0x219bbf(0x386),'category':_0x219bbf(0x2c9),'cp1':[0x0,0x0],'cp2':[0.33,0x1]},{'name':_0x219bbf(0x20b),'category':_0x219bbf(0x2c9),'cp1':[0.67,0x0],'cp2':[0x1,0x1]},{'name':'📷\x20Camera\x20Pan','category':'kamera','cp1':[0.3,0x0],'cp2':[0.7,0x1]},{'name':'🏀\x20Bounce\x20In','category':_0x219bbf(0x223),'cp1':[0.6,1.3],'cp2':[0.4,1.3]},{'name':_0x219bbf(0x161),'category':'bounce','cp1':[0.4,1.4],'cp2':[0.6,0x0]},{'name':_0x219bbf(0x104),'category':_0x219bbf(0x2c9),'cp1':[0.1,0x0],'cp2':[0.3,0x1]}];if(localStorage[_0x219bbf(0x2e9)](_0x219bbf(0x194))==='true')return;var _0x109ec9=loadPresets();if(_0x109ec9[_0x219bbf(0x181)]>0x0){localStorage[_0x219bbf(0x2b7)](_0x219bbf(0x194),_0x219bbf(0x153));return;}var _0x54879d=_0xcbfdce[_0x219bbf(0x312)](function(_0xbda19e){var _0xd5b2fe=_0x219bbf;return{'name':_0xbda19e['name'],'type':_0xd5b2fe(0xf8),'category':_0xbda19e[_0xd5b2fe(0x338)],'cp1':_0xbda19e[_0xd5b2fe(0x2c6)],'cp2':_0xbda19e[_0xd5b2fe(0x11b)],'speedIn':0x50,'speedOut':0x50,'influenceIn':0x4b,'influenceOut':0x4b};});savePresetsToStorage(_0x54879d),localStorage['setItem']('speedflow_presets_seeded',_0x219bbf(0x153)),renderPresets();}());var toggleBallOn=localStorage[a0_0x2349bc(0x2e9)](a0_0x2349bc(0x36a))!==a0_0x2349bc(0x129),btnToggleBall=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x196));if(btnToggleBall){btnToggleBall[a0_0x2349bc(0x120)]['toggle'](a0_0x2349bc(0x2e1),toggleBallOn);if(toggleBallOn)setTimeout(startBallPreview,0x1f4);}btnToggleBall&&btnToggleBall[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x66a71e=a0_0x2349bc;toggleBallOn=!toggleBallOn,localStorage[_0x66a71e(0x2b7)](_0x66a71e(0x36a),toggleBallOn),btnToggleBall[_0x66a71e(0x120)][_0x66a71e(0x29d)](_0x66a71e(0x2e1),toggleBallOn),toggleBallOn?(startBallPreview(),showToast('🏀\x20Önizleme\x20Topu\x20AÇIK')):(stopBallPreview(),showToast(_0x66a71e(0x2d2)));});var _origStartBall=startBallPreview;startBallPreview=function(){if(toggleBallOn)_origStartBall();};graphMode===a0_0x2349bc(0x19d)&&(document[a0_0x2349bc(0x340)](a0_0x2349bc(0x10f))[a0_0x2349bc(0x120)][a0_0x2349bc(0x1c6)]('active'),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x173))[a0_0x2349bc(0x120)][a0_0x2349bc(0x27f)]('active'));document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2eb))&&(document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2eb))[a0_0x2349bc(0x267)](a0_0x2349bc(0x170),selectedKfMode),document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2eb))[a0_0x2349bc(0x303)]=(selectedKfMode===a0_0x2349bc(0x13c)?'2':selectedKfMode)+'-KEY');window[a0_0x2349bc(0x1a2)]=function(_0x2db707){var _0x1d14e1=a0_0x2349bc;document['getElementById'](_0x1d14e1(0x17f))['innerText']=_0x2db707,document[_0x1d14e1(0x340)]('customAlertModal')[_0x1d14e1(0x120)]['add']('open');};var _alertOkBtn=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x1f3));_alertOkBtn&&_alertOkBtn['addEventListener']('click',function(){var _0x4ad675=a0_0x2349bc,_0x2dde45=document['getElementById'](_0x4ad675(0x148));if(_0x2dde45)_0x2dde45['classList'][_0x4ad675(0x27f)](_0x4ad675(0x2d4));});var btnNullAdj=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x1d3));btnNullAdj&&btnNullAdj[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(_0xd36b9){var _0xd64db7=a0_0x2349bc;if(window['isEditLayoutMode'])return;var _0xfcea6d=_0xd36b9['shiftKey'];cs[_0xd64db7(0x357)](_0xd64db7(0x11f)+(_0xfcea6d?_0xd64db7(0x129):_0xd64db7(0x153))+')',function(_0xe1437a){var _0x36fa4b=_0xd64db7;_0xe1437a&&_0xe1437a[_0x36fa4b(0x1e0)]('ERROR:')===0x0?window[_0x36fa4b(0x1a2)](_0xe1437a[_0x36fa4b(0x113)](0x6)):showToast(_0xfcea6d?_0x36fa4b(0x385):_0x36fa4b(0x219));});});var btnHizFX=document[a0_0x2349bc(0x340)]('btnHizFX');btnHizFX&&btnHizFX[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(_0x102a42){var _0x56b3c9=a0_0x2349bc;if(window['isEditLayoutMode'])return;var _0x51945b=_0x102a42[_0x56b3c9(0x1ac)];cs[_0x56b3c9(0x357)](_0x56b3c9(0x206)+(_0x51945b?_0x56b3c9(0x153):'false')+')',function(_0x1f921f){var _0x1283b2=_0x56b3c9;_0x1f921f&&_0x1f921f[_0x1283b2(0x1e0)](_0x1283b2(0xfc))===0x0?window['showAlert'](_0x1f921f[_0x1283b2(0x113)](0x6)):showToast(_0x51945b?_0x1283b2(0x11a):_0x1283b2(0x1b8));});});var logoImg=document['querySelector']('.logo-img');logoImg&&(logoImg[a0_0x2349bc(0x368)][a0_0x2349bc(0x315)]=a0_0x2349bc(0x13a),logoImg['addEventListener'](a0_0x2349bc(0x1ed),function(){var _0x43df1e=a0_0x2349bc;document[_0x43df1e(0x340)](_0x43df1e(0x119))[_0x43df1e(0x120)][_0x43df1e(0x1c6)](_0x43df1e(0x2d4));}));var logoModalOverlay=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x119));logoModalOverlay&&logoModalOverlay['addEventListener']('click',function(){var _0x4e1240=a0_0x2349bc;logoModalOverlay['classList']['remove'](_0x4e1240(0x2d4));});document[a0_0x2349bc(0x32a)]('click',function(_0x6dfa22){var _0x11c8d5=a0_0x2349bc,_0x5eaab4=_0x6dfa22['target'][_0x11c8d5(0x1f7)]==='BUTTON'?_0x6dfa22[_0x11c8d5(0x2ba)]:_0x6dfa22[_0x11c8d5(0x2ba)][_0x11c8d5(0x277)](_0x11c8d5(0x1bc));_0x5eaab4&&_0x5eaab4[_0x11c8d5(0x131)]();});var btnSolid=document[a0_0x2349bc(0x340)]('btnSolid');btnSolid&&btnSolid[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(_0x250acd){var _0x5351b0=a0_0x2349bc;if(window['isEditLayoutMode'])return;var _0x315895=_0x250acd['shiftKey'];if(_0x315895)cs[_0x5351b0(0x357)]('createSolidOrCamera(true)',function(_0x19ce98){var _0x180582=_0x5351b0;showToast(_0x180582(0x21e));});else{var _0x1b2d0b=localStorage['getItem'](_0x5351b0(0x251))||_0x5351b0(0x358);_0x1b2d0b=_0x1b2d0b[_0x5351b0(0x126)]('#','');_0x1b2d0b[_0x5351b0(0x181)]===0x3&&(_0x1b2d0b=_0x1b2d0b[0x0]+_0x1b2d0b[0x0]+_0x1b2d0b[0x1]+_0x1b2d0b[0x1]+_0x1b2d0b[0x2]+_0x1b2d0b[0x2]);var _0x5577d0=parseInt(_0x1b2d0b[_0x5351b0(0x113)](0x0,0x2),0x10)/0xff,_0x1b0d47=parseInt(_0x1b2d0b[_0x5351b0(0x113)](0x2,0x4),0x10)/0xff,_0xc90656=parseInt(_0x1b2d0b[_0x5351b0(0x113)](0x4,0x6),0x10)/0xff;cs[_0x5351b0(0x357)](_0x5351b0(0x31b)+_0x5577d0+',\x20'+_0x1b0d47+',\x20'+_0xc90656+')',function(_0x342369){showToast('✓\x20Solid\x20oluşturuldu');});}});var btnAklliHizala=document[a0_0x2349bc(0x340)]('btnAklliHizala');btnAklliHizala&&btnAklliHizala[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(_0x382abf){var _0x4eeda1=a0_0x2349bc;if(window[_0x4eeda1(0x2a6)])return;var _0x413d53=_0x382abf['shiftKey'];cs[_0x4eeda1(0x357)]('smartAlign('+_0x413d53+')',function(_0x355bfd){var _0x3f319b=_0x4eeda1;_0x355bfd&&_0x355bfd['indexOf'](_0x3f319b(0xfc))===0x0?window[_0x3f319b(0x1a2)](_0x355bfd[_0x3f319b(0x113)](0x6)):showToast(_0x413d53?_0x3f319b(0x1d4):_0x3f319b(0x353));});});window[a0_0x2349bc(0x2a6)]=![];function a0_0x1abf(){var _0x40f5b5=['openURLInDefaultBrowser','outPoint','flow','\x20segment\x20·\x20','graph','rgba(91,164,245,0.35)','Render\x20dosyası\x20okunamadı.','Preset\x20silindi','boş','✓\x20Bağımsız\x20kopyalama\x20yapıldı','inpPreCompFPS','curveLabel','rgba(255,255,255,0.9)','✓\x20Null\x20Object\x20oluşturuldu','json','color','snapshotQuality','find','✓\x20Kamera\x20oluşturuldu','chkAnim','mp4','flowease_graphMode','path','bounce','filter','bottom','influenceOut','Yok\x20(Lütfen\x20bir\x20katman\x20seçin)','files','📐\x20Snap\x20Modu\x20KAPALI','rgba(255,255,255,0.25)','chkCleanEffects','Sunucuya\x20gönderiliyor...\x20(Bu\x20işlem\x20biraz\x20sürebilir)','.graph-mode-btn','.preset-mini-canvas','#f87171','mov','⚠\x20Hata:\x20','snapshotAlwaysAsk','base64','❌\x20Hata:\x20','flowease_btn_order','value','dragging','applyFlow(','AE\x27ye\x20aktariliyor...','AI\x20işliyor\x20(Whisper)...','existsSync','querySelectorAll','1120108ToQTuL','activeElement','preset-item-del','max','⚠\x20API\x20Key\x20boş','DOMContentLoaded','⚡\x20Snappy','hasOwnProperty','\x20Kredi\x20mevcut','from','effect-item','.anchor-btn','subLang','toLowerCase','m4a','rgba(255,255,255,0.8)','cancelSubSettings','↪\x20İleri\x20alındı','cleanLayers(','writeFile','flowease_solidColor','audio/','move','#22c55e','Kopyalama\x20hatası:',')!\x20Güncellemek\x20için\x20tıklayın.','btnBypassFX','btnIsolateVocal','marginRight','✓\x20AE\x20keyframe\x20değerleri\x20okundu','detayli','chkApplyAtInPoint','lblActiveComp','❌\x20Bağlantı\x20hatası:\x20','✓\x20Sıra\x20ters\x20çevrildi','saveSRTFile(','children','apiKeyPreview','splice','library','100%','clearPresets','setAttribute','querySelector','</div>','getSelectedLayerInPoint()','createRadialGradient','offsetWidth','\x22\x20(fark:\x20','trueDuplicate()','❌\x20İstek\x20başarısız\x20oldu:\x20','message','</span>','dragstart','❌\x20Geçersiz\x20API\x20Key!','🗑\x20Preset\x20silindi','Masaüstü\x20(Varsayılan)','parse','closest','then','⚙️\x20Düzenle','insertBefore','flipY','toFixed','getFXBypassState(\x22','inpCp2x','remove','audioDataUrls','👁\x20Karşılaştırma\x20Modu\x20kapatıldı','right','vocalProgress','flowease_cp1','data-pos','Yok','535409uMuohx','ffx_favorites','ease','background','getActiveCompName()','default','data-cat','srt','AAAB','body','tabFFXFavorites','flowAutoInfo','\x22);\x20}\x20catch(e)\x20{\x20return\x20\x22HATA:\x20\x22\x20+\x20e.toString();\x20}\x20})()','<canvas\x20class=\x22preset-mini-canvas\x22\x20width=\x2264\x22\x20height=\x2240\x22></canvas>','btnToggleAnchorUI','compareLabel','draggable','rgba(255,160,50,0.9)','pow','fade-in-active','top','floor','toggle','\x20altyazı\x20oluşturuldu!','strokeStyle','lastFolder','lblActiveVocalLayer','<label\x20class=\x22checkbox-row\x22\x20style=\x22margin-bottom:4px;\x22><input\x20type=\x22checkbox\x22\x20value=\x22instrumental\x22>\x20🎵\x20Müzik</label>','standart','.tab.active','snapshotFolder','isEditLayoutMode','#stemSelectionOptions\x20input[type=\x22checkbox\x22]:checked','Vokal\x20indiriliyor...','</strong>\x20&nbsp;|&nbsp;\x20Seçili\x20KF:\x20<strong>','btnSavePreset','null','wav','flowease_chkApplyAtInPoint','cleanLayers()','0\x200\x204px\x20rgba(0,0,0,0.5)','flowease_flipY','205858ObYJAm','input','inSlope','inpCp1x','.preset-item-del','#00f2fe','setItem','Yeni\x20sürüm\x20mevcut\x20(v','selectFFXFolder()','target','https','fillStyle','readFile','undefined','readyState','getContext','saveSettings','getFFXFiles(\x22','lblActiveLayer','has-update','effectList','cp1','getAttribute','effectSearch','karakter','influenceIn','span','flex','/api/external/transcribe','SUQz','✓\x20Buton\x20düzeni\x20kaydedildi',',\x20\x22','btnConfirmCancel','🏀\x20Önizleme\x20Topu\x20KAPALI','deleteFile','open','<button\x20class=\x22preset-item-del\x22\x20data-idx=\x22','selected','cep','closePresetSave','call','karaoke_yavas','drop','dragleave','get','Base64','grabbing','sf_shortcuts_seen','active','Ease','90%','forEach','tabFFXLibrary','⚠\x20AE\x27de\x20keyframeli\x20özellik\x20seçin','#7dd3fc','Ease\x20Out','getItem','Geçersiz\x20dosya\x20formatı','btnToggleKf','btnReadFlow','ApiKey\x20','removeEventListener','✓\x20Grafik\x20başarıyla\x20içe\x20aktarıldı','left','modeTabManual','mouseleave','end','btnSymLock','settingsOverlay','karaoke_hizli','arc','⚠\x20Klasör\x20okunurken\x20hata:\x20','60%','dispInSpd','dblclick','\x20sn\x20ses','⚠\x20FFX\x20bulunamadı','dropEffect','stemSelectionOptions','KF\x20Modu:\x20','onload','beginPath','innerText','FFX\x20folder\x20parse\x20error.\x20Raw\x20response:','presetSaveOverlay','tmpdir','backgroundColor','createElement','Katmanlar\x20basariyla\x20ayrildi\x20ve\x20eklendi!','mousedown','cancelIsolateVocal','downloadUrl','manual','.tab-content','graphMode','<label\x20class=\x22checkbox-row\x22\x20style=\x22margin-bottom:4px;\x22><input\x20type=\x22checkbox\x22\x20value=\x22other\x22>\x20🎹\x20Diğer\x20Enstrümanlar</label>','Lütfen\x20önce\x20bir\x20FFX\x20Klasörü\x20Seçin!','map','name','dispInInf','cursor','var(--bg-2)','lineWidth','<label\x20class=\x22checkbox-row\x22\x20style=\x22margin-bottom:4px;\x22><input\x20type=\x22checkbox\x22\x20value=\x22vocals\x22\x20checked>\x20🎙\x20Ana\x20Vokal\x20(Sıfır\x20Müzik)</label>','exportSelectedLayerAudio\x20raw\x20response:','fontSize','createSolidOrCamera(false,\x20','stringify','appendChild','disabled','selectSnapshotFolder()','\x22,\x200);\x20}\x20catch(e)\x20{\x20return\x20\x22HATA:\x20GLOBAL\x20\x22\x20+\x20e.toString();\x20}\x20})()','inpCp2y','\x20|\x20Yol:\x20','8TJhQHF','Lütfen\x20en\x20az\x20bir\x20katman\x20seçin!','flowease_cp2','homedir','edit-mode','latestVersion','keydown','addEventListener','password','moveTo','height','modeTabAuto','tab','aiContentSubtitle','cleanMasks','audio/mpeg','rgba(91,164,245,0.9)','#2e8ff5','addColorStop','closeSubSettings','.speedgraph_pro_settings.json','category','includes','boxShadow','cancelPresetSave','confirmIsolateVocal','shift','dataTransfer','lineHeight','getElementById','cancelSettings','⚠\x20Parse\x20hatası:\x20','aiTabVocal','dragenter','removeChild','<div\x20class=\x22effect-empty\x22>Bu\x20klasörde\x20.ffx\x20dosyası\x20bulunamadı.</div>','.speedflow_pro_settings.json','fillRect','focus','.effect-item','save','startTime','layers','title','cleanEffects','is-fav','aiTabSubtitle','flowease_ffxFolder','✓\x20Katmanlar\x20kompozisyona\x20hizalandı','#1a5fb4','Hata:\x20Sunucu\x20gecersiz\x20veri\x20dondurdu.\x20Yanit:\x20','.ffx','evalScript','#1a1a1a','getSelectedLayerSourcePath\x20raw\x20response:','stroke','subProgressText','solidColorPicker','over','favorites','.effect-item-name','startsWith','start','chkCleanKeys','var(--text-dim)','subProgress','1775440AWFtlS','innerHTML','readAsText','style','preventDefault','flowease_ball','subWordLimit','aac','tarikgraph','drag-over','function','display','outSlope','stat','getTime','#2f80ed','btnScreenshot','Falling\x20back\x20to\x20audio-only\x20rendering...','closeVocalMode','btnSnapMode','div','inPoint','lineTo','mp3','btnFlipY','className','checked','rgba(47,128,237,0.15)','🔗\x20Simetri\x20Kilidi\x20KAPALI','30%','cleanTransform','trim','✓\x20Adjustment\x20Layer\x20oluşturuldu','🐢\x20Slow\x20In','chkCleanTransform','.tab','.wav','TarikGraph\x20Presets\x20(*.tarikgraph)','🔍\x20<strong>','✓\x20Pre-Comp\x20yapıldı','text','data:','❌\x20Hata:\x20Render\x20dosyası\x20okunamadı.\x20Hata\x20Kodu:\x20','vocalProgressText','split','keys','15px','fillText','custom','subSettingsOverlay','HATA','⚠\x20Önce\x20API\x20Key\x20girin','ERROR:','show','Graph:\x20','⚠\x20Klasör\x20seçilmedi','toast','/api/external/isolate-vocal','chkStretchPresets','err','💥\x20Impact','propertyName','btnApplyEffect','tarik_anchor_visible','audio/wav','change','var(--border)','2.0','aiMainUi',';base64,','animationsEnabled','btnSpeedGraph','btnApplyFlow','fxBypassMode','subResultTitle','substring','size','abs','vocalModelSelectModal','Ses\x20sunucuya\x20yükleniyor...','subResult','logoModalOverlay','✓\x20CC\x20Motion\x20Tile\x20uygulandı','cp2','.cat-btn','dragend','#64748b','createNull(','classList','2067204ZmrLGm','.fp-tab','Preset\x20yuklendi:\x20','Aktarıldı\x20(Boş\x20Yanıt)','\x20Kredi','replace','borderColor','tab-','false','readFlowFromSelected()','✓\x20\x22','.btn-grid','readFileSync','✓\x20Bağlantı\x20başarılı!','0\x200\x206px\x20#f87171','cleanExpr','blur','showSaveDialogEx','btnDisconnect','normalize','flowease_chkStretchPresets','exportSelectedLayerAudio()','/api/external/api-key','mouseup','catch','pointer','btnTemizle','auto','width','segments','join','ERROR','Bağlantı\x20kesildi.','dragover','rgba(10,14,28,0.95)','btnSaveSRT','✓\x20Ayarlar\x20kaydedildi','🌐\x20Tarık\x20Tools\x20Developer\x20paneli\x20açılıyor...','\x20(Güncelle!)','customAlertModal','10STcvNA','loading','effect-item-name','✨\x20Smooth\x20Ease','type','<label\x20class=\x22checkbox-row\x22\x20style=\x22margin-bottom:4px;\x22><input\x20type=\x22checkbox\x22\x20value=\x22vocals\x22\x20checked>\x20🎙\x20Ana\x20Vokal</label>','key','btnShowKey','error','selectedKeysCount','true','rgba(255,255,255,0.08)','0\x200\x206px\x20#4ade80','\x20\x20<span\x20class=\x22preset-item-name\x22>','modeContentManual','ffxFolderBar','\x20seçildi','<label\x20class=\x22checkbox-row\x22\x20style=\x22margin-bottom:4px;\x22><input\x20type=\x22checkbox\x22\x20value=\x22instrumental\x22>\x20🎵\x20Müzik\x20(Enstrümantal)</label>','audio/mp4','1px\x20solid\x20#334155','confirmSavePreset','\x20\x20<span\x20class=\x22preset-item-meta\x22>','Katman\x20bilgisi\x20alınamadı.','#f59e0b','🌊\x20Overshoot','#4ade80','chkCleanMasks','#5ba4f5','\x22>✕</button>','(function(){\x20try\x20{\x20return\x20importSubtitleToAE_FromFile(\x22','setAnchorPoint(\x22','9px\x20Inter,\x20sans-serif','onmousemove','data-mode','subTextCase','<div\x20class=\x22preset-empty\x22>Henüz\x20kayıtlı\x20preset\x20yok.</div>','basename','6seRvJL','✦\x20FFX\x20uygulandı!','data-kf','\x20FFX\x20dosyası\x20bulundu','applyFFX(','btnValueGraph','none','ExtendScript\x20boş\x20yanıt\x20döndürdü.','log','btnGenerateSub','application/json','.grid-btn','bezierCurveTo','⚠\x20Önce\x20ses/video\x20dosyası\x20seçin','presetNameInput','5072103YoqGCa','\x5cspeedgraph_presets.tarikgraph','customAlertMsg','snapshotFolderPath','length','📤\x20Grafik\x20başarıyla\x20dışa\x20aktarıldı','3069395UjTZHz','<label\x20class=\x22checkbox-row\x22\x20style=\x22margin-bottom:4px;\x22><input\x20type=\x22checkbox\x22\x20value=\x22drums\x22>\x20🥁\x20Davul</label>','getSelectedLayerName()','creditsLeft','🎯\x20En\x20yakın:\x20\x22','mousemove','btnSaveApiKey','clientY','❌\x20Yükleme\x20hatası:\x20','shadowColor','isFile','border','modeContentAuto','textContent','some','#ff6b6b','cleanKeys','speedflow_presets_seeded','Geçici\x20render\x20alınıyor...','btnToggleBall','Linear','shadowBlur','takeSnapshot(','↩\x20Geri\x20alındı','Error','subFileInput','speed','utf8','round','Update\x20check\x20error:','❌\x20Render\x20hatası:\x20','showAlert','object','vocal_','AE\x20kompozisyonunun\x20sesi\x20render\x20alınıyor...','Kredi\x20yükleniyor...','writeFileSync','result','speedIn','chkMuteOriginalModal','<label\x20class=\x22checkbox-row\x22\x20style=\x22margin-bottom:4px;\x22><input\x20type=\x22checkbox\x22\x20value=\x22backing\x22>\x20🗣\x20Ara\x20Vokal\x20(Backing)</label>','shiftKey','curveCanvas','aiAuthGate','btnImportToAE','endsWith','folderPath','\x22,\x20','<label\x20class=\x22checkbox-row\x22\x20style=\x22margin-bottom:4px;\x22><input\x20type=\x22checkbox\x22\x20value=\x22bass\x22>\x20🎸\x20Bas\x20Gitar</label>','contains','dataset','doPrecomp()','İptal\x20edildi','✓\x20Twixtor\x20Pro\x20uygulandı','importPresetFile','isArray','⚡\x20Flow\x20uygulandı!\x20(','button','💡\x20İpucu:\x201-4=Preset,\x20M=Ayna,\x20Ctrl+C=Kopyala,\x20Space=Uygula','⚠\x20Bir\x20isim\x20girin','clearRect','⚠\x20Geri\x20alacak\x20işlem\x20yok','Snappy','inpCp1y','block','chkSnapshotAlwaysAsk','Ease\x20In','add','rgba(91,\x20164,\x20245,\x200.05)','video/mp4','setData','setLineDash','rgba(47,\x20128,\x20237,\x200.35)','Enter','-KEY','fill','reverseLayerOrder()','...','karaoke','getBoundingClientRect','btnNullAdj','✓\x20Katmanlar\x20ilk\x20seçilene\x20hizalandı','Hata:\x20','chkCleanExpr','\x20(Cevap:\x20','getSelectedLayerSourcePath()','removeAttribute','1px\x20solid\x20#2f80ed','creditText','⚠\x20İçe\x20aktarılacak\x20yeni\x20preset\x20bulunamadı','⚠\x20Önce\x20altyazı\x20oluşturun','UklGR','totalKeys','indexOf','Direct\x20file\x20upload.\x20Size:','Node\x20https\x20not\x20available\x20for\x20updates:','sqrt','rgba(91,200,255,0.95)','💾\x20Preset\x20kaydedildi:\x20','speedOut','vocalProgressFill','✓\x20Dosya\x20seçildi:\x20','vocalModeOverlay','data',');\x20}\x20catch(e)\x20{\x20return\x20\x22HATA:\x20GLOBAL\x20\x22\x20+\x20e.toString();\x20}\x20})()','8px','click','tt_api_key','<div\x20class=\x22preset-empty\x22>Bu\x20kategoride\x20preset\x20yok.</div>','fxBypassStatus','stopPropagation','presetList','customAlertOk','\x20-->\x20','parentNode','animations-disabled','tagName','clientX','\x20\x20<span\x20class=\x22preset-item-meta\x22\x20style=\x22color:','Altyazı\x20Hazır\x20✓','POST','🔗\x20Simetri\x20Kilidi\x20AÇIK','push','dispOutSpd','pop','encoding','readAsDataURL','preCompFPS','data-idx','min','📐\x20Snap\x20Modu\x20AÇIK\x20(0.10\x20adım)','applyHizFX(','outInfluence','btnEditLayout','ttApiKey','grab','🚀\x20Slow\x20Out'];a0_0x1abf=function(){return _0x40f5b5;};return a0_0x1abf();}var btnEditLayout=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x208)),btnGrid=document['querySelector'](a0_0x2349bc(0x12c));function loadButtonOrder(){var _0x2d4390=a0_0x2349bc,_0x3fb793=localStorage[_0x2d4390(0x2e9)](_0x2d4390(0x235));if(_0x3fb793&&btnGrid)try{var _0x1fd24b=JSON[_0x2d4390(0x276)](_0x3fb793),_0x3702e7=Array[_0x2d4390(0x246)](btnGrid[_0x2d4390(0x261)]);_0x1fd24b[_0x2d4390(0x2e4)](function(_0x5a6868){var _0x2420ee=_0x2d4390,_0x26505d=_0x3702e7[_0x2420ee(0x21d)](function(_0x23d53e){return _0x23d53e['id']===_0x5a6868;});if(_0x26505d)btnGrid[_0x2420ee(0x31d)](_0x26505d);});}catch(_0x448380){}}loadButtonOrder();btnEditLayout&&btnGrid&&btnEditLayout[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x2efb1c=a0_0x2349bc;window[_0x2efb1c(0x2a6)]=!window[_0x2efb1c(0x2a6)];if(window[_0x2efb1c(0x2a6)])btnGrid[_0x2efb1c(0x120)][_0x2efb1c(0x1c6)]('edit-mode'),btnEditLayout[_0x2efb1c(0x190)]='✓\x20Kaydet',btnEditLayout[_0x2efb1c(0x368)][_0x2efb1c(0x127)]=_0x2efb1c(0x374),btnEditLayout['style'][_0x2efb1c(0x21b)]=_0x2efb1c(0x374),enableDragAndDrop();else{btnGrid[_0x2efb1c(0x120)][_0x2efb1c(0x27f)](_0x2efb1c(0x327)),btnEditLayout['textContent']=_0x2efb1c(0x279),btnEditLayout[_0x2efb1c(0x368)]['borderColor']=_0x2efb1c(0x10a),btnEditLayout[_0x2efb1c(0x368)][_0x2efb1c(0x21b)]=_0x2efb1c(0x363),disableDragAndDrop();var _0x524de7=Array[_0x2efb1c(0x246)](btnGrid['children'])[_0x2efb1c(0x312)](function(_0xa850f1){return _0xa850f1['id'];});localStorage[_0x2efb1c(0x2b7)](_0x2efb1c(0x235),JSON[_0x2efb1c(0x31c)](_0x524de7)),showToast(_0x2efb1c(0x2cf));}});function enableDragAndDrop(){var _0x27f33a=a0_0x2349bc,_0x341689=btnGrid[_0x27f33a(0x23c)](_0x27f33a(0x179));_0x341689[_0x27f33a(0x2e4)](function(_0x5e9d28){var _0x2fc794=_0x27f33a;_0x5e9d28[_0x2fc794(0x267)](_0x2fc794(0x297),_0x2fc794(0x153)),_0x5e9d28[_0x2fc794(0x32a)](_0x2fc794(0x272),handleDragStart),_0x5e9d28[_0x2fc794(0x32a)](_0x2fc794(0x142),handleDragOver),_0x5e9d28['addEventListener'](_0x2fc794(0x344),handleDragEnter),_0x5e9d28[_0x2fc794(0x32a)](_0x2fc794(0x2dc),handleDragLeave),_0x5e9d28[_0x2fc794(0x32a)](_0x2fc794(0x2db),handleDrop),_0x5e9d28[_0x2fc794(0x32a)](_0x2fc794(0x11d),handleDragEnd);});}function disableDragAndDrop(){var _0x4a1c85=a0_0x2349bc,_0x4d720c=btnGrid[_0x4a1c85(0x23c)](_0x4a1c85(0x179));_0x4d720c[_0x4a1c85(0x2e4)](function(_0x898acc){var _0x4edddf=_0x4a1c85;_0x898acc[_0x4edddf(0x1d9)](_0x4edddf(0x297)),_0x898acc[_0x4edddf(0x2ee)](_0x4edddf(0x272),handleDragStart),_0x898acc[_0x4edddf(0x2ee)](_0x4edddf(0x142),handleDragOver),_0x898acc[_0x4edddf(0x2ee)](_0x4edddf(0x344),handleDragEnter),_0x898acc[_0x4edddf(0x2ee)](_0x4edddf(0x2dc),handleDragLeave),_0x898acc[_0x4edddf(0x2ee)](_0x4edddf(0x2db),handleDrop),_0x898acc[_0x4edddf(0x2ee)]('dragend',handleDragEnd),_0x898acc[_0x4edddf(0x120)][_0x4edddf(0x27f)]('over',_0x4edddf(0x237));});}var dragSrcEl=null;function handleDragStart(_0x3fdf7e){var _0x47f4bb=a0_0x2349bc;if(!window[_0x47f4bb(0x2a6)])return;dragSrcEl=this,this['classList'][_0x47f4bb(0x1c6)]('dragging'),_0x3fdf7e[_0x47f4bb(0x33e)]['effectAllowed']=_0x47f4bb(0x253),_0x3fdf7e[_0x47f4bb(0x33e)][_0x47f4bb(0x1c9)]('text/html',this[_0x47f4bb(0x366)]);}function handleDragOver(_0x28a776){var _0x15aeaf=a0_0x2349bc;if(!window[_0x15aeaf(0x2a6)])return;return _0x28a776[_0x15aeaf(0x369)](),_0x28a776[_0x15aeaf(0x33e)][_0x15aeaf(0x2fe)]=_0x15aeaf(0x253),![];}function handleDragEnter(_0x409d77){var _0x5f3747=a0_0x2349bc;if(!window[_0x5f3747(0x2a6)])return;var _0xc41000=_0x409d77[_0x5f3747(0x2ba)][_0x5f3747(0x277)](_0x5f3747(0x179));_0xc41000&&_0xc41000!==dragSrcEl&&_0xc41000[_0x5f3747(0x1f5)]===btnGrid&&_0xc41000[_0x5f3747(0x120)]['add'](_0x5f3747(0x35d));}function handleDragLeave(_0x11cd86){var _0x87c56d=a0_0x2349bc;if(!window[_0x87c56d(0x2a6)])return;var _0x30d44e=_0x11cd86[_0x87c56d(0x2ba)][_0x87c56d(0x277)](_0x87c56d(0x179));_0x30d44e&&_0x30d44e[_0x87c56d(0x120)][_0x87c56d(0x27f)](_0x87c56d(0x35d));}function swapElements(_0x129bdc,_0x543e8e){var _0x3e83fc=a0_0x2349bc,_0x57eb35=_0x129bdc[_0x3e83fc(0x1f5)],_0x78678e=document[_0x3e83fc(0x308)]('div');_0x57eb35['insertBefore'](_0x78678e,_0x129bdc),_0x57eb35[_0x3e83fc(0x27a)](_0x129bdc,_0x543e8e),_0x57eb35[_0x3e83fc(0x27a)](_0x543e8e,_0x78678e),_0x57eb35[_0x3e83fc(0x345)](_0x78678e);}function handleDrop(_0x6bff28){var _0x817d7e=a0_0x2349bc;if(!window[_0x817d7e(0x2a6)])return;_0x6bff28[_0x817d7e(0x1f1)](),_0x6bff28['preventDefault']();var _0x197626=_0x6bff28[_0x817d7e(0x2ba)][_0x817d7e(0x277)](_0x817d7e(0x179));return _0x197626&&_0x197626!==dragSrcEl&&_0x197626['parentNode']===btnGrid&&swapElements(dragSrcEl,_0x197626),![];}function handleDragEnd(_0x3a789a){var _0x8d3ed=a0_0x2349bc;this[_0x8d3ed(0x120)]['remove'](_0x8d3ed(0x237));var _0x191a84=btnGrid['querySelectorAll'](_0x8d3ed(0x179));_0x191a84[_0x8d3ed(0x2e4)](function(_0x3a3944){var _0x205f1a=_0x8d3ed;_0x3a3944['classList']['remove'](_0x205f1a(0x35d));});}var anchorBtns=document[a0_0x2349bc(0x23c)](a0_0x2349bc(0x248));for(var i=0x0;i<anchorBtns[a0_0x2349bc(0x181)];i++){anchorBtns[i][a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x38a27b=a0_0x2349bc,_0x4a0f32=this['getAttribute'](_0x38a27b(0x285));cs&&cs[_0x38a27b(0x357)](_0x38a27b(0x167)+_0x4a0f32+'\x22)',function(_0x2c6049){});});}var btnToggleAnchorUI=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x295)),anchorWidgetArea=document[a0_0x2349bc(0x340)]('anchorWidgetArea');if(btnToggleAnchorUI&&anchorWidgetArea){var isAnchorVisible=localStorage[a0_0x2349bc(0x2e9)](a0_0x2349bc(0x107))===a0_0x2349bc(0x153);isAnchorVisible&&(anchorWidgetArea[a0_0x2349bc(0x120)]['add'](a0_0x2349bc(0xfd)),btnToggleAnchorUI[a0_0x2349bc(0x368)]['color']=a0_0x2349bc(0x374),btnToggleAnchorUI['style'][a0_0x2349bc(0x127)]='#2f80ed'),btnToggleAnchorUI['addEventListener'](a0_0x2349bc(0x1ed),function(){var _0x3a2810=a0_0x2349bc;isAnchorVisible=!isAnchorVisible,localStorage[_0x3a2810(0x2b7)](_0x3a2810(0x107),isAnchorVisible),isAnchorVisible?(anchorWidgetArea[_0x3a2810(0x120)][_0x3a2810(0x1c6)]('show'),btnToggleAnchorUI['style']['color']=_0x3a2810(0x374),btnToggleAnchorUI[_0x3a2810(0x368)][_0x3a2810(0x127)]='#2f80ed'):(anchorWidgetArea['classList'][_0x3a2810(0x27f)](_0x3a2810(0xfd)),btnToggleAnchorUI[_0x3a2810(0x368)][_0x3a2810(0x21b)]=_0x3a2810(0x363),btnToggleAnchorUI[_0x3a2810(0x368)][_0x3a2810(0x127)]=_0x3a2810(0x10a));});}var btnBypassFX=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x257));btnBypassFX&&btnBypassFX[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x1bb035=a0_0x2349bc;if(window[_0x1bb035(0x2a6)])return;cs&&cs[_0x1bb035(0x357)]('toggleFXBypass()');});var effectListEl=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x2c5));effectListEl&&(effectListEl[a0_0x2349bc(0x32a)](a0_0x2349bc(0x142),function(_0x543044){var _0x56b62d=a0_0x2349bc;_0x543044['preventDefault'](),_0x543044[_0x56b62d(0x1f1)](),effectListEl['style']['borderColor']=_0x56b62d(0x164),effectListEl[_0x56b62d(0x368)][_0x56b62d(0x307)]=_0x56b62d(0x1c7);}),effectListEl[a0_0x2349bc(0x32a)](a0_0x2349bc(0x2dc),function(_0x242416){var _0x44edb8=a0_0x2349bc;_0x242416[_0x44edb8(0x369)](),_0x242416[_0x44edb8(0x1f1)](),effectListEl[_0x44edb8(0x368)][_0x44edb8(0x127)]=_0x44edb8(0x10a),effectListEl[_0x44edb8(0x368)][_0x44edb8(0x307)]=_0x44edb8(0x316);}),effectListEl['addEventListener'](a0_0x2349bc(0x2db),function(_0x50942c){var _0x2680bf=a0_0x2349bc;_0x50942c[_0x2680bf(0x369)](),_0x50942c[_0x2680bf(0x1f1)](),effectListEl[_0x2680bf(0x368)][_0x2680bf(0x127)]=_0x2680bf(0x10a),effectListEl[_0x2680bf(0x368)][_0x2680bf(0x307)]=_0x2680bf(0x316);if(!window['lastFolder']){alert(_0x2680bf(0x311));return;}var _0x538771=_0x50942c[_0x2680bf(0x33e)][_0x2680bf(0x228)];if(_0x538771&&_0x538771[_0x2680bf(0x181)]>0x0){var _0x372eb3=require('fs'),_0x48b602=require(_0x2680bf(0x222)),_0xf2afee=0x0;for(var _0x45e69a=0x0;_0x45e69a<_0x538771[_0x2680bf(0x181)];_0x45e69a++){var _0x576996=_0x538771[_0x45e69a];if(_0x576996[_0x2680bf(0x222)]&&_0x576996[_0x2680bf(0x222)]['toLowerCase']()[_0x2680bf(0x1b0)](_0x2680bf(0x356))){var _0x18d395=_0x48b602[_0x2680bf(0x13f)](window[_0x2680bf(0x2a0)],_0x576996[_0x2680bf(0x313)]);try{_0x372eb3['copyFileSync'](_0x576996[_0x2680bf(0x222)],_0x18d395),_0xf2afee++;}catch(_0x5b6678){console['error'](_0x2680bf(0x255),_0x5b6678);}}}_0xf2afee>0x0&&(typeof loadEffectList===_0x2680bf(0x36f)&&loadEffectList(window[_0x2680bf(0x2a0)]));}}));setInterval(function(){var _0x4346a7=a0_0x2349bc;if(cs){var _0x3f841f=_0x4346a7(0x34d),_0x4efc29=document[_0x4346a7(0x340)](_0x4346a7(0x111));if(_0x4efc29)_0x3f841f=_0x4efc29[_0x4346a7(0x236)];cs[_0x4346a7(0x357)](_0x4346a7(0x27d)+_0x3f841f+'\x22)',function(_0x3d5a7e){var _0x5f4387=_0x4346a7,_0x194900=document[_0x5f4387(0x340)](_0x5f4387(0x1f0));if(_0x194900){if(_0x3d5a7e==='ON')_0x194900[_0x5f4387(0x368)]['background']=_0x5f4387(0x162),_0x194900[_0x5f4387(0x368)][_0x5f4387(0x33a)]=_0x5f4387(0x155);else _0x3d5a7e==='OFF'?(_0x194900[_0x5f4387(0x368)][_0x5f4387(0x28a)]=_0x5f4387(0x22f),_0x194900['style']['boxShadow']=_0x5f4387(0x12f)):(_0x194900['style']['background']=_0x5f4387(0x363),_0x194900[_0x5f4387(0x368)]['boxShadow']=_0x5f4387(0x2af));}});}},0x3e8);var btnScreenshot=document[a0_0x2349bc(0x340)](a0_0x2349bc(0x375));btnScreenshot&&btnScreenshot[a0_0x2349bc(0x32a)](a0_0x2349bc(0x1ed),function(){var _0x6f58cf=a0_0x2349bc;if(window[_0x6f58cf(0x2a6)])return;var _0x42d981=localStorage['getItem']('snapshotFolder')||'',_0x365c1e=localStorage[_0x6f58cf(0x2e9)]('snapshotAlwaysAsk')!=='false',_0x3868b1=localStorage[_0x6f58cf(0x2e9)](_0x6f58cf(0x21c))||'auto';cs&&cs['evalScript'](_0x6f58cf(0x199)+JSON['stringify'](_0x42d981)+',\x20'+_0x365c1e+',\x20'+JSON['stringify'](_0x3868b1)+')',function(_0x68fd63){var _0x388c39=_0x6f58cf;if(_0x68fd63&&_0x68fd63[_0x388c39(0x1e0)](_0x388c39(0xfc))===0x0)_0x68fd63[_0x388c39(0x1e0)](_0x388c39(0x1b7))===-0x1&&window[_0x388c39(0x1a2)](_0x68fd63['substring'](0x6));else _0x68fd63&&showToast('✓\x20'+_0x68fd63);});});var btnSelSnap=document[a0_0x2349bc(0x340)]('btnSelectSnapshotFolder');btnSelSnap&&btnSelSnap['addEventListener'](a0_0x2349bc(0x1ed),function(){var _0x85934c=a0_0x2349bc;cs&&cs[_0x85934c(0x357)](_0x85934c(0x31f),function(_0x2e2be3){var _0x825929=_0x85934c;if(_0x2e2be3&&_0x2e2be3['indexOf'](_0x825929(0xfc))!==0x0){localStorage[_0x825929(0x2b7)]('snapshotFolder',_0x2e2be3);var _0x21a6b0=document[_0x825929(0x340)](_0x825929(0x180));if(_0x21a6b0)_0x21a6b0[_0x825929(0x190)]=_0x2e2be3;}});});function checkForUpdates(){var _0x47147a=a0_0x2349bc,_0x436e58=_0x47147a(0x10b);try{var _0x10fccc=require(_0x47147a(0x2bb));_0x10fccc[_0x47147a(0x2dd)]('https://raw.githubusercontent.com/tarikeditss1/Tarik_Tools/main/update.json',function(_0x55fb27){var _0x562edd=_0x47147a,_0x423128='';_0x55fb27['on']('data',function(_0x35d2be){_0x423128+=_0x35d2be;}),_0x55fb27['on'](_0x562edd(0x2f3),function(){var _0xf36df=_0x562edd;try{var _0x32af2d=JSON[_0xf36df(0x276)](_0x423128);if(_0x32af2d&&_0x32af2d[_0xf36df(0x328)]&&_0x32af2d[_0xf36df(0x328)]!==_0x436e58){var _0x4ceabe=document[_0xf36df(0x268)]('.version-badge');_0x4ceabe&&(_0x4ceabe[_0xf36df(0x120)][_0xf36df(0x1c6)](_0xf36df(0x2c4)),_0x4ceabe['innerText']='v'+_0x436e58+_0xf36df(0x147),_0x4ceabe[_0xf36df(0x34e)]=_0xf36df(0x2b8)+_0x32af2d[_0xf36df(0x328)]+_0xf36df(0x256),_0x4ceabe[_0xf36df(0x32a)](_0xf36df(0x1ed),function(){var _0x5ef5e3=_0xf36df,_0xe4425=_0x32af2d[_0x5ef5e3(0x30c)]||'https://github.com/tarikeditss1/Tarik_Tools';window[_0x5ef5e3(0x2d7)]&&window['cep']['util'][_0x5ef5e3(0x20c)](_0xe4425);}));}}catch(_0x44ce0c){}});})['on'](_0x47147a(0x151),function(_0x52f41c){var _0x173ea9=_0x47147a;console[_0x173ea9(0x176)](_0x173ea9(0x1a0),_0x52f41c);});}catch(_0x4c1c77){console[_0x47147a(0x176)](_0x47147a(0x1e2),_0x4c1c77);}}document[a0_0x2349bc(0x2bf)]===a0_0x2349bc(0x14a)?document[a0_0x2349bc(0x32a)](a0_0x2349bc(0x242),checkForUpdates):checkForUpdates();
+document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+
+function queryAll(selector) {
+    var list = document['querySelectorAll'](selector);
+    var arr = [];
+    for (var i = 0; i < list.length; i++) {
+        arr.push(list[i]);
+    }
+    return arr;
+}
+
+// ============================================================
+
+//  SpeedFlow Pro – main.js
+
+// ============================================================
+
+var cs = new CSInterface();
+
+// Persistent Settings File Helper
+var settingsFile = '';
+try {
+    var os = require('os');
+    var path = require('path');
+    var fs = require('fs');
+    settingsFile = path.join(os.homedir(), '.speedgraph_pro_settings.json');
+    var oldSettingsFile = path.join(os.homedir(), '.speedflow_pro_settings.json');
+    
+    // Migrate old settings to new settings file if it exists and new one doesn't
+    if (fs.existsSync(oldSettingsFile) && !fs.existsSync(settingsFile)) {
+        try {
+            fs.writeFileSync(settingsFile, fs.readFileSync(oldSettingsFile, 'utf8'), 'utf8');
+        } catch(e) {}
+    }
+} catch(e) {}
+
+function getPersistedSettings() {
+    if (!settingsFile) return {};
+    try {
+        var fs = require('fs');
+        if (fs.existsSync(settingsFile)) {
+            var data = fs.readFileSync(settingsFile, 'utf8');
+            return JSON.parse(data) || {};
+        }
+    } catch(e) {}
+    return {};
+}
+
+function savePersistedSettings(obj) {
+    if (!settingsFile) return;
+    try {
+        var fs = require('fs');
+        var current = getPersistedSettings();
+        for (var k in obj) {
+            if (obj.hasOwnProperty(k)) {
+                current[k] = obj[k];
+            }
+        }
+        fs.writeFileSync(settingsFile, JSON.stringify(current, null, 2), 'utf8');
+    } catch(e) {}
+}
+
+// Restore localStorage from disk on startup
+try {
+    var settings = getPersistedSettings();
+    for (var k in settings) {
+        if (settings.hasOwnProperty(k)) {
+            var val = settings[k];
+            if (typeof val === 'object') {
+                localStorage.setItem(k, JSON.stringify(val));
+            } else {
+                localStorage.setItem(k, String(val));
+            }
+        }
+    }
+} catch(e) {}
+
+// Override localStorage.setItem to auto-save to disk
+var _origSetItem = localStorage.setItem;
+localStorage.setItem = function(key, value) {
+    _origSetItem.call(localStorage, key, value);
+    try {
+        var obj = {};
+        obj[key] = value;
+        savePersistedSettings(obj);
+    } catch(e) {}
+};
+
+
+
+// ── TOAST ──────────────────────────────────────────────────
+
+var toastTimeout = null;
+
+function showToast(msg, duration) {
+    duration = duration !== undefined ? duration : 1500;
+
+    var t = document.getElementById('toast');
+
+    t.textContent = msg;
+
+    t.classList.add('show');
+
+    if (toastTimeout) clearTimeout(toastTimeout);
+
+    toastTimeout = setTimeout(function () { t.classList.remove('show'); }, duration);
+
+}
+
+
+
+// ── AE BRIDGE ──────────────────────────────────────────────
+
+function runScript(script, cb) {
+
+    cs.evalScript(script, function (res) { if (cb) cb(res); });
+
+}
+
+
+
+// ── TABS ────────────────────────────────────────────────────
+
+queryAll('.tab').forEach(function (tab) {
+
+    tab.addEventListener('click', function () {
+
+        queryAll('.tab').forEach(function (t) { t.classList.remove('active'); });
+
+        queryAll('.tab-content').forEach(function (c) { c.classList.remove('active'); });
+
+        tab.classList.add('active');
+
+        document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+
+    });
+
+});
+
+
+
+// ── KATMAN BUTONLARI ────────────────────────────────────────
+
+var layerBtns = {
+
+    btnPrecomp:     ['doPrecomp()', '✓ Pre-Comp yapıldı'],
+
+    btnAklliKopya:  ['trueDuplicate()', '✓ Bağımsız kopyalama yapıldı'],
+
+    btnTemizle:     ['cleanLayers()', '✓ Katmanlar temizlendi'],
+
+    btnTersCevir:   ['reverseLayerOrder()', '✓ Sıra ters çevrildi']
+
+};
+
+
+
+Object.keys(layerBtns).forEach(function (id) {
+    var btn = document.getElementById(id);
+    if (btn) {
+        btn.addEventListener('click', function (e) {
+            if (window.isEditLayoutMode) return;
+            var shiftKey = e.shiftKey ? "true" : "false";
+            var fps = document.getElementById('inpPreCompFPS') ? document.getElementById('inpPreCompFPS').value : 60;
+            var scriptName = layerBtns[id][0];
+            
+            if (id === 'btnTemizle') {
+                var cEffects = document.getElementById('chkCleanEffects') ? document.getElementById('chkCleanEffects').checked : true;
+                var cMasks = document.getElementById('chkCleanMasks') ? document.getElementById('chkCleanMasks').checked : true;
+                var cKeys = document.getElementById('chkCleanKeys') ? document.getElementById('chkCleanKeys').checked : true;
+                var cExpr = document.getElementById('chkCleanExpr') ? document.getElementById('chkCleanExpr').checked : false;
+                var cTrans = document.getElementById('chkCleanTransform') ? document.getElementById('chkCleanTransform').checked : false;
+                scriptName = 'cleanLayers(' + cEffects + ', ' + cMasks + ', ' + cKeys + ', ' + cExpr + ', ' + cTrans + ')';
+            } else {
+                scriptName = scriptName.replace('()', '(' + shiftKey + ', ' + fps + ')');
+            }
+            
+            runScript(scriptName, function (res) {
+                if (res && res.indexOf('ERROR:') === 0) {
+                    window.showAlert(res.substring(6));
+                } else {
+                    showToast(layerBtns[id][1]);
+                }
+            });
+        });
+    }
+});
+
+
+
+
+
+// ═══════════════════════════════════════════════════════════
+//  FLOW TAB – İnteraktif Bezier Canvas (AE Graph Editor ile Birebir Uyumlu)
+// ═══════════════════════════════════════════════════════════
+
+// AE ease state — these hold the values that get sent to AE
+var slSpeedIn      = { value: 0   };
+var slSpeedOut     = { value: 0   };
+var slInfluenceIn  = { value: 33  };
+var slInfluenceOut = { value: 33  };
+
+var canvas     = document.getElementById('curveCanvas');
+var ctx        = canvas.getContext('2d');
+var curveLabel = document.getElementById('curveLabel');
+
+var CW = canvas.width;
+var CH = canvas.height;
+
+// Canvas layout — square box centered with padding for labels
+var PAD   = 24;
+var BOX_W = CW - PAD * 2;
+var BOX_H = CH - PAD * 2;
+
+// Normalized Bezier control points (AE Graph Editor mapping)
+// cp1 = Out handle from start keyframe: cp1.x = outInfluence/100, cp1.y=0 → speed=0 at start
+// cp2 = In  handle into end  keyframe: cp2.x = 1-inInfluence/100, cp2.y=1 → speed=0 at end
+// These match AE Easy Ease: influence 33%, speed 0
+var cp1 = { x: 0.33, y: 0.00 };
+var cp2 = { x: 0.67, y: 1.00 };
+try {
+    var savedCp1 = localStorage.getItem('flowease_cp1');
+    var savedCp2 = localStorage.getItem('flowease_cp2');
+    if (savedCp1) cp1 = JSON.parse(savedCp1);
+    if (savedCp2) cp2 = JSON.parse(savedCp2);
+} catch(e) {}
+
+var activeFlowType = 'ease';
+var graphMode = localStorage.getItem('flowease_graphMode') || 'value';
+
+// Presets mapped to AE's actual ease behavior:
+//   cp1.y = 0           → speed=0 at start (Easy Ease on out handle)
+//   cp1.y = cp1.x       → linear slope at start
+//   cp2.y = 1           → speed=0 at end   (Easy Ease on in handle)
+//   cp2.y = cp2.x       → linear slope at end (cp2.y=cp2.x means slope=(1-cp2.x)/(1-cp2.x)=1)
+var PRESETS = {
+    'ease'     : { cp1:[0.33, 0.00], cp2:[0.67, 1.00], label:'Easy Ease'  },  // F9 — 33% inf, speed=0 both ends
+    'ease-in'  : { cp1:[0.33, 0.00], cp2:[0.67, 0.67], label:'Ease In'    },  // Slow start, linear end
+    'ease-out' : { cp1:[0.33, 0.33], cp2:[0.67, 1.00], label:'Ease Out'   },  // Linear start, slow end
+    'linear'   : { cp1:[0.33, 0.33], cp2:[0.67, 0.67], label:'Linear'     }   // Constant speed
+};
+
+
+var flipY = false;
+try {
+    var savedFlipY = localStorage.getItem('flowease_flipY');
+    if (savedFlipY) flipY = (savedFlipY === 'true');
+} catch(e) {}
+
+var btnFlipY = document.getElementById('btnFlipY');
+if (btnFlipY) {
+    if (flipY) {
+        btnFlipY.style.color = '#2e8ff5';
+        btnFlipY.style.borderColor = '#2e8ff5';
+    }
+    btnFlipY.addEventListener('click', function() {
+        flipY = !flipY;
+        if (flipY) {
+            btnFlipY.style.color = '#2e8ff5';
+            btnFlipY.style.borderColor = '#2e8ff5';
+        } else {
+            btnFlipY.style.color = 'var(--text-dim)';
+            btnFlipY.style.borderColor = 'var(--border)';
+        }
+        localStorage.setItem('flowease_flipY', String(flipY));
+        drawFlow();
+    });
+}
+
+// Convert normalized (0-1, y=0 bottom) → canvas pixels
+// AE Value Graph: bottom = 0 (start value), top = 1 (end value)
+function toCanvas(nx, ny) {
+    var mappedY = flipY ? ny : (1 - ny);
+    return {
+        x: PAD + nx * BOX_W,
+        y: PAD + mappedY * BOX_H
+    };
+}
+
+// Convert canvas pixels → normalized (clamp X, allow Y outside 0-1 for overshoot)
+function fromCanvas(cx, cy) {
+    var nx = Math.max(0.001, Math.min(0.999, (cx - PAD) / BOX_W));
+    var rawNy = (cy - PAD) / BOX_H;
+    var ny = flipY ? rawNy : (1 - rawNy);
+    return {
+        x: nx,
+        y: ny
+    };
+}
+
+function drawFlow() {
+    ctx.clearRect(0, 0, CW, CH);
+
+    var p0 = toCanvas(0, 0);
+    var p3 = toCanvas(1, 1);
+    var c1 = toCanvas(cp1.x, cp1.y);
+    var c2 = toCanvas(cp2.x, cp2.y);
+
+    // ── Background box outline ──────────────────────────────
+    ctx.strokeStyle = 'rgba(91,164,245,0.35)';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(PAD, PAD, BOX_W, BOX_H);
+
+    // ── Diagonal guide (linear reference) ──────────────────
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath(); ctx.moveTo(p0.x, p0.y); ctx.lineTo(p3.x, p3.y); ctx.stroke();
+    ctx.setLineDash([]);
+
+    // ── Grid lines ──────────────────────────────────────────
+    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+    ctx.lineWidth = 1;
+    for (var g = 1; g < 4; g++) {
+        var gx = PAD + BOX_W * g / 4;
+        var gy = PAD + BOX_H * g / 4;
+        ctx.beginPath(); ctx.moveTo(gx, PAD); ctx.lineTo(gx, PAD + BOX_H); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(PAD, gy); ctx.lineTo(PAD + BOX_W, gy); ctx.stroke();
+    }
+
+    if (graphMode === 'speed') {
+        // ── SPEED GRAPH (hız eğrisi — AE speed graph gibi) ──
+        // Speed = derivative of value bezier w.r.t. X (time)
+        ctx.strokeStyle = 'rgba(91,164,245,0.9)';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+
+        var pts = [];
+        for (var i = 0; i <= 200; i++) {
+            var t = i / 200;
+            var mt = 1 - t;
+            // Bezier X and Y at parameter t
+            var bx = 3*mt*mt*t*cp1.x + 3*mt*t*t*cp2.x + t*t*t;
+            var dx_dt = 3*mt*mt*cp1.x + 6*mt*t*(cp2.x - cp1.x) + 3*t*t*(1 - cp2.x);
+            var dy_dt = 3*mt*mt*cp1.y + 6*mt*t*(cp2.y - cp1.y) + 3*t*t*(1 - cp2.y);
+            var speed = (Math.abs(dx_dt) > 0.0001) ? (dy_dt / dx_dt) : 0;
+            pts.push({ bx: bx, speed: speed });
+        }
+
+        // Normalize speed to box height (max visible speed = 2x linear)
+        var maxSpd = 2.0;
+        for (var i = 0; i < pts.length; i++) {
+            var cx2 = PAD + pts[i].bx * BOX_W;
+            var normSpd = Math.min(1, Math.max(0, pts[i].speed / maxSpd));
+            var cy2 = flipY ? (PAD + normSpd * BOX_H) : (PAD + BOX_H - normSpd * BOX_H);
+            if (i === 0) ctx.moveTo(cx2, cy2);
+            else ctx.lineTo(cx2, cy2);
+        }
+        ctx.stroke();
+
+        // Speed graph handles on baseline
+        var BASELINE = flipY ? PAD : (PAD + BOX_H);
+        var sh1 = { x: PAD + cp1.x * BOX_W, y: BASELINE };
+        var sh2 = { x: PAD + cp2.x * BOX_W, y: BASELINE };
+        var sp0 = { x: PAD,           y: BASELINE };
+        var sp3 = { x: PAD + BOX_W,   y: BASELINE };
+
+        ctx.strokeStyle = 'rgba(47,128,237,0.7)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(sp0.x, sp0.y); ctx.lineTo(sh1.x, sh1.y); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(sp3.x, sp3.y); ctx.lineTo(sh2.x, sh2.y); ctx.stroke();
+
+        [sp0, sp3, sh1, sh2].forEach(function(pt, idx) {
+            ctx.beginPath(); ctx.arc(pt.x, pt.y, idx < 2 ? 5 : 6, 0, Math.PI * 2);
+            ctx.fillStyle = idx < 2 ? 'rgba(255,255,255,0.8)' : '#2f80ed';
+            ctx.fill();
+        });
+
+        lastHandles = { p0: sp0, p3: sp3, c1: sh1, c2: sh2 };
+
+    } else {
+        // ── VALUE GRAPH (değer eğrisi — AE value graph gibi) ──
+        ctx.lineWidth = 2.5;
+
+        // Check for overshoot (Y outside 0-1)
+        var hasOvershoot = (cp1.y < 0 || cp1.y > 1 || cp2.y < 0 || cp2.y > 1);
+        if (hasOvershoot) {
+            // Clipped gradient for overshoot indication
+            ctx.strokeStyle = 'rgba(255,160,50,0.9)';
+        } else {
+            ctx.strokeStyle = 'rgba(91,200,255,0.95)';
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(p0.x, p0.y);
+        ctx.bezierCurveTo(c1.x, c1.y, c2.x, c2.y, p3.x, p3.y);
+        ctx.stroke();
+
+        // Clamp handle drawings visually to remain inside the canvas view
+        var c1_draw = {
+            x: c1.x,
+            y: Math.min(CH - 8, Math.max(8, c1.y))
+        };
+        var c2_draw = {
+            x: c2.x,
+            y: Math.min(CH - 8, Math.max(8, c2.y))
+        };
+
+        // Handle lines
+        ctx.strokeStyle = 'rgba(47,128,237,0.65)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(p0.x, p0.y); ctx.lineTo(c1_draw.x, c1_draw.y); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(p3.x, p3.y); ctx.lineTo(c2_draw.x, c2_draw.y); ctx.stroke();
+
+        // Anchor points (start/end) — white circles
+        [p0, p3].forEach(function(pt) {
+            ctx.beginPath(); ctx.arc(pt.x, pt.y, 5, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.fill();
+        });
+
+        // Control handles — blue circles
+        [c1_draw, c2_draw].forEach(function(pt) {
+            ctx.beginPath(); ctx.arc(pt.x, pt.y, 6, 0, Math.PI * 2);
+            ctx.fillStyle = '#2f80ed'; ctx.fill();
+            ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+        });
+
+        lastHandles = { p0: p0, p3: p3, c1: c1_draw, c2: c2_draw };
+    }
+
+    // ── Axis labels ─────────────────────────────────────────
+    ctx.fillStyle = 'rgba(255,255,255,0.25)';
+    ctx.font = '9px Inter, sans-serif';
+    ctx.fillText('0', PAD - 12, PAD + BOX_H + 3);
+    ctx.fillText('1', PAD + BOX_W - 3, PAD + BOX_H + 12);
+
+    // ── Update influence/speed display ──────────────────────
+    updateInfoFromCurve();
+}
+
+function updateInfoFromCurve() {
+    // Out influence = cp1.x * 100 (how far along time the out handle reaches)
+    var outInf = Math.round(cp1.x * 100);
+    // In influence = (1 - cp2.x) * 100 (how far from end the in handle reaches)
+    var inInf  = Math.round((1 - cp2.x) * 100);
+    // Speeds from slope: out speed slope = cp1.y / cp1.x, in speed slope = (1 - cp2.y) / (1 - cp2.x)
+    var outSpeedRaw = cp1.x > 0.001 ? cp1.y / cp1.x : 0;
+    var inSpeedRaw  = (1 - cp2.x) > 0.001 ? (1 - cp2.y) / (1 - cp2.x) : 0;
+
+    slInfluenceOut.value = outInf;
+    slInfluenceIn.value  = inInf;
+    // Store normalized slopes — will be scaled by actual value delta in ExtendScript
+    slSpeedOut.value = Math.round(outSpeedRaw * 100) / 100;
+    slSpeedIn.value  = Math.round(inSpeedRaw  * 100) / 100;
+
+    // Update display labels if they exist
+    var elOutInf = document.getElementById('dispOutInf');
+    var elInInf  = document.getElementById('dispInInf');
+    var elOutSpd = document.getElementById('dispOutSpd');
+    var elInSpd  = document.getElementById('dispInSpd');
+    if (elOutInf) elOutInf.textContent = outInf + '%';
+    if (elInInf)  elInInf.textContent  = inInf  + '%';
+    if (elOutSpd) elOutSpd.textContent = (outSpeedRaw * 100).toFixed(0);
+    if (elInSpd)  elInSpd.textContent  = (inSpeedRaw  * 100).toFixed(0);
+
+    // Also sync cp input boxes
+    var i1x = document.getElementById('inpCp1x');
+    var i1y = document.getElementById('inpCp1y');
+    var i2x = document.getElementById('inpCp2x');
+    var i2y = document.getElementById('inpCp2y');
+    if (i1x && document.activeElement !== i1x) i1x.value = cp1.x.toFixed(3);
+    if (i1y && document.activeElement !== i1y) i1y.value = cp1.y.toFixed(3);
+    if (i2x && document.activeElement !== i2x) i2x.value = cp2.x.toFixed(3);
+    if (i2y && document.activeElement !== i2y) i2y.value = cp2.y.toFixed(3);
+}
+
+// ── Mouse Drag ───────────────────────────────────────────────
+var dragging   = null;
+var HIT_RADIUS = 12;
+var lastHandles = { p0:{x:0,y:0}, p3:{x:0,y:0}, c1:{x:0,y:0}, c2:{x:0,y:0} };
+
+function getMousePos(e) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+        x: (e.clientX - rect.left) * (CW / rect.width),
+        y: (e.clientY - rect.top)  * (CH / rect.height)
+    };
+}
+
+function ptDist(ax, ay, bx, by) {
+    return Math.sqrt((ax-bx)*(ax-bx) + (ay-by)*(ay-by));
+}
+
+canvas.addEventListener('mousedown', function(e) {
+    var m = getMousePos(e);
+    if      (ptDist(m.x, m.y, lastHandles.c1.x, lastHandles.c1.y) < HIT_RADIUS) { dragging = 'cp1'; canvas.style.cursor = 'grabbing'; }
+    else if (ptDist(m.x, m.y, lastHandles.c2.x, lastHandles.c2.y) < HIT_RADIUS) { dragging = 'cp2'; canvas.style.cursor = 'grabbing'; }
+});
+
+canvas.addEventListener('mousemove', function(e) {
+    var m = getMousePos(e);
+    if (!dragging) {
+        if (ptDist(m.x, m.y, lastHandles.c1.x, lastHandles.c1.y) < HIT_RADIUS ||
+            ptDist(m.x, m.y, lastHandles.c2.x, lastHandles.c2.y) < HIT_RADIUS) {
+            canvas.style.cursor = 'grab';
+        } else {
+            canvas.style.cursor = 'default';
+        }
+    }
+});
+
+// mouseup anywhere (including outside canvas) stops dragging
+document.addEventListener('mouseup', function() {
+    if (dragging) {
+        localStorage.setItem('flowease_cp1', JSON.stringify(cp1));
+        localStorage.setItem('flowease_cp2', JSON.stringify(cp2));
+    }
+    dragging = null;
+    canvas.style.cursor = 'default';
+});
+// mouseleave just resets cursor but does NOT stop drag — so handle can go past canvas edge
+canvas.addEventListener('mouseleave', function() { if (!dragging) canvas.style.cursor = 'default'; });
+
+// When mouse moves outside canvas while dragging, clamp to canvas bounds
+document.addEventListener('mousemove', function(e) {
+    if (!dragging) return;
+    var rect = canvas.getBoundingClientRect();
+    var clampedX = Math.min(Math.max(e.clientX, rect.left), rect.right);
+    var clampedY = Math.min(Math.max(e.clientY, rect.top - rect.height), rect.bottom + rect.height);
+    var m = {
+        x: (clampedX - rect.left) * (CW / rect.width),
+        y: (clampedY - rect.top)  * (CH / rect.height)
+    };
+    if (graphMode === 'speed') {
+        var rawX = Math.max(0.001, Math.min(0.999, (m.x - PAD) / BOX_W));
+        if (dragging === 'cp1') cp1.x = rawX;
+        else                    cp2.x = rawX;
+    } else {
+        var n = fromCanvas(m.x, m.y);
+        if (dragging === 'cp1') {
+            cp1.x = n.x;
+            cp1.y = n.y;
+        } else {
+            cp2.x = n.x;
+            cp2.y = n.y;
+        }
+    }
+    activeFlowType = 'custom';
+    queryAll('.fp-tab').forEach(function(b) { b.classList.remove('active'); });
+    drawFlow();
+});
+
+// ── Apply Preset ──────────────────────────────────────────────
+function applyPreset(type) {
+    var pr = PRESETS[type];
+    if (!pr) return;
+    cp1 = { x: pr.cp1[0], y: pr.cp1[1] };
+    cp2 = { x: pr.cp2[0], y: pr.cp2[1] };
+    activeFlowType = type;
+    drawFlow();
+    localStorage.setItem('flowease_cp1', JSON.stringify(cp1));
+    localStorage.setItem('flowease_cp2', JSON.stringify(cp2));
+}
+
+// Initial draw
+drawFlow();
+
+// ── KF COUNT STATE ───────────────────────────────────────────
+var selectedKfMode = 'auto';
+
+var btnToggleKf = document.getElementById('btnToggleKf');
+if (btnToggleKf) {
+    btnToggleKf.addEventListener('click', function() {
+        var currentKf = parseInt(btnToggleKf.dataset.kf, 10) || 2;
+        currentKf++;
+        if (currentKf > 4) currentKf = 2;
+        btnToggleKf.dataset.kf = currentKf;
+        btnToggleKf.textContent = currentKf + '-KEY';
+        selectedKfMode = currentKf.toString();
+        var infoEl = document.getElementById('flowAutoInfo');
+        if (infoEl) infoEl.style.display = 'none';
+        drawFlow();
+        showToast('KF Modu: ' + selectedKfMode + ' keyframe');
+    });
+}
+
+var _graphModeBtns = queryAll('.graph-mode-btn');
+for (var _gmbI = 0; _gmbI < _graphModeBtns.length; _gmbI++) {
+    (function(btn) {
+        btn.addEventListener('click', function() {
+            for (var _gbi = 0; _gbi < _graphModeBtns.length; _gbi++) {
+                _graphModeBtns[_gbi].classList.remove('active');
+                _graphModeBtns[_gbi].style.color = 'var(--text-dim)';
+            }
+            this.classList.add('active');
+            this.style.color = 'var(--text)';
+            graphMode = this.getAttribute('data-mode');
+            localStorage.setItem('flowease_graphMode', graphMode);
+            drawFlow();
+        });
+    })(_graphModeBtns[_gmbI]);
+}
+
+// ── FLOW PRESET TABS ──────────────────────────────────────────
+queryAll('.fp-tab').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        queryAll('.fp-tab').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        applyPreset(btn.dataset.flow);
+        showToast('Graph: ' + btn.textContent.trim() + ' seçildi');
+    });
+});
+
+// ── AUTO READ FROM AE ─────────────────────────────────────────
+document.getElementById('btnReadFlow').addEventListener('click', function() {
+    selectedKfMode = 'auto';
+    if (btnToggleKf) {
+        btnToggleKf.style.border = '1px solid #334155';
+        btnToggleKf.style.color  = 'var(--text-dim)';
+        btnToggleKf.classList.remove('active');
+    }
+
+    runScript('readFlowFromSelected()', function(res) {
+        if (!res || res === 'null' || res === 'undefined') {
+            showToast("⚠ AE'de keyframeli özellik seçin"); return;
+        }
+        try {
+            var data = JSON.parse(res);
+            if (data.error) { showToast('⚠ ' + data.error); return; }
+
+            var infoEl  = document.getElementById('flowAutoInfo');
+            var infoTxt = document.getElementById('flowAutoInfoText');
+            if (infoEl && infoTxt) {
+                infoTxt.innerHTML = '🔍 <strong>' + data.propertyName + '</strong> &nbsp;|&nbsp; Seçili KF: <strong>' + data.selectedKeysCount + '</strong> / Toplam: ' + data.totalKeys;
+                infoEl.style.display = 'block';
+            }
+
+            if (data.selectedKeysCount >= 2 && data.selectedKeysCount <= 4) {
+                var btn = document.getElementById('kfBtn' + data.selectedKeysCount);
+                if (btn) {
+                    btn.classList.add('active');
+                    btn.style.border = '1px solid #2f80ed';
+                    btn.style.color  = '#2f80ed';
+                    selectedKfMode   = String(data.selectedKeysCount);
+                }
+            }
+
+            if (data.outInfluence !== undefined) {
+                // Convert AE ease values back to bezier control points
+                // outInfluence → cp1.x, inInfluence → cp2.x
+                // outSpeed slope → cp1.y/cp1.x, inSpeed slope → (1-cp2.y)/(1-cp2.x)
+                var newCp1x = Math.min(0.99, Math.max(0.01, data.outInfluence / 100));
+                var newCp2x = Math.min(0.99, Math.max(0.01, 1 - data.inInfluence / 100));
+                var newCp1y = Math.min(2, Math.max(-0.5, newCp1x * data.outSlope));
+                var newCp2y = Math.min(1.5, Math.max(-0.5, 1 - newCp2x * data.inSlope));
+                cp1 = { x: newCp1x, y: newCp1y };
+                cp2 = { x: newCp2x, y: newCp2y };
+                activeFlowType = 'custom';
+                queryAll('.fp-tab').forEach(function(b) { b.classList.remove('active'); });
+                drawFlow();
+                localStorage.setItem('flowease_cp1', JSON.stringify(cp1));
+                localStorage.setItem('flowease_cp2', JSON.stringify(cp2));
+                showToast('✓ AE keyframe değerleri okundu');
+            }
+        } catch(e) { showToast('⚠ Parse hatası: ' + e.message); }
+    });
+});
+
+
+
+// ── FLOW UYGULA ───────────────────────────────────────────────
+document.getElementById('btnApplyFlow').addEventListener('click', function() {
+    var opts = JSON.stringify({
+        type   : activeFlowType,
+        cp1x   : Math.round(cp1.x * 10000) / 10000,
+        cp1y   : Math.round(cp1.y * 10000) / 10000,
+        cp2x   : Math.round(cp2.x * 10000) / 10000,
+        cp2y   : Math.round(cp2.y * 10000) / 10000,
+        kfMode : selectedKfMode
+    });
+
+    runScript('applyFlow(' + opts + ')', function(res) {
+        if (res && res.indexOf('ERROR:') === 0) {
+            window.showAlert(res.substring(6));
+        } else {
+            var modeStr = selectedKfMode === 'auto' ? 'Otomatik' : (selectedKfMode + ' KF');
+            showToast('⚡ Flow uygulandı! (' + modeStr + ')');
+        }
+    });
+});
+
+// Input box sync (cp1x, cp1y, cp2x, cp2y manual edit)
+['inpCp1x','inpCp1y','inpCp2x','inpCp2y'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('change', function() {
+        var v = parseFloat(this.value);
+        if (isNaN(v)) return;
+        if (id === 'inpCp1x') cp1.x = Math.max(0.001, Math.min(0.999, v));
+        if (id === 'inpCp1y') cp1.y = v;
+        if (id === 'inpCp2x') cp2.x = Math.max(0.001, Math.min(0.999, v));
+        if (id === 'inpCp2y') cp2.y = v;
+        activeFlowType = 'custom';
+        queryAll('.fp-tab').forEach(function(b) { b.classList.remove('active'); });
+        drawFlow();
+    });
+});
+
+
+// ══════════════════════════════════
+
+//  PRESET KAYDETME
+
+// ══════════════════════════════════
+
+var PRESETS_KEY = 'speedflow_presets_v1';
+
+
+
+function loadPresets() {
+
+    try { return JSON.parse(localStorage.getItem(PRESETS_KEY)) || []; } catch(e) { return []; }
+
+}
+
+function savePresetsToStorage(arr) {
+
+    localStorage.setItem(PRESETS_KEY, JSON.stringify(arr));
+
+}
+
+
+
+function drawMiniPreset(mc, pr) {
+
+    if (!mc) return;
+
+    var mctx = mc.getContext('2d');
+
+    var W = mc.width; var H = mc.height; var p = 5;
+
+    mctx.clearRect(0, 0, W, H);
+
+    // Background
+
+    mctx.fillStyle = 'rgba(10,14,28,0.95)';
+
+    mctx.fillRect(0, 0, W, H);
+
+    // Border
+
+    mctx.strokeStyle = 'rgba(47,128,237,0.2)';
+
+    mctx.lineWidth = 1;
+
+    mctx.strokeRect(0.5, 0.5, W-1, H-1);
+
+    // Get cp1/cp2 from preset
+
+    var pc1 = pr.cp1 || [0.25, 0.1];
+
+    var pc2 = pr.cp2 || [0.75, 0.9];
+
+    var x0 = p, y0 = H-p, x3 = W-p, y3 = p;
+
+    var cx1 = x0 + pc1[0]*(W-p*2);  var cy1 = H-p - pc1[1]*(H-p*2);
+
+    var cx2 = x0 + pc2[0]*(W-p*2);  var cy2 = H-p - pc2[1]*(H-p*2);
+
+    // Curve
+
+    var grad = mctx.createLinearGradient(x0, y0, x3, y3);
+
+    grad.addColorStop(0, '#1a5fb4'); grad.addColorStop(1, '#5ba4f5');
+
+    mctx.strokeStyle = grad;
+
+    mctx.lineWidth = 1.8;
+
+    mctx.shadowColor = '#2f80ed';
+
+    mctx.shadowBlur = 4;
+
+    mctx.beginPath();
+
+    mctx.moveTo(x0, y0);
+
+    mctx.bezierCurveTo(cx1, cy1, cx2, cy2, x3, y3);
+
+    mctx.stroke();
+
+    mctx.shadowBlur = 0;
+
+    // Anchor dots
+
+    [[x0,y0],[x3,y3]].forEach(function(pt) {
+
+        mctx.beginPath(); mctx.arc(pt[0], pt[1], 2, 0, Math.PI*2);
+
+        mctx.fillStyle = '#2f80ed'; mctx.fill();
+
+    });
+
+}
+
+
+
+function renderPresets() {
+
+    var list = document.getElementById('presetList');
+
+    var presets = loadPresets();
+
+    list.innerHTML = '';
+
+    if (!presets.length) {
+
+        list.innerHTML = '<div class="preset-empty">Henüz kayıtlı preset yok.</div>';
+
+        return;
+
+    }
+
+    presets.forEach(function (pr, idx) {
+
+        var item = document.createElement('div');
+
+        item.className = 'preset-item';
+
+        var typeLabel = pr.type || 'custom';
+
+        item.innerHTML =
+
+            '<canvas class="preset-mini-canvas" width="64" height="40"></canvas>' +
+
+            '<div class="preset-item-info">' +
+
+            '  <span class="preset-item-name">' + pr.name + '</span>' +
+
+            '  <span class="preset-item-meta">' + typeLabel + '</span>' +
+
+            '</div>' +
+
+            '<button class="preset-item-del" data-idx="' + idx + '">✕</button>';
+
+
+
+        // Draw mini bezier curve preview
+
+        drawMiniPreset(item.querySelector('.preset-mini-canvas'), pr);
+
+
+
+        item.addEventListener('click', function (e) {
+
+            if (e.target.classList.contains('preset-item-del')) return;
+
+            applyPresetValues(pr);
+
+            showToast('Preset yuklendi: ' + pr.name);
+
+        });
+
+        item.querySelector('.preset-item-del').addEventListener('click', function (e) {
+
+            e.stopPropagation();
+
+            var arr = loadPresets();
+
+            arr.splice(idx, 1);
+
+            savePresetsToStorage(arr);
+
+            renderPresets();
+
+            showToast('Preset silindi');
+
+        });
+
+        list.appendChild(item);
+
+    });
+
+}
+
+
+
+function applyPresetValues(pr) {
+
+    // Priority: use saved cp1/cp2 if available, else fall back to PRESETS table
+
+    if (pr.cp1 && pr.cp2) {
+
+        cp1 = { x: pr.cp1[0], y: pr.cp1[1] };
+
+        cp2 = { x: pr.cp2[0], y: pr.cp2[1] };
+
+    } else if (pr.type && PRESETS[pr.type]) {
+
+        var preset = PRESETS[pr.type];
+
+        cp1 = { x: preset.cp1[0], y: preset.cp1[1] };
+
+        cp2 = { x: preset.cp2[0], y: preset.cp2[1] };
+
+    }
+
+    activeFlowType = pr.type || 'custom';
+
+    slSpeedIn.value      = pr.speedIn  !== undefined ? pr.speedIn  : 80;
+
+    slSpeedOut.value     = pr.speedOut !== undefined ? pr.speedOut : 80;
+
+    slInfluenceIn.value  = pr.influenceIn  !== undefined ? pr.influenceIn  : 75;
+
+    slInfluenceOut.value = pr.influenceOut !== undefined ? pr.influenceOut : 75;
+
+
+
+    queryAll('.fp-tab').forEach(function (b) {
+
+        b.classList.toggle('active', b.dataset.flow === activeFlowType);
+
+    });
+
+    drawFlow();
+
+}
+
+
+
+// Save preset modal
+
+document.getElementById('btnSavePreset').addEventListener('click', function () {
+
+    document.getElementById('presetNameInput').value = '';
+
+    document.getElementById('presetSaveOverlay').classList.add('open');
+
+    setTimeout(function() { document.getElementById('presetNameInput').focus(); }, 200);
+
+});
+
+
+
+function closePresetModal() { document.getElementById('presetSaveOverlay').classList.remove('open'); }
+
+document.getElementById('closePresetSave').addEventListener('click', closePresetModal);
+
+document.getElementById('cancelPresetSave').addEventListener('click', closePresetModal);
+
+
+
+document.getElementById('confirmSavePreset').addEventListener('click', function () {
+
+    var name = document.getElementById('presetNameInput').value.trim();
+
+    if (!name) { showToast('⚠ Bir isim girin'); return; }
+
+    var arr = loadPresets();
+
+    arr.push({
+
+        name: name, type: activeFlowType,
+
+        cp1: [cp1.x, cp1.y], cp2: [cp2.x, cp2.y],
+
+        speedIn: parseInt(slSpeedIn.value), speedOut: parseInt(slSpeedOut.value),
+
+        influenceIn: parseInt(slInfluenceIn.value), influenceOut: parseInt(slInfluenceOut.value)
+
+    });
+
+    savePresetsToStorage(arr);
+
+    renderPresets();
+
+    closePresetModal();
+
+    showToast('💾 Preset kaydedildi: ' + name);
+
+});
+
+
+
+document.getElementById('presetNameInput').addEventListener('keydown', function (e) {
+
+    if (e.key === 'Enter') document.getElementById('confirmSavePreset').click();
+
+});
+
+
+
+// ── CUSTOM CONFIRM DIALOG ────────────────────────────────
+
+function showConfirmDialog(onYes) {
+
+    var overlay = document.getElementById('confirmOverlay');
+
+    overlay.classList.add('open');
+
+
+
+    function cleanup() {
+
+        overlay.classList.remove('open');
+
+        document.getElementById('btnConfirmYes').removeEventListener('click', handleYes);
+
+        document.getElementById('btnConfirmCancel').removeEventListener('click', handleCancel);
+
+    }
+
+    function handleYes()    { cleanup(); onYes(); }
+
+    function handleCancel() { cleanup(); }
+
+
+
+    document.getElementById('btnConfirmYes').addEventListener('click', handleYes);
+
+    document.getElementById('btnConfirmCancel').addEventListener('click', handleCancel);
+
+}
+
+
+
+document.getElementById('clearPresets').addEventListener('click', function () {
+
+    showConfirmDialog(function () {
+
+        savePresetsToStorage([]);
+
+        renderPresets();
+
+        showToast('Tüm presetler silindi');
+
+    });
+
+});
+
+
+
+renderPresets();
+
+
+
+// ══════════════════════════════════
+
+//  EFEKT TAB – FFX Klasör
+
+// ══════════════════════════════════
+
+var selectedFFX = null;
+
+
+
+function processFFXFolderData(res, showNotification) {
+    if (showNotification === undefined) showNotification = true;
+    if (!res || res === 'null' || res === 'undefined' || res.trim() === '') {
+        if (showNotification) showToast('⚠ Klasör seçilmedi');
+        return;
+    }
+    var cleanRes = res.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
+    try {
+        var data = JSON.parse(cleanRes);
+        if (data && data.error) {
+            if (showNotification) showToast('⚠ Hata: ' + data.error);
+            return;
+        }
+        if (data && data.path) {
+            document.getElementById('folderPath').textContent = data.path;
+            localStorage.setItem('flowease_ffxFolder', data.path);
+            renderFFXList(data.files || []);
+            if (showNotification) {
+                showToast('✓ ' + (data.files ? data.files.length : 0) + ' FFX dosyası bulundu');
+            }
+        } else {
+            if (showNotification) showToast('⚠ FFX bulunamadı');
+        }
+    } catch(e) {
+        if (showNotification) showToast('⚠ Klasör okunurken hata: ' + e.message);
+        console.error('FFX folder parse error. Raw response:', res);
+    }
+}
+
+document.getElementById('btnSelectFolder').addEventListener('click', function () {
+    runScript('selectFFXFolder()', function (res) {
+        processFFXFolderData(res, true);
+    });
+});
+
+// Bind Refresh button
+var btnRefreshFolder = document.getElementById('btnRefreshFolder');
+if (btnRefreshFolder) {
+    btnRefreshFolder.addEventListener('click', function () {
+        var savedPath = localStorage.getItem('flowease_ffxFolder');
+        if (!savedPath) {
+            showToast('⚠ Önce bir klasör seçmelisiniz!');
+            return;
+        }
+        runScript('getFFXFiles("' + savedPath.replace(/\\/g, '\\\\') + '")', function (res) {
+            processFFXFolderData(res, true);
+        });
+    });
+}
+
+// Load FFX Folder Memory on startup
+(function loadFFXFolderMemory() {
+    var savedPath = localStorage.getItem('flowease_ffxFolder');
+    if (savedPath) {
+        runScript('getFFXFiles("' + savedPath.replace(/\\/g, '\\\\') + '")', function (res) {
+            if (res && !res.startsWith('ERROR')) {
+                processFFXFolderData(res, false);
+            }
+        });
+    }
+})();
+
+
+
+var allFFXFiles = [];
+var activeFFXTab = 'library';
+
+function renderFFXList(files) {
+    allFFXFiles = files;
+    var list = document.getElementById('effectList');
+    if (!list) return;
+    list.innerHTML = '';
+    
+    var favs = [];
+    try {
+        var fStr = localStorage.getItem('ffx_favorites');
+        if (fStr) favs = JSON.parse(fStr);
+    } catch(e) {}
+    
+    if (activeFFXTab === 'favorites') {
+        if (favs.length === 0) {
+            list.innerHTML = '<div class="effect-empty">Henüz favori efekt eklemediniz.</div>';
+            return;
+        }
+        var path = require('path');
+        favs.forEach(function(fPath) {
+            var name = path.basename(fPath);
+            var item = createEffectItem({ name: name, path: fPath }, true);
+            list.appendChild(item);
+        });
+    } else {
+        if (!files || files.length === 0) {
+            list.innerHTML = '<div class="effect-empty">Bu klasörde .ffx dosyası bulunamadı.</div>';
+            return;
+        }
+        files.forEach(function (f) {
+            var isFav = favs.indexOf(f.path) !== -1;
+            var item = createEffectItem(f, isFav);
+            list.appendChild(item);
+        });
+    }
+}
+
+function createEffectItem(f, isFav) {
+    var item = document.createElement('div');
+    item.className = 'effect-item';
+    if (isFav) item.classList.add('is-fav');
+    
+    // Star element
+    var star = document.createElement('span');
+    star.className = 'fav-star';
+    star.innerHTML = isFav ? '★' : '☆';
+    star.style.marginRight = '8px';
+    star.style.color = isFav ? '#fbbf24' : 'var(--text-dim)';
+    star.style.cursor = 'pointer';
+    star.style.fontSize = '15px';
+    star.style.lineHeight = '1';
+    
+    star.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleFavorite(f.path);
+    });
+    
+    var name = document.createElement('span');
+    name.className = 'effect-item-name';
+    name.innerText = decodeURIComponent(f.name).replace(/\.ffx$/i, '');
+    name.style.flex = '1';
+    
+    item.appendChild(star);
+    item.appendChild(name);
+    
+    if (selectedFFX === f.path) {
+        item.classList.add('selected');
+    }
+    
+    item.addEventListener('click', function () {
+        var allItems = document.querySelectorAll('.effect-item');
+        for (var k = 0; k < allItems.length; k++) {
+            allItems[k].classList.remove('selected');
+        }
+        item.classList.add('selected');
+        selectedFFX = f.path;
+        document.getElementById('btnApplyEffect').disabled = false;
+    });
+    
+    item.addEventListener('dblclick', function () {
+        selectedFFX = f.path;
+        var applyAtIn = document.getElementById('chkApplyAtInPoint') ? document.getElementById('chkApplyAtInPoint').checked : false;
+        var stretch = document.getElementById('chkStretchPresets') ? document.getElementById('chkStretchPresets').checked : false;
+        var scriptStr = 'applyFFX(' + JSON.stringify(selectedFFX) + ', ' + applyAtIn + ', ' + stretch + ')';
+        if (cs && selectedFFX) {
+            cs.evalScript(scriptStr);
+        }
+    });
+    
+    return item;
+}
+
+function toggleFavorite(fPath) {
+    var favs = [];
+    try {
+        var fStr = localStorage.getItem('ffx_favorites');
+        if (fStr) favs = JSON.parse(fStr);
+    } catch(e) {}
+    
+    var idx = favs.indexOf(fPath);
+    if (idx !== -1) {
+        favs.splice(idx, 1);
+    } else {
+        favs.push(fPath);
+    }
+    
+    localStorage.setItem('ffx_favorites', JSON.stringify(favs));
+    renderFFXList(allFFXFiles);
+}
+
+// Bind tabs
+function bindFFXTabs() {
+    var tLib = document.getElementById('tabFFXLibrary');
+    var tFav = document.getElementById('tabFFXFavorites');
+    if (tLib && tFav) {
+        tLib.addEventListener('click', function() {
+            activeFFXTab = 'library';
+            tLib.classList.add('active');
+            tFav.classList.remove('active');
+            var fb = document.getElementById('ffxFolderBar');
+            if (fb) fb.style.display = 'flex';
+            
+            var listEl = document.getElementById('effectList');
+            if (listEl) {
+                listEl.classList.remove('fade-in-active');
+                void listEl.offsetWidth;
+                listEl.classList.add('fade-in-active');
+            }
+            renderFFXList(allFFXFiles);
+        });
+        tFav.addEventListener('click', function() {
+            activeFFXTab = 'favorites';
+            tFav.classList.add('active');
+            tLib.classList.remove('active');
+            var fb = document.getElementById('ffxFolderBar');
+            if (fb) fb.style.display = 'none';
+            
+            var listEl = document.getElementById('effectList');
+            if (listEl) {
+                listEl.classList.remove('fade-in-active');
+                void listEl.offsetWidth;
+                listEl.classList.add('fade-in-active');
+            }
+            renderFFXList(allFFXFiles);
+        });
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindFFXTabs);
+} else {
+    bindFFXTabs();
+}
+
+// Effect search filter
+
+document.getElementById('effectSearch').addEventListener('input', function () {
+
+    var q = this.value.toLowerCase();
+
+    queryAll('.effect-item').forEach(function (item) {
+
+        item.style.display = item.querySelector('.effect-item-name').textContent.toLowerCase().includes(q) ? 'flex' : 'none';
+
+    });
+
+});
+
+// Checkbox Memory for FFX Options
+var chkApplyAtInPoint = document.getElementById('chkApplyAtInPoint');
+if (chkApplyAtInPoint) {
+    var savedApplyAtIn = localStorage.getItem('flowease_chkApplyAtInPoint');
+    if (savedApplyAtIn !== null) {
+        chkApplyAtInPoint.checked = (savedApplyAtIn === 'true');
+    } else {
+        chkApplyAtInPoint.checked = true; // default to checked
+    }
+    chkApplyAtInPoint.addEventListener('change', function() {
+        localStorage.setItem('flowease_chkApplyAtInPoint', String(chkApplyAtInPoint.checked));
+    });
+}
+
+var chkStretchPresets = document.getElementById('chkStretchPresets');
+if (chkStretchPresets) {
+    var savedStretch = localStorage.getItem('flowease_chkStretchPresets');
+    if (savedStretch !== null) {
+        chkStretchPresets.checked = (savedStretch === 'true');
+    } else {
+        chkStretchPresets.checked = false; // default to unchecked
+    }
+    chkStretchPresets.addEventListener('change', function() {
+        localStorage.setItem('flowease_chkStretchPresets', String(chkStretchPresets.checked));
+    });
+}
+
+document.getElementById('btnApplyEffect').addEventListener('click', function () {
+    if (!selectedFFX) return;
+    var applyAtIn = document.getElementById('chkApplyAtInPoint') ? document.getElementById('chkApplyAtInPoint').checked : false;
+    var stretch = document.getElementById('chkStretchPresets') ? document.getElementById('chkStretchPresets').checked : false;
+    
+    var scriptStr = 'applyFFX(' + JSON.stringify(selectedFFX) + ', ' + applyAtIn + ', ' + stretch + ')';
+    runScript(scriptStr, function (res) {
+        if (res && res.indexOf("Error") > -1) {
+            showToast('⚠ Hata: ' + res);
+        } else {
+            showToast('✦ FFX uygulandı!');
+        }
+    });
+});
+
+
+
+// ══════════════════════════════════
+
+//  SETTINGS MODAL
+
+// ══════════════════════════════════
+
+// ══════════════════════════════════
+
+//  SETTINGS MODAL
+
+// ══════════════════════════════════
+
+function loadSettings() {
+    var snapQual = localStorage.getItem('snapshotQuality') || 'auto';
+    var snapQualEl = document.getElementById('snapshotQuality');
+    if (snapQualEl) snapQualEl.value = snapQual;
+
+    var snapFold = localStorage.getItem('snapshotFolder') || '';
+    var snapFoldEl = document.getElementById('snapshotFolderPath');
+    if (snapFoldEl) {
+        snapFoldEl.textContent = snapFold ? snapFold : "Masaüstü (Varsayılan)";
+    }
+    var snapAsk = localStorage.getItem('snapshotAlwaysAsk') !== 'false';
+    var snapAskChk = document.getElementById('chkSnapshotAlwaysAsk');
+    if (snapAskChk) snapAskChk.checked = snapAsk;
+
+    var fps = localStorage.getItem('preCompFPS') || '60';
+    var inp = document.getElementById('inpPreCompFPS');
+    if (inp) inp.value = fps;
+    
+    var anim = localStorage.getItem('animationsEnabled') !== 'false';
+    var chk = document.getElementById('chkAnim');
+    if (chk) chk.checked = anim;
+    if (anim) {
+        document.body.classList.remove('animations-disabled');
+    } else {
+        document.body.classList.add('animations-disabled');
+    }
+    
+    var cleanEffects = localStorage.getItem('cleanEffects') !== 'false';
+    var chkCleanEffects = document.getElementById('chkCleanEffects');
+    if (chkCleanEffects) chkCleanEffects.checked = cleanEffects;
+    
+    var cleanMasks = localStorage.getItem('cleanMasks') !== 'false';
+    var chkCleanMasks = document.getElementById('chkCleanMasks');
+    if (chkCleanMasks) chkCleanMasks.checked = cleanMasks;
+    
+    var cleanKeys = localStorage.getItem('cleanKeys') !== 'false';
+    var chkCleanKeys = document.getElementById('chkCleanKeys');
+    if (chkCleanKeys) chkCleanKeys.checked = cleanKeys;
+    
+    var cleanExpr = localStorage.getItem('cleanExpr') === 'true';
+    var chkCleanExpr = document.getElementById('chkCleanExpr');
+    if (chkCleanExpr) chkCleanExpr.checked = cleanExpr;
+    
+    var cleanTransform = localStorage.getItem('cleanTransform') === 'true';
+    var chkCleanTransform = document.getElementById('chkCleanTransform');
+    if (chkCleanTransform) chkCleanTransform.checked = cleanTransform;
+    
+    var solidColor = localStorage.getItem('flowease_solidColor') || '#1a1a1a';
+    var picker = document.getElementById('solidColorPicker');
+    if (picker) picker.value = solidColor;
+}
+
+function saveSettingsToStorage() {
+    var snapQualEl = document.getElementById('snapshotQuality');
+    if (snapQualEl) localStorage.setItem('snapshotQuality', snapQualEl.value);
+
+    var snapAskChk = document.getElementById('chkSnapshotAlwaysAsk');
+    if (snapAskChk) localStorage.setItem('snapshotAlwaysAsk', String(snapAskChk.checked));
+
+    var fpsInput = document.getElementById('inpPreCompFPS');
+    if (fpsInput) localStorage.setItem('preCompFPS', fpsInput.value);
+    
+    var animInput = document.getElementById('chkAnim');
+    if (animInput) {
+        var anim = animInput.checked;
+        localStorage.setItem('animationsEnabled', anim);
+        if (anim) {
+            document.body.classList.remove('animations-disabled');
+        } else {
+            document.body.classList.add('animations-disabled');
+        }
+    }
+    
+    var chkCleanEffects = document.getElementById('chkCleanEffects');
+    if (chkCleanEffects) localStorage.setItem('cleanEffects', chkCleanEffects.checked);
+    
+    var chkCleanMasks = document.getElementById('chkCleanMasks');
+    if (chkCleanMasks) localStorage.setItem('cleanMasks', chkCleanMasks.checked);
+    
+    var chkCleanKeys = document.getElementById('chkCleanKeys');
+    if (chkCleanKeys) localStorage.setItem('cleanKeys', chkCleanKeys.checked);
+    
+    var chkCleanExpr = document.getElementById('chkCleanExpr');
+    if (chkCleanExpr) localStorage.setItem('cleanExpr', chkCleanExpr.checked);
+    
+    var chkCleanTransform = document.getElementById('chkCleanTransform');
+    if (chkCleanTransform) localStorage.setItem('cleanTransform', chkCleanTransform.checked);
+    
+    var picker = document.getElementById('solidColorPicker');
+    if (picker) localStorage.setItem('flowease_solidColor', picker.value);
+    
+    showToast('✓ Ayarlar kaydedildi');
+}
+
+// Load settings on startup
+loadSettings();
+
+document.getElementById('btnSettings').addEventListener('click', function () {
+    loadSettings();
+    document.getElementById('settingsOverlay').classList.add('open');
+});
+
+function closeSettings() { document.getElementById('settingsOverlay').classList.remove('open'); }
+
+document.getElementById('closeSettings').addEventListener('click', closeSettings);
+
+document.getElementById('cancelSettings').addEventListener('click', closeSettings);
+
+document.getElementById('settingsOverlay').addEventListener('click', function (e) {
+    if (e.target === this) closeSettings();
+});
+
+document.getElementById('saveSettings').addEventListener('click', function () {
+    saveSettingsToStorage();
+    closeSettings();
+});
+
+
+
+// ══════════════════════════════════════════════════════════
+
+//  ALTYAZİ TAB — Tarık Tools API Entegrasyonu (Gelişmiş v2.1)
+
+// ══════════════════════════════════════════════════════════
+
+
+
+var TT_BASE_URL = 'https://tariktools.com';
+
+var subFile = null;
+
+var subSegments = null;
+
+var subSrtContent = null;
+
+var subMode = 'auto'; // 'auto' (Otomatik) veya 'manual' (Manuel)
+
+
+
+// ── API KEY DOĞRULAMA & GİRİŞ EKRANI KONTROLÜ ─────────────
+
+var verifiedApiKey = localStorage.getItem('tt_api_key') || '';
+
+
+
+function updateAuthUi() {
+
+    var authGate = document.getElementById('aiAuthGate');
+
+    var mainUi = document.getElementById('aiMainUi');
+
+    
+
+    if (verifiedApiKey) {
+
+        if(authGate) authGate.style.display = 'none';
+
+        if(mainUi) mainUi.style.display = 'block';
+
+        
+
+        loadCredits(verifiedApiKey);
+
+        startCompPolling(); // Active composition name poll
+
+        
+
+        var preview = document.getElementById('apiKeyPreview');
+
+        if (preview) {
+
+            var displayKey = verifiedApiKey;
+
+            if (displayKey.length > 12) {
+
+                displayKey = displayKey.substring(0, 8) + '...' + displayKey.substring(displayKey.length - 4);
+
+            }
+
+            preview.textContent = 'Key: ' + displayKey;
+
+        }
+
+    } else {
+
+        if(authGate) authGate.style.display = 'block';
+
+        if(mainUi) mainUi.style.display = 'none';
+
+        stopCompPolling();
+
+    }
+
+}
+
+
+
+document.getElementById('btnShowKey').addEventListener('click', function () {
+
+    var inp = document.getElementById('ttApiKey');
+
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+
+    this.textContent = inp.type === 'password' ? '👁' : '🙈';
+
+});
+
+
+
+// Kaydet (Ve API'den doğrula)
+
+document.getElementById('btnSaveApiKey').addEventListener('click', function () {
+
+    var key = document.getElementById('ttApiKey').value.trim();
+
+    if (!key) { showToast('⚠ API Key boş'); return; }
+
+    
+
+    showToast('🔑 Doğrulanıyor...');
+
+    fetch(TT_BASE_URL + '/api/external/api-key', {
+
+        headers: {
+
+            'Authorization': 'ApiKey ' + key
+
+        }
+
+    })
+
+    .then(function(res) {
+
+        return res.json();
+
+    })
+
+    .then(function(data) {
+
+        if (data && data.error) {
+
+            showToast('❌ Hata: ' + data.error);
+
+        } else if (data && data.credits !== undefined) {
+
+            // Key valid!
+
+            localStorage.setItem('tt_api_key', key);
+
+            verifiedApiKey = key;
+
+            updateAuthUi();
+
+            showToast('✓ Bağlantı başarılı!');
+
+        } else {
+
+            showToast('❌ Geçersiz API Key!');
+
+        }
+
+    })
+
+    .catch(function(err) {
+
+        showToast('❌ Bağlantı hatası: ' + err.message);
+
+    });
+
+});
+
+
+
+// Çıkış (API Key sil)
+
+document.getElementById('btnDisconnect').addEventListener('click', function () {
+
+    localStorage.removeItem('tt_api_key');
+
+    verifiedApiKey = '';
+
+    document.getElementById('ttApiKey').value = '';
+
+    updateAuthUi();
+
+    showToast('Bağlantı kesildi.');
+
+});
+
+
+
+// Siteden API Key al (tariktools.com developer API paneline git)
+
+document.getElementById('btnGetApiKey').addEventListener('click', function () {
+
+    showToast('🌐 Tarık Tools Developer paneli açılıyor...');
+
+    cs.openURLInDefaultBrowser("https://tariktools.com/dashboard");
+
+});
+
+
+
+// AI Sub-Tabs (Altyazı vs Vokal)
+
+var aiTabSubtitle = document.getElementById('aiTabSubtitle');
+
+var aiTabVocal = document.getElementById('aiTabVocal');
+
+var aiContentSubtitle = document.getElementById('aiContentSubtitle');
+
+var aiContentVocal = document.getElementById('aiContentVocal');
+
+
+
+if (aiTabSubtitle && aiTabVocal) {
+
+    aiTabSubtitle.addEventListener('click', function() {
+
+        aiTabSubtitle.classList.add('active');
+
+        aiTabVocal.classList.remove('active');
+
+        aiContentSubtitle.style.display = 'block';
+
+        aiContentVocal.style.display = 'none';
+
+    });
+
+    
+
+    aiTabVocal.addEventListener('click', function() {
+
+        aiTabVocal.classList.add('active');
+
+        aiTabSubtitle.classList.remove('active');
+
+        aiContentVocal.style.display = 'block';
+
+        aiContentSubtitle.style.display = 'none';
+
+    });
+
+}
+
+
+
+function loadCredits(apiKey) {
+
+    if (!apiKey) return;
+
+    var creditText = document.getElementById('creditText');
+
+    creditText.textContent = 'Kredi yükleniyor...';
+
+    
+
+    fetch(TT_BASE_URL + '/api/external/api-key', {
+
+        headers: {
+
+            'Authorization': 'ApiKey ' + apiKey
+
+        }
+
+    })
+
+    .then(function(res) {
+
+        return res.json();
+
+    })
+
+    .then(function(data) {
+
+        if (data && data.credits !== undefined) {
+
+            creditText.textContent = data.credits + ' Kredi mevcut';
+
+        } else {
+
+            creditText.textContent = 'Kredi bilgisi alınamadı';
+
+        }
+
+    })
+
+    .catch(function() {
+
+        creditText.textContent = 'Bağlantı hatası';
+
+    });
+
+}
+
+
+
+// ── AKTİF KOMPOZİSYON VE SEÇİLİ KATMAN POLLEME (OTOMATİK MOD İÇİN) ──────
+
+var compPollInterval = null;
+
+function startCompPolling() {
+
+    if (compPollInterval) clearInterval(compPollInterval);
+
+    compPollInterval = setInterval(function () {
+
+        // Comp polling
+
+        cs.evalScript('getActiveCompName()', function (name) {
+
+            var lbl = document.getElementById('lblActiveComp');
+
+            if (lbl) {
+
+                if (name && name.trim()) {
+
+                    lbl.textContent = name;
+
+                    lbl.style.color = '#00f2fe';
+
+                } else {
+
+                    lbl.textContent = 'Yok';
+
+                    lbl.style.color = '#ff6b6b';
+
+                }
+
+            }
+
+        });
+
+        // Selected layer polling
+
+        cs.evalScript('getSelectedLayerName()', function (layerName) {
+
+            var lbl = document.getElementById('lblActiveLayer');
+
+            var lblVocal = document.getElementById('lblActiveVocalLayer');
+
+            var activeName = (layerName && layerName.trim()) ? layerName : '';
+
+            
+
+            if (lbl) {
+
+                if (activeName) {
+
+                    lbl.textContent = activeName;
+
+                    lbl.style.color = '#00f2fe';
+
+                } else {
+
+                    lbl.textContent = 'Yok (Lütfen sesli bir katman seçin)';
+
+                    lbl.style.color = '#ff6b6b';
+
+                }
+
+            }
+
+            if (lblVocal) {
+
+                if (activeName) {
+
+                    lblVocal.textContent = activeName;
+
+                    lblVocal.style.color = '#00f2fe';
+
+                } else {
+
+                    lblVocal.textContent = 'Yok (Lütfen bir katman seçin)';
+
+                    lblVocal.style.color = '#ff6b6b';
+
+                }
+
+            }
+
+        });
+
+    }, 1500);
+
+}
+
+
+
+function stopCompPolling() {
+
+    if (compPollInterval) {
+
+        clearInterval(compPollInterval);
+
+        compPollInterval = null;
+
+    }
+
+}
+
+
+
+
+
+// ── SUB-TAB MOD DEĞİŞTİRME (OTOMATİK vs MANUEL) ───────────
+
+document.getElementById('modeTabAuto').addEventListener('click', function () {
+
+    subMode = 'auto';
+
+    this.classList.add('active');
+
+    document.getElementById('modeTabManual').classList.remove('active');
+
+    document.getElementById('modeContentAuto').style.display = 'block';
+
+    document.getElementById('modeContentManual').style.display = 'none';
+
+});
+
+
+
+document.getElementById('modeTabManual').addEventListener('click', function () {
+
+    subMode = 'manual';
+
+    this.classList.add('active');
+
+    document.getElementById('modeTabAuto').classList.remove('active');
+
+    document.getElementById('modeContentManual').style.display = 'block';
+
+    document.getElementById('modeContentAuto').style.display = 'none';
+
+});
+
+
+
+// ── MANUEL DOSYA SEÇİMİ / DRAG & DROP ────────────────────
+
+var dropZone = document.getElementById('subDropZone');
+
+var fileInput = document.getElementById('subFileInput');
+
+
+
+dropZone.addEventListener('click', function () { fileInput.click(); });
+
+
+
+fileInput.addEventListener('change', function () {
+
+    if (this.files[0]) setSubFile(this.files[0]);
+
+});
+
+
+
+dropZone.addEventListener('dragover', function (e) {
+
+    e.preventDefault(); dropZone.classList.add('drag-over');
+
+});
+
+dropZone.addEventListener('dragleave', function () { dropZone.classList.remove('drag-over'); });
+
+dropZone.addEventListener('drop', function (e) {
+
+    e.preventDefault(); dropZone.classList.remove('drag-over');
+
+    var f = e.dataTransfer.files[0];
+
+    if (f) setSubFile(f);
+
+});
+
+
+
+function setSubFile(f) {
+
+    var maxSize = 50 * 1024 * 1024;
+
+    if (f.size > maxSize) { showToast("⚠ Dosya 50MB'dan büyük!"); return; }
+
+    subFile = f;
+
+    dropZone.classList.add('has-file');
+
+    document.getElementById('subDropText').textContent = f.name;
+
+    showToast('✓ Dosya seçildi: ' + f.name);
+
+}
+
+
+
+// ── İLERLEME ÇUBUĞU ───────────────────────────────────────
+
+var progressInterval = null;
+
+function startProgress() {
+
+    var bar = document.getElementById('subProgressFill');
+
+    var txt = document.getElementById('subProgressText');
+
+    document.getElementById('subProgress').style.display = 'flex';
+
+    document.getElementById('subResult').style.display = 'none';
+
+    document.getElementById('btnImportToAE').disabled = true;
+
+    var pct = 5;
+
+    bar.style.width = pct + '%';
+
+    progressInterval = setInterval(function () {
+
+        pct = Math.min(pct + (Math.random() * 3), 90);
+
+        bar.style.width = pct + '%';
+
+        if (subMode === 'auto' && pct < 25) {
+
+            txt.textContent = 'AE kompozisyonunun sesi render alınıyor...';
+
+        } else if (pct < 50) {
+
+            txt.textContent = 'Ses sunucuya yükleniyor...';
+
+        } else if (pct < 80) {
+
+            txt.textContent = 'AI işliyor (Whisper)...';
+
+        } else {
+
+            txt.textContent = 'Segmentler oluşturuluyor...';
+
+        }
+
+    }, 600);
+
+}
+
+
+
+function stopProgress(success) {
+
+    clearInterval(progressInterval);
+
+    var bar = document.getElementById('subProgressFill');
+
+    bar.style.width = success ? '100%' : '0%';
+
+    setTimeout(function () {
+
+        document.getElementById('subProgress').style.display = 'none';
+
+        bar.style.width = '0%';
+
+    }, 600);
+
+}
+
+
+
+// ── ALTYAZI AYARLARI MODALI ────────────────────────────────
+
+document.getElementById('btnGenerateSub').addEventListener('click', function () {
+
+    var apiKey = verifiedApiKey || localStorage.getItem('tt_api_key') || '';
+
+    if (!apiKey) { showToast('⚠ Önce API Key girin'); return; }
+
+    
+
+    if (subMode === 'manual' && !subFile) { 
+
+        showToast('⚠ Önce ses/video dosyası seçin'); 
+
+        return; 
+
+    }
+
+    
+
+    document.getElementById('subSettingsOverlay').classList.add('open');
+
+});
+
+
+
+document.getElementById('closeSubSettings').addEventListener('click', function () {
+
+    document.getElementById('subSettingsOverlay').classList.remove('open');
+
+});
+
+document.getElementById('cancelSubSettings').addEventListener('click', function () {
+
+    document.getElementById('subSettingsOverlay').classList.remove('open');
+
+});
+
+
+
+document.getElementById('btnConfirmGenerateSub').addEventListener('click', function () {
+
+    document.getElementById('subSettingsOverlay').classList.remove('open');
+
+    
+
+    var apiKey = verifiedApiKey || localStorage.getItem('tt_api_key') || '';
+
+    var lang      = document.getElementById('subLang').value;
+
+    var wordLimit = document.getElementById('subWordLimit').value;
+
+    var textCase  = document.getElementById('subTextCase').value;
+
+
+
+    if (subMode === 'manual') {
+
+        sendToTranscribeAPI(subFile, apiKey, lang, wordLimit, textCase);
+
+    } else {
+
+        // Otomatik Mod: Önce seçili katmanın direkt kaynak dosyasını oku (Sıfır Render Hızı!)
+
+        startProgress();
+
+        cs.evalScript('getSelectedLayerSourcePath()', function (sourceResStr) {
+
+            console.log("getSelectedLayerSourcePath raw response:", sourceResStr);
+
+            try {
+
+                if (!sourceResStr) {
+
+                    throw new Error("Katman bilgisi alınamadı.");
+
+                }
+
+                var sourceRes = JSON.parse(sourceResStr);
+
+                if (sourceRes.error) {
+
+                    stopProgress(false);
+
+                    showToast('❌ Hata: ' + decodeURIComponent(sourceRes.error));
+
+                    return;
+
+                }
+
+
+
+                var fs = require('fs');
+
+                var path = require('path');
+
+
+
+                if (sourceRes.hasSourceFile) {
+
+                    var sourcePath = decodeURIComponent(sourceRes.path);
+
+                    var statObj = window.cep.fs.stat(sourcePath);
+
+                    if (statObj.err === 0 && statObj.data.isFile) {
+
+                        var fileSizeMB = statObj.data.size / (1024 * 1024);
+
+
+
+                        var ext = sourcePath.split('.').pop().toLowerCase();
+
+                        var isAudioFile = (ext === 'mp3' || ext === 'wav' || ext === 'm4a' || ext === 'aac');
+
+
+
+                        // Maksimum limit 50MB. Render sürecinden tamamen kaçınmak için boyutu 50MB altındaki HER dosya (video veya ses) doğrudan okunup sunucuya gönderilir!
+
+                        if (fileSizeMB < 50) {
+
+                            console.log("Direct file upload. Size:", fileSizeMB.toFixed(2), "MB. Path:", sourcePath);
+
+                            
+
+                            var readResult = window.cep.fs.readFile(sourcePath, window.cep.encoding.Base64);
+
+                            if (readResult.err === 0) {
+
+                                var base64Data = readResult.data.replace(/[\r\n]+/g, "");
+
+                                var mime = 'audio/' + (ext || 'wav');
+
+                                if (ext === 'mp3') mime = 'audio/mpeg';
+
+                                if (ext === 'm4a') mime = 'audio/mp4';
+
+                                if (ext === 'mp4' || ext === 'mov') mime = 'video/mp4';
+
+                                
+
+                                var dataUrl = 'data:' + mime + ';base64,' + base64Data;
+
+                                var fileName = sourcePath.split('\\\\').pop().split('/').pop();
+
+
+
+                                var payload = {
+
+                                    audioDataUrl: dataUrl,
+
+                                    fileName: fileName,
+
+                                    language: lang,
+
+                                    wordLimit: wordLimit,
+
+                                    textCase: textCase
+
+                                };
+
+
+
+                                executeTranscribeRequestDirect(payload, apiKey, sourceRes.startTime, sourceRes.inPoint, sourceRes.outPoint);
+
+                                return;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+
+
+                // EĞER RENDER ŞART İSE (Pre-comp ise veya dosya çok büyükse): Hızlı Render Al (Video Kapalı!)
+
+                console.log("Falling back to audio-only rendering...");
+
+                triggerAudioRenderSub(apiKey, lang, wordLimit, textCase);
+
+
+
+            } catch (err) {
+
+                stopProgress(false);
+
+                showToast('❌ Hata: ' + err.message);
+
+            }
+
+        });
+
+    }
+
+});
+
+
+
+function triggerAudioRenderSub(apiKey, lang, wordLimit, textCase) {
+
+    cs.evalScript('exportSelectedLayerAudio()', function (renderRes) {
+
+        console.log("exportSelectedLayerAudio raw response:", renderRes);
+
+        try {
+
+            if (!renderRes) {
+
+                throw new Error("ExtendScript boş yanıt döndürdü.");
+
+            }
+
+            var res = JSON.parse(renderRes);
+
+            if (res.error) {
+
+                stopProgress(false);
+
+                showToast('❌ Hata: ' + decodeURIComponent(res.error));
+
+                return;
+
+            }
+
+            
+
+            var filePath = decodeURIComponent(res.path);
+
+            var statObj = window.cep.fs.stat(filePath);
+
+            
+
+            if (statObj.err !== 0) {
+
+                stopProgress(false);
+
+                showToast('❌ Hata: Render edilen dosya bulunamadı.');
+
+                return;
+
+            }
+
+            
+
+            var readResult = window.cep.fs.readFile(filePath, window.cep.encoding.Base64);
+
+            if (readResult.err !== 0) {
+
+                stopProgress(false);
+
+                showToast('❌ Hata: Render dosyası okunamadı. Hata Kodu: ' + readResult.err);
+
+                return;
+
+            }
+
+            
+
+            var base64Data = readResult.data.replace(/[\r\n]+/g, "");
+
+            
+
+            var mime = 'audio/wav';
+
+            var firstBytes = base64Data.substring(0, 10);
+
+            if (firstBytes.indexOf("AAAA") === 0 || firstBytes.indexOf("AAAB") === 0) {
+
+                mime = 'video/mp4'; // H.264/MP4/M4A signature
+
+            } else if (firstBytes.indexOf("UklGR") === 0) {
+
+                mime = 'audio/wav'; // WAV signature
+
+            } else if (firstBytes.indexOf("SUQz") === 0 || firstBytes.indexOf("//Nkx") === 0) {
+
+                mime = 'audio/mpeg'; // MP3 signature
+
+            } else {
+
+                var ext = filePath.split('.').pop().toLowerCase();
+
+                if (ext === 'mp3') mime = 'audio/mpeg';
+
+                if (ext === 'm4a') mime = 'audio/mp4';
+
+                if (ext === 'mp4' || ext === 'mov') mime = 'video/mp4';
+
+            }
+
+            
+
+            var dataUrl = 'data:' + mime + ';base64,' + base64Data;
+
+            
+
+            try { window.cep.fs.deleteFile(filePath); } catch(e){}
+
+            
+
+            var fileName = filePath.split('\\\\').pop().split('/').pop();
+
+            
+
+            var payload = {
+
+                audioDataUrl: dataUrl,
+
+                fileName: fileName,
+
+                language: lang,
+
+                wordLimit: wordLimit,
+
+                textCase: textCase
+
+            };
+
+            
+
+            executeTranscribeRequest(payload, apiKey);
+
+            
+
+        } catch(err) {
+
+            stopProgress(false);
+
+            var detail = renderRes ? String(renderRes).substring(0, 120) : "boş";
+
+            showToast('❌ Render hatası: ' + err.message + ' (Cevap: ' + detail + ')');
+
+        }
+
+    });
+
+}
+
+
+
+function executeTranscribeRequestDirect(payload, apiKey, startTime, inPoint, outPoint) {
+
+    fetch(TT_BASE_URL + '/api/external/transcribe', {
+
+        method: 'POST',
+
+        headers: {
+
+            'Content-Type': 'application/json',
+
+            'Authorization': 'ApiKey ' + apiKey
+
+        },
+
+        body: JSON.stringify(payload)
+
+    })
+
+    .then(function(res) {
+
+        return res.json();
+
+    })
+
+    .then(function(data) {
+
+        if (data.error) {
+
+            stopProgress(false);
+
+            showToast('❌ Hata: ' + data.error);
+
+            return;
+
+        }
+
+        stopProgress(true);
+
+
+
+        // Segmentleri After Effects kompozisyon zamanlamasına göre kaydır ve görünür aralığa göre kırp
+
+        var offset = startTime || 0;
+
+        var filteredSegments = [];
+
+        for (var i = 0; i < data.segments.length; i++) {
+
+            var seg = data.segments[i];
+
+            var absoluteStart = seg.start + offset;
+
+            var absoluteEnd = seg.end + offset;
+
+
+
+            // Görünür aralığa denk gelenleri filtrele (0.5 sn tolerans payı ile)
+
+            if (absoluteStart >= inPoint - 0.5 && absoluteEnd <= outPoint + 0.5) {
+
+                seg.start = absoluteStart - inPoint;
+
+                seg.end = absoluteEnd - inPoint;
+
+                filteredSegments.push(seg);
+
+            }
+
+        }
+
+
+
+        subSegments = filteredSegments;
+
+        
+
+        // Yeniden SRT formatı oluştur (Kırpılmış segmentlere göre)
+
+        function toSrt(secs) {
+            var h = Math.floor(secs/3600), m = Math.floor((secs%3600)/60), s = Math.floor(secs%60), ms = Math.round((secs%1)*1000);
+            function pad2(n){ return (n < 10 ? '0' : '') + n; }
+            function pad3(n){ return (n < 10 ? '00' : (n < 100 ? '0' : '')) + n; }
+            return pad2(h) + ':' + pad2(m) + ':' + pad2(s) + ',' + pad3(ms);
+        }
+
+        var _srtParts = [];
+        for (var _si = 0; _si < subSegments.length; _si++) {
+            var _seg = subSegments[_si];
+            _srtParts.push((_si + 1) + '\n' + toSrt(_seg.start) + ' --> ' + toSrt(_seg.end) + '\n' + _seg.text);
+        }
+        subSrtContent = _srtParts.join('\n\n');
+
+
+
+        // Kredi güncelle
+
+        if (data.creditsLeft !== undefined) {
+
+            document.getElementById('creditText').textContent = data.creditsLeft + ' Kredi mevcut';
+
+        }
+
+
+
+        // Sonuç göster
+
+        document.getElementById('subResult').style.display = 'flex';
+
+        document.getElementById('subResultTitle').textContent = 'Altyazı Hazır ✓';
+
+        document.getElementById('subResultMeta').textContent = (subSegments.length) + ' segment (Sıfır Render)';
+
+        document.getElementById('btnImportToAE').disabled = false;
+
+        showToast('✅ ' + subSegments.length + ' altyazı oluşturuldu!');
+
+    })
+
+    .catch(function(e) {
+
+        stopProgress(false);
+
+        showToast('❌ İstek başarısız oldu: ' + e.message);
+
+    });
+
+}
+
+
+
+function sendToTranscribeAPI(fileObj, apiKey, lang, wordLimit, textCase) {
+
+    startProgress();
+
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+
+        var payload = {
+
+            audioDataUrl: e.target.result,
+
+            fileName: fileObj.name,
+
+            language: lang,
+
+            wordLimit: wordLimit,
+
+            textCase: textCase
+
+        };
+
+        executeTranscribeRequest(payload, apiKey);
+
+    };
+
+    reader.readAsDataURL(fileObj);
+
+}
+
+
+
+function executeTranscribeRequest(payload, apiKey) {
+
+    fetch(TT_BASE_URL + '/api/external/transcribe', {
+
+        method: 'POST',
+
+        headers: {
+
+            'Content-Type': 'application/json',
+
+            'Authorization': 'ApiKey ' + apiKey
+
+        },
+
+        body: JSON.stringify(payload)
+
+    })
+
+    .then(function(res) {
+
+        return res.json();
+
+    })
+
+    .then(function(data) {
+
+        if (data.error) {
+
+            stopProgress(false);
+
+            showToast('❌ Hata: ' + data.error);
+
+            return;
+
+        }
+
+        stopProgress(true);
+
+        subSegments = data.segments;
+
+        subSrtContent = data.srt;
+
+
+
+        // Kredi güncelle
+
+        if (data.creditsLeft !== undefined) {
+
+            document.getElementById('creditText').textContent = data.creditsLeft + ' Kredi mevcut';
+
+        }
+
+
+
+        // Sonuç göster
+
+        document.getElementById('subResult').style.display = 'flex';
+
+        document.getElementById('subResultTitle').textContent = 'Altyazı Hazır ✓';
+
+        document.getElementById('subResultMeta').textContent = (subSegments.length) + ' segment · ' + Math.round(data.text.length/10) + ' sn ses';
+
+        document.getElementById('btnImportToAE').disabled = false;
+
+        showToast('✅ ' + subSegments.length + ' altyazı oluşturuldu!');
+
+    })
+
+    .catch(function(e) {
+
+        stopProgress(false);
+
+        showToast('❌ İstek başarısız oldu: ' + e.message);
+
+    });
+
+}
+
+
+
+// ── SRT İNDİR ─────────────────────────────────────────────
+
+document.getElementById('btnSaveSRT').addEventListener('click', function () {
+
+    if (!subSrtContent) { showToast('⚠ Önce altyazı oluşturun'); return; }
+
+    cs.evalScript('saveSRTFile(' + JSON.stringify(subSrtContent) + ')', function() {
+
+        showToast('⬇ SRT kaydedildi');
+
+    });
+
+});
+
+
+
+// ── AE'YE AKTAR ───────────────────────────────────────────
+
+document.getElementById('btnImportToAE').addEventListener('click', function () {
+
+    if (!subSegments || !subSegments.length) { showToast('⚠ Altyazı yok'); return; }
+
+    
+
+    var fs = require('fs');
+
+    var path = require('path');
+
+    var os = require('os');
+
+    var tempPath = path.join(os.tmpdir(), 'ae_sub_data_' + new Date().getTime() + '.json');
+
+    var segJson = JSON.stringify(subSegments);
+
+    fs.writeFileSync(tempPath, segJson, 'utf8');
+
+
+
+    if (subMode === 'auto') {
+
+        cs.evalScript('getSelectedLayerInPoint()', function (inPointStr) {
+
+            var offset = parseFloat(inPointStr) || 0;
+
+            var scriptStr = '(function(){ try { return importSubtitleToAE_FromFile("' + tempPath.replace(/\\/g, '/') + '", ' + offset + '); } catch(e) { return "HATA: GLOBAL " + e.toString(); } })()';
+
+            cs.evalScript(scriptStr, function (res) {
+
+                if (res && res.indexOf("HATA") !== -1) {
+
+                    showToast('❌ ' + res);
+
+                } else {
+
+                    showToast('✦ ' + (res || 'Aktarıldı (Boş Yanıt)'));
+
+                }
+
+            });
+
+        });
+
+    } else {
+
+        var scriptStr = '(function(){ try { return importSubtitleToAE_FromFile("' + tempPath.replace(/\\/g, '/') + '", 0); } catch(e) { return "HATA: GLOBAL " + e.toString(); } })()';
+
+        cs.evalScript(scriptStr, function (res) {
+
+            if (res && res.indexOf("HATA") !== -1) {
+
+                showToast('❌ ' + res);
+
+            } else {
+
+                showToast('✦ ' + (res || 'Aktarıldı (Boş Yanıt)'));
+
+            }
+
+        });
+
+    }
+
+});
+
+
+
+// ── VOKAL AYIRMA MANTIĞI ─────────────────────────────────────
+
+var vocalModeOverlay = document.getElementById('vocalModeOverlay');
+
+if (document.getElementById('btnIsolateVocal')) {
+
+    document.getElementById('btnIsolateVocal').addEventListener('click', function () {
+
+        var apiKey = verifiedApiKey || localStorage.getItem('tt_api_key') || '';
+
+        if (!apiKey) { showToast('⚠ Lütfen Developer Kodunuzu girin'); return; }
+
+        updateStemCheckboxes();
+if (vocalModeOverlay) vocalModeOverlay.classList.add('open');
+
+    });
+
+}
+
+if (document.getElementById('closeVocalMode')) {
+
+    document.getElementById('closeVocalMode').addEventListener('click', function () { vocalModeOverlay.classList.remove('open'); });
+
+}
+
+if (document.getElementById('cancelIsolateVocal')) {
+
+    document.getElementById('cancelIsolateVocal').addEventListener('click', function () { vocalModeOverlay.classList.remove('open'); });
+
+}
+
+
+
+function updateStemCheckboxes() {
+
+    var model = document.getElementById('vocalModelSelectModal').value;
+
+    var container = document.getElementById('stemSelectionOptions');
+
+    if (!container) return;
+
+    
+
+    var html = '';
+
+    if (model === 'standart') {
+
+        html += '<label class="checkbox-row" style="margin-bottom:4px;"><input type="checkbox" value="vocals" checked> 🎙 Ana Vokal</label>';
+
+        html += '<label class="checkbox-row" style="margin-bottom:4px;"><input type="checkbox" value="instrumental"> 🎵 Müzik (Enstrümantal)</label>';
+
+    } else if (model.indexOf('karaoke') !== -1) {
+
+        html += '<label class="checkbox-row" style="margin-bottom:4px;"><input type="checkbox" value="vocals" checked> 🎙 Ana Vokal (Sıfır Müzik)</label>';
+
+        html += '<label class="checkbox-row" style="margin-bottom:4px;"><input type="checkbox" value="backing"> 🗣 Ara Vokal (Backing)</label>';
+
+        html += '<label class="checkbox-row" style="margin-bottom:4px;"><input type="checkbox" value="instrumental"> 🎵 Müzik</label>';
+
+    } else if (model === 'detayli') {
+
+        html += '<label class="checkbox-row" style="margin-bottom:4px;"><input type="checkbox" value="vocals" checked> 🎙 Ana Vokal</label>';
+
+        html += '<label class="checkbox-row" style="margin-bottom:4px;"><input type="checkbox" value="drums"> 🥁 Davul</label>';
+
+        html += '<label class="checkbox-row" style="margin-bottom:4px;"><input type="checkbox" value="bass"> 🎸 Bas Gitar</label>';
+
+        html += '<label class="checkbox-row" style="margin-bottom:4px;"><input type="checkbox" value="other"> 🎹 Diğer Enstrümanlar</label>';
+
+    }
+
+    container.innerHTML = html;
+
+}
+
+
+
+if (document.getElementById('vocalModelSelectModal')) {
+
+    document.getElementById('vocalModelSelectModal').addEventListener('change', updateStemCheckboxes);
+
+}
+
+
+
+if (document.getElementById('confirmIsolateVocal')) {
+
+    document.getElementById('confirmIsolateVocal').addEventListener('click', function () {
+
+        if (vocalModeOverlay) vocalModeOverlay.classList.remove('open');
+
+        var apiKey = verifiedApiKey || localStorage.getItem('tt_api_key') || '';
+
+        
+
+        var model = document.getElementById('vocalModelSelectModal').value;
+
+        var muteOriginal = document.getElementById('chkMuteOriginalModal').checked;
+
+
+
+        // Get selected stems
+
+        var selectedStems = [];
+
+        var checkboxes = queryAll('#stemSelectionOptions input[type="checkbox"]:checked');
+
+        checkboxes.forEach(function(chk) { selectedStems.push(chk.value); });
+
+        
+
+        if (selectedStems.length === 0) {
+
+            showToast('Lütfen en az bir katman seçin!');
+
+            return;
+
+        }
+
+
+
+        document.getElementById('vocalProgress').style.display = 'flex';
+
+        document.getElementById('vocalProgressFill').style.width = '30%';
+
+        document.getElementById('vocalProgressText').textContent = 'Ses okunuyor...';
+
+
+
+        // Ses Katmanını Oku
+
+        cs.evalScript('getSelectedLayerSourcePath()', function (sourceResStr) {
+
+            try {
+
+                if (!sourceResStr) throw new Error("Katman bilgisi alınamadı.");
+
+                var sourceRes = JSON.parse(sourceResStr);
+
+                if (sourceRes.error) { throw new Error(decodeURIComponent(sourceRes.error)); }
+
+
+
+                var fs = require('fs');
+
+                var sourcePath = decodeURIComponent(sourceRes.path);
+
+                var statObj = window.cep.fs.stat(sourcePath);
+
+                
+
+                if (statObj.err === 0 && statObj.data.isFile) {
+
+                    var fileSizeMB = statObj.data.size / (1024 * 1024);
+
+                    var ext = sourcePath.split('.').pop().toLowerCase();
+
+                    var isAudioOrVideo = (['mp3', 'wav', 'm4a', 'aac', 'mp4', 'mov'].indexOf(ext) !== -1);
+
+
+
+                    if (fileSizeMB < 50 && isAudioOrVideo) {
+
+                        // Direkt Oku
+
+                        var readResult = window.cep.fs.readFile(sourcePath, window.cep.encoding.Base64);
+
+                        if (readResult.err === 0) {
+
+                            var base64Data = readResult.data.replace(/[\r\n]+/g, "");
+
+                            var mime = 'audio/' + (ext || 'wav');
+
+                            if (ext === 'mp3') mime = 'audio/mpeg';
+
+                            if (ext === 'm4a' || ext === 'mp4' || ext === 'mov') mime = 'video/mp4';
+
+                            
+
+                            var dataUrl = 'data:' + mime + ';base64,' + base64Data;
+
+                            var fileName = sourcePath.split('\\').pop().split('/').pop();
+
+                            
+
+                            executeVocalIsolation(dataUrl, fileName, model, apiKey, sourceRes.startTime, sourceRes.inPoint, sourceRes.outPoint, muteOriginal, selectedStems);
+
+                            return;
+
+                        }
+
+                    }
+
+                }
+
+                
+
+                // Eğer direkt okunamadıysa Render'a düş (Render Audio)
+
+                document.getElementById('vocalProgressText').textContent = 'Geçici render alınıyor...';
+
+                cs.evalScript('exportSelectedLayerAudio()', function (renderRes) {
+
+                    try {
+
+                        var res = JSON.parse(renderRes);
+
+                        if (res.error) throw new Error(decodeURIComponent(res.error));
+
+                        
+
+                        var filePath = decodeURIComponent(res.path);
+
+                        var readResult = window.cep.fs.readFile(filePath, window.cep.encoding.Base64);
+
+                        if (readResult.err !== 0) throw new Error("Render dosyası okunamadı.");
+
+                        
+
+                        var base64Data = readResult.data.replace(/[\r\n]+/g, "");
+
+                        var mime = 'audio/wav'; // Default exported
+
+                        var dataUrl = 'data:' + mime + ';base64,' + base64Data;
+
+                        
+
+                        try { window.cep.fs.deleteFile(filePath); } catch(e){}
+
+                        var fileName = filePath.split('\\').pop().split('/').pop();
+
+                        
+
+                        // For rendered audio, the file itself is already trimmed.
+
+                        // The file's internal time 0 should align with the comp's inPoint.
+
+                        // Therefore, startTime = inPoint. inPoint = inPoint. outPoint = outPoint.
+
+                        executeVocalIsolation(dataUrl, fileName, model, apiKey, sourceRes.inPoint, sourceRes.inPoint, sourceRes.outPoint, muteOriginal, selectedStems);
+
+                    } catch(err) {
+
+                        document.getElementById('vocalProgress').style.display = 'none';
+
+                        showToast('❌ Render hatası: ' + err.message);
+
+                    }
+
+                });
+
+
+
+            } catch (err) {
+
+                document.getElementById('vocalProgress').style.display = 'none';
+
+                showToast('❌ Hata: ' + err.message);
+
+            }
+
+        });
+
+    });
+
+}
+
+
+
+function executeVocalIsolation(audioDataUrl, fileName, model, apiKey, startTime, inPoint, outPoint, muteOriginal, selectedStems) {
+
+    document.getElementById('vocalProgressFill').style.width = '60%';
+
+    document.getElementById('vocalProgressText').textContent = 'Sunucuya gönderiliyor... (Bu işlem biraz sürebilir)';
+
+    
+
+    // Map the karaoke models to what the server expects
+
+    var serverModel = model;
+
+    if (model === 'karaoke_hizli') serverModel = 'karaoke';
+
+    if (model === 'karaoke_yavas') serverModel = 'karaoke-slow';
+
+
+
+    fetch(TT_BASE_URL + '/api/external/isolate-vocal', {
+
+        method: 'POST',
+
+        headers: {
+
+            'Content-Type': 'application/json',
+
+            'Authorization': 'ApiKey ' + apiKey
+
+        },
+
+        body: JSON.stringify({ audioDataUrl: audioDataUrl, fileName: fileName, model: serverModel, selectedStems: selectedStems })
+
+    })
+
+    .then(function(res) { return res.json(); })
+
+    .then(function(data) {
+
+        if (data.error) {
+
+            document.getElementById('vocalProgress').style.display = 'none';
+
+            showToast('❌ Sunucu Hatası: ' + data.error);
+
+            return;
+
+        }
+
+        
+
+        document.getElementById('vocalProgressFill').style.width = '90%';
+
+        document.getElementById('vocalProgressText').textContent = 'Vokal indiriliyor...';
+
+        
+
+        // Gelen ses katmanlarini (stems) isle
+
+        if (data.audioDataUrls) {
+
+            var stems = Object.keys(data.audioDataUrls);
+
+            var isFirst = true;
+
+            var hasError = false;
+
+            var fs = require('fs');
+
+            var path = require('path');
+
+            var os = require('os');
+
+
+
+            function importNextStem(index) {
+
+                if (index >= stems.length) {
+
+                    document.getElementById('vocalProgress').style.display = 'none';
+
+                    if (!hasError) showToast('Katmanlar basariyla ayrildi ve eklendi!');
+
+                    if (data.creditsLeft !== undefined) {
+
+                        var credEl = document.getElementById('creditText');
+
+                        if(credEl) credEl.textContent = data.creditsLeft + ' Kredi';
+
+                    }
+
+                    return;
+
+                }
+
+                var stemName = stems[index];
+
+                var rawData = data.audioDataUrls[stemName];
+
+                var b64Data = rawData.indexOf(',') !== -1 ? rawData.split(',')[1] : rawData;
+
+                var tempPath = path.join(os.tmpdir(), 'vocal_' + stemName + '_' + Date.now() + '.wav');
+
+                var buf = Buffer.from(b64Data, 'base64');
+
+                fs.writeFileSync(tempPath, buf);
+
+                var doMute = isFirst ? muteOriginal : false;
+
+                var safePath = tempPath.replace(/\\/g, '/');
+
+                var scriptStr = '(function(){ try { return importIsolatedAudioToAE(\"' + safePath + '\", ' + startTime + ', ' + inPoint + ', ' + outPoint + ', ' + doMute + ', \"' + stemName + '\"); } catch(e) { return \"HATA: \" + e.toString(); } })()';
+
+                cs.evalScript(scriptStr, function(res) {
+
+                    if (res && res.indexOf('HATA') !== -1) { showToast('Hata: ' + res); hasError = true; }
+
+                    isFirst = false;
+
+                    importNextStem(index + 1);
+
+                });
+
+            }
+
+
+
+            document.getElementById('vocalProgressFill').style.width = '100%';
+
+            document.getElementById('vocalProgressText').textContent = "AE'ye aktariliyor...";
+
+            importNextStem(0);
+
+        } else {
+
+            document.getElementById('vocalProgress').style.display = 'none';
+
+            showToast('Hata: Sunucu gecersiz veri dondurdu. Yanit: ' + JSON.stringify(data).substring(0, 100));
+
+        }
+
+    })
+
+    .catch(function(e) {
+
+        document.getElementById('vocalProgress').style.display = 'none';
+
+        showToast('❌ İstek başarısız oldu: ' + e.message);
+
+    });
+
+}
+
+
+
+// Arayüzü başlat (Hafızadan API Key oku)
+
+updateAuthUi();
+
+
+
+// ── Input Listeners ───────────────────────────────────────────
+// (flipY button is already set up at the top of the file — do NOT add it again here)
+
+
+
+    ['inpCp1x','inpCp1y','inpCp2x','inpCp2y'].forEach(function(id) {
+
+    var el = document.getElementById(id);
+
+    if (el) {
+
+        el.addEventListener('input', function() {
+
+            var v = parseFloat(this.value) || 0;
+
+            if (id==='inpCp1x') cp1.x = v;
+
+            if (id==='inpCp1y') cp1.y = v;
+
+            if (id==='inpCp2x') cp2.x = v;
+
+            if (id==='inpCp2y') cp2.y = v;
+
+            activeFlowType = 'custom';
+
+            drawFlow();
+
+            localStorage.setItem('flowease_cp1', JSON.stringify(cp1));
+
+            localStorage.setItem('flowease_cp2', JSON.stringify(cp2));
+
+        });
+
+    }
+
+});
+
+
+
+// ── KEYBOARD SHORTCUTS ──────────────────────────────────────────
+
+
+
+
+
+// Show shortcuts hint on first load
+
+(function() {
+
+    if (!localStorage.getItem('sf_shortcuts_seen')) {
+
+        setTimeout(function() {
+
+            showToast('💡 İpucu: 1-4=Preset, M=Ayna, Ctrl+C=Kopyala, Space=Uygula');
+
+            localStorage.setItem('sf_shortcuts_seen', '1');
+
+        }, 2000);
+
+    }
+
+})();
+
+
+
+// ═══════════════════════════════════════════════════════════
+
+//  NEW FEATURES v2.5
+
+// ═══════════════════════════════════════════════════════════
+
+
+
+// ── 1. UNDO / REDO SYSTEM (10 steps) ───────────────────────
+
+var undoStack = [];
+
+var redoStack = [];
+
+var MAX_UNDO = 10;
+
+
+
+function pushUndo() {
+
+    undoStack.push({ cp1: {x:cp1.x, y:cp1.y}, cp2: {x:cp2.x, y:cp2.y} });
+
+    if (undoStack.length > MAX_UNDO) undoStack.shift();
+
+    redoStack = [];
+
+}
+
+
+
+function doUndo() {
+
+    if (!undoStack.length) { showToast('⚠ Geri alacak işlem yok'); return; }
+
+    redoStack.push({ cp1: {x:cp1.x, y:cp1.y}, cp2: {x:cp2.x, y:cp2.y} });
+
+    var state = undoStack.pop();
+
+    cp1 = state.cp1; cp2 = state.cp2;
+
+    drawFlow(); showToast('↩ Geri alındı');
+
+}
+
+
+
+function doRedo() {
+
+    if (!redoStack.length) { showToast('⚠ İleri alacak işlem yok'); return; }
+
+    undoStack.push({ cp1: {x:cp1.x, y:cp1.y}, cp2: {x:cp2.x, y:cp2.y} });
+
+    var state = redoStack.pop();
+
+    cp1 = state.cp1; cp2 = state.cp2;
+
+    drawFlow(); showToast('↪ İleri alındı');
+
+}
+
+
+
+document.getElementById('btnUndo').addEventListener('click', doUndo);
+
+document.getElementById('btnRedo').addEventListener('click', doRedo);
+
+
+
+// Inject undo push into drag end
+
+canvas.addEventListener('mousedown', function() { pushUndo(); }, true);
+
+
+
+
+
+// ── 2. SYMMETRY LOCK ────────────────────────────────────────
+
+var symLockOn = false;
+
+var btnSymLock = document.getElementById('btnSymLock');
+
+btnSymLock.addEventListener('click', function() {
+
+    symLockOn = !symLockOn;
+
+    btnSymLock.classList.toggle('active', symLockOn);
+
+    showToast(symLockOn ? '🔗 Simetri Kilidi AÇIK' : '🔗 Simetri Kilidi KAPALI');
+
+});
+
+
+
+// Hook into drawFlow drag to mirror when symLock is on
+
+var _origCanvasMove = canvas.onmousemove;
+
+canvas.addEventListener('mousemove', function(e) {
+
+    if (!dragging || !symLockOn || graphMode === 'speed') return;
+
+    // cp1 and cp2 are already set by the base handler; now mirror
+
+    requestAnimationFrame(function() {
+
+        if (dragging === 'cp1') {
+
+            cp2.x = 1 - cp1.x;
+
+            cp2.y = 1 - cp1.y;
+
+        } else {
+
+            cp1.x = 1 - cp2.x;
+
+            cp1.y = 1 - cp2.y;
+
+        }
+
+        drawFlow();
+
+    });
+
+});
+
+
+
+
+
+// ── 3. SNAP / GRID MODE ─────────────────────────────────────
+
+var snapOn = false;
+
+var SNAP_STEP = 0.1;
+
+var btnSnapMode = document.getElementById('btnSnapMode');
+
+btnSnapMode.addEventListener('click', function() {
+
+    snapOn = !snapOn;
+
+    btnSnapMode.classList.toggle('active', snapOn);
+
+    showToast(snapOn ? '📐 Snap Modu AÇIK (0.10 adım)' : '📐 Snap Modu KAPALI');
+
+});
+
+
+
+// Patch fromCanvas to snap
+
+var _origFromCanvas = fromCanvas;
+
+fromCanvas = function(cx, cy) {
+
+    var pt = _origFromCanvas(cx, cy);
+
+    if (snapOn) {
+
+        pt.x = Math.round(pt.x / SNAP_STEP) * SNAP_STEP;
+
+        pt.y = Math.round(pt.y / SNAP_STEP) * SNAP_STEP;
+
+    }
+
+    return pt;
+
+};
+
+
+
+
+
+// ── 4. COMPARE MODE ─────────────────────────────────────────
+
+var compareOn = false;
+
+var compareCp1 = null;
+
+var compareCp2 = null;
+
+var btnCompare = document.getElementById('btnCompare');
+
+var compareLabel = document.getElementById('compareLabel');
+
+
+
+btnCompare.addEventListener('click', function() {
+
+    if (!compareOn) {
+
+        // Save current as reference
+
+        compareCp1 = {x:cp1.x, y:cp1.y};
+
+        compareCp2 = {x:cp2.x, y:cp2.y};
+
+        compareOn = true;
+
+        btnCompare.classList.add('active');
+
+        compareLabel.style.display = 'block';
+
+        showToast('👁 Karşılaştırma kaydedildi — eğriyi değiştir');
+
+    } else {
+
+        compareOn = false;
+
+        compareCp1 = null;
+
+        compareCp2 = null;
+
+        btnCompare.classList.remove('active');
+
+        compareLabel.style.display = 'none';
+
+        showToast('👁 Karşılaştırma Modu kapatıldı');
+
+    }
+
+    drawFlow();
+
+});
+
+
+
+// Draw ghost curve in compare mode — hook into drawFlow
+
+var _origDrawFlow = drawFlow;
+
+drawFlow = function() {
+
+    _origDrawFlow();
+
+    if (compareOn && compareCp1 && graphMode === 'value') {
+
+        var p0g = toCanvas(0, 0);
+
+        var p3g = toCanvas(1, 1);
+
+        var gc1 = toCanvas(compareCp1.x, compareCp1.y);
+
+        var gc2 = toCanvas(compareCp2.x, compareCp2.y);
+
+        ctx.save();
+
+        ctx.strokeStyle = 'rgba(47, 128, 237, 0.35)';
+
+        ctx.lineWidth = 2;
+
+        ctx.setLineDash([4, 4]);
+
+        ctx.beginPath();
+
+        ctx.moveTo(p0g.x, p0g.y);
+
+        ctx.bezierCurveTo(gc1.x, gc1.y, gc2.x, gc2.y, p3g.x, p3g.y);
+
+        ctx.stroke();
+
+        ctx.setLineDash([]);
+
+        ctx.restore();
+
+    }
+
+};
+
+
+
+
+
+// ── 5. ANIMATED BALL PREVIEW ────────────────────────────────
+
+var ballCanvas = document.getElementById('ballCanvas');
+
+var ballCtx = ballCanvas ? ballCanvas.getContext('2d') : null;
+
+var ballAnim = null;
+
+var ballRunning = false;
+
+
+
+function solveCubicBezierT(bx, p1x, p2x, iters) {
+
+    // Newton's method to find t given x on a cubic bezier
+
+    var t = bx;
+
+    for (var i = 0; i < (iters || 8); i++) {
+
+        var mt = 1 - t;
+
+        var f  = 3*mt*mt*t*p1x + 3*mt*t*t*p2x + t*t*t - bx;
+
+        var df = 3*mt*mt*p1x + 6*mt*t*(p2x - p1x) + 3*t*t*(1 - p2x);
+
+        if (Math.abs(df) < 1e-6) break;
+
+        t -= f / df;
+
+        t = Math.max(0, Math.min(1, t));
+
+    }
+
+    return t;
+
+}
+
+
+
+function evaluateBezierY(t, p1y, p2y) {
+
+    var mt = 1 - t;
+
+    return 3*mt*mt*t*p1y + 3*mt*t*t*p2y + t*t*t;
+
+}
+
+
+
+function startBallPreview() {
+
+    if (!ballCanvas || !ballCtx) return;
+
+    if (ballAnim) cancelAnimationFrame(ballAnim);
+
+    ballRunning = true;
+
+    var startTime = null;
+
+    var DURATION = 1200; // ms
+
+
+
+    function frame(now) {
+
+        if (!ballRunning) return;
+
+        if (!startTime) startTime = now;
+
+        var progress = (now - startTime) / DURATION;
+
+
+
+        if (progress > 1.05) {
+
+            // Pause then restart
+
+            ballCtx.clearRect(0, 0, ballCanvas.width, ballCanvas.height);
+
+            startTime = null;
+
+            setTimeout(function() {
+
+                if (ballRunning) ballAnim = requestAnimationFrame(frame);
+
+            }, 400);
+
+            return;
+
+        }
+
+
+
+        progress = Math.min(progress, 1);
+
+
+
+        // Find Y using bezier for current progress (X)
+
+        var t = solveCubicBezierT(progress, cp1.x, cp2.x);
+
+        var by = evaluateBezierY(t, cp1.y, cp2.y);
+
+
+
+        // Map to canvas
+        var bx_screen = PAD + progress * BOX_W;
+        var by_screen;
+        if (flipY) {
+            by_screen = PAD + by * BOX_H;
+        } else {
+            by_screen = PAD + (1 - by) * BOX_H;
+        }
+
+
+
+        ballCtx.clearRect(0, 0, ballCanvas.width, ballCanvas.height);
+
+
+
+        // Trail
+
+        ballCtx.beginPath();
+
+        ballCtx.arc(bx_screen, by_screen, 7, 0, Math.PI * 2);
+
+        ballCtx.fillStyle = 'rgba(47,128,237,0.15)';
+
+        ballCtx.fill();
+
+
+
+        // Ball
+
+        ballCtx.beginPath();
+
+        ballCtx.arc(bx_screen, by_screen, 5, 0, Math.PI * 2);
+
+        var grad = ballCtx.createRadialGradient(bx_screen-1, by_screen-1, 1, bx_screen, by_screen, 5);
+
+        grad.addColorStop(0, '#7dd3fc');
+
+        grad.addColorStop(1, '#2f80ed');
+
+        ballCtx.fillStyle = grad;
+
+        ballCtx.fill();
+
+
+
+        ballAnim = requestAnimationFrame(frame);
+
+    }
+
+
+
+    ballAnim = requestAnimationFrame(frame);
+
+}
+
+
+
+function stopBallPreview() {
+
+    ballRunning = false;
+
+    if (ballAnim) cancelAnimationFrame(ballAnim);
+
+    if (ballCtx) ballCtx.clearRect(0, 0, ballCanvas.width, ballCanvas.height);
+
+}
+
+
+
+// Auto-play when flow tab is active, stop otherwise
+
+queryAll('.tab').forEach(function(tab) {
+
+    tab.addEventListener('click', function() {
+
+        if (tab.dataset.tab === 'graph') {
+
+            setTimeout(startBallPreview, 300);
+
+        } else {
+
+            stopBallPreview();
+
+        }
+
+    });
+
+});
+
+
+
+// Restart ball on curve change
+
+var _origDrawFlowBall = drawFlow;
+
+drawFlow = function() {
+
+    _origDrawFlowBall();
+
+    if (ballRunning) {
+
+        if (ballAnim) cancelAnimationFrame(ballAnim);
+
+        startBallPreview();
+
+    }
+
+};
+
+
+
+// Start ball when page loads if on flow tab
+
+setTimeout(function() {
+
+    var activeTab = document.querySelector('.tab.active');
+
+    if (activeTab && activeTab.dataset.tab === 'graph') startBallPreview();
+
+}, 800);
+
+
+
+
+
+// ── 6. CATEGORY FILTER ──────────────────────────────────────
+
+var activeCat = 'all';
+
+queryAll('.cat-btn').forEach(function(btn) {
+
+    btn.addEventListener('click', function() {
+
+        activeCat = btn.getAttribute('data-cat');
+
+        queryAll('.cat-btn').forEach(function(b) { b.classList.remove('active'); });
+
+        btn.classList.add('active');
+
+        renderPresets();
+
+    });
+
+});
+
+
+
+// Patch renderPresets to support category filtering
+
+var _origRenderPresets = renderPresets;
+
+renderPresets = function() {
+
+    var list = document.getElementById('presetList');
+
+    var allPresets = loadPresets();
+
+    var filtered = activeCat === 'all' ? allPresets : allPresets.filter(function(p) { return p.category === activeCat; });
+
+
+
+    list.innerHTML = '';
+
+    if (!filtered.length) {
+
+        list.innerHTML = '<div class="preset-empty">Bu kategoride preset yok.</div>';
+
+        return;
+
+    }
+
+
+
+    filtered.forEach(function(pr, displayIdx) {
+
+        // Find the real index in allPresets
+
+        var realIdx = allPresets.indexOf(pr);
+
+        var item = document.createElement('div');
+
+        item.className = 'preset-item';
+
+        var catTag = pr.category ? pr.category : 'custom';
+
+        var catColor = {ui:'#2f80ed', karakter:'#22c55e', kamera:'#f59e0b', bounce:'#a855f7'}[catTag] || '#64748b';
+
+
+
+        item.innerHTML =
+
+            '<canvas class="preset-mini-canvas" width="64" height="40"></canvas>' +
+
+            '<div class="preset-item-info">' +
+
+            '  <span class="preset-item-name">' + pr.name + '</span>' +
+
+            '  <span class="preset-item-meta" style="color:' + catColor + ';">' + catTag + '</span>' +
+
+            '</div>' +
+
+            '<button class="preset-item-del" data-idx="' + realIdx + '">✕</button>';
+
+
+
+        drawMiniPreset(item.querySelector('.preset-mini-canvas'), pr);
+
+
+
+        item.addEventListener('click', function(e) {
+
+            if (e.target.classList.contains('preset-item-del')) {
+
+                var idx = parseInt(e.target.getAttribute('data-idx'));
+
+                var arr = loadPresets();
+
+                arr.splice(idx, 1);
+
+                savePresetsToStorage(arr);
+
+                renderPresets();
+
+                showToast('🗑 Preset silindi');
+
+                return;
+
+            }
+
+            pushUndo();
+
+            cp1 = { x: pr.cp1[0], y: pr.cp1[1] };
+
+            cp2 = { x: pr.cp2[0], y: pr.cp2[1] };
+
+            activeFlowType = 'custom';
+
+            drawFlow();
+
+            showToast('✓ "' + pr.name + '" yüklendi');
+
+        });
+
+
+
+        list.appendChild(item);
+
+    });
+
+};
+
+
+
+
+
+
+
+
+// ── 8. PRESET EXPORT (JSON) ─────────────────────────────────
+
+document.getElementById('btnExportPreset').addEventListener('click', function() {
+    // Export the active graph directly from the screen
+    var exportData = {
+        type: "single_graph",
+        cp1: [cp1.x, cp1.y],
+        cp2: [cp2.x, cp2.y],
+        flipY: flipY,
+        graphMode: graphMode
+    };
+    var json = JSON.stringify(exportData, null, 2);
+
+    try {
+        var os = require('os');
+        var path = require('path');
+        var fs = require('fs');
+        var defaultPath = "";
+        try {
+            var docDir = path.join(os.homedir(), 'Documents');
+            if (fs.existsSync(docDir)) {
+                defaultPath = path.join(docDir, 'speedgraph_presets.tarikgraph');
+            } else {
+                defaultPath = path.join(os.homedir(), 'speedgraph_presets.tarikgraph');
+            }
+        } catch (ex) {
+            defaultPath = os.homedir() + "\\speedgraph_presets.tarikgraph";
+        }
+
+        var result = window.cep.fs.showSaveDialogEx(
+            "Presetleri Dışa Aktar",
+            defaultPath,
+            ["tarikgraph", "json"],
+            "speedgraph_presets.tarikgraph",
+            "TarikGraph Presets (*.tarikgraph)"
+        );
+
+        if (result.err === 0 && result.data && result.data.length > 0) {
+            var savePath = result.data;
+            if (Array.isArray(savePath)) {
+                savePath = savePath[0];
+            } else if (typeof savePath === 'object') {
+                savePath = savePath[0];
+            }
+            // Ensure savePath is a string
+            savePath = String(savePath);
+            // Normalize path for Windows
+            try {
+                savePath = path.normalize(savePath);
+            } catch(pn) {}
+
+            var success = false;
+            // Method 1: CEP Native writeFile
+            try {
+                var writeResult = window.cep.fs.writeFile(savePath, json);
+                if (writeResult.err === 0) {
+                    success = true;
+                }
+            } catch(ce) {}
+
+            // Method 2: Node.js fs write
+            if (!success) {
+                try {
+                    fs.writeFileSync(savePath, json, 'utf8');
+                    success = true;
+                } catch(ne) {
+                    throw new Error(ne.message + " | Yol: " + savePath);
+                }
+            }
+
+            if (success) {
+                showToast('📤 Grafik başarıyla dışa aktarıldı');
+            } else {
+                throw new Error("Yazma hatası | Yol: " + savePath);
+            }
+        }
+    } catch (e) {
+        showToast('⚠ Hata: ' + e.message);
+    }
+});
+
+
+
+
+
+// ── 9. PRESET IMPORT (JSON) ─────────────────────────────────
+
+document.getElementById('importPresetFile').addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+        try {
+            var imported = JSON.parse(ev.target.result);
+            
+            // Check if it is a single graph
+            if (imported && imported.type === "single_graph" && imported.cp1 && imported.cp2) {
+                cp1 = { x: imported.cp1[0], y: imported.cp1[1] };
+                cp2 = { x: imported.cp2[0], y: imported.cp2[1] };
+                
+                if (imported.flipY !== undefined) {
+                    flipY = imported.flipY;
+                    var btnFlipY = document.getElementById('btnFlipY');
+                    if (btnFlipY) {
+                        if (flipY) {
+                            btnFlipY.style.color = '#2e8ff5';
+                            btnFlipY.style.borderColor = '#2e8ff5';
+                        } else {
+                            btnFlipY.style.color = 'var(--text-dim)';
+                            btnFlipY.style.borderColor = 'var(--border)';
+                        }
+                    }
+                    localStorage.setItem('flowease_flipY', String(flipY));
+                }
+                
+                if (imported.graphMode !== undefined) {
+                    graphMode = imported.graphMode;
+                    localStorage.setItem('flowease_graphMode', graphMode);
+                    var _graphModeBtns = queryAll('.graph-mode-btn');
+                    _graphModeBtns.forEach(function(btn) {
+                        if (btn.getAttribute('data-mode') === graphMode) {
+                            btn.classList.add('active');
+                            btn.style.color = 'var(--text)';
+                        } else {
+                            btn.classList.remove('active');
+                            btn.style.color = 'var(--text-dim)';
+                        }
+                    });
+                }
+                
+                activeFlowType = 'custom';
+                queryAll('.fp-tab').forEach(function(b) { b.classList.remove('active'); });
+                drawFlow();
+                localStorage.setItem('flowease_cp1', JSON.stringify(cp1));
+                localStorage.setItem('flowease_cp2', JSON.stringify(cp2));
+                showToast('✓ Grafik başarıyla içe aktarıldı');
+            } else if (Array.isArray(imported)) {
+                // Import array as custom presets
+                var arr = loadPresets();
+                var added = 0;
+                imported.forEach(function(p) {
+                    if (p.name && p.cp1 && p.cp2) {
+                        var dup = arr.some(function(x) { return x.name === p.name; });
+                        if (!dup) {
+                            arr.push(p);
+                            added++;
+                        }
+                    }
+                });
+                if (added > 0) {
+                    savePresetsToStorage(arr);
+                    renderPresets();
+                    showToast('📥 ' + added + ' preset içe aktarıldı!');
+                } else {
+                    showToast('⚠ İçe aktarılacak yeni preset bulunamadı');
+                }
+            } else {
+                throw new Error("Geçersiz dosya formatı");
+            }
+        } catch(err) {
+            showToast('❌ Yükleme hatası: ' + err.message);
+        }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+});
+
+
+
+
+
+// ── 10. AUTO CURVE ANALYSIS ─────────────────────────────────
+
+function analyzeClosestPreset() {
+
+    var NAMED = [
+
+        { name:'Ease',     cp1:[0.25,0.10], cp2:[0.75,0.90] },
+
+        { name:'Ease In',  cp1:[0.42,0.00], cp2:[1.00,1.00] },
+
+        { name:'Ease Out', cp1:[0.00,0.00], cp2:[0.58,1.00] },
+
+        { name:'Linear',   cp1:[0.33,0.33], cp2:[0.67,0.67] },
+
+        { name:'Snappy',   cp1:[0.10,1.00], cp2:[0.90,0.00] },
+
+    ];
+
+    var bestDist = Infinity;
+
+    var bestName = '';
+
+    NAMED.forEach(function(p) {
+
+        var d = Math.sqrt(
+
+            Math.pow(cp1.x - p.cp1[0], 2) + Math.pow(cp1.y - p.cp1[1], 2) +
+
+            Math.pow(cp2.x - p.cp2[0], 2) + Math.pow(cp2.y - p.cp2[1], 2)
+
+        );
+
+        if (d < bestDist) { bestDist = d; bestName = p.name; }
+
+    });
+
+    if (bestDist < 0.25) {
+
+        showToast('🎯 En yakın: "' + bestName + '" (fark: ' + bestDist.toFixed(2) + ')');
+
+    }
+
+}
+
+
+
+// Run analysis after Auto Read
+
+var _origBtnRead = document.getElementById('btnReadFlow');
+
+if (_origBtnRead) {
+
+    _origBtnRead.addEventListener('click', function() {
+
+        setTimeout(analyzeClosestPreset, 600);
+
+    });
+
+}
+
+
+
+
+
+// ── 11. BUILT-IN GALLERY PRESETS (Online Preset Gallery) ────
+
+(function seedGalleryPresets() {
+
+    var GALLERY = [
+
+        { name:'✨ Smooth Ease',  category:'ui',       cp1:[0.25,0.10], cp2:[0.75,0.90] },
+
+        { name:'⚡ Snappy',       category:'ui',       cp1:[0.10,1.00], cp2:[0.90,0.00] },
+
+        { name:'🐢 Slow In',      category:'karakter', cp1:[0.00,0.00], cp2:[0.33,1.00] },
+
+        { name:'🚀 Slow Out',     category:'karakter', cp1:[0.67,0.00], cp2:[1.00,1.00] },
+
+        { name:'📷 Camera Pan',   category:'kamera',   cp1:[0.30,0.00], cp2:[0.70,1.00] },
+
+        { name:'🏀 Bounce In',    category:'bounce',   cp1:[0.60,1.30], cp2:[0.40,1.30] },
+
+        { name:'🌊 Overshoot',    category:'bounce',   cp1:[0.40,1.40], cp2:[0.60,0.00] },
+
+        { name:'💥 Impact',       category:'karakter', cp1:[0.10,0.00], cp2:[0.30,1.00] },
+
+    ];
+
+    if (localStorage.getItem('speedflow_presets_seeded') === 'true') return;
+
+    var existing = loadPresets();
+    if (existing.length > 0) {
+        localStorage.setItem('speedflow_presets_seeded', 'true');
+        return;
+    }
+
+    var seeded = GALLERY.map(function(g) {
+
+        return {
+
+            name: g.name, type: 'custom', category: g.category,
+
+            cp1: g.cp1, cp2: g.cp2,
+
+            speedIn: 80, speedOut: 80, influenceIn: 75, influenceOut: 75
+
+        };
+
+    });
+
+    savePresetsToStorage(seeded);
+    localStorage.setItem('speedflow_presets_seeded', 'true');
+
+    renderPresets();
+
+})();
+
+
+
+// ── 12. TOGGLE BALL PREVIEW ────────────────────────────────
+var toggleBallOn = localStorage.getItem('flowease_ball') !== 'false';
+var btnToggleBall = document.getElementById('btnToggleBall');
+if (btnToggleBall) {
+    btnToggleBall.classList.toggle('active', toggleBallOn);
+    if(toggleBallOn) setTimeout(startBallPreview, 500);
+}
+
+if (btnToggleBall) {
+    btnToggleBall.addEventListener('click', function() {
+        toggleBallOn = !toggleBallOn; localStorage.setItem('flowease_ball', toggleBallOn);
+        btnToggleBall.classList.toggle('active', toggleBallOn);
+        if (toggleBallOn) {
+            startBallPreview();
+            showToast('🏀 Önizleme Topu AÇIK');
+        } else {
+            stopBallPreview();
+            showToast('🏀 Önizleme Topu KAPALI');
+        }
+    });
+}
+
+// Patch startBallPreview to respect toggleBallOn
+var _origStartBall = startBallPreview;
+startBallPreview = function() {
+    if (toggleBallOn) _origStartBall();
+};
+
+// Initialize Graph Mode UI
+if(graphMode === 'speed') {
+    document.getElementById('btnSpeedGraph').classList.add('active');
+    document.getElementById('btnValueGraph').classList.remove('active');
+}
+
+
+if(document.getElementById('btnToggleKf')) {
+    document.getElementById('btnToggleKf').setAttribute('data-kf', selectedKfMode);
+    document.getElementById('btnToggleKf').innerText = (selectedKfMode === 'auto' ? '2' : selectedKfMode) + '-KEY';
+}
+
+
+window.showAlert = function(msg) {
+    document.getElementById('customAlertMsg').innerText = msg;
+    document.getElementById('customAlertModal').classList.add('open');
+};
+var _alertOkBtn = document.getElementById('customAlertOk');
+if (_alertOkBtn) {
+    _alertOkBtn.addEventListener('click', function() {
+        var _modal = document.getElementById('customAlertModal');
+        if (_modal) _modal.classList.remove('open');
+    });
+}
+
+
+/* btnHizFX bound below with shift-click */
+
+
+// FFX Folder Memory loaded via startup IIFE
+
+
+var btnNullAdj = document.getElementById('btnNullAdj');
+if (btnNullAdj) {
+    btnNullAdj.addEventListener('click', function(e) {
+        if (window.isEditLayoutMode) return;
+        var isAdj = e.shiftKey;
+        cs.evalScript('createNull(' + (isAdj ? 'false' : 'true') + ')', function(res){
+            if (res && res.indexOf('ERROR:') === 0) {
+                window.showAlert(res.substring(6));
+            } else {
+                showToast(isAdj ? '✓ Adjustment Layer oluşturuldu' : '✓ Null Object oluşturuldu');
+            }
+        });
+    });
+}
+var btnHizFX = document.getElementById('btnHizFX');
+if (btnHizFX) {
+    btnHizFX.addEventListener('click', function(e) {
+        if (window.isEditLayoutMode) return;
+        var isShift = e.shiftKey;
+        cs.evalScript('applyHizFX(' + (isShift ? 'true' : 'false') + ')', function(res){
+            if (res && res.indexOf('ERROR:') === 0) {
+                window.showAlert(res.substring(6));
+            } else {
+                showToast(isShift ? '✓ CC Motion Tile uygulandı' : '✓ Twixtor Pro uygulandı');
+            }
+        });
+    });
+}
+
+// Logo Modal Preview Events
+var logoImg = document.querySelector('.logo-img');
+if (logoImg) {
+    logoImg.style.cursor = 'pointer';
+    logoImg.addEventListener('click', function () {
+        document.getElementById('logoModalOverlay').classList.add('open');
+    });
+}
+var logoModalOverlay = document.getElementById('logoModalOverlay');
+if (logoModalOverlay) {
+    logoModalOverlay.addEventListener('click', function () {
+        logoModalOverlay.classList.remove('open');
+    });
+}
+
+// Global button focus removal on click
+document.addEventListener('click', function (e) {
+    var btn = e.target.tagName === 'BUTTON' ? e.target : e.target.closest('button');
+    if (btn) {
+        btn.blur();
+    }
+});
+
+// Bind btnSolid manually for Solid/Camera creation
+var btnSolid = document.getElementById('btnSolid');
+if (btnSolid) {
+    btnSolid.addEventListener('click', function(e) {
+        if (window.isEditLayoutMode) return;
+        var isCamera = e.shiftKey;
+        if (isCamera) {
+            cs.evalScript('createSolidOrCamera(true)', function(res){
+                showToast('✓ Kamera oluşturuldu');
+            });
+        } else {
+            var hex = localStorage.getItem('flowease_solidColor') || '#1a1a1a';
+            // Parse hex to RGB
+            hex = hex.replace('#', '');
+            if (hex.length === 3) {
+                hex = hex[0]+hex[0] + hex[1]+hex[1] + hex[2]+hex[2];
+            }
+            var r = parseInt(hex.substring(0, 2), 16) / 255;
+            var g = parseInt(hex.substring(2, 4), 16) / 255;
+            var b = parseInt(hex.substring(4, 6), 16) / 255;
+            cs.evalScript('createSolidOrCamera(false, ' + r + ', ' + g + ', ' + b + ')', function(res){
+                showToast('✓ Solid oluşturuldu');
+            });
+        }
+    });
+}
+
+// Bind btnAklliHizala manually for Align to Comp vs Align to First Layer
+var btnAklliHizala = document.getElementById('btnAklliHizala');
+if (btnAklliHizala) {
+    btnAklliHizala.addEventListener('click', function(e) {
+        if (window.isEditLayoutMode) return;
+        var isShift = e.shiftKey;
+        cs.evalScript('smartAlign(' + isShift + ')', function(res){
+            if (res && res.indexOf('ERROR:') === 0) {
+                window.showAlert(res.substring(6));
+            } else {
+                showToast(isShift ? '✓ Katmanlar ilk seçilene hizalandı' : '✓ Katmanlar kompozisyona hizalandı');
+            }
+        });
+    });
+}
+
+// ==========================================
+// DRAGGABLE REORDER LAYOUT SYSTEM
+// ==========================================
+window.isEditLayoutMode = false;
+var btnEditLayout = document.getElementById('btnEditLayout');
+var btnGrid = document.querySelector('.btn-grid');
+
+function loadButtonOrder() {
+    var savedOrder = localStorage.getItem('flowease_btn_order');
+    if (savedOrder && btnGrid) {
+        try {
+            var ids = JSON.parse(savedOrder);
+            var buttons = Array.from(btnGrid.children);
+            ids.forEach(function(id) {
+                var btn = buttons.find(function(b) { return b.id === id; });
+                if (btn) btnGrid.appendChild(btn);
+            });
+        } catch(e){}
+    }
+}
+
+// Load order initially
+loadButtonOrder();
+
+if (btnEditLayout && btnGrid) {
+    btnEditLayout.addEventListener('click', function() {
+        window.isEditLayoutMode = !window.isEditLayoutMode;
+        if (window.isEditLayoutMode) {
+            btnGrid.classList.add('edit-mode');
+            btnEditLayout.textContent = '✓ Kaydet';
+            btnEditLayout.style.borderColor = '#2f80ed';
+            btnEditLayout.style.color = '#2f80ed';
+            enableDragAndDrop();
+        } else {
+            btnGrid.classList.remove('edit-mode');
+            btnEditLayout.textContent = '⚙️ Düzenle';
+            btnEditLayout.style.borderColor = 'var(--border)';
+            btnEditLayout.style.color = 'var(--text-dim)';
+            disableDragAndDrop();
+            // Save layout order
+            var ids = Array.from(btnGrid.children).map(function(btn) { return btn.id; });
+            localStorage.setItem('flowease_btn_order', JSON.stringify(ids));
+            showToast('✓ Buton düzeni kaydedildi');
+        }
+    });
+}
+
+function enableDragAndDrop() {
+    var buttons = btnGrid.querySelectorAll('.grid-btn');
+    buttons.forEach(function(btn) {
+        btn.setAttribute('draggable', 'true');
+        btn.addEventListener('dragstart', handleDragStart);
+        btn.addEventListener('dragover', handleDragOver);
+        btn.addEventListener('dragenter', handleDragEnter);
+        btn.addEventListener('dragleave', handleDragLeave);
+        btn.addEventListener('drop', handleDrop);
+        btn.addEventListener('dragend', handleDragEnd);
+    });
+}
+
+function disableDragAndDrop() {
+    var buttons = btnGrid.querySelectorAll('.grid-btn');
+    buttons.forEach(function(btn) {
+        btn.removeAttribute('draggable');
+        btn.removeEventListener('dragstart', handleDragStart);
+        btn.removeEventListener('dragover', handleDragOver);
+        btn.removeEventListener('dragenter', handleDragEnter);
+        btn.removeEventListener('dragleave', handleDragLeave);
+        btn.removeEventListener('drop', handleDrop);
+        btn.removeEventListener('dragend', handleDragEnd);
+        btn.classList.remove('over', 'dragging');
+    });
+}
+
+var dragSrcEl = null;
+function handleDragStart(e) {
+    if (!window.isEditLayoutMode) return;
+    dragSrcEl = this;
+    this.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function handleDragOver(e) {
+    if (!window.isEditLayoutMode) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    return false;
+}
+
+function handleDragEnter(e) {
+    if (!window.isEditLayoutMode) return;
+    var target = e.target.closest('.grid-btn');
+    if (target && target !== dragSrcEl && target.parentNode === btnGrid) {
+        target.classList.add('over');
+    }
+}
+
+function handleDragLeave(e) {
+    if (!window.isEditLayoutMode) return;
+    var target = e.target.closest('.grid-btn');
+    if (target) {
+        target.classList.remove('over');
+    }
+}
+
+function swapElements(el1, el2) {
+    var parent = el1.parentNode;
+    var temp = document.createElement("div");
+    parent.insertBefore(temp, el1);
+    parent.insertBefore(el1, el2);
+    parent.insertBefore(el2, temp);
+    parent.removeChild(temp);
+}
+
+function handleDrop(e) {
+    if (!window.isEditLayoutMode) return;
+    e.stopPropagation();
+    e.preventDefault();
+    
+    var target = e.target.closest('.grid-btn');
+    if (target && target !== dragSrcEl && target.parentNode === btnGrid) {
+        swapElements(dragSrcEl, target);
+    }
+    return false;
+}
+
+function handleDragEnd(e) {
+    this.classList.remove('dragging');
+    var buttons = btnGrid.querySelectorAll('.grid-btn');
+    buttons.forEach(function(btn) {
+        btn.classList.remove('over');
+    });
+}
+
+
+
+
+// --- Anchor Point Logic ---
+var anchorBtns = document.querySelectorAll('.anchor-btn');
+for (var i = 0; i < anchorBtns.length; i++) {
+    anchorBtns[i].addEventListener('click', function() {
+        var pos = this.getAttribute('data-pos');
+        if (cs) {
+            cs.evalScript('setAnchorPoint("' + pos + '")', function(res) {
+
+            });
+        }
+    });
+}
+
+// --- Anchor UI Toggle ---
+var btnToggleAnchorUI = document.getElementById('btnToggleAnchorUI');
+var anchorWidgetArea = document.getElementById('anchorWidgetArea');
+if (btnToggleAnchorUI && anchorWidgetArea) {
+    var isAnchorVisible = localStorage.getItem('tarik_anchor_visible') === 'true';
+    if (isAnchorVisible) {
+        anchorWidgetArea.classList.add('show');
+        btnToggleAnchorUI.style.color = '#2f80ed';
+        btnToggleAnchorUI.style.borderColor = '#2f80ed';
+    }
+    btnToggleAnchorUI.addEventListener('click', function() {
+        isAnchorVisible = !isAnchorVisible;
+        localStorage.setItem('tarik_anchor_visible', isAnchorVisible);
+        if (isAnchorVisible) {
+            anchorWidgetArea.classList.add('show');
+            btnToggleAnchorUI.style.color = '#2f80ed';
+            btnToggleAnchorUI.style.borderColor = '#2f80ed';
+        } else {
+            anchorWidgetArea.classList.remove('show');
+            btnToggleAnchorUI.style.color = 'var(--text-dim)';
+            btnToggleAnchorUI.style.borderColor = 'var(--border)';
+        }
+    });
+}
+
+// --- FX Bypass ---
+var btnBypassFX = document.getElementById('btnBypassFX');
+if (btnBypassFX) {
+    btnBypassFX.addEventListener('click', function() { if (window.isEditLayoutMode) return;
+        if (cs) {
+            cs.evalScript('toggleFXBypass()');
+        }
+    });
+}
+
+
+// --- Drag and Drop FFX ---
+var effectListEl = document.getElementById('effectList');
+if (effectListEl) {
+    effectListEl.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        effectListEl.style.borderColor = '#5ba4f5';
+        effectListEl.style.backgroundColor = 'rgba(91, 164, 245, 0.05)';
+    });
+
+    effectListEl.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        effectListEl.style.borderColor = 'var(--border)';
+        effectListEl.style.backgroundColor = 'var(--bg-2)';
+    });
+
+    effectListEl.addEventListener('drop', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        effectListEl.style.borderColor = 'var(--border)';
+        effectListEl.style.backgroundColor = 'var(--bg-2)';
+        
+        if (!window.lastFolder) {
+            alert("Lütfen önce bir FFX Klasörü Seçin!");
+            return;
+        }
+        
+        var files = e.dataTransfer.files;
+        if (files && files.length > 0) {
+            var fs = require('fs');
+            var path = require('path');
+            var addedCount = 0;
+            
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                if (file.path && file.path.toLowerCase().endsWith('.ffx')) {
+                    var dest = path.join(window.lastFolder, file.name);
+                    try {
+                        fs.copyFileSync(file.path, dest);
+                        addedCount++;
+                    } catch(err) {
+                        console.error("Kopyalama hatası:", err);
+                    }
+                }
+            }
+            
+            if (addedCount > 0) {
+                if (typeof loadEffectList === 'function') {
+                    loadEffectList(window.lastFolder);
+                }
+            }
+        }
+    });
+}
+
+
+// --- FX Bypass Polling ---
+setInterval(function() {
+    if (cs) {
+        var mode = "layers";
+        var modeEl = document.getElementById("fxBypassMode");
+        if (modeEl) mode = modeEl.value;
+        cs.evalScript('getFXBypassState("' + mode + '")', function(res) {
+            var dot = document.getElementById('fxBypassStatus');
+            if (dot) {
+                if (res === "ON") {
+                    dot.style.background = "#4ade80"; // Green
+                    dot.style.boxShadow = "0 0 6px #4ade80";
+                } else if (res === "OFF") {
+                    dot.style.background = "#f87171"; // Red
+                    dot.style.boxShadow = "0 0 6px #f87171";
+                } else {
+                    dot.style.background = "var(--text-dim)"; // Gray
+                    dot.style.boxShadow = "0 0 4px rgba(0,0,0,0.5)";
+                }
+            }
+        });
+    }
+}, 1000);
+
+
+// --- Snapshot ---
+var btnScreenshot = document.getElementById('btnScreenshot');
+if (btnScreenshot) {
+    btnScreenshot.addEventListener('click', function() {
+        if (window.isEditLayoutMode) return;
+        var folder = localStorage.getItem('snapshotFolder') || '';
+        var alwaysAsk = localStorage.getItem('snapshotAlwaysAsk') !== 'false';
+        var quality = localStorage.getItem('snapshotQuality') || 'auto';
+        if (cs) {
+            cs.evalScript('takeSnapshot(' + JSON.stringify(folder) + ', ' + alwaysAsk + ', ' + JSON.stringify(quality) + ')', function(res) {
+                if (res && res.indexOf('ERROR:') === 0) {
+                    if (res.indexOf('İptal edildi') === -1) {
+                        window.showAlert(res.substring(6));
+                    }
+                } else if (res) {
+                    showToast('✓ ' + res);
+                }
+            });
+        }
+    });
+}
+
+
+    var btnSelSnap = document.getElementById('btnSelectSnapshotFolder');
+    if (btnSelSnap) {
+        btnSelSnap.addEventListener('click', function() {
+            if (cs) {
+                cs.evalScript('selectSnapshotFolder()', function(res) {
+                    if (res && res.indexOf("ERROR:") !== 0) {
+                        localStorage.setItem('snapshotFolder', res);
+                        var pEl = document.getElementById('snapshotFolderPath');
+                        if (pEl) pEl.textContent = res;
+                    }
+                });
+            }
+        });
+    }
+
+
+// --- Auto Update Checker ---
+function checkForUpdates() {
+    var currentVersion = "2.0";
+    try {
+        var https = require('https');
+        https.get('https://raw.githubusercontent.com/tarikeditss1/Tarik_Tools/main/update.json', function(res) {
+            var data = '';
+            res.on('data', function(chunk) { data += chunk; });
+            res.on('end', function() {
+                try {
+                    var json = JSON.parse(data);
+                    if (json && json.latestVersion && json.latestVersion !== currentVersion) {
+                        var badge = document.querySelector('.version-badge');
+                        if (badge) {
+                            badge.classList.add('has-update');
+                            badge.innerText = 'v' + currentVersion + ' (Güncelle!)';
+                            badge.title = 'Yeni sürüm mevcut (v' + json.latestVersion + ')! Güncellemek için tıklayın.';
+                            badge.addEventListener('click', function() {
+                                var url = json.downloadUrl || 'https://github.com/tarikeditss1/Tarik_Tools';
+                                if (window.cep) {
+                                    window.cep.util.openURLInDefaultBrowser(url);
+                                }
+                            });
+                        }
+                    }
+                } catch(e) {}
+            });
+        }).on('error', function(err) {
+            console.log("Update check error:", err);
+        });
+    } catch(e) {
+        console.log("Node https not available for updates:", e);
+    }
+}
+
+// Call update checker
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkForUpdates);
+} else {
+    checkForUpdates();
+}
