@@ -965,24 +965,19 @@ body.animations-disabled *:after {
 }
 
 /* ── GRAPH RESPONSIVENESS FIX ── */
-@media screen and (max-height: 800px) {
-    .curve-canvas-wrap {
-        max-width: 250px !important;
-    }
-    .curve-canvas-wrap canvas {
-        max-height: 200px !important;
-    }
-    .flow-sliders-box {
-        padding: 6px;
-        gap: 4px;
-    }
+@media screen and (max-height: 850px) {
+    .tab-content { padding: 6px !important; gap: 4px !important; }
+    .header { padding: 6px 10px !important; }
+    .plugin-name { font-size: 13px !important; }
+    .curve-canvas-wrap { max-width: 200px !important; padding: 2px 0 0 !important; }
+    .curve-canvas-wrap canvas { max-height: 150px !important; }
+    .flow-sliders-box { padding: 4px !important; gap: 2px !important; }
+    .flow-sliders-box label { font-size: 9px !important; }
+    .slider-val { font-size: 9px !important; }
+    .flow-topbar, .flow-preset-tabs { gap: 2px !important; }
+    .fp-tab, .read-btn, .kf-count-btn { font-size: 9px !important; padding: 3px 6px !important; }
+    .grid-btn, .tab { padding: 4px 6px !important; font-size: 10px !important; }
+    .btn-grid { gap: 4px !important; }
+    .section-label { margin-bottom: 2px !important; font-size: 9px !important; }
 }
-@media screen and (max-height: 700px) {
-    .curve-canvas-wrap {
-        max-width: 200px !important;
-    }
-    .curve-canvas-wrap canvas {
-        max-height: 150px !important;
-    }
-    .slider-val { font-size: 9px; }
-}
+
