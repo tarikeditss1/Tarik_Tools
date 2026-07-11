@@ -116,13 +116,15 @@ body::-webkit-scrollbar-thumb { background: var(--border); border-radius:4px; }
 /* ── TAB CONTENT ─────────────────────────── */
 .tab-content {
     flex: 1;
-    overflow: hidden;
+    overflow-y: auto;
     display: none;
     padding: 12px;
     flex-direction: column;
     gap: 8px;
     animation: fadeIn .2s ease;
 }
+.tab-content::-webkit-scrollbar { width:4px; }
+.tab-content::-webkit-scrollbar-thumb { background: var(--border); border-radius:4px; }
 .tab-content.active { display:flex; }
 @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
 
@@ -130,7 +132,7 @@ body::-webkit-scrollbar-thumb { background: var(--border); border-radius:4px; }
 .section-label {
     font-size:10px; font-weight:600; color:var(--text-dim);
     text-transform:uppercase; letter-spacing:.1em;
-    display:flex; align-items:center; gap:8px;
+    display:flex; flex-wrap: wrap; align-items:center; gap:8px;
     margin-bottom:2px;
 }
 
