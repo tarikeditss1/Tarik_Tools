@@ -55,6 +55,26 @@
     </div>
 </div>
 
+<!-- ========== AUTH GATE (GLOBAL) ========== -->
+<div id="aiAuthGate" style="padding: 12px; display: none;">
+    <div class="auth-card">
+        <div class="auth-icon">🔑</div>
+        <div class="auth-title">Tarık Tools Giriş</div>
+        <div class="auth-desc">Eklentiyi kullanabilmek için Tarık Tools Developer Kodunuzu girin.</div>
+        <div class="apikey-row" style="margin-top: 15px;">
+            <input type="password" id="ttApiKey" class="apikey-input" placeholder="ttk_xxxxxxxxxxxx...">
+            <button class="apikey-show" id="btnShowKey" title="Göster/Gizle">👁</button>
+        </div>
+        <div class="apikey-actions" style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px;">
+            <button class="apply-btn" id="btnSaveApiKey">💾 Kodu Kaydet</button>
+            <button class="action-btn-sm" id="btnGetApiKey" style="width: 100%; text-align: center;">🌐 Tarık Tools Developer Paneline Git</button>
+        </div>
+    </div>
+</div>
+
+<!-- ========== APP MAIN CONTAINER ========== -->
+<div id="appMainContainer" style="display: none;">
+
 <!-- TAB BAR -->
 <div class="tab-bar">
     <button class="tab active" data-tab="layers">
@@ -254,24 +274,9 @@
 
 <!-- ========== TAB: YAPAY ZEKA ========== -->
 <div id="tab-ai" class="tab-content">
-    <div id="aiAuthGate">
-        <div class="auth-card">
-            <div class="auth-icon">🤖</div>
-            <div class="auth-title">Yapay Zeka Araçları</div>
-            <div class="auth-desc">Altyazı ve Vokal Ayırma araçlarını kullanabilmek için Tarık Tools Developer Kodunuzu girin.</div>
-            <div class="apikey-row" style="margin-top: 15px;">
-                <input type="password" id="ttApiKey" class="apikey-input" placeholder="ttk_xxxxxxxxxxxx...">
-                <button class="apikey-show" id="btnShowKey" title="Göster/Gizle">👁</button>
-            </div>
-            <div class="apikey-actions" style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px;">
-                <button class="apply-btn" id="btnSaveApiKey">💾 Kodu Kaydet</button>
-                <button class="action-btn-sm" id="btnGetApiKey" style="width: 100%; text-align: center;">🌐 Tarık Tools Developer Paneline Git</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- AI MAIN UI (HIDDEN BY DEFAULT) -->
-    <div id="aiMainUi" style="display:none">
+    <!-- AI MAIN UI -->
+    <div id="aiMainUi">
         <div class="sub-header-info" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
             <div style="display: flex; align-items: center; gap: 8px; width: 100%;">
                 <div class="credit-badge" id="creditBadge" style="flex: 1; padding: 4px 10px;">
@@ -507,6 +512,7 @@
 
     </div>
 </div>
+</div> <!-- End of appMainContainer -->
 
 <!-- VOCAL MODE MODAL -->
 <div class="modal-overlay" id="vocalModeOverlay">
