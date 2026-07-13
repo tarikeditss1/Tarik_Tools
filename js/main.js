@@ -4255,11 +4255,9 @@ document.getElementById('btnConfirmGenerateSub').addEventListener('click', funct
 
 
 
-                        // Maksimum limit 50MB. Render sürecinden tamamen kaçınmak için boyutu 50MB altındaki HER dosya (video veya ses) doğrudan okunup sunucuya gönderilir!
-
-
-
-                        if (fileSizeMB < 50) {
+                        // Maksimum limit 50MB. Alan ayarına göre veya boyutu 50MB altındaki dosyalarda doğrudan upload kullanılır.
+                        var subRangeLimit = document.getElementById('subRangeLimit') ? document.getElementById('subRangeLimit').value : 'layer';
+                        if (fileSizeMB < 50 && subRangeLimit !== 'layer') {
 
 
 
@@ -5190,17 +5188,6 @@ function executeTranscribeRequest(payload, apiKey) {
 // ==========================================
 // SUBTITLE EDITOR HELPER FUNCTIONS
 // ==========================================
-function getSpeakerColor(spk) {
-    var colors = [
-        '#ffffff', // Speaker 0: White
-        '#60a5fa', // Speaker 1: Blue
-        '#4ade80', // Speaker 2: Green
-        '#f472b6'  // Speaker 3: Pink
-    ];
-    var idx = parseInt(spk) || 0;
-    return colors[idx % colors.length];
-}
-
 function updateSrtContentFromSegments() {
     if (!subSegments || !subSegments.length) {
         subSrtContent = "";
@@ -5223,7 +5210,6 @@ function updateSrtContentFromSegments() {
     var _srtParts = [];
     for (var _si = 0; _si < subSegments.length; _si++) {
         var _seg = subSegments[_si];
-        if (_seg.speaker === undefined) _seg.speaker = 0;
         _srtParts.push((_si + 1) + '\n' + toSrt(_seg.start) + ' --> ' + toSrt(_seg.end) + '\n' + _seg.text);
     }
     subSrtContent = _srtParts.join('\n\n');
@@ -5250,42 +5236,51 @@ function renderSubEditorList() {
     list.innerHTML = '';
     
     subSegments.forEach(function(seg, idx) {
-        if (seg.speaker === undefined) seg.speaker = 0;
-        
         var item = document.createElement('div');
         item.className = 'sub-editor-item';
         item.dataset.index = idx;
-        item.style.cssText = 'display: flex; flex-direction: column; gap: 4px; background: var(--bg-3); border: 1px solid var(--border); border-radius: 6px; padding: 6px; margin-bottom: 4px; position: relative; box-sizing: border-box;';
         
         var isLast = (idx === subSegments.length - 1);
         
+        // Parse words to create pills & dividers
+        var words = (seg.text || "").split(/\s+/).filter(Boolean);
+        var wordsHTML = "";
+        
+        if (words.length === 0) {
+            wordsHTML = '<span style="font-size:10px; color:var(--text-dim); font-style:italic;">Boş Metin</span>';
+        } else {
+            words.forEach(function(word, wIdx) {
+                wordsHTML += '<span class="sub-word-pill">' + word + '</span>';
+                if (wIdx < words.length - 1) {
+                    wordsHTML += '<div class="sub-word-divider" data-word-idx="' + wIdx + '" title="' + word + ' sonrasından böl"></div>';
+                }
+            });
+        }
+        
         item.innerHTML = '\
-            <div style="display: flex; align-items: center; gap: 4px;">\
-                <button class="btn-sub-speaker" style="width: 12px; height: 12px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; background-color: ' + getSpeakerColor(seg.speaker) + '; padding: 0; flex-shrink: 0;" title="Konuşmacı Değiştir (Renk)"></button>\
-                <span style="font-size: 9px; color: var(--text-dim); font-weight: bold; min-width: 14px;">#' + (idx + 1) + '</span>\
-                <input type="number" step="0.1" class="sub-time-input" data-field="start" value="' + seg.start.toFixed(1) + '" style="width: 38px; background: var(--bg-dark); border: 1px solid var(--border); color: var(--text); font-size: 9px; border-radius: 4px; text-align: center; padding: 2px 0;">\
-                <span style="font-size: 9px; color: var(--text-dim);">➜</span>\
-                <input type="number" step="0.1" class="sub-time-input" data-field="end" value="' + seg.end.toFixed(1) + '" style="width: 38px; background: var(--bg-dark); border: 1px solid var(--border); color: var(--text); font-size: 9px; border-radius: 4px; text-align: center; padding: 2px 0;">\
-                <div style="flex: 1;"></div>\
-                <button class="btn-sub-split" title="Böl" style="background: none; border: 1px solid var(--border); color: var(--text-dim); cursor: pointer; border-radius: 4px; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center; padding: 0;">✂</button>\
-                <button class="btn-sub-merge" title="Sonrakiyle Birleştir" style="background: none; border: 1px solid var(--border); color: var(--text-dim); cursor: pointer; border-radius: 4px; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center; padding: 0; margin-left: 2px;' + (isLast ? 'display:none;' : '') + '">🔗</button>\
-                <button class="btn-sub-delete" title="Sil" style="background: none; border: 1px solid var(--border); color: #ef4444; cursor: pointer; border-radius: 4px; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center; padding: 0; margin-left: 2px;">🗑</button>\
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; box-sizing: border-box;">\
+                <span style="font-size: 10px; color: var(--text-dim); font-weight: 700;">#' + (idx + 1) + '</span>\
+                <div style="display: flex; align-items: center; gap: 4px;">\
+                    <span style="font-size: 8px; color: var(--text-dim); text-transform: uppercase; font-weight: 600;">In</span>\
+                    <input type="number" step="0.1" class="sub-time-input" data-field="start" value="' + seg.start.toFixed(1) + '">\
+                    <span style="font-size: 8px; color: var(--text-dim); text-transform: uppercase; font-weight: 600;">Out</span>\
+                    <input type="number" step="0.1" class="sub-time-input" data-field="end" value="' + seg.end.toFixed(1) + '">\
+                </div>\
+                <div style="display: flex; align-items: center; gap: 3px;">\
+                    <button class="btn-sub-merge" title="Sonrakiyle Birleştir" style="background: none; border: 1px solid var(--border); color: var(--text-dim); cursor: pointer; border-radius: 4px; width: 18px; height: 18px; font-size: 9px; display: ' + (isLast ? 'none' : 'flex') + '; align-items: center; justify-content: center; padding: 0;">🔗</button>\
+                    <button class="btn-sub-delete" title="Sil" style="background: none; border: 1px solid var(--border); color: #ef4444; cursor: pointer; border-radius: 4px; width: 18px; height: 18px; font-size: 9px; display: flex; align-items: center; justify-content: center; padding: 0;">🗑</button>\
+                </div>\
             </div>\
-            <textarea class="sub-text-textarea" style="width: 100%; background: var(--bg-dark); border: 1px solid var(--border); color: var(--text); font-size: 10px; border-radius: 4px; padding: 4px; font-family: inherit; resize: vertical; height: 26px; box-sizing: border-box; margin-top: 2px;">' + seg.text + '</textarea>\
+            <div class="sub-words-wrapper" style="box-sizing: border-box;">\
+                ' + wordsHTML + '\
+            </div>\
+            <input type="text" class="sub-text-input-field" value="' + seg.text + '" placeholder="Altyazı metnini düzenle...">\
         ';
         
         // Event listeners
-        var speakerBtn = item.querySelector('.btn-sub-speaker');
         var startInput = item.querySelector('input[data-field="start"]');
         var endInput = item.querySelector('input[data-field="end"]');
-        var textTextarea = item.querySelector('.sub-text-textarea');
-        
-        speakerBtn.addEventListener('click', function() {
-            var currentSpk = seg.speaker !== undefined ? parseInt(seg.speaker) : 0;
-            seg.speaker = (currentSpk + 1) % 4;
-            speakerBtn.style.backgroundColor = getSpeakerColor(seg.speaker);
-            updateSrtContentFromSegments();
-        });
+        var textInput = item.querySelector('.sub-text-input-field');
         
         startInput.addEventListener('input', function() {
             seg.start = parseFloat(startInput.value) || 0;
@@ -5297,9 +5292,28 @@ function renderSubEditorList() {
             updateSrtContentFromSegments();
         });
         
-        textTextarea.addEventListener('input', function() {
-            seg.text = textTextarea.value;
+        textInput.addEventListener('input', function() {
+            seg.text = textInput.value;
             updateSrtContentFromSegments();
+            
+            // Re-render only the words wrapper to prevent input focus loss!
+            var wrapper = item.querySelector('.sub-words-wrapper');
+            if (wrapper) {
+                var newWords = (seg.text || "").split(/\s+/).filter(Boolean);
+                var newHTML = "";
+                if (newWords.length === 0) {
+                    newHTML = '<span style="font-size:10px; color:var(--text-dim); font-style:italic;">Boş Metin</span>';
+                } else {
+                    newWords.forEach(function(w, wIdx) {
+                        newHTML += '<span class="sub-word-pill">' + w + '</span>';
+                        if (wIdx < newWords.length - 1) {
+                            newHTML += '<div class="sub-word-divider" data-word-idx="' + wIdx + '" title="' + w + ' sonrasından böl"></div>';
+                        }
+                    });
+                }
+                wrapper.innerHTML = newHTML;
+                bindWordDividers(wrapper, seg, idx);
+            }
         });
         
         item.querySelector('.btn-sub-delete').addEventListener('click', function() {
@@ -5318,26 +5332,26 @@ function renderSubEditorList() {
             });
         }
         
-        item.querySelector('.btn-sub-split').addEventListener('click', function() {
-            var txt = textTextarea.value;
-            var pos = textTextarea.selectionStart;
-            var part1 = "";
-            var part2 = "";
+        // Bind dividers immediately for initial render
+        var wrapper = item.querySelector('.sub-words-wrapper');
+        if (wrapper && words.length > 0) {
+            bindWordDividers(wrapper, seg, idx);
+        }
+        
+        list.appendChild(item);
+    });
+}
+
+function bindWordDividers(wrapper, seg, idx) {
+    var dividers = wrapper.querySelectorAll('.sub-word-divider');
+    dividers.forEach(function(div) {
+        div.addEventListener('click', function() {
+            var wIdx = parseInt(div.dataset.wordIdx);
+            var words = seg.text.split(/\s+/).filter(Boolean);
+            if (words.length <= 1) return;
             
-            if (pos > 0 && pos < txt.length) {
-                part1 = txt.substring(0, pos).trim();
-                part2 = txt.substring(pos).trim();
-            } else {
-                var words = txt.split(/\s+/);
-                if (words.length > 1) {
-                    var mid = Math.ceil(words.length / 2);
-                    part1 = words.slice(0, mid).join(" ");
-                    part2 = words.slice(mid).join(" ");
-                } else {
-                    part1 = txt;
-                    part2 = "...";
-                }
-            }
+            var part1 = words.slice(0, wIdx + 1).join(" ");
+            var part2 = words.slice(wIdx + 1).join(" ");
             
             var totalDur = seg.end - seg.start;
             var splitRatio = part1.length / (part1.length + part2.length || 1);
@@ -5353,16 +5367,13 @@ function renderSubEditorList() {
             var newSeg = {
                 start: midTime,
                 end: originalEnd,
-                text: part2,
-                speaker: seg.speaker
+                text: part2
             };
             
             subSegments.splice(idx + 1, 0, newSeg);
             updateSrtContentFromSegments();
             renderSubEditorList();
         });
-        
-        list.appendChild(item);
     });
 }
 
@@ -5376,8 +5387,7 @@ document.addEventListener('DOMContentLoaded', function() {
             subSegments.push({
                 start: lastEnd,
                 end: lastEnd + 2.0,
-                text: "Yeni Altyazı",
-                speaker: 0
+                text: "Yeni Altyazı"
             });
             updateSrtContentFromSegments();
             renderSubEditorList();
@@ -5395,8 +5405,7 @@ setTimeout(function() {
             subSegments.push({
                 start: lastEnd,
                 end: lastEnd + 2.0,
-                text: "Yeni Altyazı",
-                speaker: 0
+                text: "Yeni Altyazı"
             });
             updateSrtContentFromSegments();
             renderSubEditorList();
