@@ -334,6 +334,15 @@
                     <div class="sub-result-meta" id="subResultMeta">0 segment</div>
                 </div>
             </div>
+            <!-- SUBTITLE LIST EDITOR -->
+            <div id="subEditorContainer" style="display:none; margin-top: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-2); padding: 8px;">
+                <div style="font-size: 10px; font-weight: bold; color: var(--blue-light); margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+                    <span>📝 Düzenleyici (tariktools.com)</span>
+                    <button id="btnSubAddSegment" class="action-btn-sm" style="padding: 2px 6px; font-size: 9px; margin: 0; cursor: pointer;">➕ Ekle</button>
+                </div>
+                <div id="subEditorList" style="max-height: 180px; overflow-y: auto; display: flex; flex-direction: column; gap: 4px; padding-right: 4px;">
+                </div>
+            </div>
             <div class="flow-actions" style="margin-top: 8px;">
                 <button class="action-btn-sm" id="btnSaveSRT" style="flex:1">⬇ SRT İndir</button>
                 <button class="apply-btn" id="btnGenerateSub" style="flex:2">🎙 Altyazı Oluştur</button>
