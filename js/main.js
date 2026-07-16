@@ -234,6 +234,45 @@ function runScript(script, cb) {
 
 }
 
+function checkFeaturePermission(featureKey, successCallback) {
+    var apiKey = verifiedApiKey || localStorage.getItem('tt_api_key') || '';
+    if (!apiKey) {
+        showToast('⚠ Lütfen önce Ayarlar\'dan API Key girin.');
+        return;
+    }
+    
+    fetch(TT_BASE_URL + '/api/external/check-permission', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'ApiKey ' + apiKey
+        },
+        body: JSON.stringify({ feature: featureKey })
+    })
+    .then(function(res) {
+        if (!res.ok) {
+            return res.json().then(function(err) {
+                throw new Error(err.error || 'Bağlantı hatası.');
+            });
+        }
+        return res.json();
+    })
+    .then(function(data) {
+        if (data.allowed) {
+            if (typeof data.credits !== 'undefined') {
+                var creditsEl = document.getElementById('spanCredits');
+                if (creditsEl) creditsEl.textContent = data.credits;
+            }
+            successCallback();
+        } else {
+            showToast('❌ Yetkisiz: ' + (data.reason || 'Bu özelliği kullanma izniniz yok.'));
+        }
+    })
+    .catch(function(err) {
+        showToast('❌ Hata: ' + err.message);
+    });
+}
+
 
 
 
@@ -352,19 +391,30 @@ Object.keys(layerBtns).forEach(function (id) {
 
             
 
-            runScript(scriptName, function (res) {
+            var featureKey = null;
+            if (id === 'btnAklliKopya') featureKey = 'smart-duplicate';
+            else if (id === 'btnPrecomp') featureKey = 'precomp';
+            else if (id === 'btnTemizle') featureKey = 'clean-layers';
 
-                if (res && res.indexOf('ERROR:') === 0) {
-
-                    window.showAlert(res.substring(6));
-
-                } else {
-
-                    showToast(layerBtns[id][1]);
-
-                }
-
-            });
+            if (featureKey) {
+                checkFeaturePermission(featureKey, function() {
+                    runScript(scriptName, function (res) {
+                        if (res && res.indexOf('ERROR:') === 0) {
+                            window.showAlert(res.substring(6));
+                        } else {
+                            showToast(layerBtns[id][1]);
+                        }
+                    });
+                });
+            } else {
+                runScript(scriptName, function (res) {
+                    if (res && res.indexOf('ERROR:') === 0) {
+                        window.showAlert(res.substring(6));
+                    } else {
+                        showToast(layerBtns[id][1]);
+                    }
+                });
+            }
 
         });
 
@@ -1325,41 +1375,25 @@ document.getElementById('btnReadFlow').addEventListener('click', function() {
 // ── FLOW UYGULA ───────────────────────────────────────────────
 
 document.getElementById('btnApplyFlow').addEventListener('click', function() {
+    checkFeaturePermission('flow-ease', function() {
+        var opts = JSON.stringify({
+            type   : activeFlowType,
+            cp1x   : Math.round(cp1.x * 10000) / 10000,
+            cp1y   : Math.round(cp1.y * 10000) / 10000,
+            cp2x   : Math.round(cp2.x * 10000) / 10000,
+            cp2y   : Math.round(cp2.y * 10000) / 10000,
+            kfMode : selectedKfMode
+        });
 
-    var opts = JSON.stringify({
-
-        type   : activeFlowType,
-
-        cp1x   : Math.round(cp1.x * 10000) / 10000,
-
-        cp1y   : Math.round(cp1.y * 10000) / 10000,
-
-        cp2x   : Math.round(cp2.x * 10000) / 10000,
-
-        cp2y   : Math.round(cp2.y * 10000) / 10000,
-
-        kfMode : selectedKfMode
-
+        runScript('applyFlow(' + opts + ')', function(res) {
+            if (res && res.indexOf('ERROR:') === 0) {
+                window.showAlert(res.substring(6));
+            } else {
+                var modeStr = selectedKfMode === 'auto' ? 'Otomatik' : (selectedKfMode + ' KF');
+                showToast('⚡ Flow uygulandı! (' + modeStr + ')');
+            }
+        });
     });
-
-
-
-    runScript('applyFlow(' + opts + ')', function(res) {
-
-        if (res && res.indexOf('ERROR:') === 0) {
-
-            window.showAlert(res.substring(6));
-
-        } else {
-
-            var modeStr = selectedKfMode === 'auto' ? 'Otomatik' : (selectedKfMode + ' KF');
-
-            showToast('⚡ Flow uygulandı! (' + modeStr + ')');
-
-        }
-
-    });
-
 });
 
 
