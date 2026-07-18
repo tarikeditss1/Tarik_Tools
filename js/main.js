@@ -265,7 +265,22 @@ function checkFeaturePermission(featureKey, successCallback) {
             }
             successCallback();
         } else {
-            showToast('❌ Yetkisiz: ' + (data.reason || 'Bu özelliği kullanma izniniz yok.'));
+            var msg = data.reason || 'Bu özelliği kullanma izniniz yok.';
+
+            if (data.reason && data.reason.toLowerCase().indexOf('süre') !== -1 || (data.reason && data.reason.toLowerCase().indexOf('dolmu') !== -1)) {
+
+                showToast('⏰ Eklenti süreniz dolmuş! Lütfen aboneliğinizi yenileyin.');
+
+            } else if (data.reason && (data.reason.toLowerCase().indexOf('engel') !== -1 || data.reason.toLowerCase().indexOf('askıya') !== -1)) {
+
+                showBanScreen();
+
+            } else {
+
+                showToast('❌ Yetkisiz: ' + msg);
+
+            }
+
         }
     })
     .catch(function(err) {
@@ -1448,6 +1463,15 @@ document.getElementById('btnApplyFlow').addEventListener('click', function() {
 
 var PRESETS_KEY = 'speedflow_presets_v1';
 
+function getPresetsKey() {
+
+    var ak = (typeof verifiedApiKey !== 'undefined' && verifiedApiKey) ? verifiedApiKey : (localStorage.getItem('tt_api_key') || '');
+
+    return ak ? PRESETS_KEY + '_' + ak : PRESETS_KEY;
+
+}
+
+
 
 
 
@@ -1458,7 +1482,8 @@ function loadPresets() {
 
 
 
-    try { return JSON.parse(localStorage.getItem(PRESETS_KEY)) || []; } catch(e) { return []; }
+    try { return JSON.parse(localStorage.getItem(getPresetsKey())) || []; } catch(e) { return []; }
+
 
 
 
@@ -1470,7 +1495,8 @@ function savePresetsToStorage(arr) {
 
 
 
-    localStorage.setItem(PRESETS_KEY, JSON.stringify(arr));
+    localStorage.setItem(getPresetsKey(), JSON.stringify(arr));
+
 
 
 
@@ -3002,12 +3028,51 @@ var verifiedApiKey = localStorage.getItem('tt_api_key') || '';
 
 
 function showBanScreen() {
+    // Inject keyframe animations if not already present
+    if (!document.getElementById('tt-ban-styles')) {
+        var styleEl = document.createElement('style');
+        styleEl.id = 'tt-ban-styles';
+        styleEl.textContent = '@keyframes tt-ban-fadein{from{opacity:0;transform:scale(0.9) translateY(24px)}to{opacity:1;transform:scale(1) translateY(0)}}'
+            + '@keyframes tt-ban-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,77,77,0.4)}50%{box-shadow:0 0 0 18px rgba(255,77,77,0)}}'
+            + '@keyframes tt-ban-glow{0%,100%{text-shadow:0 0 10px rgba(255,77,77,0.5),0 0 30px rgba(255,77,77,0.2)}50%{text-shadow:0 0 24px rgba(255,80,80,1),0 0 60px rgba(255,77,77,0.5)}}'
+            + '@keyframes tt-ban-shake{0%,100%{transform:translateX(0)}15%,45%,75%{transform:translateX(-7px)}30%,60%,90%{transform:translateX(7px)}}'
+            + '@keyframes tt-ban-scan{0%{top:-5%}100%{top:105%}}'
+            + '@keyframes tt-ban-dot{0%,100%{opacity:1}50%{opacity:0.2}}';
+        document.head.appendChild(styleEl);
+    }
+
     var banEl = document.getElementById('banScreen');
     if (!banEl) {
         banEl = document.createElement('div');
         banEl.id = 'banScreen';
-        banEl.style.cssText = 'position:fixed; inset:0; background:#141923; z-index:999999; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#ff4d4d; text-align:center; padding:20px; font-family:\'Inter\',\'Segoe UI\',sans-serif;';
-        banEl.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;padding:20px;background:radial-gradient(circle, rgba(255,50,50,0.1) 0%, transparent 70%);border-radius:12px;"><span style="font-size:56px; margin-bottom:15px; filter:drop-shadow(0 0 15px rgba(255,77,77,0.5));">⛔</span><h1 style="font-size:22px; font-weight:800; margin:0 0 12px; color:#ff4d4d; letter-spacing:2px; text-shadow:0 0 10px rgba(255,77,77,0.4); text-transform:uppercase;">Erişim Engellendi</h1><p style="font-size:13px; color:#a3b2c2; max-width:280px; margin:0 0 25px; line-height:1.6; text-align:center;">Bu hesap, kullanım politikaları ihlali sebebiyle yönetici tarafından askıya alınmıştır.<br><br>Lütfen destek ekibiyle iletişime geçin.</p><span style="font-size:11px; font-weight:600; color:#5ba4f5; letter-spacing:1px;">TARIK TOOLS © 2026</span></div>';
+        banEl.style.cssText = 'position:fixed;inset:0;background:linear-gradient(135deg,#0a0c14 0%,#12181f 50%,#0a0c14 100%);z-index:999999;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;font-family:\'Inter\',\'Segoe UI\',sans-serif;overflow:hidden;';
+
+        banEl.innerHTML = ''
+            // Background grid
+            + '<div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,50,50,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,50,50,0.04) 1px,transparent 1px);background-size:36px 36px;"></div>'
+            // Scanline
+            + '<div style="position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(255,77,77,0.2),transparent);animation:tt-ban-scan 5s linear infinite;pointer-events:none;"></div>'
+            // Card
+            + '<div style="position:relative;display:flex;flex-direction:column;align-items:center;padding:34px 30px;background:rgba(255,30,30,0.06);border:1px solid rgba(255,77,77,0.25);border-radius:22px;box-shadow:0 0 80px rgba(255,30,30,0.12),inset 0 1px 0 rgba(255,255,255,0.05);animation:tt-ban-fadein 0.65s cubic-bezier(0.16,1,0.3,1) forwards;">'
+            // Icon ring with pulse
+            + '<div style="width:86px;height:86px;border-radius:50%;background:radial-gradient(circle,rgba(255,77,77,0.18) 0%,rgba(255,77,77,0.04) 60%,transparent 100%);display:flex;align-items:center;justify-content:center;margin-bottom:20px;animation:tt-ban-pulse 2.5s ease-in-out infinite;">'
+            + '<span style="font-size:42px;display:block;animation:tt-ban-shake 0.9s ease-in-out 0.7s;filter:drop-shadow(0 0 14px rgba(255,77,77,0.9));">&#x26D4;</span>'
+            + '</div>'
+            // Title
+            + '<h1 style="font-size:18px;font-weight:900;margin:0 0 8px;color:#ff4d4d;letter-spacing:3px;text-transform:uppercase;animation:tt-ban-glow 2.2s ease-in-out infinite;">Eri\u015fim Engellendi</h1>'
+            // Red divider
+            + '<div style="width:50px;height:2px;background:linear-gradient(90deg,transparent,#ff4d4d,transparent);border-radius:2px;margin:0 0 18px;"></div>'
+            // Description
+            + '<p style="font-size:12px;color:#8899aa;max-width:255px;margin:0 0 22px;line-height:1.75;">Bu hesab\u0131n eklenti eri\u015fimi y\u00f6netici taraf\u0131ndan ask\u0131ya al\u0131nm\u0131\u015ft\u0131r.<br><br>L\u00fctfen destek ekibiyle ileti\u015fime ge\u00e7in.</p>'
+            // Status badge
+            + '<div style="display:flex;align-items:center;gap:7px;padding:6px 15px;background:rgba(255,77,77,0.08);border:1px solid rgba(255,77,77,0.25);border-radius:30px;margin-bottom:12px;">'
+            + '<div style="width:7px;height:7px;border-radius:50%;background:#ff4d4d;animation:tt-ban-dot 1.2s ease-in-out infinite;"></div>'
+            + '<span style="font-size:10px;font-weight:700;color:#ff6b6b;letter-spacing:1.5px;">ACCESS DENIED \u2014 403</span>'
+            + '</div>'
+            // Footer
+            + '<span style="font-size:10px;font-weight:600;color:#2a3444;letter-spacing:1px;margin-top:4px;">TARIK TOOLS \u00a9 2026</span>'
+            + '</div>';
+
         document.body.appendChild(banEl);
     }
     banEl.style.display = 'flex';
@@ -8408,7 +8473,9 @@ if (_origBtnRead) {
 
 
 
-    if (localStorage.getItem('speedflow_presets_seeded') === 'true') return;
+    var _seedKey = 'speedflow_presets_seeded_' + ((typeof verifiedApiKey !== 'undefined' && verifiedApiKey) ? verifiedApiKey : (localStorage.getItem('tt_api_key') || ''));
+
+    if (localStorage.getItem(_seedKey) === 'true') return;
 
 
 
@@ -8416,7 +8483,7 @@ if (_origBtnRead) {
 
     if (existing.length > 0) {
 
-        localStorage.setItem('speedflow_presets_seeded', 'true');
+        localStorage.setItem(_seedKey, 'true');
 
         return;
 
@@ -8454,7 +8521,7 @@ if (_origBtnRead) {
 
     savePresetsToStorage(seeded);
 
-    localStorage.setItem('speedflow_presets_seeded', 'true');
+    localStorage.setItem(_seedKey, 'true');
 
 
 
