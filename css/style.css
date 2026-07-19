@@ -1071,7 +1071,7 @@ html, body {
 .tab-content {
     flex: 1 !important;
     height: 100% !important;
-    overflow: hidden !important; /* Wrapper does not scroll */
+    overflow-y: auto !important; /* Allow scrolling if contents exceed height */
     display: none;
     flex-direction: column;
     min-height: 0 !important; /* Allows inner flex elements to shrink */

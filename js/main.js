@@ -240,16 +240,42 @@ function checkFeaturePermission(featureKey, successCallback) {
         showToast('⚠ Lütfen önce Ayarlar\'dan API Key girin.');
         return;
     }
-    
-    fetch(TT_BASE_URL + '/api/external/check-permission', {
+
+    var isBypassed = false;
+    var controller = null;
+    try {
+        if (typeof AbortController !== 'undefined') {
+            controller = new AbortController();
+        }
+    } catch(e) {}
+
+    var timeoutId = setTimeout(function() {
+        if (controller) {
+            try { controller.abort(); } catch(e) {}
+        }
+        if (!isBypassed) {
+            isBypassed = true;
+            showToast('📶 Çevrimdışı Mod: İşlem devam ediyor...');
+            successCallback();
+        }
+    }, 3500);
+
+    var fetchOpts = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'ApiKey ' + apiKey
         },
         body: JSON.stringify({ feature: featureKey })
-    })
+    };
+    if (controller) {
+        fetchOpts.signal = controller.signal;
+    }
+
+    fetch(TT_BASE_URL + '/api/external/check-permission', fetchOpts)
     .then(function(res) {
+        clearTimeout(timeoutId);
+        if (isBypassed) return;
         if (!res.ok) {
             return res.json().then(function(err) {
                 throw new Error(err.error || 'Bağlantı hatası.');
@@ -258,6 +284,8 @@ function checkFeaturePermission(featureKey, successCallback) {
         return res.json();
     })
     .then(function(data) {
+        if (!data) return;
+        if (isBypassed) return;
         if (data.allowed) {
             if (typeof data.credits !== 'undefined') {
                 var creditsEl = document.getElementById('spanCredits');
@@ -266,25 +294,21 @@ function checkFeaturePermission(featureKey, successCallback) {
             successCallback();
         } else {
             var msg = data.reason || 'Bu özelliği kullanma izniniz yok.';
-
-            if (data.reason && data.reason.toLowerCase().indexOf('süre') !== -1 || (data.reason && data.reason.toLowerCase().indexOf('dolmu') !== -1)) {
-
+            if (data.reason && (data.reason.toLowerCase().indexOf('süre') !== -1 || data.reason.toLowerCase().indexOf('dolmu') !== -1)) {
                 showToast('⏰ Eklenti süreniz dolmuş! Lütfen aboneliğinizi yenileyin.');
-
             } else if (data.reason && (data.reason.toLowerCase().indexOf('engel') !== -1 || data.reason.toLowerCase().indexOf('askıya') !== -1)) {
-
                 showBanScreen();
-
             } else {
-
                 showToast('❌ Yetkisiz: ' + msg);
-
             }
-
         }
     })
     .catch(function(err) {
-        showToast('❌ Hata: ' + err.message);
+        clearTimeout(timeoutId);
+        if (isBypassed) return;
+        isBypassed = true;
+        showToast('📶 Çevrimdışı Mod: İşlem devam ediyor...');
+        successCallback();
     });
 }
 
@@ -406,13 +430,35 @@ Object.keys(layerBtns).forEach(function (id) {
 
             
 
-            var featureKey = null;
-            if (id === 'btnAklliKopya') featureKey = 'smart-duplicate';
-            else if (id === 'btnPrecomp') featureKey = 'precomp';
-            else if (id === 'btnTemizle') featureKey = 'clean-layers';
+            // Quick check for selected layers first before anything (even checkFeaturePermission)
+            cs.evalScript('var comp = app.project.activeItem; (!comp || !(comp instanceof CompItem)) ? 0 : comp.selectedLayers.length', function(resStr) {
+                var count = parseInt(resStr, 10);
+                if (isNaN(count) || count === 0) {
+                    var errorMsg = "Lütfen önce katman seçin.";
+                    if (id === 'btnPrecomp') errorMsg = "Pre-comp için katman seçin.";
+                    else if (id === 'btnAklliKopya') errorMsg = "Kopyalamak için katman seçin.";
+                    else if (id === 'btnTemizle') errorMsg = "Temizlemek için katman seçin.";
+                    else if (id === 'btnTersCevir') errorMsg = "Sırayı ters çevirmek için katman seçin.";
+                    window.showAlert(errorMsg);
+                    return;
+                }
 
-            if (featureKey) {
-                checkFeaturePermission(featureKey, function() {
+                var featureKey = null;
+                if (id === 'btnAklliKopya') featureKey = 'smart-duplicate';
+                else if (id === 'btnPrecomp') featureKey = 'precomp';
+                else if (id === 'btnTemizle') featureKey = 'clean-layers';
+
+                if (featureKey) {
+                    checkFeaturePermission(featureKey, function() {
+                        runScript(scriptName, function (res) {
+                            if (res && res.indexOf('ERROR:') === 0) {
+                                window.showAlert(res.substring(6));
+                            } else {
+                                showToast(layerBtns[id][1]);
+                            }
+                        });
+                    });
+                } else {
                     runScript(scriptName, function (res) {
                         if (res && res.indexOf('ERROR:') === 0) {
                             window.showAlert(res.substring(6));
@@ -420,16 +466,8 @@ Object.keys(layerBtns).forEach(function (id) {
                             showToast(layerBtns[id][1]);
                         }
                     });
-                });
-            } else {
-                runScript(scriptName, function (res) {
-                    if (res && res.indexOf('ERROR:') === 0) {
-                        window.showAlert(res.substring(6));
-                    } else {
-                        showToast(layerBtns[id][1]);
-                    }
-                });
-            }
+                }
+            });
 
         });
 
@@ -1390,23 +1428,31 @@ document.getElementById('btnReadFlow').addEventListener('click', function() {
 // ── FLOW UYGULA ───────────────────────────────────────────────
 
 document.getElementById('btnApplyFlow').addEventListener('click', function() {
-    checkFeaturePermission('flow-ease', function() {
-        var opts = JSON.stringify({
-            type   : activeFlowType,
-            cp1x   : Math.round(cp1.x * 10000) / 10000,
-            cp1y   : Math.round(cp1.y * 10000) / 10000,
-            cp2x   : Math.round(cp2.x * 10000) / 10000,
-            cp2y   : Math.round(cp2.y * 10000) / 10000,
-            kfMode : selectedKfMode
-        });
+    cs.evalScript('var comp = app.project.activeItem; (!comp || !(comp instanceof CompItem)) ? 0 : comp.selectedLayers.length', function(resStr) {
+        var count = parseInt(resStr, 10);
+        if (isNaN(count) || count === 0) {
+            window.showAlert("Flow için katman seçin.");
+            return;
+        }
 
-        runScript('applyFlow(' + opts + ')', function(res) {
-            if (res && res.indexOf('ERROR:') === 0) {
-                window.showAlert(res.substring(6));
-            } else {
-                var modeStr = selectedKfMode === 'auto' ? 'Otomatik' : (selectedKfMode + ' KF');
-                showToast('⚡ Flow uygulandı! (' + modeStr + ')');
-            }
+        checkFeaturePermission('flow-ease', function() {
+            var opts = JSON.stringify({
+                type   : activeFlowType,
+                cp1x   : Math.round(cp1.x * 10000) / 10000,
+                cp1y   : Math.round(cp1.y * 10000) / 10000,
+                cp2x   : Math.round(cp2.x * 10000) / 10000,
+                cp2y   : Math.round(cp2.y * 10000) / 10000,
+                kfMode : selectedKfMode
+            });
+
+            runScript('applyFlow(' + opts + ')', function(res) {
+                if (res && res.indexOf('ERROR:') === 0) {
+                    window.showAlert(res.substring(6));
+                } else {
+                    var modeStr = selectedKfMode === 'auto' ? 'Otomatik' : (selectedKfMode + ' KF');
+                    showToast('⚡ Flow uygulandı! (' + modeStr + ')');
+                }
+            });
         });
     });
 });
@@ -8429,106 +8475,23 @@ if (_origBtnRead) {
 
 
 
-(function seedGalleryPresets() {
-
-
-
-    var GALLERY = [
-
-
-
-        { name:'✨ Smooth Ease',  category:'ui',       cp1:[0.25,0.10], cp2:[0.75,0.90] },
-
-
-
-        { name:'⚡ Snappy',       category:'ui',       cp1:[0.10,1.00], cp2:[0.90,0.00] },
-
-
-
-        { name:'🐢 Slow In',      category:'karakter', cp1:[0.00,0.00], cp2:[0.33,1.00] },
-
-
-
-        { name:'🚀 Slow Out',     category:'karakter', cp1:[0.67,0.00], cp2:[1.00,1.00] },
-
-
-
-        { name:'📷 Camera Pan',   category:'kamera',   cp1:[0.30,0.00], cp2:[0.70,1.00] },
-
-
-
-        { name:'🏀 Bounce In',    category:'bounce',   cp1:[0.60,1.30], cp2:[0.40,1.30] },
-
-
-
-        { name:'🌊 Overshoot',    category:'bounce',   cp1:[0.40,1.40], cp2:[0.60,0.00] },
-
-
-
-        { name:'💥 Impact',       category:'karakter', cp1:[0.10,0.00], cp2:[0.30,1.00] },
-
-
-
-    ];
-
-
-
-    var _seedKey = 'speedflow_presets_seeded_' + ((typeof verifiedApiKey !== 'undefined' && verifiedApiKey) ? verifiedApiKey : (localStorage.getItem('tt_api_key') || ''));
-
-    if (localStorage.getItem(_seedKey) === 'true') return;
-
-
-
-    var existing = loadPresets();
-
-    if (existing.length > 0) {
-
-        localStorage.setItem(_seedKey, 'true');
-
-        return;
-
+(function cleanDefaultPresetsAndDisableSeed() {
+    var cleanKey = 'speedflow_presets_cleaned_defaults_v2';
+    if (localStorage.getItem(cleanKey) !== 'true') {
+        var existing = loadPresets();
+        var defaultNames = [
+            '✨ Smooth Ease', '⚡ Snappy', '🐢 Slow In', '🚀 Slow Out',
+            '📷 Camera Pan', '🏀 Bounce In', '🌊 Overshoot', '💥 Impact',
+            'Smooth Ease', 'Snappy', 'Slow In', 'Slow Out', 'Camera Pan',
+            'Bounce In', 'Overshoot', 'Impact'
+        ];
+        var filtered = existing.filter(function(pr) {
+            return defaultNames.indexOf(pr.name) === -1;
+        });
+        savePresetsToStorage(filtered);
+        localStorage.setItem(cleanKey, 'true');
+        renderPresets();
     }
-
-
-
-    var seeded = GALLERY.map(function(g) {
-
-
-
-        return {
-
-
-
-            name: g.name, type: 'custom', category: g.category,
-
-
-
-            cp1: g.cp1, cp2: g.cp2,
-
-
-
-            speedIn: 80, speedOut: 80, influenceIn: 75, influenceOut: 75
-
-
-
-        };
-
-
-
-    });
-
-
-
-    savePresetsToStorage(seeded);
-
-    localStorage.setItem(_seedKey, 'true');
-
-
-
-    renderPresets();
-
-
-
 })();
 
 
