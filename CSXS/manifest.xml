@@ -19,7 +19,7 @@
             <DispatchInfo>
                 <Resources>
                     <MainPath>./index.html</MainPath>
-                    <ScriptPath>./jsx/hostscript.jsx</ScriptPath>
+                    <ScriptPath>./jsx/hostscript.jsxbin</ScriptPath>
                     <CEFCommandLine>
                         <Parameter>--enable-nodejs</Parameter>
                         <Parameter>--mixed-context</Parameter>
