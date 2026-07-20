@@ -8784,18 +8784,20 @@ if (btnAklliHizala) {
 
         var isShift = e.shiftKey;
 
-        cs.evalScript('smartAlign(' + isShift + ')', function(res){
+        checkFeaturePermission('smart-align', function() {
+            cs.evalScript('smartAlign(' + isShift + ')', function(res){
 
-            if (res && res.indexOf('ERROR:') === 0) {
+                if (res && res.indexOf('ERROR:') === 0) {
 
-                window.showAlert(res.substring(6));
+                    window.showAlert(res.substring(6));
 
-            } else {
+                } else {
 
-                showToast(isShift ? '✓ Katmanlar ilk seçilene hizalandı' : '✓ Katmanlar kompozisyona hizalandı');
+                    showToast(isShift ? '✓ Katmanlar ilk seçilene hizalandı' : '✓ Katmanlar kompozisyona hizalandı');
 
-            }
+                }
 
+            });
         });
 
     });
