@@ -662,11 +662,8 @@ function toCanvas(nx, ny) {
 // Convert canvas pixels → normalized (clamp X, allow Y outside 0-1 for overshoot)
 
 function fromCanvas(cx, cy) {
-
-    var nx = Math.max(0.001, Math.min(0.999, (cx - PAD) / BOX_W));
-
+    var nx = Math.max(0.0, Math.min(1.0, (cx - PAD) / BOX_W));
     var rawNy = (cy - PAD) / BOX_H;
-
     var ny = flipY ? rawNy : (1 - rawNy);
 
     return {
@@ -1152,11 +1149,8 @@ document.addEventListener('mousemove', function(e) {
     };
 
     if (graphMode === 'speed') {
-
-        var rawX = Math.max(0.001, Math.min(0.999, (m.x - PAD) / BOX_W));
-
+        var rawX = Math.max(0.0, Math.min(1.0, (m.x - PAD) / BOX_W));
         if (dragging === 'cp1') cp1.x = rawX;
-
         else                    cp2.x = rawX;
 
     } else {
@@ -1393,7 +1387,7 @@ document.getElementById('btnReadFlow').addEventListener('click', function() {
 
                 var newCp1y = Math.min(2, Math.max(-0.5, newCp1x * data.outSlope));
 
-                var newCp2y = Math.min(1.5, Math.max(-0.5, 1 - newCp2x * data.inSlope));
+                var newCp2y = Math.min(1.5, Math.max(-0.5, 1 - (1 - newCp2x) * data.inSlope));
 
                 cp1 = { x: newCp1x, y: newCp1y };
 
@@ -1438,9 +1432,9 @@ document.getElementById('btnApplyFlow').addEventListener('click', function() {
         checkFeaturePermission('flow-ease', function() {
             var opts = JSON.stringify({
                 type   : activeFlowType,
-                cp1x   : Math.round(cp1.x * 10000) / 10000,
+                cp1x   : Math.max(0.01, Math.min(0.99, Math.round(cp1.x * 10000) / 10000)),
                 cp1y   : Math.round(cp1.y * 10000) / 10000,
-                cp2x   : Math.round(cp2.x * 10000) / 10000,
+                cp2x   : Math.max(0.01, Math.min(0.99, Math.round(cp2.x * 10000) / 10000)),
                 cp2y   : Math.round(cp2.y * 10000) / 10000,
                 kfMode : selectedKfMode
             });
@@ -9442,7 +9436,7 @@ function checkForUpdates() {
 
         var https = require('https');
 
-        https.get('https://raw.githubusercontent.com/tarikeditss1/Tarik_Tools/main/update.json', function(res) {
+        https.get('https://tariktools.com/api/settings', function(res) {
 
             var data = '';
 
@@ -9454,7 +9448,7 @@ function checkForUpdates() {
 
                     var json = JSON.parse(data);
 
-                    if (json && json.latestVersion && json.latestVersion !== currentVersion) {
+                    if (json && json.extensionVersion && json.extensionVersion !== currentVersion) {
 
                         var badge = document.querySelector('.version-badge');
 
@@ -9464,11 +9458,11 @@ function checkForUpdates() {
 
                             badge.innerText = 'v' + currentVersion + ' (Güncelle!)';
 
-                            badge.title = 'Yeni sürüm mevcut (v' + json.latestVersion + ')! Güncellemek için tıklayın.';
+                            badge.title = 'Yeni sürüm mevcut (v' + json.extensionVersion + ')! Güncellemek için tıklayın.';
 
                             badge.addEventListener('click', function() {
 
-                                var url = json.downloadUrl || 'https://github.com/tarikeditss1/Tarik_Tools';
+                                var url = 'https://tariktools.com/tarik-tools';
 
                                 if (window.cep) {
 
