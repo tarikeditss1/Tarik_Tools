@@ -1435,3 +1435,48 @@ html, body {
 .sub-time-input:focus {
     border-color: #3b82f6;
 }
+
+/* ── HEADER ACTION BUTTON ANIMATIONS ─────────────────────── */
+.hdr-action-btn {
+    font-size: 10px;
+    font-weight: 500;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--text-dim);
+    padding: 3px 8px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+
+.hdr-action-btn:hover {
+    background: linear-gradient(135deg, rgba(47, 128, 237, 0.25), rgba(30, 111, 196, 0.4));
+    border-color: rgba(47, 128, 237, 0.7);
+    color: #ffffff;
+    transform: translateY(-1px) scale(1.04);
+    box-shadow: 0 4px 12px rgba(47, 128, 237, 0.35);
+}
+
+.hdr-action-btn:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow: 0 1px 4px rgba(47, 128, 237, 0.2);
+}
+
+.hdr-action-btn .btn-icon {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hdr-action-btn:hover .gear-icon {
+    transform: rotate(90deg);
+}
+
+.hdr-action-btn:hover .btn-icon:not(.gear-icon) {
+    transform: scale(1.2);
+}
