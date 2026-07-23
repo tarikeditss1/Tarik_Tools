@@ -94,6 +94,7 @@
         <div class="section-label" style="margin-bottom: 0; padding-bottom: 0;">Katman & Düzenleme</div>
         <div style="display:flex; gap:4px; flex-wrap:wrap;">
         <button id="btnToggleAnchorUI" style="font-size: 10px; background: var(--bg-3); border: 1px solid var(--border); border-radius: 4px; color: var(--text-dim); padding: 2px 6px; cursor: pointer; transition: all 0.2s; font-family: inherit;" title="Merkez Noktası (Anchor) aracını göster/gizle">⚓ Anchor</button>
+        <button id="btnFitToComp" style="font-size: 10px; background: var(--bg-3); border: 1px solid var(--border); border-radius: 4px; color: var(--text-dim); padding: 2px 6px; cursor: pointer; transition: all 0.2s; font-family: inherit;" title="Normal Tık: Katmanı Kompozisyona Sığdır | Shift+Tık: Orantılı Sığdır">Comp'a Sığdır</button>
         <button id="btnEditLayout" style="font-size: 10px; background: var(--bg-3); border: 1px solid var(--border); border-radius: 4px; color: var(--text-dim); padding: 2px 6px; cursor: pointer; transition: all 0.2s; font-family: inherit;">⚙️ Düzenle</button>
     </div>
     </div>
@@ -103,10 +104,8 @@
         <button class="grid-btn" id="btnHizFX" title="Normal Tık: Twixtor Pro | Shift+Tık: Motion Tile">Hız FX</button>
         <button class="grid-btn" id="btnSolid">Solid / Kamera</button>
         <button class="grid-btn" id="btnPrecomp">PRE COMP</button>
-        <button class="grid-btn" id="btnFitToComp" title="Normal Tık: Katmanı Kompozisyona Sığdır | Shift+Tık: Orantılı Sığdır">Comp'a Sığdır</button>
         <button class="grid-btn" id="btnScreenshot" title="Mevcut kareyi doğrudan Masaüstüne PNG olarak kaydeder.">Ekran Görüntüsü</button>
         <button class="grid-btn" id="btnAklliHizala">Akıllı Hizala</button>
-        <button class="grid-btn" id="btnCompResize" title="Seçili Pre-Comp katmanlarının veya aktif kompozisyonun boyutunu (Width/Height) hızlıca değiştirin.">Comp Boyutu</button>
         <button class="grid-btn" id="btnAklliKopya" title="Tıkla: Bağımsız Kopyala | Shift+Tıkla: Zamanı ve Yeri Koruyarak Bağımsız Kopyala">Bağımsız Pre-Comp</button>
         <button class="grid-btn" id="btnTemizle">Gelişmiş Temizle</button>
         <button class="grid-btn" id="btnTersCevir">Sırayı Ters Çevir</button>
@@ -630,31 +629,7 @@
     </div>
 </div>
 
-<!-- ========== COMP RESIZE MODAL ========== -->
-<div class="modal-overlay" id="compResizeModalOverlay">
-    <div class="modal" style="max-width: 320px; background: var(--bg-1); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 12px 35px rgba(0,0,0,0.6); padding: 16px;">
-        <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 14px;">
-            <span class="modal-title" style="font-size: 13px; font-weight: 700; color: var(--text-bright); display: flex; align-items: center; gap: 6px;">
-                <span>📐</span> Kompozisyon Boyutlandır
-            </span>
-            <button id="btnCloseCompResizeModal" style="background: none; border: none; color: var(--text-dim); cursor: pointer; font-size: 16px;">✕</button>
-        </div>
-        
-        <div id="compResizeTargetInfo" style="font-size: 11px; color: var(--accent); margin-bottom: 12px; padding: 6px 10px; background: rgba(47, 128, 237, 0.1); border-left: 3px solid var(--accent); border-radius: 4px; font-weight: 500;">
-            Hedef: Aktif Kompozisyon
-        </div>
 
-        <div style="display: flex; gap: 10px; margin-bottom: 14px;">
-            <div style="flex: 1;">
-                <label style="font-size: 10px; color: var(--text-dim); display: block; margin-bottom: 4px;">Genişlik (Width)</label>
-                <input type="number" id="inputCompWidth" placeholder="1920" style="width: 100%; box-sizing: border-box; background: var(--bg-2); border: 1px solid var(--border); color: var(--text-bright); padding: 6px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; text-align: center;">
-            </div>
-            <div style="display: flex; align-items: flex-end; padding-bottom: 8px; color: var(--text-dim); font-weight: bold;">×</div>
-            <div style="flex: 1;">
-                <label style="font-size: 10px; color: var(--text-dim); display: block; margin-bottom: 4px;">Yükseklik (Height)</label>
-                <input type="number" id="inputCompHeight" placeholder="1080" style="width: 100%; box-sizing: border-box; background: var(--bg-2); border: 1px solid var(--border); color: var(--text-bright); padding: 6px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; text-align: center;">
-            </div>
-        </div>
 
         <!-- Quick Presets -->
         <div style="margin-bottom: 16px;">
