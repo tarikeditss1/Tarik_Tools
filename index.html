@@ -103,8 +103,10 @@
         <button class="grid-btn" id="btnHizFX" title="Normal Tık: Twixtor Pro | Shift+Tık: Motion Tile">Hız FX</button>
         <button class="grid-btn" id="btnSolid">Solid / Kamera</button>
         <button class="grid-btn" id="btnPrecomp">PRE COMP</button>
+        <button class="grid-btn" id="btnUnprecomp" title="Seçili Pre-Comp katmanını çıkarıp içerisindeki katmanları ana kompozisyona aktarır.">Un-PreComp</button>
         <button class="grid-btn" id="btnScreenshot" title="Mevcut kareyi doğrudan Masaüstüne PNG olarak kaydeder.">Ekran Görüntüsü</button>
         <button class="grid-btn" id="btnAklliHizala">Akıllı Hizala</button>
+        <button class="grid-btn" id="btnCompResize" title="Seçili Pre-Comp katmanlarının veya aktif kompozisyonun boyutunu (Width/Height) hızlıca değiştirin.">Comp Boyutu</button>
         <button class="grid-btn" id="btnAklliKopya" title="Tıkla: Bağımsız Kopyala | Shift+Tıkla: Zamanı ve Yeri Koruyarak Bağımsız Kopyala">Bağımsız Pre-Comp</button>
         <button class="grid-btn" id="btnTemizle">Gelişmiş Temizle</button>
         <button class="grid-btn" id="btnTersCevir">Sırayı Ters Çevir</button>
@@ -624,6 +626,50 @@
         <div style="display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--border); background: var(--bg-2); border-bottom-left-radius: var(--radius); border-bottom-right-radius: var(--radius);">
             <button class="action-btn-sm" id="btnConfirmCancel" style="flex: 1; margin: 0; background: var(--bg-3); border: 1px solid var(--border); font-size: 10px;">İptal</button>
             <button class="apply-btn" id="btnConfirmYes" style="flex: 1; margin: 0; background: linear-gradient(135deg, #ef4444, #b91c1c); font-size: 10px; border: none; box-shadow: 0 0 6px rgba(239, 68, 68, 0.4);">Evet, Sil</button>
+        </div>
+    </div>
+</div>
+
+<!-- ========== COMP RESIZE MODAL ========== -->
+<div class="modal-overlay" id="compResizeModalOverlay">
+    <div class="modal" style="max-width: 320px; background: var(--bg-1); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 12px 35px rgba(0,0,0,0.6); padding: 16px;">
+        <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 14px;">
+            <span class="modal-title" style="font-size: 13px; font-weight: 700; color: var(--text-bright); display: flex; align-items: center; gap: 6px;">
+                <span>📐</span> Kompozisyon Boyutlandır
+            </span>
+            <button id="btnCloseCompResizeModal" style="background: none; border: none; color: var(--text-dim); cursor: pointer; font-size: 16px;">✕</button>
+        </div>
+        
+        <div id="compResizeTargetInfo" style="font-size: 11px; color: var(--accent); margin-bottom: 12px; padding: 6px 10px; background: rgba(47, 128, 237, 0.1); border-left: 3px solid var(--accent); border-radius: 4px; font-weight: 500;">
+            Hedef: Aktif Kompozisyon
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-bottom: 14px;">
+            <div style="flex: 1;">
+                <label style="font-size: 10px; color: var(--text-dim); display: block; margin-bottom: 4px;">Genişlik (Width)</label>
+                <input type="number" id="inputCompWidth" placeholder="1920" style="width: 100%; box-sizing: border-box; background: var(--bg-2); border: 1px solid var(--border); color: var(--text-bright); padding: 6px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; text-align: center;">
+            </div>
+            <div style="display: flex; align-items: flex-end; padding-bottom: 8px; color: var(--text-dim); font-weight: bold;">×</div>
+            <div style="flex: 1;">
+                <label style="font-size: 10px; color: var(--text-dim); display: block; margin-bottom: 4px;">Yükseklik (Height)</label>
+                <input type="number" id="inputCompHeight" placeholder="1080" style="width: 100%; box-sizing: border-box; background: var(--bg-2); border: 1px solid var(--border); color: var(--text-bright); padding: 6px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; text-align: center;">
+            </div>
+        </div>
+
+        <!-- Quick Presets -->
+        <div style="margin-bottom: 16px;">
+            <label style="font-size: 10px; color: var(--text-dim); display: block; margin-bottom: 6px;">Hızlı Hazır Ayarlar:</label>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;">
+                <button class="resize-preset-btn" data-w="1920" data-h="1080" style="font-size: 10px; padding: 5px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; color: var(--text); cursor: pointer; transition: all 0.2s;">1920x1080 (16:9)</button>
+                <button class="resize-preset-btn" data-w="1080" data-h="1920" style="font-size: 10px; padding: 5px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; color: var(--text); cursor: pointer; transition: all 0.2s;">1080x1920 (9:16)</button>
+                <button class="resize-preset-btn" data-w="1080" data-h="1080" style="font-size: 10px; padding: 5px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; color: var(--text); cursor: pointer; transition: all 0.2s;">1080x1080 (1:1)</button>
+                <button class="resize-preset-btn" data-w="3840" data-h="2160" style="font-size: 10px; padding: 5px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; color: var(--text); cursor: pointer; transition: all 0.2s;">3840x2160 (4K)</button>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 8px;">
+            <button id="btnCancelCompResize" class="modal-cancel" style="flex: 1; margin: 0; padding: 8px; font-size: 11px;">İptal</button>
+            <button id="btnApplyCompResize" class="apply-btn" style="flex: 1; margin: 0; padding: 8px; font-size: 11px; font-weight: 700; background: linear-gradient(135deg, #2f80ed, #1cb5e0);">⚡ UYGULA</button>
         </div>
     </div>
 </div>
